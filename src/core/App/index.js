@@ -12,7 +12,7 @@ export const App = () => {
       <GlobalStyle />
       <HashRouter>
         <Switch>
-          <Route path="/autor">
+          <Route path="/error">
             <Error />
           </Route>
         </Switch>
