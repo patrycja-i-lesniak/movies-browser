@@ -12,6 +12,6 @@ html  {
 body {
   margin: auto;
   font-family: 'Poppins', sans-serif;
-  background-color: ${({ theme }) => theme.colors.background};
+  background-color: ${({ theme }) => theme.colors.site.background};
 }
 `;
