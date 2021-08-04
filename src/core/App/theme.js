@@ -33,6 +33,11 @@ export const theme = {
             background: colorNames.platinum,
             text: colorNames.black,
         },
+
+        button:  {
+            background: colorNames.blue,
+            text: colorNames.white,
+        }
     },
 
     breakpoints,
