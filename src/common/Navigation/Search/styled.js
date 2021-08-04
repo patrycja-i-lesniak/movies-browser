@@ -16,16 +16,12 @@ export const SearchInput = styled.input`
     box-sizing: border-box;
     border-radius: 33px;
     background-color: ${({ theme }) => theme.colors.navigation.elems}; 
+    outline:none;
 
     &::placeholder {
         font-size: 16px;
     }
-
-    &.js-focus-visible :focus:not(.focus-visible) {
-        outline: none;
-    }
-
-    `;
+`;
 
     export const SearchIcon = styled.img`
     width: 24px;
