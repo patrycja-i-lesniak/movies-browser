@@ -6,28 +6,30 @@ export const SearchField = styled.div`
     border-radius: 33px;
     background-color: ${({ theme }) => theme.colors.navigation.elems};
     border: 1px solid ${({ theme }) => theme.colors.navigation.border};
-    flex:0 1 auto; ;
  
 `;
 
-export const SearchInput = styled.input`
-    min-width: 200px;   
-    max-width: 432px;
+export const SearchInput = styled.input`  
+    width: 432px;
     height: 48px;
     border: none;
     box-sizing: border-box;
     border-radius: 33px;
     background-color: ${({ theme }) => theme.colors.navigation.elems}; 
 
-&::placeholder {
-    font-size: 16px;
+    &::placeholder {
+        font-size: 16px;
+    }
 
-}
-`;
+    &.js-focus-visible :focus:not(.focus-visible) {
+        outline: none;
+    }
 
-export const SearchIcon = styled.img`
+    `;
+
+    export const SearchIcon = styled.img`
     width: 24px;
     height: 24px;
-    margin: 10px 10px;
+    margin: 10px 20px;
 `;
 
