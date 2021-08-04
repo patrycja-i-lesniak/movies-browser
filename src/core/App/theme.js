@@ -24,9 +24,10 @@ export const theme = {
     colors: {
         textPrimary: colorNames.black,
 
-        header: {
+        navigation: {
             background: colorNames.black,
             border: colorNames.grey,
+            elems: colorNames.white,
         },
 
         site: {
