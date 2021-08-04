@@ -1,13 +1,19 @@
-import { Link } from "./styled";
+import { List, StyledNavLink, Item } from "./styled";
 
 export const NavigationLink = () => {
     return (
-        <>
-            <Link>Movies</Link>
-            <Link>People</Link>
-        </>
-    )
-}
+        <nav>
+            <List>
+                <Item>
+                    <StyledNavLink to="/movies">Movies</StyledNavLink>
+                </Item>
+                <Item>
+                    <StyledNavLink to="/people">People</StyledNavLink>
+                </Item>
+            </List>
+        </nav>
+    );
+};
 
 
 

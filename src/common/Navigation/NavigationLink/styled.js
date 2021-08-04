@@ -1,13 +1,28 @@
 import styled from "styled-components";
+import {NavLink} from "react-router-dom";
 
-export const Link = styled.h2`
+export const List = styled.ul`
+    list-style-type: none;
+    display: flex;
+    padding-inline-start: 0px;
+
+`;
+
+export const Item = styled.li`
+padding-right: 30px;
+`;
+
+const activeClassName = "active";
+
+export const StyledNavLink = styled(NavLink).attrs(() => ({activeClassName}))`
+    text-decoration: none;
     font-weight: 600;
     font-size: 14px;
     text-transform: uppercase;
     color: ${({ theme }) => theme.colors.navigation.elems};
-    padding: 20px;
+    padding: 10px;
 
-&:active {
+&${activeClassName} {
     border: 1px solid ${({ theme }) => theme.colors.navigation.elems};
     box-sizing: border-box;
     border-radius: 24px;
