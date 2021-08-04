@@ -7,7 +7,7 @@ import {
     NavigationLink,
 } from "./styled";
 import { Search } from "./Search";
-import { Wrapper } from "../Wrapper";
+import { Wrapper } from "../../Wrapper";
 import videoIcon from "./videoIcon.svg";
 
 export const Header = () => {
