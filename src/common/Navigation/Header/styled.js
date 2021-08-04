@@ -2,13 +2,12 @@ import styled from "styled-components";
 
 export const Container = styled.div`
     background-color: ${({ theme }) => theme.colors.navigation.background};
-    height: 94px;
+    min-height: 94px;
     width: 100%;
-   
 `;
 
 export const Navigation = styled.div`
-     display: flex;
+    display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
     align-items: center;
@@ -34,15 +33,15 @@ export const PageTitle = styled.h1`
 `;
 
 export const NavigationLink = styled.h2`
-font-weight: 600;
-font-size: 14px;
-text-transform: uppercase;
-color: ${({ theme }) => theme.colors.navigation.elems};
+    font-weight: 600;
+    font-size: 14px;
+    text-transform: uppercase;
+    color: ${({ theme }) => theme.colors.navigation.elems};
 
 &:active {
     border: 1px solid #FFFFFF;
     box-sizing: border-box;
-    border-radius: 24px; 
+    border-radius: 24px;
     padding: 16px 24px;
 }
 `;
