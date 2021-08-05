@@ -1,7 +1,7 @@
 const colorNames = {
     lightGrey: "#F5F5FA",
     platinum: "#E5E5E5",
-    grey: "#E4E6F0",
+    mystic: "#E4E6F0",
     black: "#000000",
     darkGrey: "#7E839A",
     white: "#FFFFFF",
@@ -28,14 +28,18 @@ export const theme = {
 
         navigation: {
             background: colorNames.black,
-            border: colorNames.grey,
+            border: colorNames.mystic,
             elems: colorNames.white,
         },
-
         site: {
-            background: colorNames.platinum,
+            background: colorNames.lightGrey,
             text: colorNames.black,
         },
+        tile: {
+            background: colorNames.white,
+            tagBackground: colorNames.mystic,
+            details: colorNames.slateGray,
+        }
     },
 
     ...common,
