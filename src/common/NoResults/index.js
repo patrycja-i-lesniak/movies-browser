@@ -1,6 +1,6 @@
 import { NoResultsHeader, NoResultsImage, NoResultsWrapper } from "./styled";
 
-export const NoResults = () => {
+const NoResults = () => {
     const search = "Muan" //template, waitng for search code and logic
 
     return (
@@ -10,3 +10,5 @@ export const NoResults = () => {
         </NoResultsWrapper>
     );
 };
+
+export default NoResults;
