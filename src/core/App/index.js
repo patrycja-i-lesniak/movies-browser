@@ -1,13 +1,34 @@
-import { ThemeProvider } from "styled-components";
-import { Normalize } from "styled-normalize";
-import { GlobalStyle } from "./GlobalStyle";
-import { theme } from "./theme"
+import {
+  HashRouter,
+  Switch,
+  Route,
+  Redirect,
+} from "react-router-dom";
+import { Navigation } from "../../common/Navigation";
+import { MovieList } from "../../features/MovieList";
+import { PersonList } from "../../features/PersonList";
+import { MovieDetails } from "../../features/MovieDetails";
+import { Wrapper } from "../../common/Wrapper";
+
 
 export const App = () => {
   return (
-    <ThemeProvider theme={theme}>
-      <Normalize />
-      <GlobalStyle />
-    </ThemeProvider>
+    <HashRouter>
+      <Navigation />
+      <Wrapper>
+        <Switch>
+          <Route patch="/movies">
+            <MovieList />
+          </Route>
+          <Route patch="/people">
+            <PersonList />
+          </Route>
+          <Route patch="/">
+            <Redirect to="/movies" />
+          </Route>
+        </Switch>
+        <MovieDetails />
+      </Wrapper>
+    </HashRouter>
   );
 };

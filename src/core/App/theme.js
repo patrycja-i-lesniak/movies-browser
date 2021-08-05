@@ -1,7 +1,7 @@
 const colorNames = {
     lightGrey: "#F5F5FA",
     platinum: "#E5E5E5",
-    grey: "#E4E6F0",
+    mystic: "#E4E6F0",
     black: "#000000",
     darkGrey: "#7E839A",
     white: "#FFFFFF",
@@ -13,27 +13,34 @@ const colorNames = {
     slateGray: "#74788B",
 }
 
-const breakpoints = {
-    xsmall: 576,
-    small: 768,
-    medium: 992,
-    large: 1200,
-}
+const common = {
+    breakpoints: {
+        xsmall: 576,
+        small: 768,
+        medium: 992,
+        large: 1200,
+    }
+};
 
 export const theme = {
     colors: {
         textPrimary: colorNames.black,
 
-        header: {
+        navigation: {
             background: colorNames.black,
-            border: colorNames.grey,
+            border: colorNames.mystic,
+            elems: colorNames.white,
         },
-
         site: {
-            background: colorNames.platinum,
+            background: colorNames.lightGrey,
             text: colorNames.black,
         },
+        tile: {
+            background: colorNames.white,
+            tagBackground: colorNames.mystic,
+            details: colorNames.slateGray,
+        }
     },
 
-    ...breakpoints,
+    ...common,
 }

@@ -10,8 +10,8 @@ html  {
   }
 
 body {
-  margin: auto;
-  font-family: 'Poppins', sans-serif;
-  background-color: ${({ theme }) => theme.colors.site.background};
+    margin: auto;
+    font-family: 'Poppins', sans-serif;
+    background-color: ${({ theme }) => theme.colors.site.background};
 }
 `;
