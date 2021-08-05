@@ -1,5 +1,5 @@
-import poster from "../Images/poster.jpg";
-import posterSmall from "../Images/posterSmall.jpg";
+import poster from "../Images/poster.png";
+import posterSmall from "../Images/posterSmall.png";
 import { Rateing, MobileRateing } from "../Rating";
 import {
     MovieDetailsTile,
