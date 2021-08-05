@@ -10,7 +10,6 @@ import { PersonList } from "../../features/PersonList";
 import { MovieDetails } from "../../features/MovieDetails";
 import { Wrapper } from "../../common/Wrapper";
 
-
 export const App = () => {
   return (
     <HashRouter>
