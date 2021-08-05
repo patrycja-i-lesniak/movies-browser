@@ -39,6 +39,8 @@ export const theme = {
             background: colorNames.white,
             tagBackground: colorNames.mystic,
             details: colorNames.slateGray,
+            substitutionPicture: colorNames.silverSand,
+            role: colorNames.darkGrey,
         }
     },
 
