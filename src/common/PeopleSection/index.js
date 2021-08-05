@@ -4,7 +4,7 @@ import { exampleCredits } from "./exampleCredits";
 import pictureSubstitution from "./pictureSubstitution.svg";
 import { PeopleList, PersonTile, ProfilePicture, Role, TileTitle, Title } from "./styled";
 
-const Section = ({ title }) => {
+const PeopleSection = ({ title }) => {
     let peopleList;
     const sectionName = title.toLowerCase();
 
@@ -52,4 +52,4 @@ const Section = ({ title }) => {
     );
 };
 
-export default Section;
+export default PeopleSection;
