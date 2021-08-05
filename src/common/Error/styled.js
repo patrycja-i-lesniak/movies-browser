@@ -2,9 +2,10 @@ import styled from "styled-components";
 import { NavLink } from "react-router-dom";
 
 export const Wrapper = styled.div`
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+    margin: 0 auto;
+    max-width: 630px;
+    text-align: center;
+    padding: 14px;
 `;
 
 export const Title = styled.h1`
@@ -14,13 +15,15 @@ export const Title = styled.h1`
 `;
 
 export const Subtitle = styled.h2`
-    margin: 0;
+    margin: 0 auto;
+    max-width: 450px;
     font-weight: 500;
     font-size: 22px;
     line-height: 29px;
 `;
 
 export const StyledNavLink = styled(NavLink)`
+    display: inline-block;
     margin-top: 24px;
     padding: 16px 24px;
     border-radius: 5px;
