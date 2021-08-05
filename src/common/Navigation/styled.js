@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 export const NavigationContainer = styled.div`
     background-color: ${({ theme }) => theme.colors.navigation.background};
-    color: ${({theme}) => theme.colors.navigation.elems};
+    color: ${({ theme }) => theme.colors.navigation.elems};
     min-height: 94px;
 
     @media(max-width: ${({ theme }) => theme.breakpoints.small}px) {

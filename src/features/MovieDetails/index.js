@@ -6,8 +6,8 @@ import {
 export const MovieDetails = () => {
     return (
         <>
-        <MovieTile/>
-        <MobileMovieTile/>
+            <MovieTile />
+            <MobileMovieTile />
         </>
     )
 };

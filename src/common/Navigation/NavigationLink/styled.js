@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import {NavLink} from "react-router-dom";
+import { NavLink } from "react-router-dom";
 
 export const List = styled.ul`
     list-style-type: none;
@@ -14,7 +14,7 @@ export const Item = styled.li`
 
 const activeClassName = "active";
 
-export const StyledNavLink = styled(NavLink).attrs(() => ({activeClassName}))`
+export const StyledNavLink = styled(NavLink).attrs(() => ({ activeClassName }))`
     text-decoration: none;
     font-weight: 600;
     font-size: 14px;
