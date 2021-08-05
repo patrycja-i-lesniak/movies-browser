@@ -9,7 +9,7 @@ export const List = styled.ul`
 `;
 
 export const Item = styled.li`
-padding-right: 30px;
+    padding-right: 30px;
 `;
 
 const activeClassName = "active";
@@ -22,10 +22,10 @@ export const StyledNavLink = styled(NavLink).attrs(() => ({activeClassName}))`
     color: ${({ theme }) => theme.colors.navigation.elems};
     padding: 10px;
 
-&${activeClassName} {
-    border: 1px solid ${({ theme }) => theme.colors.navigation.elems};
-    box-sizing: border-box;
-    border-radius: 24px;
-    padding: 16px 24px;
-}
+    &${activeClassName} {
+        border: 1px solid ${({ theme }) => theme.colors.navigation.elems};
+        box-sizing: border-box;
+        border-radius: 24px;
+        padding: 16px 24px;
+    }
 `;
