@@ -2,7 +2,7 @@ import { exampleConfiguration } from "./exampleConfiguration";
 import { examplePopularPeople } from "./examplePopularPeople";
 import { exampleCredits } from "./exampleCredits";
 import pictureSubstitution from "./pictureSubstitution.svg";
-import { PeopleList, PersonTile, ProfilePicture, Role, SectionWrapper, TileTitle } from "./styled";
+import { PeopleList, PersonTile, ProfilePicture, Role, TileTitle } from "./styled";
 
 const Section = ({ title }) => {
     let peopleList;
@@ -20,9 +20,11 @@ const Section = ({ title }) => {
         default:
             peopleList = examplePopularPeople.results;
     }
+
+    const pictureLinkBase = `${exampleConfiguration.images.base_url}w185`
     
     return (
-        <SectionWrapper>
+        <section>
             <h1>{title}</h1>
             <PeopleList>
                 {peopleList.map((person, index) =>
@@ -30,7 +32,7 @@ const Section = ({ title }) => {
 
                         <ProfilePicture
                             src={person.profile_path ?
-                                `https://image.tmdb.org/t/p/w185/${person.profile_path}` :
+                                `${pictureLinkBase}${person.profile_path}` :
                                 pictureSubstitution}
                         />
 
@@ -46,7 +48,7 @@ const Section = ({ title }) => {
                     </PersonTile>
                 )}
             </PeopleList>
-        </SectionWrapper>
+        </section>
     );
 };
 
