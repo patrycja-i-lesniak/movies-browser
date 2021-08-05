@@ -1,5 +1,16 @@
 import styled from "styled-components";
 
+export const Title = styled.h1`
+    font-size: 36px;
+    line-height: 120%;
+    margin: 0 0 32px;
+
+    @media(max-width: ${({theme}) => theme.breakpoints.xsmall}px) {
+        font-size: 20px;
+        margin-bottom: 12px;
+    }
+`;
+
 export const PeopleList = styled.ul`
     display: grid;
     grid-gap: 24px;

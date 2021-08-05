@@ -2,7 +2,7 @@ import { exampleConfiguration } from "./exampleConfiguration";
 import { examplePopularPeople } from "./examplePopularPeople";
 import { exampleCredits } from "./exampleCredits";
 import pictureSubstitution from "./pictureSubstitution.svg";
-import { PeopleList, PersonTile, ProfilePicture, Role, TileTitle } from "./styled";
+import { PeopleList, PersonTile, ProfilePicture, Role, TileTitle, Title } from "./styled";
 
 const Section = ({ title }) => {
     let peopleList;
@@ -25,7 +25,7 @@ const Section = ({ title }) => {
     
     return (
         <section>
-            <h1>{title}</h1>
+            <Title>{title}</Title>
             <PeopleList>
                 {peopleList.map((person, index) =>
                     <PersonTile key={index}>
