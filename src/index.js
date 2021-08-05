@@ -1,3 +1,7 @@
+import { ThemeProvider } from "styled-components";
+import { Normalize } from "styled-normalize";
+import { GlobalStyle } from "../src/core/App/GlobalStyle";
+import { theme } from "../src/core/App/theme.js";
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { App } from '../src/core/App';
@@ -5,7 +9,11 @@ import reportWebVitals from './reportWebVitals';
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <ThemeProvider theme={theme}>
+      <Normalize />
+      <GlobalStyle />
+      <App />
+    </ThemeProvider>
   </React.StrictMode>,
   document.getElementById('root')
 );

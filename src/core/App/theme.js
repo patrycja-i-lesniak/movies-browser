@@ -13,20 +13,23 @@ const colorNames = {
     slateGray: "#74788B",
 }
 
-const breakpoints = {
-    xsmall: 576,
-    small: 768,
-    medium: 992,
-    large: 1200,
-}
+const common = {
+    breakpoints: {
+        xsmall: 576,
+        small: 768,
+        medium: 992,
+        large: 1200,
+    }
+};
 
 export const theme = {
     colors: {
         textPrimary: colorNames.black,
 
-        header: {
+        navigation: {
             background: colorNames.black,
             border: colorNames.grey,
+            elems: colorNames.white,
         },
 
         site: {
@@ -35,5 +38,5 @@ export const theme = {
         },
     },
 
-    ...breakpoints,
+    ...common,
 }
