@@ -1,25 +1,34 @@
-import { HashRouter } from "react-router-dom";
-import { Switch, Route, Redirect } from "react-router-dom";
+import {
+  HashRouter,
+  Switch,
+  Route,
+  Redirect,
+} from "react-router-dom";
 import { Navigation } from "../../common/Navigation";
 import { MovieList } from "../../features/MovieList";
 import { PersonList } from "../../features/PersonList";
+import { MovieDetails } from "../../features/MovieDetails";
+import { Wrapper } from "../../common/Wrapper";
 
 
 export const App = () => {
   return (
     <HashRouter>
       <Navigation />
-      <Switch>
-        <Route patch="/movies/:id">
-          <MovieList />
-        </Route>
-        <Route patch="/people/:id">
-          <PersonList />
-        </Route>
-        <Route patch="/">
-          <Redirect to="/movies" />
-        </Route>
-      </Switch>
+      <Wrapper>
+        <Switch>
+          <Route patch="/movies">
+            <MovieList />
+          </Route>
+          <Route patch="/people">
+            <PersonList />
+          </Route>
+          <Route patch="/">
+            <Redirect to="/movies" />
+          </Route>
+        </Switch>
+        <MovieDetails />
+      </Wrapper>
     </HashRouter>
   );
 };
