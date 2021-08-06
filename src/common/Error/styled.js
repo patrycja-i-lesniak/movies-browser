@@ -5,7 +5,7 @@ export const Wrapper = styled.div`
     margin: 0 auto;
     max-width: 630px;
     text-align: center;
-    padding: 14px;
+    padding: 16px;
 `;
 
 export const Title = styled.h1`
@@ -33,4 +33,5 @@ export const StyledNavLink = styled(NavLink)`
     font-weight: 700;
     line-height: 19px;
     font-family: 'Open Sans', sans-serif;
+    text-decoration: none;
 `;
