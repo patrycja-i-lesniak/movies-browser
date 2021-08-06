@@ -26,6 +26,7 @@ const common = {
 export const theme = {
     colors: {
         textPrimary: colorNames.black,
+        textHeader: colorNames.white,
 
         navigation: {
             background: colorNames.black,
@@ -45,7 +46,9 @@ export const theme = {
             circle: colorNames.snuff,
             elipse: colorNames.black,
         },
+        movieDetails: {
+            background: colorNames.black,
+        },
     },
-
     ...common,
 }
