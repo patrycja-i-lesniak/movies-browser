@@ -1,22 +1,38 @@
-import { HashRouter, Route, Switch } from "react-router-dom";
-import { ThemeProvider } from "styled-components";
-import { Normalize } from "styled-normalize";
+import {
+  HashRouter,
+  Switch,
+  Route,
+  Redirect,
+} from "react-router-dom";
+import { Navigation } from "../../common/Navigation";
+import { MovieList } from "../../features/MovieList";
+import { PersonList } from "../../features/PersonList";
+import { MovieDetails } from "../../features/MovieDetails";
+import { Wrapper } from "../../common/Wrapper";
 import Error from "../../common/Error";
-import { GlobalStyle } from "./GlobalStyle";
-import { theme } from "./theme"
+
 
 export const App = () => {
   return (
-    <ThemeProvider theme={theme}>
-      <Normalize />
-      <GlobalStyle />
-      <HashRouter>
+    <HashRouter>
+      <Navigation />
+      <Wrapper>
         <Switch>
+          <Route patch="/movies">
+            <MovieList />
+          </Route>
+          <Route patch="/people">
+            <PersonList />
+          </Route>
           <Route path="/error">
             <Error />
           </Route>
+          <Route patch="/">
+            <Redirect to="/movies" />
+          </Route>
         </Switch>
-      </HashRouter>
-    </ThemeProvider>
+        <MovieDetails />
+      </Wrapper>
+    </HashRouter>
   );
 };
