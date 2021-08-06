@@ -14,10 +14,10 @@ export const App = () => {
   return (
     <HashRouter>
       <Navigation />
-      <Wrapper>
+      {/* <Wrapper> */}
         <Switch>
           <Route patch="/movies">
-            <MovieList />
+            {/* <MovieList /> */}
           </Route>
           <Route patch="/people">
             <PersonList />
@@ -27,7 +27,7 @@ export const App = () => {
           </Route>
         </Switch>
         <MovieDetails />
-      </Wrapper>
+      {/* </Wrapper> */}
     </HashRouter>
   );
 };
