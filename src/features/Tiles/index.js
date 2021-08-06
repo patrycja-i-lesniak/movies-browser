@@ -1,6 +1,6 @@
 import poster from "../Images/poster.png";
 import posterSmall from "../Images/posterSmall.png";
-import { Rateing, MobileRateing } from "../Rating";
+import { Rating, MobileRating } from "../Rating";
 import {
     MovieDetailsTile,
     Image,
@@ -35,7 +35,7 @@ export const MovieTile = () => {
                     <Tag>Adventure</Tag>
                     <Tag>Drama</Tag>
                 </Tags>
-                <Rateing />
+                <Rating />
                 <Description>
                     A young Chinese maiden disguises herself as a male warrior in order to save her father.
                     Disguises herself as a male warrior in order to save her father. A young Chinese maiden disguises herself as a male warrior in order to save her father.
@@ -61,7 +61,7 @@ export const MobileMovieTile = () => {
                     <Tag>Adventure</Tag>
                     <Tag>Drama</Tag>
                 </Tags>
-                <MobileRateing />
+                <MobileRating />
                 <Description>
                     A young Chinese maiden disguises herself as a male warrior in order to save her father.
                     Disguises herself as a male warrior in order to save her father. A young Chinese maiden disguises herself as a male warrior in order to save her father.
