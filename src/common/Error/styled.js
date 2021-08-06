@@ -8,10 +8,21 @@ export const Wrapper = styled.div`
     padding: 16px;
 `;
 
+export const DangerImage = styled.img`
+    @media(max-width: ${({theme}) => theme.breakpoints.xsmall}px) {
+        width: 100px;
+    }
+`
+
 export const Title = styled.h1`
     margin: 24px 0;
     font-size: 36px;
-    line-height: 43px;
+    line-height: 120%;
+
+    @media(max-width: ${({theme}) => theme.breakpoints.xsmall}px) {
+        font-size: 20px;
+        margin: 16px 0;
+    }
 `;
 
 export const Subtitle = styled.h2`
@@ -19,7 +30,11 @@ export const Subtitle = styled.h2`
     max-width: 450px;
     font-weight: 500;
     font-size: 22px;
-    line-height: 29px;
+    line-height: 130%;
+
+    @media(max-width: ${({theme}) => theme.breakpoints.xsmall}px) {
+        font-size: 14px;
+    }
 `;
 
 export const StyledNavLink = styled(NavLink)`
@@ -34,4 +49,9 @@ export const StyledNavLink = styled(NavLink)`
     line-height: 19px;
     font-family: 'Open Sans', sans-serif;
     text-decoration: none;
+
+    @media(max-width: ${({theme}) => theme.breakpoints.xsmall}px) {
+        padding: 12px 16px;
+        font-size: 12px;
+    }
 `;
