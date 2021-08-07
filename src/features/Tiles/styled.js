@@ -7,13 +7,13 @@ export const MovieDetailsTile = styled.article`
     background: ${({ theme }) => theme.colors.tile.background};
     padding: 40px;
     box-shadow: 0px 4px 12px rgba(186, 199, 213, 0.5);
-    margin: 20px auto;
+    margin-bottom: 20px auto;
     max-width: 1368px;
 
     @media(max-width: ${({ theme }) => theme.breakpoints.xsmall}px) {
         padding: 16px;
         grid-gap: 16px;
-    }
+    };
 `;
 
 export const Image = styled.img`
@@ -23,7 +23,7 @@ export const Image = styled.img`
     @media(max-width: ${({ theme }) => theme.breakpoints.xsmall}px) {
         width: 30%;
         height: 30%;
-    }
+    };
 `;
 
 export const Content = styled.div`
@@ -38,7 +38,7 @@ export const Title = styled.header`
     @media(max-width: ${({ theme }) => theme.breakpoints.xsmall}px) {
         font-weight: 500;
         font-size: 16px;
-}
+    };
 `;
 
 export const Year = styled.div`
@@ -46,8 +46,8 @@ export const Year = styled.div`
 
     @media(max-width: ${({ theme }) => theme.breakpoints.xsmall}px) {
         font-size: 13px;
-        color: ${({ theme }) => theme.colors.tile.details}; 
-    }
+        color: ${({ theme }) => theme.colors.tile.details};
+    };
 `;
 
 export const Details = styled.div`
@@ -104,5 +104,5 @@ export const ImageSmall = styled.img`
     @media(max-width: ${({ theme }) => theme.breakpoints.xsmall}px) {
         width: 30%;
         height: 30%;
-    }
+    };
 `;
