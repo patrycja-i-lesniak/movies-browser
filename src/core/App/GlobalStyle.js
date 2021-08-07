@@ -11,7 +11,9 @@ html  {
 
 body {
     margin: auto;
+    max-width: 1920px;
     font-family: 'Poppins', sans-serif;
-    background-color: ${({ theme }) => theme.colors.site.background};
+    background: ${({ theme }) => theme.colors.site.background};
+    /* background: #F5F5FA"; */
 }
 `;

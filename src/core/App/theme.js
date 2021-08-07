@@ -34,8 +34,9 @@ export const theme = {
             elems: colorNames.white,
         },
         site: {
-            background: colorNames.lightGrey,
+            background: colorNames.platinum,
             text: colorNames.black,
+            backgroundWrapper: colorNames.lightGrey,
         },
         tile: {
             background: colorNames.white,

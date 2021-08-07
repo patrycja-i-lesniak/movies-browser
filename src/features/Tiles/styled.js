@@ -3,11 +3,12 @@ import styled from "styled-components";
 export const MovieDetailsTile = styled.article`
     display: grid;
     grid-template-columns: auto 1fr;
-    grid-gap: 40px; 
+    grid-gap: 40px;
     background: ${({ theme }) => theme.colors.tile.background};
     padding: 40px;
     box-shadow: 0px 4px 12px rgba(186, 199, 213, 0.5);
-    margin: 20px; 
+    margin: 20px auto;
+    max-width: 1368px;
 
     @media(max-width: ${({ theme }) => theme.breakpoints.xsmall}px) {
         padding: 16px;

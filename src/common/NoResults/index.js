@@ -1,7 +1,7 @@
 import { NoResultsHeader, NoResultsImage, NoResultsWrapper } from "./styled";
 
 const NoResults = () => {
-    const search = "Muan" //template, waitng for search code and logic
+    const search = "Muan" //template, waiting for search code and logic
 
     return (
         <NoResultsWrapper>
