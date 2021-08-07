@@ -7,10 +7,12 @@ import { Wrapper } from "./styled";
 
 export const MovieDetails = () => {
     return (
-        <Wrapper>
+       <>
             <Header />
+            <Wrapper>
             <MovieTile />
             {/* <MobileMovieTile /> */}
         </Wrapper>
+        </>
     )
 };
