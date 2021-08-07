@@ -5,7 +5,10 @@ const HeaderRating = () => (
     <HeaderDiv>
         <Wrapper>
             <HeaderStarImage src={star} alt="star" />
-            <HeaderNote>7,8</HeaderNote><HeaderScale>/ 10</HeaderScale>
+            <div>
+                <HeaderNote>7,8</HeaderNote>
+                <HeaderScale>/ 10</HeaderScale>
+            </div>
         </Wrapper>
         <HeaderVotes>335 votes</HeaderVotes>
     </HeaderDiv>
