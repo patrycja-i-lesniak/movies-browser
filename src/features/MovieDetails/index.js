@@ -1,11 +1,11 @@
 import {
-    MovieTile,
-} from "../Tiles";
+    BigMovieTile,
+} from "../Tiles/BigMovieTile";
 
 export const MovieDetails = () => {
     return (
         <>
-            <MovieTile />
+            <BigMovieTile />
         </>
     )
 };

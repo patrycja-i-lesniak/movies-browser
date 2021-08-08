@@ -1,5 +1,5 @@
-import poster from "../Images/poster.png";
-import { Rating } from "../Rating";
+import poster from "../../Images/poster.png";
+import { Rating } from "../../Rating";
 import {
     MovieDetailsTile,
     Image,
@@ -15,7 +15,7 @@ import {
     Description,
 } from "./styled";
 
-export const MovieTile = () => {
+export const BigMovieTile = () => {
     return (
         <MovieDetailsTile>
             <Image src={poster} alt="" />
