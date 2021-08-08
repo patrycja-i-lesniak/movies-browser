@@ -1,107 +1,166 @@
 import styled from "styled-components";
 
+
 export const MovieDetailsTile = styled.article`
-    display: grid;
-    grid-template-columns: auto 1fr;
-    grid-gap: 40px; 
-    background: ${({ theme }) => theme.colors.tile.background};
     padding: 40px;
+    background: ${({ theme }) => theme.colors.tile.background};
     box-shadow: 0px 4px 12px rgba(186, 199, 213, 0.5);
-    margin: 20px; 
+    margin: 40px 8px 64px;
+    border-radius: 5px;
+    min-height: 544px;
+    
+    @media(max-width: ${({ theme }) => theme.breakpoints.small}px) {
+        min-height: unset;
+        padding: 24px; 
+       
+    }
 
     @media(max-width: ${({ theme }) => theme.breakpoints.xsmall}px) {
-        padding: 16px;
-        grid-gap: 16px;
+        padding: 16px; 
+        display: grid;
+        grid-template-columns:  min-content 1fr;
+        grid-template-rows: auto;
+        grid-gap: 8px;
+        grid-template-areas: 
+        "image content"
+        "description description";
     }
 `;
+// 
 
 export const Image = styled.img`
-    width: 312px;
-    height: 464px;
+    max-width: 312px;
+    max-height: 464px;
+    border-radius: 5px;
+    margin-right: 40px;
+    float: left;
+    /* display: block; */
+
+    @media(max-width: ${({ theme }) => theme.breakpoints.small}px) {
+        width: 188px;
+        height: 280px;
+        margin: 0 20px 0 0;
+    
+    }
 
     @media(max-width: ${({ theme }) => theme.breakpoints.xsmall}px) {
-        width: 30%;
-        height: 30%;
+        width: 114px;
+        height: 169px;
+        margin: 0 8px 0 0;
     }
 `;
 
 export const Content = styled.div`
+@media(max-width: ${({ theme }) => theme.breakpoints.small}px) {
+        grid-area: content;
+    
+    }
 `;
 
 export const Title = styled.header`
     font-weight: 600;
     font-size: 36px;
-    line-height: 43px;
     margin-bottom: 24px;
 
-    @media(max-width: ${({ theme }) => theme.breakpoints.xsmall}px) {
+    @media(max-width: ${({ theme }) => theme.breakpoints.small}px) {
         font-weight: 500;
         font-size: 16px;
-}
+        line-height: 1.3;
+        margin-bottom: 4px;
+    }
 `;
 
 export const Year = styled.div`
     font-size: 22px;
+    margin-bottom: 24px;
 
-    @media(max-width: ${({ theme }) => theme.breakpoints.xsmall}px) {
+    @media(max-width: ${({ theme }) => theme.breakpoints.small}px) {
+        color: ${({ theme }) => theme.colors.tile.year};
         font-size: 13px;
-        color: ${({ theme }) => theme.colors.tile.details}; 
+        line-height: 1.3;
+        margin-bottom: 8px;
     }
 `;
 
 export const Details = styled.div`
     display: grid;
-    grid-template-columns: auto 1fr;
+    grid-template-columns: 1fr;
     grid-gap: 10px;
-    margin: 24px 0;
+    margin-bottom: 8px;
+`;
+
+export const MovieDetails = styled.div`
+    display: flex;
+    flex-wrap: wrap;
 `;
 
 export const Label = styled.p`
     font-size: 18px;
     color: ${({ theme }) => theme.colors.tile.details};
-    margin: 0;
+    margin: 0 10px 0 0;
+    display: flex;
+    align-items: center;
+
+    @media(max-width: ${({ theme }) => theme.breakpoints.medium}px) {
+        display: none;
+        font-size: 12px
+    }
 `;
 
 export const MovieData = styled.p`
     font-size: 18px;
     color: ${({ theme }) => theme.colors.tile.data};
-    padding: 0;
     margin: 0;
-`;
 
+    @media(max-width: ${({ theme }) => theme.breakpoints.small}px) {
+        font-size: 12px;
+        line-height: 1.3;
+    }
+`;
 
 export const Tags = styled.ul`
     display: flex;
     flex-wrap: wrap;
     list-style: none;
-    padding-left: 0;
-    margin: 0px -8px;
+    padding-left: 8px;
+    margin: 24px 0;
+
+    @media(max-width: ${({ theme }) => theme.breakpoints.small}px) {
+        margin: 8px -8px;
+    }
 `;
 
 export const Tag = styled.li`
     background: ${({ theme }) => theme.colors.tile.tagBackground};
     padding: 8px 16px;
     font-size: 14px;
-    margin: 8px;
+    margin-right: 8px;
     border-radius: 5px;
+
+    @media(max-width: ${({ theme }) => theme.breakpoints.small}px) {
+        padding: 4px 8px;
+        font-size: 10px;
+        margin-bottom: 8px;
+    }
 `;
 
-export const Description = styled.p`
+export const Description = styled.div`
+
     font-size: 20px;
     margin-top: 24px;
     line-height: 1.6;
-`;
 
-export const PersonTile = styled(MovieDetailsTile)`
-    grid-template-rows: auto 1fr;
-`;
-
-export const ImageSmall = styled.img`
-    width: 312px;
-    height: 464px;
+    @media(max-width: ${({ theme }) => theme.breakpoints.small}px) {
+        font-size: 16px;
+        grid-area: description;
+        margin-top: 12px;
+    }
 
     @media(max-width: ${({ theme }) => theme.breakpoints.xsmall}px) {
-        width: 30%;
-        height: 30%;
+        font-size: 14px;
+        margin-top: 0;
+       
     }
 `;
+
+

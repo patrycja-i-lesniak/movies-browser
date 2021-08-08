@@ -1,6 +1,5 @@
 import poster from "../Images/poster.png";
-import posterSmall from "../Images/posterSmall.png";
-import { Rateing, MobileRateing } from "../Rating";
+import { Rating } from "../Rating";
 import {
     MovieDetailsTile,
     Image,
@@ -8,12 +7,12 @@ import {
     Title,
     Year,
     Details,
+    MovieDetails,
     Label,
     MovieData,
     Tags,
     Tag,
     Description,
-    ImageSmall,
 } from "./styled";
 
 export const MovieTile = () => {
@@ -24,49 +23,25 @@ export const MovieTile = () => {
                 <Title>Mulan</Title>
                 <Year>2020</Year>
                 <Details>
-                    <Label>Production:</Label>
-                    <MovieData>China, United States of America </MovieData>
-
-                    <Label>Release date:</Label>
-                    <MovieData>24.10.2020</MovieData>
+                    <MovieDetails>
+                        <Label>Production:</Label>
+                        <MovieData>China, USA </MovieData>
+                    </MovieDetails>
+                    <MovieDetails>
+                        <Label>Release date:</Label>
+                        <MovieData>24.10.2020</MovieData>
+                    </MovieDetails>
                 </Details>
                 <Tags>
                     <Tag>Action</Tag>
                     <Tag>Adventure</Tag>
                     <Tag>Drama</Tag>
                 </Tags>
-                <Rateing />
+                <Rating />
+                </Content>
                 <Description>
-                    A young Chinese maiden disguises herself as a male warrior in order to save her father.
-                    Disguises herself as a male warrior in order to save her father. A young Chinese maiden disguises herself as a male warrior in order to save her father.
+                    A young Chinese maiden disguises herself as a male warrior in order to save her father. Disguises herself as a male warrior in order to save her father.  A young Chinese maiden disguises herself as a male warrior in order to save her father.
                 </Description>
-            </Content>
-        </MovieDetailsTile>
-    )
-};
-
-export const MobileMovieTile = () => {
-    return (
-        <MovieDetailsTile>
-            <ImageSmall src={posterSmall} alt="" />
-            <Content>
-                <Title>Mulan</Title>
-                <Year>2020</Year>
-                <Details>
-                    <MovieData>China, United States of America </MovieData>
-                    <MovieData>24.10.2020</MovieData>
-                </Details>
-                <Tags>
-                    <Tag>Action</Tag>
-                    <Tag>Adventure</Tag>
-                    <Tag>Drama</Tag>
-                </Tags>
-                <MobileRateing />
-                <Description>
-                    A young Chinese maiden disguises herself as a male warrior in order to save her father.
-                    Disguises herself as a male warrior in order to save her father. A young Chinese maiden disguises herself as a male warrior in order to save her father.
-                </Description>
-            </Content>
         </MovieDetailsTile>
     )
 };
