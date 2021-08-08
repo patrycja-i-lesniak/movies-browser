@@ -72,23 +72,33 @@ export const NavigationLinks = styled.ul`
     display: flex;
     list-style: none;
     padding-left: 0;
+    text-decoration: none;
+    color: white;
 `;
 
-export const NavigationItems = styled.li`
-`;
+export const NavigationItems = styled.li``;
 
 const activeClassName = "active";
+const hoverClassName = "hover";
 
-export const StyledNavLink = styled(NavLink).attrs(() => ({ activeClassName }))`
+export const StyledNavLink = styled(NavLink).attrs(() => ({ activeClassName, hoverClassName }))`
     text-transform: uppercase;
     font-weight: 600;
     font-size: 14px;
     text-decoration: none;
     padding: 8px 24px;
+    color: ${({ theme }) => theme.colors.navigation.elems};
 
-    &${activeClassName} {
+    &.${hoverClassName} {
         border: 1px solid ${({ theme }) => theme.colors.navigation.elems};
         border-radius: 24px;
+    }
+
+    &.${activeClassName} {
+        border: 1px solid ${({ theme }) => theme.colors.navigation.elems};
+        border-radius: 24px;
+        background-color: ${({ theme }) => theme.colors.navigation.elems};
+        color: ${({ theme }) => theme.colors.navigation.background};
     }
 
     @media(max-width: ${({ theme }) => theme.breakpoints.xxsmall}px) {
@@ -101,7 +111,6 @@ export const SearchContainer = styled.div`
     display: flex;
     justify-content: flex-end;
     align-items: center;
-    flex-basis: 50%;
     min-height: inherit;
     padding: 0 10px;
     flex-wrap: wrap;
@@ -136,7 +145,7 @@ export const SearchIcon = styled.button`
 
 export const SearchInput = styled.input`
     width: 432px;
-    max-width: 80vw;
+    max-width: 90vw;
     height: 48px;
     border: none;
     border-radius: 33px;
