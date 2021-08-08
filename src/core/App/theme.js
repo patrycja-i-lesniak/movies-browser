@@ -11,6 +11,7 @@ const colorNames = {
     silverSand: "#C4C4C4",
     eerieBlack: "#18181B",
     slateGray: "#74788B",
+    lynch: "#627489",
 }
 
 const common = {
@@ -30,6 +31,7 @@ export const theme = {
             background: colorNames.black,
             border: colorNames.mystic,
             elems: colorNames.white,
+            searchIcon: colorNames.lynch,
         },
         site: {
             background: colorNames.lightGrey,
@@ -39,7 +41,8 @@ export const theme = {
             background: colorNames.white,
             tagBackground: colorNames.mystic,
             details: colorNames.slateGray,
-        }
+            year: colorNames.darkGrey,
+        },
     },
 
     ...common,
