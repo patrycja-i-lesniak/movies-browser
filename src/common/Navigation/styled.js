@@ -79,9 +79,8 @@ export const NavigationLinks = styled.ul`
 export const NavigationItems = styled.li``;
 
 const activeClassName = "active";
-const hoverClassName = "hover";
 
-export const StyledNavLink = styled(NavLink).attrs(() => ({ activeClassName, hoverClassName }))`
+export const StyledNavLink = styled(NavLink).attrs(() => ({ activeClassName}))`
     text-transform: uppercase;
     font-weight: 600;
     font-size: 14px;
@@ -89,7 +88,7 @@ export const StyledNavLink = styled(NavLink).attrs(() => ({ activeClassName, hov
     padding: 8px 24px;
     color: ${({ theme }) => theme.colors.navigation.elems};
 
-    &.${hoverClassName} {
+    &:hover {
         border: 1px solid ${({ theme }) => theme.colors.navigation.elems};
         border-radius: 24px;
     }

@@ -46,7 +46,8 @@ export const Image = styled.img`
 `;
 
 export const Content = styled.div`
-@media(max-width: ${({ theme }) => theme.breakpoints.small}px) {
+
+    @media(max-width: ${({ theme }) => theme.breakpoints.small}px) {
         grid-area: content;
     }
 `;
