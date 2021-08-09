@@ -19,14 +19,19 @@ export const DoubleContainer = styled.div`
     flex-wrap: wrap;
     min-height: inherit;
     padding: 0 10px;
+    justify-content: space-between;
+    
+    @media(max-width: ${({ theme }) => theme.breakpoints.medium}px) {
+        justify-content: center;
+}
 `;
 
 export const HeaderContainer = styled.div`
+    justify-content: flex-start;
     display: flex;
     flex-wrap: nowrap;
     align-items: center;
     min-height: inherit;
-    margin: 0 auto;
     min-height: 54px;
 `;
 
@@ -78,7 +83,7 @@ export const NavigationItems = styled.li``;
 
 const activeClassName = "active";
 
-export const StyledNavLink = styled(NavLink).attrs(() => ({ activeClassName}))`
+export const StyledNavLink = styled(NavLink).attrs(() => ({ activeClassName }))`
     text-transform: uppercase;
     font-weight: 600;
     font-size: 14px;
@@ -111,7 +116,6 @@ export const SearchContainer = styled.div`
     min-height: inherit;
     padding: 0 10px;
     flex-wrap: wrap;
-    margin: 0 auto;
     min-height: 74px;
 `;
 
