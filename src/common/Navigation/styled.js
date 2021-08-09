@@ -39,6 +39,11 @@ export const Logo = styled.a`
     display: flex;
     align-items: center;
     margin-right: 20px;
+    margin-right: 80px;
+
+    @media(max-width: ${({ theme }) => theme.breakpoints.medium}px) {
+        margin-right: 24px;   
+    }
 `;
 
 export const VideoIcon = styled.img`
@@ -79,7 +84,9 @@ export const NavigationLinks = styled.ul`
     color: white;
 `;
 
-export const NavigationItems = styled.li``;
+export const NavigationItems = styled.li`
+    margin-left: 4px;
+`;
 
 const activeClassName = "active";
 
@@ -89,6 +96,7 @@ export const StyledNavLink = styled(NavLink).attrs(() => ({ activeClassName }))`
     font-size: 14px;
     text-decoration: none;
     padding: 8px 24px;
+    margin-right: 16px;
     color: ${({ theme }) => theme.colors.navigation.elems};
 
     &:hover {
@@ -103,9 +111,13 @@ export const StyledNavLink = styled(NavLink).attrs(() => ({ activeClassName }))`
         color: ${({ theme }) => theme.colors.navigation.background};
     }
 
+    @media(max-width: ${({ theme }) => theme.breakpoints.medium}px) {
+        margin-right: 0px;
+    }
+    
     @media(max-width: ${({ theme }) => theme.breakpoints.xxsmall}px) {
         font-size: 12px;
-        padding: 8px 12px;
+        padding: 4px 12px;
     }
 `;
 
