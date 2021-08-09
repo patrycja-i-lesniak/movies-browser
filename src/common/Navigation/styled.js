@@ -43,12 +43,10 @@ export const VideoIcon = styled.img`
 
     @media(max-width: ${({ theme }) => theme.breakpoints.xsmall}px) {
         width: 26px;
-        margin-left: 20px;
     }
 
     @media(max-width: ${({ theme }) => theme.breakpoints.xxsmall}px) {
         width: 14px;
-        margin-left: 20px;
     }
 `;
 

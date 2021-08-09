@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 export const RatingField = styled.div`
-grid-area: rating;
+    grid-area: rating;
     display: grid;
     grid-template-columns: repeat(4, auto);
     justify-content: start;
