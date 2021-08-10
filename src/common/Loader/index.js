@@ -1,4 +1,5 @@
-import { Header, LoadingIcon, LoadingIconCircle, Wrapper } from "./styled";
+import { Header, LoadingIcon } from "./styled";
+import { Wrapper } from "../LoaderNoResultsWrapper";
 
 const Loader = () => {
     const search = "Mulan" //template, waitng for search code and logic
@@ -6,7 +7,7 @@ const Loader = () => {
     return (
         <Wrapper>
             <Header>Search results for "{search}"</Header>
-            <LoadingIconCircle><LoadingIcon /></LoadingIconCircle>
+            <LoadingIcon />
         </Wrapper>
     );
 };
