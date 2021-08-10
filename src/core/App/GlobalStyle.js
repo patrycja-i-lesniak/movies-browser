@@ -10,10 +10,8 @@ html  {
   }
 
 body {
-    margin: auto;
-    max-width: 1920px;
+    margin: 0 auto;
     font-family: 'Poppins', sans-serif;
     background: ${({ theme }) => theme.colors.site.background};
-    /* background: #F5F5FA"; */
 }
 `;
