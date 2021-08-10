@@ -1,13 +1,14 @@
-import { NoResultsHeader, NoResultsImage, NoResultsWrapper } from "./styled";
+import { NoResultsHeader, NoResultsImage, } from "./styled";
+import { Wrapper } from "../LoaderNoResultsWrapper";
 
 const NoResults = () => {
     const search = "Muan" //template, waitng for search code and logic
 
     return (
-        <NoResultsWrapper>
+        <Wrapper>
             <NoResultsHeader>Sorry, there are no results for "{search}"</NoResultsHeader>
             <NoResultsImage />
-        </NoResultsWrapper>
+        </Wrapper>
     );
 };
 
