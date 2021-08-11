@@ -1,7 +1,7 @@
 import { Header, LoadingIcon, LoadingIconCircle, Wrapper } from "./styled";
 
 const Loader = () => {
-    const search = "Mulan" //template, waitng for search code and logic
+    const search = "Mulan" //template, waiting for search code and logic
 
     return (
         <Wrapper>
