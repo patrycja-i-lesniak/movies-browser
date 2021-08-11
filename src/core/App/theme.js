@@ -20,6 +20,8 @@ const common = {
         small: 768,
         medium: 992,
         large: 1200,
+        xlarge: 1350,
+        xxlarge: 1650,
     }
 };
 
