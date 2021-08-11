@@ -11,7 +11,6 @@ import { MovieDetails } from "../../features/MovieDetails";
 import { Wrapper } from "../../common/Wrapper";
 import Error from "../../common/Error";
 
-
 export const App = () => {
   return (
     <HashRouter>

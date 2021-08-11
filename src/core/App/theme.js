@@ -25,7 +25,7 @@ const common = {
 export const theme = {
     colors: {
         textPrimary: colorNames.black,
-        
+
         navigation: {
             background: colorNames.black,
             border: colorNames.mystic,
@@ -43,8 +43,13 @@ export const theme = {
         button: {
             background: colorNames.blue,
             text: colorNames.white,
-        },
-    },
 
-    ...common,
+        },
+        loader: {
+            circle: colorNames.snuff,
+            elipse: colorNames.black,
+        },
+
+        ...common,
+    },
 };
