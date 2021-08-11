@@ -91,6 +91,7 @@ export const Role = styled.p`
 export const ShowMoreButton = styled.button`
     border: none;
     background: none;
+    padding: 2px;
     text-transform: uppercase;
     font-size: 12px;
     font-weight: 500;
@@ -100,4 +101,9 @@ export const ShowMoreButton = styled.button`
     grid-gap: 6px;
     align-items: center;
     color: ${({ theme }) => theme.colors.tile.role};
+
+    :hover {
+        cursor: pointer;
+        transform: scale(1.1);
+    }
 `;
