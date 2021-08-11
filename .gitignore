@@ -11,6 +11,9 @@
 # production
 /build
 
+#eslint
+/src/eslintrc.json
+
 # misc
 .DS_Store
 .env.local
