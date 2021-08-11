@@ -13,7 +13,7 @@ import {
     SearchBox,
     SearchIcon,
     SearchInput,
-} from "./styled"
+} from "./styled";
 import videoIcon from "./videoIcon.svg";
 
 export const Navigation = () => {
