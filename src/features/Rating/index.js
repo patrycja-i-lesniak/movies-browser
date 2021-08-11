@@ -1,29 +1,29 @@
 import star from "../Images/star.svg";
 import {
-    RateingField,
+    RatingField,
     StarIcon,
     Note,
-    RateingScale,
+    RatingScale,
     Votes,
 } from "./styled";
 
-export const Rateing = () => {
+export const Rating = () => {
     return (
-        <RateingField>
+        <RatingField>
             <StarIcon src={star} alt="" />
             <Note>7,8</Note>
-            <RateingScale>/10</RateingScale>
+            <RatingScale>/10</RatingScale>
             <Votes>335 votes</Votes>
-        </RateingField>
+        </RatingField>
     )
 };
 
-export const MobileRateing = () => {
+export const MobileRating = () => {
     return (
-        <RateingField>
+        <RatingField>
             <StarIcon src={star} alt="" />
             <Note>7,8</Note>
             <Votes>35 votes</Votes>
-        </RateingField>
+        </RatingField>
     )
 };
