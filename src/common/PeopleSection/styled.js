@@ -1,5 +1,9 @@
 import styled from "styled-components";
 
+export const SectionWrapper = styled.section`
+    padding: 0 16px;
+`;
+
 export const Title = styled.h1`
     font-size: 36px;
     line-height: 1.2;
@@ -19,14 +23,18 @@ export const PeopleList = styled.ul`
     padding: 0;
 
     @media(max-width: ${({ theme }) => theme.breakpoints.large}px) {
-        grid-template-columns: repeat(4, 1fr);
+        grid-template-columns: repeat(5, 1fr);
     }
 
     @media(max-width: ${({ theme }) => theme.breakpoints.medium}px) {
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(4, 1fr);
+    }
+
+    @media(max-width: ${({ theme }) => theme.breakpoints.small}px) {
+        grid-template-columns: repeat(3, 1fr);
     }
     
-    @media(max-width: ${({ theme }) => theme.breakpoints.small}px) {
+    @media(max-width: ${({ theme }) => theme.breakpoints.xsmall}px) {
         grid-template-columns: repeat(2, 1fr);
     }
 `;
