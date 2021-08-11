@@ -1,24 +1,48 @@
-import { Container, NavigationContainer, SearchContainer, HeaderContainer } from "./styled";
-import { NavigationLink } from "./NavigationLink";
-import { Header } from "./Header";
-import { Search } from "./Search";
-import { Wrapper } from "../Wrapper/";
+import {
+    NavigationWrapper,
+    NavigationContainer,
+    DoubleContainer,
+    HeaderContainer,
+    Logo,
+    VideoIcon,
+    Title,
+    NavigationLinks,
+    NavigationItems,
+    StyledNavLink,
+    SearchContainer,
+    SearchBox,
+    SearchIcon,
+    SearchInput,
+} from "./styled"
+import videoIcon from "./videoIcon.svg";
 
 export const Navigation = () => {
-
     return (
-        <NavigationContainer>
-            <Wrapper>
-                <Container>
+        <NavigationWrapper>
+            <NavigationContainer>
+                <DoubleContainer>
                     <HeaderContainer>
-                        <Header />
-                        <NavigationLink />
+                        <Logo to="/movies">
+                            <VideoIcon src={videoIcon} />
+                            <Title>Movie Browser</Title>
+                        </Logo>
+                        <NavigationLinks>
+                            <NavigationItems>
+                                <StyledNavLink to="/movies">Movie</StyledNavLink>
+                            </NavigationItems>
+                            <NavigationItems>
+                                <StyledNavLink to="/people">People</StyledNavLink>
+                            </NavigationItems>
+                        </NavigationLinks>
                     </HeaderContainer>
                     <SearchContainer>
-                        <Search />
+                        < SearchBox>
+                            <SearchIcon />
+                            <SearchInput placeholder="Search for movies" />
+                        </SearchBox>
                     </SearchContainer>
-                </Container>
-            </Wrapper>
-        </NavigationContainer>
-    )
-}
+                </DoubleContainer>
+            </NavigationContainer>
+        </NavigationWrapper>
+    );
+};
