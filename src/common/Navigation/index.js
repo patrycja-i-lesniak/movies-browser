@@ -22,7 +22,7 @@ export const Navigation = () => {
             <NavigationContainer>
                 <DoubleContainer>
                     <HeaderContainer>
-                        <Logo>
+                        <Logo to="/movies">
                             <VideoIcon src={videoIcon} />
                             <Title>Movie Browser</Title>
                         </Logo>

@@ -20,7 +20,7 @@ export const DoubleContainer = styled.div`
     min-height: inherit;
     padding: 0 10px;
     justify-content: space-between;
-    
+
     @media(max-width: ${({ theme }) => theme.breakpoints.medium}px) {
         justify-content: center;
 }
@@ -29,26 +29,26 @@ export const DoubleContainer = styled.div`
 export const HeaderContainer = styled.div`
     justify-content: flex-start;
     display: flex;
-    flex-wrap: nowrap;
     align-items: center;
-    min-height: inherit;
     min-height: 54px;
 `;
 
-export const Logo = styled.a`
+const activeClassName = "active";
+
+export const Logo = styled(NavLink).attrs(() => ({ activeClassName }))`
     display: flex;
     align-items: center;
     margin-right: 20px;
     margin-right: 80px;
+    text-decoration: none;
 
     @media(max-width: ${({ theme }) => theme.breakpoints.medium}px) {
-        margin-right: 24px;   
+        margin-right: 24px;
     }
 `;
 
 export const VideoIcon = styled.img`
     color: ${({ theme }) => theme.colors.navigation.elems};
-    width: 34px;
     margin-right: 12px;
 
     @media(max-width: ${({ theme }) => theme.breakpoints.xsmall}px) {
@@ -61,7 +61,6 @@ export const VideoIcon = styled.img`
 `;
 
 export const Title = styled.h1`
-    text-decoration: none;
     color: ${({ theme }) => theme.colors.navigation.elems};
     font-size: 24px;
     font-weight: 500;
@@ -81,14 +80,12 @@ export const NavigationLinks = styled.ul`
     list-style: none;
     padding-left: 0;
     text-decoration: none;
-    color: white;
+    color: ${({ theme }) => theme.colors.navigation.elems};
 `;
 
 export const NavigationItems = styled.li`
     margin-left: 4px;
 `;
-
-const activeClassName = "active";
 
 export const StyledNavLink = styled(NavLink).attrs(() => ({ activeClassName }))`
     text-transform: uppercase;
@@ -98,6 +95,8 @@ export const StyledNavLink = styled(NavLink).attrs(() => ({ activeClassName }))`
     padding: 8px 24px;
     margin-right: 16px;
     color: ${({ theme }) => theme.colors.navigation.elems};
+    border: 1px solid ${({ theme }) => theme.colors.navigation.background};
+
 
     &:hover {
         border: 1px solid ${({ theme }) => theme.colors.navigation.elems};
@@ -169,6 +168,7 @@ export const SearchInput = styled.input`
 
     @media(max-width: ${({ theme }) => theme.breakpoints.xsmall}px) {
         padding-left: 44px;
+        height: 44px;
     }
 `;
 
