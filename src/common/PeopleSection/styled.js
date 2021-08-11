@@ -54,6 +54,10 @@ export const TileTitle = styled.h2`
     margin: 0;
     font-weight: 500;
 
+    @media(max-width: ${({ theme }) => theme.breakpoints.medium}px) {
+        font-size: 18px;
+    }
+
     @media(max-width: ${({ theme }) => theme.breakpoints.xsmall}px) {
         font-size: 14px;
     }
@@ -64,6 +68,11 @@ export const Role = styled.p`
     font-size: 18px;
     line-height: 1.5;
     color: ${({ theme }) => theme.colors.tile.role};
+
+    @media(max-width: ${({ theme }) => theme.breakpoints.medium}px) {
+        font-size: 16px;
+        line-height: 1.4;
+    }
 
     @media(max-width: ${({ theme }) => theme.breakpoints.xsmall}px) {
         font-size: 13px;
