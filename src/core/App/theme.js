@@ -12,7 +12,7 @@ const colorNames = {
     eerieBlack: "#18181B",
     slateGray: "#74788B",
     lynch: "#627489",
-}
+};
 
 const common = {
     breakpoints: {
@@ -45,6 +45,16 @@ export const theme = {
             year: colorNames.darkGrey,
         },
     },
+        },
+        button: {
+            background: colorNames.blue,
+            text: colorNames.white,
+        },
+        loader: {
+            circle: colorNames.snuff,
+            elipse: colorNames.black,
+        },
 
-    ...common,
-}
+        ...common,
+    },
+};

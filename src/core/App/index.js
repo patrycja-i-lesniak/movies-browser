@@ -9,7 +9,7 @@ import { MovieList } from "../../features/MovieList";
 import { PersonList } from "../../features/PersonList";
 import { MovieDetails } from "../../features/MovieDetails";
 import { Wrapper } from "../../common/Wrapper";
-
+import Error from "../../common/Error";
 
 export const App = () => {
   return (
@@ -17,17 +17,20 @@ export const App = () => {
       <Navigation />
       <Wrapper>
         <Switch>
-          <Route patch="/movies">
+          <Route path="/movies">
             <MovieList />
           </Route>
-          <Route patch="/people">
+          <Route path="/people">
             <PersonList />
           </Route>
-          <Route patch="/">
+          <Route path="/error">
+            <Error />
+          </Route>
+          <Route path="/">
             <Redirect to="/movies" />
           </Route>
         </Switch>
-        <MovieDetails />
+        {/* <MovieDetails /> */}
       </Wrapper>
     </HashRouter>
   );
