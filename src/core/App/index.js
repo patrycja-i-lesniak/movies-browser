@@ -29,7 +29,7 @@ export const App = () => {
             <Redirect to="/movies" />
           </Route>
         </Switch>
-        {/* <MovieDetails /> */}
+        <MovieDetails />
     </HashRouter>
   );
 };
