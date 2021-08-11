@@ -1,4 +1,4 @@
-import star from "../../../Images/star.svg"
+import star from "../../../Images/star.svg";
 import { HeaderDiv, HeaderNote, HeaderScale, HeaderStarImage, HeaderVotes, Wrapper } from "./styled";
 
 const HeaderRating = () => {
@@ -17,6 +17,6 @@ const HeaderRating = () => {
             <HeaderVotes>{votesNumber} votes</HeaderVotes>
         </HeaderDiv>
     );
-}
+};
 
 export default HeaderRating;
