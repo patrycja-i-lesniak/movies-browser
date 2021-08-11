@@ -11,8 +11,7 @@ const colorNames = {
     silverSand: "#C4C4C4",
     eerieBlack: "#18181B",
     slateGray: "#74788B",
-    snuff: "#DDDDEE",
-}
+};
 
 const common = {
     breakpoints: {
@@ -43,11 +42,15 @@ export const theme = {
             substitutionPicture: colorNames.silverSand,
             role: colorNames.darkGrey,
         },
+        button: {
+            background: colorNames.blue,
+            text: colorNames.white,
+
+        },
         loader: {
             circle: colorNames.snuff,
             elipse: colorNames.black,
         },
     },
     ...common,
-
 };
