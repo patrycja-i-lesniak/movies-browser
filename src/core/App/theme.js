@@ -11,6 +11,7 @@ const colorNames = {
     silverSand: "#C4C4C4",
     eerieBlack: "#18181B",
     slateGray: "#74788B",
+    snuff: "#DDDDEE",
 }
 
 const common = {
@@ -41,8 +42,12 @@ export const theme = {
             details: colorNames.slateGray,
             substitutionPicture: colorNames.silverSand,
             role: colorNames.darkGrey,
-        }
+        },
+        loader: {
+            circle: colorNames.snuff,
+            elipse: colorNames.black,
+        },
     },
-
     ...common,
-}
+
+};
