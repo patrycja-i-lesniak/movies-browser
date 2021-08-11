@@ -11,8 +11,7 @@ const colorNames = {
     silverSand: "#C4C4C4",
     eerieBlack: "#18181B",
     slateGray: "#74788B",
-    snuff: "#DDDDEE",
-}
+};
 
 const common = {
     breakpoints: {
@@ -41,11 +40,16 @@ export const theme = {
             tagBackground: colorNames.mystic,
             details: colorNames.slateGray,
         },
+        button: {
+            background: colorNames.blue,
+            text: colorNames.white,
+
+        },
         loader: {
             circle: colorNames.snuff,
             elipse: colorNames.black,
         },
-    },
 
-    ...common,
-}
+        ...common,
+    },
+};
