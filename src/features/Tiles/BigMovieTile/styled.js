@@ -1,7 +1,6 @@
 import styled from "styled-components";
 
 export const MovieDetailsTile = styled.article`
-    padding: 40px;
     background: ${({ theme }) => theme.colors.tile.background};
     box-shadow: 0px 4px 12px rgba(186, 199, 213, 0.5);
     border-radius: 5px;
@@ -9,16 +8,16 @@ export const MovieDetailsTile = styled.article`
 
     @media(max-width: ${({ theme }) => theme.breakpoints.small}px) {
         min-height: unset;
-        padding: 24px; 
+        padding: 24px;
     }
 
     @media(max-width: ${({ theme }) => theme.breakpoints.xsmall}px) {
-        padding: 16px; 
+        padding: 16px;
         display: grid;
         grid-template-columns:  min-content 1fr;
         grid-template-rows: auto;
         grid-gap: 16px;
-        grid-template-areas: 
+        grid-template-areas:
         "image content"
         "description description";
     }
