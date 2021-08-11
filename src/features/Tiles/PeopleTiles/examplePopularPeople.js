@@ -1420,4 +1420,4 @@ export const examplePopularPeople = {
     ],
     "total_pages": 500,
     "total_results": 10000
-}
+};
