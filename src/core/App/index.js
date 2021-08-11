@@ -18,16 +18,16 @@ export const App = () => {
       <Navigation />
       <Wrapper>
         <Switch>
-          <Route patch="/movies">
+          <Route path="/movies">
             <MovieList />
           </Route>
-          <Route patch="/people">
+          <Route path="/people">
             <PersonList />
           </Route>
           <Route path="/error">
             <Error />
           </Route>
-          <Route patch="/">
+          <Route path="/">
             <Redirect to="/movies" />
           </Route>
         </Switch>
