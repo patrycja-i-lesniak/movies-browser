@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 export const Title = styled.h1`
     font-size: 36px;
-    line-height: 120%;
+    line-height: 1.2;
     margin: 0 0 32px;
 
     @media(max-width: ${({ theme }) => theme.breakpoints.xsmall}px) {
@@ -49,7 +49,7 @@ export const ProfilePicture = styled.img`
 
 export const TileTitle = styled.h2`
     font-size: 22px;
-    line-height: 130%;
+    line-height: 1.3;
     color: ${({ theme }) => theme.colors.textPrimary};
     margin: 0;
     font-weight: 500;
@@ -62,11 +62,11 @@ export const TileTitle = styled.h2`
 export const Role = styled.p`
     margin: 0;
     font-size: 18px;
-    line-height: 150%;
+    line-height: 1.5;
     color: ${({ theme }) => theme.colors.tile.role};
 
     @media(max-width: ${({ theme }) => theme.breakpoints.xsmall}px) {
         font-size: 13px;
-        line-height: 130%;
+        line-height: 1.3;
     }
 `;
