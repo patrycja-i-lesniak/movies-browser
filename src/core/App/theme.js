@@ -12,7 +12,7 @@ const colorNames = {
     eerieBlack: "#18181B",
     slateGray: "#74788B",
     lynch: "#627489",
-}
+};
 
 const common = {
     breakpoints: {
@@ -27,7 +27,6 @@ const common = {
 export const theme = {
     colors: {
         textPrimary: colorNames.black,
-
         navigation: {
             background: colorNames.black,
             border: colorNames.mystic,
@@ -45,6 +44,5 @@ export const theme = {
             year: colorNames.darkGrey,
         },
     },
-
     ...common,
-}
+};

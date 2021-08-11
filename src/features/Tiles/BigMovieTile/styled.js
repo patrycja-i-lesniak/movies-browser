@@ -4,7 +4,6 @@ export const MovieDetailsTile = styled.article`
     padding: 40px;
     background: ${({ theme }) => theme.colors.tile.background};
     box-shadow: 0px 4px 12px rgba(186, 199, 213, 0.5);
-    margin: 40px 8px 64px;
     border-radius: 5px;
     min-height: 544px;
 
@@ -18,7 +17,7 @@ export const MovieDetailsTile = styled.article`
         display: grid;
         grid-template-columns:  min-content 1fr;
         grid-template-rows: auto;
-        grid-gap: 8px;
+        grid-gap: 16px;
         grid-template-areas: 
         "image content"
         "description description";
@@ -98,7 +97,6 @@ export const Label = styled.p`
 
     @media(max-width: ${({ theme }) => theme.breakpoints.medium}px) {
         display: none;
-        font-size: 12px
     }
 `;
 
@@ -117,11 +115,11 @@ export const Tags = styled.ul`
     display: flex;
     flex-wrap: wrap;
     list-style: none;
-    padding-left: 8px;
+    padding-left: 0px;
     margin: 24px 0;
 
     @media(max-width: ${({ theme }) => theme.breakpoints.small}px) {
-        margin: 8px -8px;
+        margin: 8px -4px;
     }
 `;
 
