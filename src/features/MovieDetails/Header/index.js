@@ -1,7 +1,7 @@
 import { TextWrapper, Wrapper, WrapperPoster, TitleHeader, MovieDetailsHeader } from "./styled";
 import HeaderRating from "./HeaderRating";
 
-const Header = () => {
+export const Header = () => {
     const title = "Mulan long title"; //temporary - waiting for API/ reducer.
 
     return (
@@ -17,4 +17,3 @@ const Header = () => {
         </MovieDetailsHeader>
     );
 };
-export default Header;
