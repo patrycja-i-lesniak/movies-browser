@@ -21,12 +21,15 @@ const common = {
         small: 768,
         medium: 992,
         large: 1200,
+        xlarge: 1350,
+        xxlarge: 1650,
     }
 };
 
 export const theme = {
     colors: {
         textPrimary: colorNames.black,
+        textHeader: colorNames.white,
         navigation: {
             background: colorNames.black,
             border: colorNames.mystic,
@@ -34,8 +37,9 @@ export const theme = {
             searchIcon: colorNames.lynch,
         },
         site: {
-            background: colorNames.lightGrey,
+            background: colorNames.platinum,
             text: colorNames.black,
+            backgroundWrapper: colorNames.lightGrey,
         },
         tile: {
             background: colorNames.white,
@@ -53,6 +57,9 @@ export const theme = {
             circle: colorNames.snuff,
             elipse: colorNames.black,
         },
+        movieDetails: {
+            background: colorNames.black,
+        },
     },
-        ...common,
+    ...common,
 };

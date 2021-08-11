@@ -19,6 +19,7 @@ export const StarIcon = styled.img`
     }
 `;
 
+
 export const Note = styled.p`
     font-size: 22px;
     font-weight: 500;
@@ -38,6 +39,7 @@ export const RatingScale = styled.p`
     }
 `;
 
+
 export const Votes = styled.p`
     padding-left: 4px;
     font-size: 14px;
@@ -47,4 +49,3 @@ export const Votes = styled.p`
         font-size: 13px;
     }
 `;
-

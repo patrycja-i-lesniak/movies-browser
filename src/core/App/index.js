@@ -15,7 +15,6 @@ export const App = () => {
   return (
     <HashRouter>
       <Navigation />
-      <Wrapper>
         <Switch>
           <Route path="/movies">
             <MovieList />
@@ -31,7 +30,6 @@ export const App = () => {
           </Route>
         </Switch>
         <MovieDetails />
-      </Wrapper>
     </HashRouter>
   );
 };
