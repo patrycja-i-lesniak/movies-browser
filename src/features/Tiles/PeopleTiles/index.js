@@ -14,7 +14,7 @@ import {
 } from "./styled";
 import { Arrow } from "./Arrow/index";
 
-const PeopleSection = ({ title }) => {
+const PeopleTiles = ({ title }) => {
     const [showMore, setShowMore] = useState(false);
 
     let peopleList;
@@ -77,4 +77,4 @@ const PeopleSection = ({ title }) => {
     );
 };
 
-export default PeopleSection;
+export default PeopleTiles;
