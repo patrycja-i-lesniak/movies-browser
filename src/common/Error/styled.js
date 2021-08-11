@@ -18,7 +18,7 @@ export const Wrapper = styled.div`
 
 export const DangerImage = styled.img`
     @media(max-width: ${({theme}) => theme.breakpoints.xsmall}px) {
-        width: 100px;
+        width: 80px;
     }
 `;
 
