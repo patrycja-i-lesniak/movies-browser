@@ -6,6 +6,14 @@ export const Wrapper = styled.div`
     max-width: 630px;
     text-align: center;
     padding: 16px;
+
+    @media(max-width: ${({theme}) => theme.breakpoints.medium}px) {
+        margin-top: 120px;
+    }
+
+    @media(max-width: ${({theme}) => theme.breakpoints.xsmall}px) {
+        margin-top: 80px;
+    }
 `;
 
 export const DangerImage = styled.img`
@@ -19,6 +27,10 @@ export const Title = styled.h1`
     font-size: 36px;
     line-height: 1.2;
 
+    @media(max-width: ${({theme}) => theme.breakpoints.medium}px) {
+        font-size: 28px;
+    }
+
     @media(max-width: ${({theme}) => theme.breakpoints.xsmall}px) {
         font-size: 20px;
         margin: 16px 0;
@@ -31,6 +43,10 @@ export const Subtitle = styled.h2`
     font-weight: 500;
     font-size: 22px;
     line-height: 1.3;
+
+    @media(max-width: ${({theme}) => theme.breakpoints.medium}px) {
+        font-size: 18px;
+    }
 
     @media(max-width: ${({theme}) => theme.breakpoints.xsmall}px) {
         font-size: 14px;
