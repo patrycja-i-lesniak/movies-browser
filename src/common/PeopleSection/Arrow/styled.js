@@ -1,7 +1,7 @@
 import styled, { css } from "styled-components";
 
 export const StyledArrow = styled.svg`
-    ${({ turn }) => turn && css`
+    ${({ showMore }) => showMore && css`
         transform: rotate(180deg);     
     `}
 `;

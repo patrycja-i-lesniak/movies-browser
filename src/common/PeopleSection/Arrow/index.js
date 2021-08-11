@@ -1,8 +1,8 @@
 import { StyledArrow } from "./styled";
 
-export const Arrow = ({turn}) => (
+export const Arrow = ({ showMore }) => (
     <StyledArrow
-        turn={turn}
+        showMore={showMore}
         width="12"
         height="12"
         fill="currentColor"

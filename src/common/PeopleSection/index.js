@@ -70,7 +70,7 @@ const PeopleSection = ({ title }) => {
                     <span>
                         {showMore ? "Show less" : "Show more"}
                     </span>
-                    <Arrow turn={showMore} />
+                    <Arrow showMore={showMore} />
                 </ShowMoreButton>
             }
         </>
