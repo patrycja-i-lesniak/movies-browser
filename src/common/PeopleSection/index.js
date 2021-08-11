@@ -7,6 +7,7 @@ import {
     PersonTile,
     ProfilePicture,
     Role,
+    SectionWrapper,
     TileTitle,
     Title } from "./styled";
 
@@ -30,7 +31,7 @@ const PeopleSection = ({ title }) => {
     const pictureLinkBase = `${exampleConfiguration.images.base_url}w185`;
     
     return (
-        <section>
+        <SectionWrapper>
             <Title>{title}</Title>
             <PeopleList>
                 {peopleList.map((person, index) =>
@@ -50,7 +51,7 @@ const PeopleSection = ({ title }) => {
                     </PersonTile>
                 )}
             </PeopleList>
-        </section>
+        </SectionWrapper>
     );
 };
 
