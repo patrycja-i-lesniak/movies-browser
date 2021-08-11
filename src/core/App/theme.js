@@ -43,6 +43,14 @@ export const theme = {
             details: colorNames.slateGray,
             year: colorNames.darkGrey,
         },
+        button: {
+            background: colorNames.blue,
+            text: colorNames.white,
+        },
+        loader: {
+            circle: colorNames.snuff,
+            elipse: colorNames.black,
+        },
     },
-    ...common,
+        ...common,
 };
