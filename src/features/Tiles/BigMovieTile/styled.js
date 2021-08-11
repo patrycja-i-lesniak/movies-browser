@@ -5,10 +5,16 @@ export const MovieDetailsTile = styled.article`
     box-shadow: 0px 4px 12px rgba(186, 199, 213, 0.5);
     border-radius: 5px;
     min-height: 544px;
+    margin-bottom: 64px;
+
+    @media(max-width: ${({ theme }) => theme.breakpoints.medium}px) {
+        margin-bottom: 32px;
+    }
 
     @media(max-width: ${({ theme }) => theme.breakpoints.small}px) {
         min-height: unset;
         padding: 24px;
+        margin-bottom: 20px;
     }
 
     @media(max-width: ${({ theme }) => theme.breakpoints.xsmall}px) {
