@@ -1,13 +1,11 @@
 import {
-    MovieTile,
-    MobileMovieTile,
-} from "../Tiles";
+    BigMovieTile,
+} from "../Tiles/BigMovieTile";
 
 export const MovieDetails = () => {
     return (
         <>
-            <MovieTile />
-            <MobileMovieTile />
+            <BigMovieTile />
         </>
-    )
+    );
 };
