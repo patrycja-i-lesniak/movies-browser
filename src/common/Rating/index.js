@@ -11,16 +11,16 @@ import {
 // Props: movie, movieMobile, header, headerMobile
 // One of these props should be provided in the component to which the Rating component has been added.
 
-export const Rateing = ({ vote_average, vote_count }) => {
-    return (
-        <RateWrapper>
-            <StarIcon src={star} alt="" />
-            <VoteAverage>{vote_average}</VoteAverage>
-            <RatingScale>/10</RatingScale>
-            <VoteCount>{vote_count}</VoteCount>
-        </RateWrapper>
-    )
-};
+// export const Rateing = ({ vote_average, vote_count }) => {
+//     return (
+//         <RateWrapper>
+//             <StarIcon src={star} alt="" />
+//             <VoteAverage>{vote_average}</VoteAverage>
+//             <RatingScale>/10</RatingScale>
+//             <VoteCount>{vote_count}</VoteCount>
+//         </RateWrapper>
+//     )
+// };
 
 // test version
 
