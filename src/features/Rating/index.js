@@ -15,7 +15,7 @@ export const Rating = () => {
             <RatingScale>/10</RatingScale>
             <Votes>335 votes</Votes>
         </RatingField>
-    )
+    );
 };
 
 export const MobileRating = () => {
@@ -25,5 +25,5 @@ export const MobileRating = () => {
             <Note>7,8</Note>
             <Votes>35 votes</Votes>
         </RatingField>
-    )
+    );
 };
