@@ -26,8 +26,8 @@ export const MovieDetailsTile = styled.article`
         grid-template-rows: auto;
         grid-gap: 16px;
         grid-template-areas:
-        "image content"
-        "description description";
+            "image content"
+            "description description";
     }
 `;
 
