@@ -1,6 +1,6 @@
 import { examplePopularPeople } from "./examplePopularPeople";
 import { PaginationArrow } from "./PaginationArrow";
-import { Caption, CaptionWrapper, PaginationLinks, StyledLink, Wrapper } from "./styled";
+import { Caption, CaptionsWrapper, PaginationLinks, StyledLink, Wrapper } from "./styled";
 
 export const Pagination = () => {
     const page = examplePopularPeople.page;
@@ -28,12 +28,12 @@ export const Pagination = () => {
                     </StyledLink>
                 </li>
             </PaginationLinks>
-            <CaptionWrapper>
+            <CaptionsWrapper>
                 <Caption>Page</Caption>
                 <Caption semibold>{page}</Caption>
                 <Caption>of</Caption>
                 <Caption semibold>{totalPages}</Caption>
-            </CaptionWrapper>
+            </CaptionsWrapper>
             <PaginationLinks>
                 <li>
                     <StyledLink
