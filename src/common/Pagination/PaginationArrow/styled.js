@@ -9,7 +9,7 @@ export const Image = styled.svg`
         display: none;
 
         @media(max-width: ${({ theme }) => theme.breakpoints.xsmall}px) {
-        display: inherit;
-    }
+            display: inherit;
+        }
     `}
 `;
