@@ -1,10 +1,11 @@
 import { examplePopularPeople } from "./examplePopularPeople";
 import { PaginationArrow } from "./PaginationArrow";
-import { Caption, CaptionsWrapper, PaginationLinks, StyledLink, Wrapper } from "./styled";
+import { Caption, CaptionsWrapper, LinkText, PaginationLinks, StyledLink, Wrapper } from "./styled";
 
 export const Pagination = () => {
     const page = examplePopularPeople.page;
     const totalPages = examplePopularPeople.total_pages;
+    // code above is to be changed after connecting with API
 
     return (
         <Wrapper>
@@ -15,16 +16,18 @@ export const Pagination = () => {
                         to={`/movies/1`}
                     >
                         <PaginationArrow disabled={page === 1} />
-                        First
+                        <PaginationArrow extra disabled={page === 1} />
+                        <LinkText>First</LinkText>
                     </StyledLink>
                 </li>
                 <li>
                     <StyledLink
+                        smallstep="true"
                         disabled={page === 1}
                         to={`/movies/${page - 1}`}
                     >
                         <PaginationArrow disabled={page === 1} />
-                        Previous
+                        <LinkText>Previous</LinkText>
                     </StyledLink>
                 </li>
             </PaginationLinks>
@@ -37,10 +40,11 @@ export const Pagination = () => {
             <PaginationLinks>
                 <li>
                     <StyledLink
+                        smallstep="true"
                         disabled={page === totalPages}
                         to={`/movies/${page + 1}`}
                     >
-                        Next
+                        <LinkText>Next</LinkText>
                         <PaginationArrow forward disabled={page === totalPages} />
                     </StyledLink>
                 </li>
@@ -49,8 +53,9 @@ export const Pagination = () => {
                         disabled={page === totalPages}
                         to={`/movies/${totalPages}`}
                     >
-                        Last
+                        <LinkText>Last</LinkText>
                         <PaginationArrow forward disabled={page === totalPages} />
+                        <PaginationArrow extra forward disabled={page === totalPages} />
                     </StyledLink>
                 </li>
             </PaginationLinks>

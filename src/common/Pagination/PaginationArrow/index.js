@@ -1,8 +1,9 @@
 import { Image } from "./styled";
 
-export const PaginationArrow = ({ forward, disabled }) => (
+export const PaginationArrow = ({ forward, disabled, extra }) => (
     <Image
         forward={forward}
+        extra={extra}
         width="7"
         height="12"
         viewBox="0 0 7 12"
