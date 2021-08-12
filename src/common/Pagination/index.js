@@ -13,10 +13,14 @@ export const Pagination = () => {
                 <li>
                     <StyledLink
                         disabled={page === 1}
-                        to={`/movies/1`}
+                        to={`/`}
                     >
                         <PaginationArrow disabled={page === 1} />
-                        <PaginationArrow extra disabled={page === 1} />
+                        <PaginationArrow
+                            extra
+                            disabled={page === 1}
+
+                        />
                         <LinkText>First</LinkText>
                     </StyledLink>
                 </li>
@@ -24,7 +28,7 @@ export const Pagination = () => {
                     <StyledLink
                         smallstep="true"
                         disabled={page === 1}
-                        to={`/movies/${page - 1}`}
+                        to={`/`}
                     >
                         <PaginationArrow disabled={page === 1} />
                         <LinkText>Previous</LinkText>
@@ -32,30 +36,48 @@ export const Pagination = () => {
                 </li>
             </PaginationLinks>
             <CaptionsWrapper>
-                <Caption>Page</Caption>
-                <Caption semibold>{page}</Caption>
-                <Caption>of</Caption>
-                <Caption semibold>{totalPages}</Caption>
+                <Caption>
+                    Page
+                </Caption>
+                <Caption semibold>
+                    {page}
+                </Caption>
+                <Caption>
+                    of
+                </Caption>
+                <Caption semibold>
+                    {totalPages}
+                </Caption>
             </CaptionsWrapper>
             <PaginationLinks>
                 <li>
                     <StyledLink
                         smallstep="true"
                         disabled={page === totalPages}
-                        to={`/movies/${page + 1}`}
+                        to={`/`}
                     >
                         <LinkText>Next</LinkText>
-                        <PaginationArrow forward disabled={page === totalPages} />
+                        <PaginationArrow
+                            forward
+                            disabled={page === totalPages}
+                        />
                     </StyledLink>
                 </li>
                 <li>
                     <StyledLink
                         disabled={page === totalPages}
-                        to={`/movies/${totalPages}`}
+                        to={`/`}
                     >
                         <LinkText>Last</LinkText>
-                        <PaginationArrow forward disabled={page === totalPages} />
-                        <PaginationArrow extra forward disabled={page === totalPages} />
+                        <PaginationArrow
+                            forward
+                            disabled={page === totalPages}
+                        />
+                        <PaginationArrow
+                            extra
+                            forward
+                            disabled={page === totalPages}
+                        />
                     </StyledLink>
                 </li>
             </PaginationLinks>
