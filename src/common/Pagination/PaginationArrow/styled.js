@@ -13,3 +13,11 @@ export const Image = styled.svg`
         }
     `}
 `;
+
+export const Path = styled.path`
+    fill: ${({ theme }) => theme.colors.pagination.paginationArrow};
+
+    ${({ disabled }) => disabled && css`
+        fill: ${({ theme }) => theme.colors.pagination.secondaryText};
+    `}
+`;
