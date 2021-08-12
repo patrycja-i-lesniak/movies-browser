@@ -1,5 +1,11 @@
+import { Pagination } from "../../common/Pagination";
+import PeopleTiles from "../Tiles/PeopleTiles";
+
 export const PersonList = () => {
     return (
-        <div>Popular People</div>
+        <>
+            <PeopleTiles title="Popular people" />
+            <Pagination />
+        </>
     );
 };
