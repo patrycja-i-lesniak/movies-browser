@@ -60,6 +60,12 @@ export const theme = {
         movieDetails: {
             background: colorNames.black,
         },
+        pagination: {
+            primaryText: colorNames.eerieBlack,
+            background: colorNames.lightBlue,
+            backgroundDisabled: colorNames.mystic,
+            caption: colorNames.darkGrey,
+        },
     },
     ...common,
 };
