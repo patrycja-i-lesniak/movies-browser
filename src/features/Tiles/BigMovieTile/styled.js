@@ -9,6 +9,7 @@ export const MovieDetailsTile = styled.article`
     margin-bottom: 64px;
 
     @media(max-width: ${({ theme }) => theme.breakpoints.medium}px) {
+        padding: 32px;
         margin-bottom: 32px;
     }
 
