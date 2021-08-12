@@ -47,7 +47,11 @@ export const Image = styled.img`
     @media(max-width: ${({ theme }) => theme.breakpoints.xsmall}px) {
         width: 114px;
         height: 169px;
-        margin: 0 8px 0 0;
+        margin: 0 0 8px 0;
+    }
+
+    @media(max-width: ${({ theme }) => theme.breakpoints.xxsmall}px) {
+        margin: 0;
     }
 `;
 
