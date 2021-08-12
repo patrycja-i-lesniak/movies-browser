@@ -94,7 +94,7 @@ export const CaptionsWrapper = styled.div`
 export const Caption = styled.span`
     font-size: 16px;
     line-height: 1.5;
-    color: ${({ theme }) => theme.colors.pagination.caption};
+    color: ${({ theme }) => theme.colors.pagination.secondaryText};
 
     ${({ semibold }) => semibold && css`
         font-weight: 600;
