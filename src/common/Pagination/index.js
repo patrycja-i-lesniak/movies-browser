@@ -1,25 +1,26 @@
-import { examplePopularPeople } from "./examplePopularPeople";
+import { examplePopularPeople } from "../../features/Tiles/PeopleTiles/examplePopularPeople";
 import { PaginationArrow } from "./PaginationArrow";
+import searchQueryParamName from "./searchQueryParamName";
 import { Caption, CaptionsWrapper, LinkText, PaginationLinks, StyledLink, Wrapper } from "./styled";
+import { useQueryParameter } from "./useQueryParameter";
 
 export const Pagination = () => {
-    const page = examplePopularPeople.page;
-    const totalPages = examplePopularPeople.total_pages;
-    // code above is to be changed after connecting with API
+    const currentPage = useQueryParameter(searchQueryParamName) || "1";
+    // totalPages is to be changed after connecting with API
+    const totalPages = examplePopularPeople.total_pages.toString();
 
     return (
         <Wrapper>
             <PaginationLinks>
                 <li>
                     <StyledLink
-                        disabled={page === 1}
-                        to={`/`}
+                        disabled={currentPage === "1"}
+                        to="/people?page=1"
                     >
-                        <PaginationArrow disabled={page === 1} />
+                        <PaginationArrow disabled={currentPage === "1"} />
                         <PaginationArrow
                             extra
-                            disabled={page === 1}
-
+                            disabled={currentPage === "1"}
                         />
                         <LinkText>First</LinkText>
                     </StyledLink>
@@ -27,10 +28,10 @@ export const Pagination = () => {
                 <li>
                     <StyledLink
                         smallstep="true"
-                        disabled={page === 1}
-                        to={`/`}
+                        disabled={currentPage === "1"}
+                        to={`/people?page=${currentPage - 1}`}
                     >
-                        <PaginationArrow disabled={page === 1} />
+                        <PaginationArrow disabled={currentPage === "1"} />
                         <LinkText>Previous</LinkText>
                     </StyledLink>
                 </li>
@@ -40,7 +41,7 @@ export const Pagination = () => {
                     Page
                 </Caption>
                 <Caption semibold>
-                    {page}
+                    {currentPage}
                 </Caption>
                 <Caption>
                     of
@@ -53,30 +54,30 @@ export const Pagination = () => {
                 <li>
                     <StyledLink
                         smallstep="true"
-                        disabled={page === totalPages}
-                        to={`/`}
+                        disabled={currentPage === totalPages}
+                        to={`/people?page=${+currentPage + 1}`}
                     >
                         <LinkText>Next</LinkText>
                         <PaginationArrow
                             forward
-                            disabled={page === totalPages}
+                            disabled={currentPage === totalPages}
                         />
                     </StyledLink>
                 </li>
                 <li>
                     <StyledLink
-                        disabled={page === totalPages}
-                        to={`/`}
+                        disabled={currentPage === totalPages}
+                        to={`/people?page=${totalPages}`}
                     >
                         <LinkText>Last</LinkText>
                         <PaginationArrow
                             forward
-                            disabled={page === totalPages}
+                            disabled={currentPage === totalPages}
                         />
                         <PaginationArrow
                             extra
                             forward
-                            disabled={page === totalPages}
+                            disabled={currentPage === totalPages}
                         />
                     </StyledLink>
                 </li>
