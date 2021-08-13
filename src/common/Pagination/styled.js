@@ -65,7 +65,7 @@ export const StyledLink = styled(Link)`
         grid-gap: 4px;
         padding: 8px 12px;
 
-        ${({ smallstep }) => smallstep && css`
+        ${({ smallStep }) => smallStep && css`
             grid-template-columns: auto;
         `}
     }

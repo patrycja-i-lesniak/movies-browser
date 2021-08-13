@@ -27,7 +27,7 @@ export const Pagination = () => {
                 </li>
                 <li>
                     <StyledLink
-                        smallstep="true"
+                        smallStep
                         disabled={currentPage === "1"}
                         to={`/people?page=${currentPage - 1}`}
                     >
@@ -53,7 +53,7 @@ export const Pagination = () => {
             <PaginationLinks>
                 <li>
                     <StyledLink
-                        smallstep="true"
+                        smallStep
                         disabled={currentPage === totalPages}
                         to={`/people?page=${+currentPage + 1}`}
                     >
