@@ -1,7 +1,7 @@
 import styled, { css } from "styled-components";
 import { Link } from "react-router-dom";
 
-export const Wrapper = styled.div`
+export const Wrapper = styled.nav`
     color: ${({ theme }) => theme.colors.pagination.primaryText};
     display: grid;
     grid-template-columns: repeat(3, auto);
