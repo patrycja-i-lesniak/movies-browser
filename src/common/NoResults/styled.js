@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import { Header } from "../Loader/styled";
-import { ReactComponent as Image } from "./NoResultsPicture.svg"
+import { ReactComponent as Image } from "./NoResultsPicture.svg";
 
 export const NoResultsHeader = styled(Header)`
     margin: 56px 56px 40px;
