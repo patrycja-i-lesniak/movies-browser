@@ -26,8 +26,6 @@ export const useAPIData = () => {
                     creditsData: response2
                 });
 
-                console.log(movieDetailsAPI);
-                console.log(response2);
             } catch (error) {
                 setMovieData({
                     status: "error"
