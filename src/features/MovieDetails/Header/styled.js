@@ -1,5 +1,6 @@
 import styled from "styled-components";
-import poster from "./poster.png";
+
+// let poster = "http://image.tmdb.org/t/p/original/wgvc3PmjQGtYYDWaeuV867mnFDs.jpg";
 
 export const MovieDetailsHeader = styled.header`
     background-color: ${({ theme }) => theme.colors.movieDetails.background};
@@ -8,10 +9,11 @@ export const MovieDetailsHeader = styled.header`
 export const WrapperPoster = styled.div`
     max-width: 1920px;
     max-height: 770px;
+    height: 100%;
     margin: 0 auto;
-    background-image: url("${poster}");
     background-repeat: no-repeat;
     background-position: center;
+
 
     @media(max-width: ${({ theme }) => theme.breakpoints.xlarge}px) {
         background-size: cover;

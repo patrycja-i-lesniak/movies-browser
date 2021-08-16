@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { ReactComponent as Loading } from "./icon-spinner.svg"
+import { ReactComponent as Loading } from "./icon-spinner.svg";
 
 export const Wrapper = styled.div`
     display: flex;
