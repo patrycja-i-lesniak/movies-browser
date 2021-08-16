@@ -12,7 +12,7 @@ export const useAPIData = () => {
             try {
                 const APIKey = 'api_key=3af561a12389e6d632bf79207cb88b6c';
                 const APIAdress = 'https://api.themoviedb.org/3/';
-                const movieId = '20';
+                const movieId = '21';
 
                 const movieDetailsAPI = `${APIAdress}movie/${movieId}?${APIKey}`;
                 const response = await axios.get(movieDetailsAPI);
