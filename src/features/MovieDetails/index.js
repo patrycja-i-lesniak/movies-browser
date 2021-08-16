@@ -27,8 +27,7 @@ export const MovieDetails = () => {
             case "error":
                 return (<Error />);
             default:
-                <NoResults />;
-                break;
+                return <NoResults />;
         };
     };
 
