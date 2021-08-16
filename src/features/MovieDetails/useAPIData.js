@@ -10,10 +10,9 @@ export const useAPIData = () => {
     useEffect(() => {
         const getAPIData = async () => {
             try {
-                
                 const APIKey = 'api_key=3af561a12389e6d632bf79207cb88b6c';
                 const APIAdress = 'https://api.themoviedb.org/3/';
-                const movieId = '18';
+                const movieId = '20';
                 const APIConfigurarion = `https://api.themoviedb.org/3/configuration?${APIKey}`;
                 // const  movieKeyWordsAPI = `https://api.themoviedb.org/3/movie/18/keywords?api_key=${APIKey}`;
                 const movieDetailsAPI = `${APIAdress}movie/${movieId}?${APIKey}`;

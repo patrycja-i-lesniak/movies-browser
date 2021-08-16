@@ -16,7 +16,7 @@ export const MovieDetails = () => {
                 <>
                     <Header movieData={APIData.movieData.data}/>
                     <Wrapper>
-                        <BigMovieTile />
+                        <BigMovieTile movieData={APIData.movieData.data}/>
                         <PeopleTiles title="cast" />
                         <PeopleTiles title="crew" />
                     </Wrapper>

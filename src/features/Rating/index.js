@@ -7,13 +7,15 @@ import {
     Votes,
 } from "./styled";
 
-export const Rating = () => {
+export const Rating = ({movieData}) => {
+    const note = movieData.vote_average;
+    const votes = movieData.vote_count;
     return (
         <RatingField>
             <StarIcon src={star} alt="" />
-            <Note>7,8</Note>
+            <Note>{note}</Note>
             <RatingScale>/10</RatingScale>
-            <Votes>335 votes</Votes>
+            <Votes>{votes} votes</Votes>
         </RatingField>
     );
 };
