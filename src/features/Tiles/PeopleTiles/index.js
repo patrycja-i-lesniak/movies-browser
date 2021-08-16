@@ -1,6 +1,6 @@
-import { useState } from "react"; import { exampleConfiguration } from "./exampleConfiguration";
+import { useState } from "react";
+import { exampleConfiguration } from "./exampleConfiguration";
 import { examplePopularPeople } from "./examplePopularPeople";
-import { exampleCredits } from "./exampleCredits";
 import pictureSubstitution from "./pictureSubstitution.svg";
 import {
     PeopleList,
@@ -13,7 +13,7 @@ import {
 } from "./styled";
 import { Arrow } from "./Arrow/index";
 
-const PeopleTiles = ({ title }) => {
+const PeopleTiles = ({ title, creditsData }) => {
     const [showMore, setShowMore] = useState(false);
 
     let peopleList;
@@ -22,11 +22,11 @@ const PeopleTiles = ({ title }) => {
 
     switch (sectionName) {
         case "cast":
-            peopleList = exampleCredits.cast;
+            peopleList = creditsData.cast;
             break;
 
         case "crew":
-            peopleList = exampleCredits.crew;
+            peopleList = creditsData.crew;
             break;
 
         default:
