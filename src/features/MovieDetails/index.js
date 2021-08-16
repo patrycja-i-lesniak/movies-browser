@@ -4,6 +4,7 @@ import { BigMovieTile } from "../Tiles/BigMovieTile";
 import PeopleTiles from "../Tiles/PeopleTiles";
 import { useAPIData } from "./useAPIData";
 import  {Loader} from "../../common/Loader";
+import Error from "../../common/Error";
 
 export const MovieDetails = () => {
     const APIData = useAPIData();
@@ -22,6 +23,7 @@ export const MovieDetails = () => {
                     </Wrapper>
                 </>
             }
+            {APIData.status === "error" && <Error />}
         </>
     );
 };

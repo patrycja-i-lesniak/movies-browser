@@ -24,7 +24,9 @@ export const useAPIData = () => {
                     movieData: response
                 });
             } catch (error) {
-                console.log(error);
+                setMovieData({
+                    status: "error"
+                });
             };
         };
         setTimeout(getAPIData, 2_000);
