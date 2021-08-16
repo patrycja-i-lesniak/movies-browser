@@ -1,7 +1,7 @@
 import { Header, LoadingIcon } from "./styled";
 import { Wrapper } from "../LoaderNoResultsWrapper";
 
-const Loader = () => {
+export const Loader = () => {
     const search = "Mulan"; //template, waiting for search code and logic
 
     return (
@@ -11,5 +11,3 @@ const Loader = () => {
         </Wrapper>
     );
 };
-
-export default Loader;

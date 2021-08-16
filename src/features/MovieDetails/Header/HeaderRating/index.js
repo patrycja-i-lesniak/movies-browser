@@ -1,9 +1,9 @@
 import star from "../../../Images/star.svg";
 import { HeaderDiv, HeaderNote, HeaderScale, HeaderStarImage, HeaderVotes, Wrapper } from "./styled";
 
-const HeaderRating = () => {
-    const rating = 7.8;
-    const votesNumber= 335;
+const HeaderRating = ({movieData}) => {
+    const rating = movieData.vote_average;
+    const votesNumber= movieData.vote_count;
 
     return (
         <HeaderDiv>
