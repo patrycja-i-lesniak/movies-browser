@@ -1,8 +1,8 @@
 import { NoResultsHeader, NoResultsImage, } from "./styled";
 import { Wrapper } from "../LoaderNoResultsWrapper";
 
-const NoResults = () => {
-    const search = "Muan" //template, waitng for search code and logic
+export const NoResults = () => {
+    const search = "Muan"; //template, waitng for search code and logic
 
     return (
         <Wrapper>
@@ -11,5 +11,3 @@ const NoResults = () => {
         </Wrapper>
     );
 };
-
-export default NoResults;
