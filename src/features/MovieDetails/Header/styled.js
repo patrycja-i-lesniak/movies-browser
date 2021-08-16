@@ -1,7 +1,5 @@
 import styled from "styled-components";
 
-// let poster = "http://image.tmdb.org/t/p/original/wgvc3PmjQGtYYDWaeuV867mnFDs.jpg";
-
 export const MovieDetailsHeader = styled.header`
     background-color: ${({ theme }) => theme.colors.movieDetails.background};
 `;
