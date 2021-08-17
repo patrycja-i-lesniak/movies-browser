@@ -1,6 +1,5 @@
 import { useState } from "react";
 import { exampleConfiguration } from "./exampleConfiguration";
-import { examplePopularPeople } from "./examplePopularPeople";
 import pictureSubstitution from "./pictureSubstitution.svg";
 import {
     PeopleList,
@@ -13,7 +12,7 @@ import {
 } from "./styled";
 import { Arrow } from "./Arrow/index";
 
-const PeopleTiles = ({ title, creditsData }) => {
+const PeopleTiles = ({ title, creditsData, popularPeopleData }) => {
     const [showMore, setShowMore] = useState(false);
 
     let peopleList;
@@ -30,7 +29,7 @@ const PeopleTiles = ({ title, creditsData }) => {
             break;
 
         default:
-            peopleList = examplePopularPeople.results;
+            peopleList = popularPeopleData.results;
     }
 
     return (
