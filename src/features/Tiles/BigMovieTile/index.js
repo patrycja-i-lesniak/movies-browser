@@ -1,4 +1,4 @@
-import poster from "../../Images/poster.png";
+// import poster from "../../Images/poster.png";
 import { Rating } from "../../Rating";
 import {
     MovieDetailsTile,
@@ -15,33 +15,43 @@ import {
     Description,
 } from "./styled";
 
-export const BigMovieTile = () => {
+
+export const BigMovieTile = ({ movieData }) => {
+    const image = movieData.poster_path;
+    const imageURL = "http://image.tmdb.org/t/p/";
+    const size = "original";
+    const poster = `${imageURL}${size}${image}`;
+    const title = movieData.title;
+    const year = movieData.release_date.slice(0, 4);
+    const production = movieData.production_countries;
+    const releaseDate = movieData.release_date;
+    const overview = movieData.overview;
+    const genres = movieData.genres;
+
     return (
         <MovieDetailsTile>
             <Image src={poster} alt="" />
             <Content>
-                <Title>Mulan</Title>
-                <Year>2020</Year>
+                <Title>{title}</Title>
+                <Year>{year}</Year>
                 <Details>
                     <MovieDetails>
                         <Label>Production:</Label>
-                        <MovieData>China, USA </MovieData>
+                        <MovieData>{production.map(country=> <span>{country.name}{", "}</span>)}</MovieData>
                     </MovieDetails>
                     <MovieDetails>
                         <Label>Release date:</Label>
-                        <MovieData>24.10.2020</MovieData>
+                        <MovieData>{releaseDate}</MovieData>
                     </MovieDetails>
                 </Details>
                 <Tags>
-                    <Tag>Action</Tag>
-                    <Tag>Adventure</Tag>
-                    <Tag>Drama</Tag>
+                    {genres.map(tag => <Tag>{tag.name}</Tag>)}
                 </Tags>
-                <Rating />
-                </Content>
-                <Description>
-                    A young Chinese maiden disguises herself as a male warrior in order to save her father. Disguises herself as a male warrior in order to save her father.  A young Chinese maiden disguises herself as a male warrior in order to save her father.
-                </Description>
+                <Rating movieData={movieData} />
+            </Content>
+            <Description>
+                {overview}
+            </Description>
         </MovieDetailsTile>
     );
 };

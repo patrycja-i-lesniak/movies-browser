@@ -1,26 +1,33 @@
 import styled from "styled-components";
 
 export const MovieDetailsTile = styled.article`
-    padding: 40px;
     background: ${({ theme }) => theme.colors.tile.background};
     box-shadow: 0px 4px 12px rgba(186, 199, 213, 0.5);
     border-radius: 5px;
     min-height: 544px;
+    padding: 40px;
+    margin-bottom: 64px;
+
+    @media(max-width: ${({ theme }) => theme.breakpoints.medium}px) {
+        padding: 32px;
+        margin-bottom: 32px;
+    }
 
     @media(max-width: ${({ theme }) => theme.breakpoints.small}px) {
         min-height: unset;
-        padding: 24px; 
+        padding: 24px;
+        margin-bottom: 20px;
     }
 
     @media(max-width: ${({ theme }) => theme.breakpoints.xsmall}px) {
-        padding: 16px; 
+        padding: 16px;
         display: grid;
         grid-template-columns:  min-content 1fr;
         grid-template-rows: auto;
         grid-gap: 16px;
-        grid-template-areas: 
-        "image content"
-        "description description";
+        grid-template-areas:
+            "image content"
+            "description description";
     }
 `;
 
@@ -40,7 +47,11 @@ export const Image = styled.img`
     @media(max-width: ${({ theme }) => theme.breakpoints.xsmall}px) {
         width: 114px;
         height: 169px;
-        margin: 0 8px 0 0;
+        margin: 0 0 8px 0;
+    }
+
+    @media(max-width: ${({ theme }) => theme.breakpoints.xxsmall}px) {
+        margin: 0;
     }
 `;
 

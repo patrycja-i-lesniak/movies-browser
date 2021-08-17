@@ -7,7 +7,6 @@ import {
     PersonTile,
     ProfilePicture,
     Role,
-    SectionWrapper,
     ShowMoreButton,
     TileTitle,
     Title
@@ -36,7 +35,7 @@ const PeopleTiles = ({ title }) => {
 
     return (
         <>
-            <SectionWrapper>
+            <section>
                 <Title>{title}</Title>
                 <PeopleList>
                     {peopleList.map((person, index) =>
@@ -63,7 +62,7 @@ const PeopleTiles = ({ title }) => {
                         </PersonTile>
                     )}
                 </PeopleList>
-            </SectionWrapper>
+            </section>
             {
                 !sectionName.includes("popular") &&
                 <ShowMoreButton onClick={() => setShowMore(!showMore)}>
