@@ -2,7 +2,7 @@ import { Header } from "./Header";
 import { Wrapper } from "./styled";
 import { BigMovieTile } from "../Tiles/BigMovieTile";
 import PeopleTiles from "../Tiles/PeopleTiles";
-import { useAPIData } from "./useAPIData";
+import { useAPIData } from "../../useAPIData";
 import { Loader } from "../../common/Loader";
 import Error from "../../common/Error";
 import { NoResults } from "../../common/NoResults";
