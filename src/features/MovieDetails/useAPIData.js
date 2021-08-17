@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import axios from "axios";
 
 export const useAPIData = () => {
-    const [movieData, setMovieData] = useState({
+    const [moviesAndPeopleData, setMoviesAndPeopleData] = useState({
         status: "loading",
         movieData: null
     });
@@ -11,29 +11,48 @@ export const useAPIData = () => {
         const getAPIData = async () => {
             try {
                 const APIKey = "api_key=3af561a12389e6d632bf79207cb88b6c";
-                const APIAdress = "https://api.themoviedb.org/3/";
-                const movieId = "21";
+                const pathAPI = "https://api.themoviedb.org/3/";
 
-                const movieDetailsAPI = `${APIAdress}movie/${movieId}?${APIKey}`;
+                const movieId = "21";
+                const personId = "1039305";
+                const page = 1;
+
+                const popularMoviesAPI = `${pathAPI}movie/popular?${APIKey}&${page}`;
+                const popularMoviesData = await axios.get(popularMoviesAPI);
+
+                const movieDetailsAPI = `${pathAPI}movie/${movieId}?${APIKey}`;
                 const movieData = await axios.get(movieDetailsAPI);
 
-                const creditsAPI = `${APIAdress}movie/${movieId}/credits?${APIKey}`;
-                const creditsData= await axios.get(creditsAPI);
+                const creditsAPI = `${pathAPI}movie/${movieId}/credits?${APIKey}`;
+                const creditsData = await axios.get(creditsAPI);
 
-                setMovieData({
+                const popularPeopleAPI = `${pathAPI}person/popular?${APIKey}&${page}`;
+                const popularPeopleData = await axios.get(popularPeopleAPI);
+
+                const personAPI = `${pathAPI}person/${personId}/movie_credits?${APIKey}`;
+                const personData = await axios.get(personAPI);
+
+                const personCreditsAPI = `${pathAPI}movie/${movieId}/credits?${APIKey}`;
+                const personCreditsData = await axios.get(personCreditsAPI);
+
+                setMoviesAndPeopleData({
                     status: "success",
+                    popularMoviesData,
                     movieData,
-                    creditsData
+                    creditsData,
+                    popularPeopleData,
+                    personData,
+                    personCreditsData
                 });
 
             } catch (error) {
-                setMovieData({
+                setMoviesAndPeopleData({
                     status: "error"
                 });
             };
         };
         setTimeout(getAPIData, 2_000);
     }, []);
-    return movieData;
+    return moviesAndPeopleData;
 };
 
