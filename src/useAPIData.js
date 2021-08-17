@@ -51,7 +51,7 @@ export const useAPIData = () => {
                 });
             };
         };
-        setTimeout(getAPIData, 2_000);
+        setTimeout(getAPIData, 1_000);
     }, []);
     return moviesAndPeopleData;
 };
