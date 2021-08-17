@@ -25,7 +25,7 @@ export const MovieDetails = () => {
                         </Wrapper>
                     </>);
             case "error":
-                return (<Error />);
+                return <Error />;
             default:
                 return <NoResults />;
         };
