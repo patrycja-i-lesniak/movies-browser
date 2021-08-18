@@ -38,7 +38,7 @@ const PeopleTiles = ({ title, creditsData, popularPeopleData }) => {
                 <Title>{title}</Title>
                 <PeopleList>
                     {peopleList.map((person, index) =>
-                        <li key={person.id}>
+                        <li key={index}>
                             <PersonTile
                                 to={`/profile/${person.id}`}
                                 hidden={
