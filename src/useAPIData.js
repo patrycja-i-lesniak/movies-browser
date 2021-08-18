@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
-import { useQueryParameter } from "./common/Pagination/useQueryParameter";
-import searchQueryParamName from "./common/Pagination/searchQueryParamName";
+import { useQueryParameter } from "./useQueryParameter";
+import searchQueryParamName from "./searchQueryParamName";
 
 export const useAPIData = () => {
     const [moviesAndPeopleData, setMoviesAndPeopleData] = useState({
