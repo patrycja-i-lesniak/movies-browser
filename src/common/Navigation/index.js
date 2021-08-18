@@ -36,7 +36,7 @@ export const Navigation = () => {
                         </NavigationLinks>
                     </HeaderContainer>
                     <SearchContainer>
-                        < SearchBox>
+                        <SearchBox>
                             <SearchIcon />
                             <SearchInput placeholder="Search for movies" />
                         </SearchBox>
