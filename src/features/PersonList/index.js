@@ -19,6 +19,7 @@ export const PersonList = () => {
                         <Wrapper>
                             <PeopleTiles title="Popular People" popularPeopleData={APIData.popularPeopleData.data} />
                         </Wrapper>
+                        <Pagination popularPeopleData={APIData.popularPeopleData.data}/>
                     </>);
             case "error":
                 return <Error />;
@@ -30,7 +31,6 @@ export const PersonList = () => {
     return (
         <>
             <PersonListContent />
-            <Pagination />
         </>
     );
 };
