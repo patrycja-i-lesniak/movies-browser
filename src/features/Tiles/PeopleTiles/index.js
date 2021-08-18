@@ -39,7 +39,7 @@ const PeopleTiles = ({ title, creditsData, popularPeopleData }) => {
                 <PeopleList>
                     {peopleList.map((person, index) =>
                         <PersonTile
-                            key={index}
+                            key={person.id}
                             hidden={
                                 !sectionName.includes("popular") &&
                                 !showMore &&
