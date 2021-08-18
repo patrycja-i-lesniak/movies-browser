@@ -12,7 +12,6 @@ export const useAPIData = () => {
     const page = useQueryParameter(searchQueryParamName) || "1";
 
     useEffect(() => {
-        
         const getAPIData = async () => {
             try {
                 const APIKey = "api_key=3af561a12389e6d632bf79207cb88b6c";
@@ -20,7 +19,7 @@ export const useAPIData = () => {
 
                 const movieId = "21";
                 const personId = "1039305";
-                
+
 
                 const popularMoviesAPI = `${pathAPI}movie/popular?${APIKey}&language=en-US&page=${page}`;
                 const popularMoviesData = await axios.get(popularMoviesAPI);
@@ -33,8 +32,6 @@ export const useAPIData = () => {
 
                 const popularPeopleAPI = `${pathAPI}person/popular?${APIKey}&language=en-US&page=${page}`;
                 const popularPeopleData = await axios.get(popularPeopleAPI);
-                console.log(`page: ${page}`);
-                console.log( await popularPeopleData.data.page);
 
                 const personAPI = `${pathAPI}person/${personId}/movie_credits?${APIKey}`;
                 const personData = await axios.get(personAPI);
@@ -51,7 +48,6 @@ export const useAPIData = () => {
                     personData,
                     personCreditsData
                 });
-
             } catch (error) {
                 setMoviesAndPeopleData({
                     status: "error"
