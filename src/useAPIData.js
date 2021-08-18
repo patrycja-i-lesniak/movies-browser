@@ -54,7 +54,8 @@ export const useAPIData = () => {
                 });
             };
         };
-        setTimeout(getAPIData, 2_000);
+        const timeoutID = setTimeout(getAPIData, 0);
+        return () => clearTimeout(timeoutID);
     }, [page]);
     return moviesAndPeopleData;
 };
