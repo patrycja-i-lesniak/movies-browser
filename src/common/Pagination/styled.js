@@ -38,8 +38,8 @@ export const PaginationLinks = styled.ul`
     }
 `;
 
-export const StyledLink = styled(Link)`
-    display: grid;
+export const StyledLink = styled(({ smallStep, ...otherProps }) => <Link {...otherProps} />)`
+display: grid;
     grid-template-columns: auto auto;
     grid-gap: 8px;
     align-items: center;
