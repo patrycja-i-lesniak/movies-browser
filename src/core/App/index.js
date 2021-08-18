@@ -14,6 +14,9 @@ export const App = () => {
     <HashRouter>
       <Navigation />
         <Switch>
+          <Route path="/profile/:id">
+            <p>5. Profile</p>
+          </Route>
           <Route path="/movies">
             {/* <MovieList /> */}
             <MovieDetails />
