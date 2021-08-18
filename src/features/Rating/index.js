@@ -12,7 +12,7 @@ export const Rating = ({movieData}) => {
     const votes = movieData.vote_count;
     return (
         <RatingField>
-            <StarIcon src={star} alt="" />
+            <StarIcon src={star} alt="rating star" />
             <Note>{note}</Note>
             <RatingScale>/10</RatingScale>
             <Votes>{votes} votes</Votes>
