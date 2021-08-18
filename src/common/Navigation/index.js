@@ -1,3 +1,4 @@
+import { useQueryParameter } from "../../useQueryParameter";
 import {
     NavigationWrapper,
     NavigationContainer,
@@ -14,9 +15,20 @@ import {
     SearchIcon,
     SearchInput,
 } from "./styled";
+import { useReplaceQueryParameter } from "./useReplaceQueryParameter";
 import videoIcon from "./videoIcon.svg";
 
 export const Navigation = () => {
+    const query = useQueryParameter("search");
+    const replaceQueryParameter = useReplaceQueryParameter();
+
+    const onSearchChange = ({ target }) => {
+        replaceQueryParameter({
+            key: "search",
+            value: target.value.trim() !== "" ? target.value : undefined
+        });
+    };
+
     return (
         <NavigationWrapper>
             <NavigationContainer>
@@ -38,7 +50,7 @@ export const Navigation = () => {
                     <SearchContainer>
                         <SearchBox>
                             <SearchIcon />
-                            <SearchInput placeholder="Search for movies" />
+                            <SearchInput onChange={onSearchChange} value={query || ""} placeholder="Search for movies" />
                         </SearchBox>
                     </SearchContainer>
                 </DoubleContainer>
