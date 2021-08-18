@@ -11,6 +11,7 @@ export const WrapperPoster = styled.div`
     margin: 0 auto;
     background-repeat: no-repeat;
     background-position: center;
+    background-image: url(${props => props.url});
 
     @media(max-width: ${({ theme }) => theme.breakpoints.xlarge}px) {
         background-size: cover;
