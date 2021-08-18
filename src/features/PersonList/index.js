@@ -29,8 +29,6 @@ export const PersonList = () => {
     };
 
     return (
-        <>
-            <PersonListContent />
-        </>
+        <PersonListContent />
     );
 };
