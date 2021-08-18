@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import styled from "styled-components";
 
 export const Title = styled.h1`
@@ -35,11 +36,13 @@ export const PeopleList = styled.ul`
     }
 `;
 
-export const PersonTile = styled.li`
+export const PersonTile = styled(Link)`
+    text-decoration: none;
     display: grid;
     grid-row-gap: 8px;
     align-content: start;
     padding: 16px;
+    height: 100%;
     background-color: ${({ theme }) => theme.colors.tile.background};
     box-shadow: 0px 4px 12px rgba(186, 199, 213, 0.5);
     border-radius: 5px;
