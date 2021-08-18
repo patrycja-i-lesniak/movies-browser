@@ -1,13 +1,8 @@
-// import { examplePopularPeople } from "../../features/Tiles/PeopleTiles/examplePopularPeople";
 import { PaginationArrow } from "./PaginationArrow";
-// import searchQueryParamName from "./searchQueryParamName";
 import { Caption, CaptionsWrapper, LinkText, PaginationLinks, StyledLink, Wrapper } from "./styled";
-// import { useQueryParameter } from "./useQueryParameter";
 
 export const Pagination = ({ popularPeopleData }) => {
-    // const currentPage = useQueryParameter(searchQueryParamName) || "1";
     const currentPage = popularPeopleData.page;
-    // totalPages is to be changed after connecting with API
     const totalPages = popularPeopleData.total_pages;
 
     return (
