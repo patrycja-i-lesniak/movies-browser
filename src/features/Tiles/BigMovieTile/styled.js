@@ -14,7 +14,7 @@ export const MovieDetailsTile = styled.article`
     }
 
     @media(max-width: ${({ theme }) => theme.breakpoints.small}px) {
-        min-height: unset;
+        min-height: 328px;
         padding: 24px;
         margin-bottom: 20px;
     }

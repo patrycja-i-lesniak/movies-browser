@@ -5,7 +5,6 @@ import {
   Redirect,
 } from "react-router-dom";
 import { Navigation } from "../../common/Navigation";
-import { MovieList } from "../../features/MovieList";
 import { PersonList } from "../../features/PersonList";
 import { MovieDetails } from "../../features/MovieDetails";
 import Error from "../../common/Error";

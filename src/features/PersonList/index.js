@@ -4,6 +4,7 @@ import { Loader } from "../../common/Loader";
 import Error from "../../common/Error";
 import { NoResults } from "../../common/NoResults";
 import { Wrapper } from "../MovieDetails/styled";
+import { Pagination } from "../../common/Pagination";
 
 export const PersonList = () => {
     const APIData = useAPIData();
@@ -27,6 +28,9 @@ export const PersonList = () => {
     };
 
     return (
-        <PersonListContent />
+        <>
+            <PersonListContent />
+            <Pagination />
+        </>
     );
 };
