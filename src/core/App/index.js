@@ -16,7 +16,8 @@ export const App = () => {
       <Navigation />
         <Switch>
           <Route path="/movies">
-            <MovieList />
+            {/* <MovieList /> */}
+            <MovieDetails />
           </Route>
           <Route path="/people">
             <PersonList />
@@ -28,7 +29,6 @@ export const App = () => {
             <Redirect to="/movies" />
           </Route>
         </Switch>
-        {/* <MovieDetails /> */}
     </HashRouter>
   );
 };

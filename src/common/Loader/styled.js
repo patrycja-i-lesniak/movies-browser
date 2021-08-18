@@ -38,6 +38,7 @@ animation-name: rotate;
 animation-duration: 1s;
 animation-iteration-count: infinite;
 animation-timing-function: linear;
+user-select: none;
 
 @keyframes rotate {
     from{

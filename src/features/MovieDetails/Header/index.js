@@ -10,9 +10,7 @@ export const Header = ({ movieData }) => {
 
     return (
         <MovieDetailsHeader>
-            <WrapperPoster style={{
-                backgroundImage: `url("${poster}")`
-            }}>
+            <WrapperPoster url={poster}>
                 <Wrapper>
                     <TextWrapper>
                         <TitleHeader>{title}</TitleHeader>

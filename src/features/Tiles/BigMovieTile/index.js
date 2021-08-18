@@ -37,7 +37,7 @@ export const BigMovieTile = ({ movieData }) => {
                 <Details>
                     <MovieDetails>
                         <Label>Production:</Label>
-                        <MovieData>{production.map(country=> <span>{country.name}{", "}</span>)}</MovieData>
+                        <MovieData>{production.map(country=> <span key ={`production-${country.name}`}>{country.name}{", "}</span>)}</MovieData>
                     </MovieDetails>
                     <MovieDetails>
                         <Label>Release date:</Label>
@@ -45,7 +45,7 @@ export const BigMovieTile = ({ movieData }) => {
                     </MovieDetails>
                 </Details>
                 <Tags>
-                    {genres.map(tag => <Tag>{tag.name}</Tag>)}
+                    {genres.map(tag => <Tag key={`genres-${tag.name}`}>{tag.name}</Tag>)}
                 </Tags>
                 <Rating movieData={movieData} />
             </Content>
