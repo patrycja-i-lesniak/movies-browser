@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Arrow } from "../Tile/Arrow";
+import { Arrow } from "../Arrow";
 import pictureSubstitution from "../Tile/pictureSubstitution.svg";
 import {
     SiteTitle,
@@ -11,7 +11,7 @@ import {
     ShowMoreButton,
     Tags,
     Tag,
-} from "../Tile";
+} from "./styled";
 import { MobileRating } from "../../Rating";
 
 

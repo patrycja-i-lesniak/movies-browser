@@ -1,6 +1,6 @@
 import { useState } from "react";
-import { exampleConfiguration } from "./exampleConfiguration";
-import pictureSubstitution from "./pictureSubstitution.svg";
+import { exampleConfiguration } from "../exampleConfiguration";
+import pictureSubstitution from "../pictureSubstitution.svg";
 import {
     PeopleList,
     PersonTile,
@@ -10,7 +10,7 @@ import {
     TileTitle,
     Title
 } from "./styled";
-import { Arrow } from "./Arrow/index";
+import { Arrow } from "../Arrow";
 
 const PeopleTiles = ({ title, creditsData, popularPeopleData }) => {
     const [showMore, setShowMore] = useState(false);
