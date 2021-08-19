@@ -12,6 +12,7 @@ import {
     Tags,
     Tag,
 } from "./styled";
+import {Rate} from "../../Rate";
 
 
 
@@ -19,7 +20,9 @@ const MovieTiles = ({ title, popularMoviesData, movieData }) => {
     const [showMore, setShowMore] = useState(false);
     const moviesList = popularMoviesData.results;
     const genres = movieData.genres;
-
+    // const year = movieData.release_date.slice(0, 4);
+    const vote_average = movieData.vote_average;
+    const vote_count = movieData.vote_count;
 
 
     return (
@@ -48,8 +51,12 @@ const MovieTiles = ({ title, popularMoviesData, movieData }) => {
                                     {movie.release_date.slice(0, 4)}
                                 </Year>
                                 <Tags>
-                                {genres.map(tag => <Tag key={`genres-${tag.name}`}>{tag.name}</Tag>)}
+                                    {genres.map(tag => <Tag key={`genres-${tag.name}`}>{tag.name}</Tag>)}
                                 </Tags>
+                                <Rate 
+                                small={true}
+                                vote_average={vote_average}
+                                vote_count={vote_count}/>
                             </Tile>
                         </li>
                     )}
