@@ -81,6 +81,10 @@ export const Picture = styled.img`
 background: ${({ theme }) => theme.colors.tile.substitutionPicture};
 border-radius: 5px;
 width: 100%;
+@media(max-width: ${({ theme }) => theme.breakpoints.xsmall}px) {
+       float: none;
+    }
+
 `;
 
 export const TileTitle = styled.h2`
