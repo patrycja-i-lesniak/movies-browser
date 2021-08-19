@@ -1,4 +1,7 @@
 import { useState } from "react";
+import { useSelector } from "react-redux";
+
+import { selectPopularPeopleData } from "../../PersonList/popularPeopleSlice";
 import { exampleConfiguration } from "./exampleConfiguration";
 import pictureSubstitution from "./pictureSubstitution.svg";
 import {
@@ -12,12 +15,14 @@ import {
 } from "./styled";
 import { Arrow } from "./Arrow/index";
 
-const PeopleTiles = ({ title, creditsData, popularPeopleData }) => {
+const PeopleTiles = ({ title, creditsData }) => {
     const [showMore, setShowMore] = useState(false);
 
     let peopleList;
     const sectionName = title.toLowerCase();
     const pictureLinkBase = `${exampleConfiguration.images.base_url}w185`;
+
+    const popularPeopleData = useSelector(selectPopularPeopleData);
 
     switch (sectionName) {
         case "cast":
