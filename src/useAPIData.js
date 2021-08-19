@@ -1,11 +1,15 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
+import { useQueryParameter } from "./useQueryParameter";
+import searchQueryParamName from "./searchQueryParamName";
 
 export const useAPIData = () => {
     const [moviesAndPeopleData, setMoviesAndPeopleData] = useState({
         status: "loading",
         movieData: null
     });
+
+    const page = useQueryParameter(searchQueryParamName) || "1";
 
     useEffect(() => {
         const getAPIData = async () => {
@@ -15,9 +19,9 @@ export const useAPIData = () => {
 
                 const movieId = "21";
                 const personId = "1039305";
-                const page = 1;
 
-                const popularMoviesAPI = `${pathAPI}movie/popular?${APIKey}&${page}`;
+
+                const popularMoviesAPI = `${pathAPI}movie/popular?${APIKey}&language=en-US&page=${page}`;
                 const popularMoviesData = await axios.get(popularMoviesAPI);
 
                 const movieDetailsAPI = `${pathAPI}movie/${movieId}?${APIKey}`;
@@ -26,7 +30,7 @@ export const useAPIData = () => {
                 const creditsAPI = `${pathAPI}movie/${movieId}/credits?${APIKey}`;
                 const creditsData = await axios.get(creditsAPI);
 
-                const popularPeopleAPI = `${pathAPI}person/popular?${APIKey}&${page}`;
+                const popularPeopleAPI = `${pathAPI}person/popular?${APIKey}&language=en-US&page=${page}`;
                 const popularPeopleData = await axios.get(popularPeopleAPI);
 
                 const personAPI = `${pathAPI}person/${personId}/movie_credits?${APIKey}`;
@@ -44,15 +48,14 @@ export const useAPIData = () => {
                     personData,
                     personCreditsData
                 });
-
             } catch (error) {
                 setMoviesAndPeopleData({
                     status: "error"
                 });
             };
         };
-        setTimeout(getAPIData, 1_000);
-    }, []);
+        setTimeout(getAPIData, 2_000);
+    }, [page]);
     return moviesAndPeopleData;
 };
 

@@ -38,27 +38,29 @@ const PeopleTiles = ({ title, creditsData, popularPeopleData }) => {
                 <Title>{title}</Title>
                 <PeopleList>
                     {peopleList.map((person, index) =>
-                        <PersonTile
-                            key={index}
-                            hidden={
-                                !sectionName.includes("popular") &&
-                                !showMore &&
-                                index > 5
-                            }
-                        >
-                            <ProfilePicture
-                                src={person.profile_path ?
-                                    `${pictureLinkBase}${person.profile_path}` :
-                                    pictureSubstitution}
-                            />
-                            <TileTitle>{person.name}</TileTitle>
-                            {
-                                !sectionName.includes("popular") &&
-                                <Role>
-                                    {person.character || person.job}
-                                </Role>
-                            }
-                        </PersonTile>
+                        <li key={index}>
+                            <PersonTile
+                                to={`/profile/${person.id}`}
+                                hidden={
+                                    !sectionName.includes("popular") &&
+                                    !showMore &&
+                                    index > 5
+                                }
+                            >
+                                <ProfilePicture
+                                    src={person.profile_path ?
+                                        `${pictureLinkBase}${person.profile_path}` :
+                                        pictureSubstitution}
+                                />
+                                <TileTitle>{person.name}</TileTitle>
+                                {
+                                    !sectionName.includes("popular") &&
+                                    <Role>
+                                        {person.character || person.job}
+                                    </Role>
+                                }
+                            </PersonTile>
+                        </li>
                     )}
                 </PeopleList>
             </section>
