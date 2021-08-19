@@ -157,13 +157,12 @@ transform: scale(1.1);
 }
 `;
 
-
 export const Tags = styled.ul`
     display: flex;
     flex-wrap: wrap;
     list-style: none;
     padding-left: 0px;
-    margin: 24px 0;
+    margin: 0px 0;
 
     @media(max-width: ${({ theme }) => theme.breakpoints.small}px) {
         margin: 8px -4px;

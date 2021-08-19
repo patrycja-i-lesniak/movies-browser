@@ -19,6 +19,7 @@ const MovieList = () => {
                         <Wrapper>
                             <MovieTiles title="Popular Movie"
                                 popularMoviesData={APIData.popularMoviesData.data}
+                                movieData={APIData.movieData.data}
                             />
                         </Wrapper>
                         {/* <Pagination popularMovieData={APIData.popularMoviesData.data}/> */}

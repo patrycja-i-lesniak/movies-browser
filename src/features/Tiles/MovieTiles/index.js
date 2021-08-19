@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { Arrow } from "../Arrow";
-import pictureSubstitution from "../Tile/pictureSubstitution.svg";
+import pictureSubstitution from "../pictureSubstitution.svg";
 import {
     SiteTitle,
     List,
@@ -12,15 +12,15 @@ import {
     Tags,
     Tag,
 } from "./styled";
-import { MobileRating } from "../../Rating";
 
 
-const MovieTiles = ({ title, popularMoviesData, movieData}) => {
+
+const MovieTiles = ({ title, popularMoviesData, movieData }) => {
     const [showMore, setShowMore] = useState(false);
     const moviesList = popularMoviesData.results;
+    const genres = movieData.genres;
 
-    // const genres = movieData.genres;
-    // const releaseDate = movieData.release_date;
+
 
     return (
         <>
@@ -44,22 +44,12 @@ const MovieTiles = ({ title, popularMoviesData, movieData}) => {
                                 />
 
                                 <TileTitle>{movie.title}</TileTitle>
-                                {/* <Tags>
-                                    {genres.map(tag => 
-                                    <Tag 
-                                    key={`genres-${tag.name}`}>
-                                        {tag.name}
-                                        </Tag>)
-                                        } */}
-                                {/* </Tags> */}
-                                {
-                                    movie.release_date &&
-                                    <Year>
-                                        {movie.release_date.slice(0, 4)}
-                                    </Year>
-                                }
-
-                                {/* <MobileRating movieData={movieData} /> */}
+                                <Year>
+                                    {movie.release_date.slice(0, 4)}
+                                </Year>
+                                <Tags>
+                                {genres.map(tag => <Tag key={`genres-${tag.name}`}>{tag.name}</Tag>)}
+                                </Tags>
                             </Tile>
                         </li>
                     )}
