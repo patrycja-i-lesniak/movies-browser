@@ -4,7 +4,7 @@ import { Loader } from "../../common/Loader";
 import Error from "../../common/Error";
 import { NoResults } from "../../common/NoResults";
 import { Wrapper } from "../MovieDetails/styled";
-// import { Pagination } from "../../common/Pagination";
+import { Pagination } from "../MovieList/Pagination";
 
 const MovieList = () => {
     const APIData = useAPIData();
@@ -22,7 +22,7 @@ const MovieList = () => {
                                 movieData={APIData.movieData.data}
                             />
                         </Wrapper>
-                        {/* <Pagination popularMovieData={APIData.popularMoviesData.data}/> */}
+                        <Pagination popularMoviesData={APIData.popularMoviesData.data}/>
                     </>);
             case "error":
                 return <Error />;
