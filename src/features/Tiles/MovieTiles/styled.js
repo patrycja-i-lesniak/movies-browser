@@ -175,6 +175,7 @@ export const Tag = styled.li`
     font-size: 14px;
     margin-right: 8px;
     border-radius: 5px;
+    text-decoration: none;
 
     @media(max-width: ${({ theme }) => theme.breakpoints.small}px) {
         padding: 4px 8px;
