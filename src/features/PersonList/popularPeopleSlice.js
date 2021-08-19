@@ -5,20 +5,19 @@ const popularPeopleSlice = createSlice({
     initialState: {
         status: "initial",
         popularPeopleData: null,
-        // personData: null,
-        // personCreditsData: null
     },
     reducers: {
-        fetchPopularPeopleLoading: state => {
-            state.status = "loading";
-        },
-        fetchPopularPeopleSuccess: (state, { payload: popularMoviesData }) => {
-            state.status = "loading";
-            state.popularMoviesData = popularMoviesData;
-        },
-        fetchPopularPeopleError: state => {
-            state.status = "error";
-        },
+        fetchPopularPeopleLoading: () => ({
+            status: "loading",
+        }),
+        fetchPopularPeopleSuccess: (_, { payload: popularPeopleData }) => ({
+            status: "success",
+            popularPeopleData,
+        }),
+        fetchPopularPeopleError: () => ({
+            status: "error",
+            popularPeopleData: null,
+        }),
     }
 });
 
@@ -28,22 +27,9 @@ export const {
     fetchPopularPeopleError,
 } = popularPeopleSlice.actions;
 
-export const selectPopularPeopleDataState = state => state.popularMoviesData;
+export const selectPopularPeopleDataState = state => state.popularPeople;
 
 export const selectPopularPeopleData = state => selectPopularPeopleDataState(state).popularPeopleData;
-export const selectPopularPeopleLoading = state => selectPopularPeopleDataState(state).status === "loading";
-
-export const getPopularPersonByyId = (state, personId) =>
-    selectPopularPeopleData(state).find(({ id }) => id === personId);
-
-export const selectPopularPeopleDataByQuery = (state, query) => {
-    const popularPeopleData = selectPopularPeopleData(state);
-
-    if (!query || query.trim() === "") {
-        return popularPeopleData;
-    }
-    return popularPeopleData.filter(({ content }) =>
-        content.toUpperCase().includes(query.trim().toUpperCase()));
-};
+export const selectStatus = state => selectPopularPeopleDataState(state).status;
 
 export default popularPeopleSlice.reducer;
