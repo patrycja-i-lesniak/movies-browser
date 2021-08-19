@@ -30,8 +30,8 @@ export const useAPIData = () => {
                 const creditsAPI = `${pathAPI}movie/${movieId}/credits?${APIKey}`;
                 const creditsData = await axios.get(creditsAPI);
 
-                const popularPeopleAPI = `${pathAPI}person/popular?${APIKey}&language=en-US&page=${page}`;
-                const popularPeopleData = await axios.get(popularPeopleAPI);
+                // const popularPeopleAPI = `${pathAPI}person/popular?${APIKey}&language=en-US&page=${page}`;
+                // const popularPeopleData = await axios.get(popularPeopleAPI);
 
                 const personAPI = `${pathAPI}person/${personId}/movie_credits?${APIKey}`;
                 const personData = await axios.get(personAPI);
@@ -44,7 +44,7 @@ export const useAPIData = () => {
                     popularMoviesData,
                     movieData,
                     creditsData,
-                    popularPeopleData,
+                    // popularPeopleData,
                     personData,
                     personCreditsData
                 });
