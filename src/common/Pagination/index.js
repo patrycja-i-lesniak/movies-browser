@@ -1,7 +1,12 @@
+import { useSelector } from "react-redux";
+
+import { selectPopularPeopleData } from "../../features/PersonList/popularPeopleSlice";
 import { PaginationArrow } from "./PaginationArrow";
 import { Caption, CaptionsWrapper, LinkText, PaginationLinks, StyledLink, Wrapper } from "./styled";
 
-export const Pagination = ({ popularPeopleData }) => {
+export const Pagination = () => {
+    const popularPeopleData = useSelector(selectPopularPeopleData);
+
     const currentPage = popularPeopleData.page;
     const totalPages = popularPeopleData.total_pages;
 
