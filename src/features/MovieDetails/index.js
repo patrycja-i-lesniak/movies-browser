@@ -2,28 +2,39 @@ import { Header } from "./Header";
 import { Wrapper } from "./styled";
 import { BigMovieTile } from "../Tiles/BigMovieTile";
 import PeopleTiles from "../Tiles/PeopleTiles";
-import { useAPIData } from "../../useAPIData";
+// import { useAPIData } from "../../useAPIData";
 import { Loader } from "../../common/Loader";
 import Error from "../../common/Error";
 import { NoResults } from "../../common/NoResults";
+import { useDispatch, useSelector } from "react-redux";
+import { fetchMovieDetails, selectStatus } from "./movieDetailsSlice";
+import { useEffect } from "react";
+import { useParams } from "react-router-dom";
 
 export const MovieDetails = () => {
-    const APIData = useAPIData();
+    const status = useSelector(selectStatus);
+    const dispatch = useDispatch();
+    const { id } = useParams();
+
+    useEffect(() => {
+        dispatch(fetchMovieDetails(id));
+    }, [dispatch, id]);
 
     const MovieDetailsContent = () => {
-        switch (APIData.status) {
+        switch (status) {
             case "loading":
                 return < Loader />;
             case "success":
                 return (
                     <>
-                        <Header movieData={APIData.movieData.data} />
+                        <Header />
                         <Wrapper>
-                            <BigMovieTile movieData={APIData.movieData.data} />
-                            <PeopleTiles title="cast" creditsData={APIData.creditsData.data} />
-                            <PeopleTiles title="crew" creditsData={APIData.creditsData.data} />
+                            <BigMovieTile />
+                            <PeopleTiles title="Cast" />
+                            <PeopleTiles title="Crew" />
                         </Wrapper>
-                    </>);
+                    </>
+                );
             case "error":
                 return <Error />;
             default:
