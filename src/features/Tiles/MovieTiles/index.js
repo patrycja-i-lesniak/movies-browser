@@ -20,8 +20,7 @@ const MovieTiles = ({ title, movieData }) => {
 
     const moviesList = popularMoviesData.results;
     const genres = movieData.genres;
-    // const year = movieData.release_date.slice(0, 4);
-
+    // console.log(popularMoviesData);
     return (
         <>
             <SiteTitle>{title}</SiteTitle>
