@@ -1,4 +1,3 @@
-// import poster from "../../Images/poster.png";
 import { Rating } from "../../Rating";
 import {
     MovieDetailsTile,
