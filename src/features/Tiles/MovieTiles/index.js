@@ -8,6 +8,7 @@ import {
     Year,
     Tags,
     Tag,
+    ContentContainer,
 } from "./styled";
 import { Rate } from "../../Rate";
 
@@ -18,6 +19,7 @@ const MovieTiles = ({ title, popularMoviesData, movieData }) => {
     const genres = movieData.genres;
     // const year = movieData.release_date.slice(0, 4);
 
+
     return (
         <>
             <SiteTitle>{title}</SiteTitle>
@@ -27,13 +29,14 @@ const MovieTiles = ({ title, popularMoviesData, movieData }) => {
                         <Tile
                             to={`/movie/${movie.id}`}
                         >
+                            
                             <Picture
                                 src={movie.poster_path ? `https://image.tmdb.org/t/p/w185${movie.poster_path}`
                                     : pictureSubstitution
                                 }
                                 alt={`${title} poster`}
                             />
-
+                            <ContentContainer>
                             <TileTitle>{movie.title}</TileTitle>
                             {movie.release_date && (
                                 <Year>
@@ -48,6 +51,7 @@ const MovieTiles = ({ title, popularMoviesData, movieData }) => {
                                 small={true}
                                 vote_average={movie.vote_average}
                                 vote_count={movie.vote_count} />
+                                </ContentContainer>
                         </Tile>
                     </li>
                 )}
