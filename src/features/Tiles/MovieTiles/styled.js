@@ -47,6 +47,7 @@ export const Tile = styled(Link)`
     background-color: ${({ theme }) => theme.colors.tile.background};
     box-shadow: 0px 4px 12px rgba(186, 199, 213, 0.5);
     border-radius: 5px;
+    color: inherit;
 
     @media(max-width: ${({ theme }) => theme.breakpoints.xsmall}px) {
         display: grid;
