@@ -4,7 +4,7 @@ const popularMoviesSlice = createSlice({
     name: "popularMovies",
     initialState: {
         status: "initial",
-        popularPeopleData: null,
+        popularMoviesData: null,
     },
     reducers: {
         fetchPopularMoviesLoading: () => ({
