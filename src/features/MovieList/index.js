@@ -17,7 +17,7 @@ const MovieList = () => {
                 return (
                     <>
                         <Wrapper>
-                            <MovieTiles title="Popular Movie"
+                            <MovieTiles title="Popular movies"
                                 popularMoviesData={APIData.popularMoviesData.data}
                                 movieData={APIData.movieData.data}
                             />
