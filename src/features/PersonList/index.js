@@ -7,6 +7,8 @@ import Error from "../../common/Error";
 import { NoResults } from "../../common/NoResults";
 import { Wrapper } from "../MovieDetails/styled";
 import { Pagination } from "../../common/Pagination";
+import { useQueryParameter } from "../../useQueryParameter";
+import searchQueryParamName from "../../searchQueryParamName";
 import {
     fetchPopularPeopleLoading,
     selectStatus,
@@ -16,13 +18,11 @@ export const PersonList = () => {
     const dispatch = useDispatch();
     const status = useSelector(selectStatus);
 
-    const page = 2; // temporary. waiting for  pagination and reducer update to redux actions.
+    const page = useQueryParameter(searchQueryParamName) || "1";
 
     useEffect(() => {
         dispatch(fetchPopularPeopleLoading(page));
-    }, [dispatch]);
-
-    // const APIData = useAPIData();
+    }, [dispatch, page]);
 
     const PersonListContent = () => {
         switch (status) {
@@ -34,7 +34,7 @@ export const PersonList = () => {
                         <Wrapper>
                             <PeopleTiles title="Popular People" />
                         </Wrapper>
-                        {/* <Pagination popularPeopleData={APIData.popularPeopleData.data} /> */}
+                        <Pagination />
                     </>);
             case "error":
                 return <Error />;
