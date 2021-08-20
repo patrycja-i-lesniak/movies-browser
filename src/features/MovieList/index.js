@@ -7,10 +7,11 @@ import { Loader } from "../../common/Loader";
 import Error from "../../common/Error";
 import { NoResults } from "../../common/NoResults";
 import { Wrapper } from "../MovieDetails/styled";
-import { Pagination } from "../MovieList/Pagination";
+
 import { useQueryParameter } from "../../useQueryParameter";
 import searchQueryParamName from "../../searchQueryParamName";
 import { selectPopularMoviesStatus, fetchPopularMoviesLoading } from "./popularMoviesSlice";
+import { Pagination } from "../../common/Pagination";
 
 const MovieList = () => {
     const dispatch = useDispatch();
@@ -36,8 +37,9 @@ const MovieList = () => {
                                 movieData={APIData.movieData.data}
                             />
                         </Wrapper>
-                        <Pagination />
-                    </>);
+                        <Pagination pathName="/movies" />
+                    </>
+                );
             case "error":
                 return <Error />;
             default:
