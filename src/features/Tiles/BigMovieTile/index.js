@@ -1,3 +1,5 @@
+import { useSelector } from "react-redux";
+import { selectMovieData } from "../../MovieDetails/movieDetailsSlice";
 import { Rating } from "../../Rating";
 import {
     MovieDetailsTile,
@@ -14,12 +16,12 @@ import {
     Description,
 } from "./styled";
 
+export const BigMovieTile = () => {
+    const movieData = useSelector(selectMovieData);
 
-export const BigMovieTile = ({ movieData }) => {
-    const image = movieData.poster_path;
     const imageURL = "http://image.tmdb.org/t/p/";
     const size = "original";
-    const poster = `${imageURL}${size}${image}`;
+    const poster = `${imageURL}${size}${movieData.poster_path}`;
     const title = movieData.title;
     const year = movieData.release_date.slice(0, 4);
     const production = movieData.production_countries;
@@ -46,7 +48,7 @@ export const BigMovieTile = ({ movieData }) => {
                 <Tags>
                     {genres.map(tag => <Tag key={`genres-${tag.name}`}>{tag.name}</Tag>)}
                 </Tags>
-                <Rating movieData={movieData} />
+                <Rating />
             </Content>
             <Description>
                 {overview}
