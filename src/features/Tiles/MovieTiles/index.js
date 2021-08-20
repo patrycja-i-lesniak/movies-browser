@@ -1,3 +1,6 @@
+import { useSelector } from "react-redux";
+import { selectPopularMoviesData } from "../../MovieList/popularMoviesSlice";
+
 import pictureSubstitution from "../pictureSubstitution.svg";
 import {
     SiteTitle,
@@ -12,13 +15,12 @@ import {
 } from "./styled";
 import { Rate } from "../../Rate";
 
+const MovieTiles = ({ title, movieData }) => {
+    const popularMoviesData = useSelector(selectPopularMoviesData);
 
-
-const MovieTiles = ({ title, popularMoviesData, movieData }) => {
     const moviesList = popularMoviesData.results;
     const genres = movieData.genres;
     // const year = movieData.release_date.slice(0, 4);
-
 
     return (
         <>
