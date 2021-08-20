@@ -1,25 +1,40 @@
+import { useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
+
 import PeopleTiles from "../Tiles/PeopleTiles";
-import { useAPIData } from "../../useAPIData";
 import { Loader } from "../../common/Loader";
 import Error from "../../common/Error";
 import { NoResults } from "../../common/NoResults";
 import { Wrapper } from "../MovieDetails/styled";
 import { Pagination } from "../../common/Pagination";
+import { useQueryParameter } from "../../useQueryParameter";
+import searchQueryParamName from "../../searchQueryParamName";
+import {
+    fetchPopularPeopleLoading,
+    selectStatus,
+} from "./popularPeopleSlice";
 
 export const PersonList = () => {
-    const APIData = useAPIData();
+    const dispatch = useDispatch();
+    const status = useSelector(selectStatus);
+
+    const page = useQueryParameter(searchQueryParamName) || "1";
+
+    useEffect(() => {
+        dispatch(fetchPopularPeopleLoading(page));
+    }, [dispatch, page]);
 
     const PersonListContent = () => {
-        switch (APIData.status) {
+        switch (status) {
             case "loading":
                 return < Loader />;
             case "success":
                 return (
                     <>
                         <Wrapper>
-                            <PeopleTiles title="Popular People" popularPeopleData={APIData.popularPeopleData.data} />
+                            <PeopleTiles title="Popular People" />
                         </Wrapper>
-                        <Pagination popularPeopleData={APIData.popularPeopleData.data}/>
+                        <Pagination />
                     </>);
             case "error":
                 return <Error />;

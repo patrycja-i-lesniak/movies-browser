@@ -12,12 +12,14 @@ import {
 } from "./styled";
 import { Arrow } from "../Arrow";
 
-const PeopleTiles = ({ title, creditsData, popularPeopleData }) => {
+const PeopleTiles = ({ title, creditsData }) => {
     const [showMore, setShowMore] = useState(false);
 
     let peopleList;
     const sectionName = title.toLowerCase();
     const pictureLinkBase = `${exampleConfiguration.images.base_url}w185`;
+
+    const popularPeopleData = useSelector(selectPopularPeopleData);
 
     switch (sectionName) {
         case "cast":
