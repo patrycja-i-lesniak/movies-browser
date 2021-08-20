@@ -11,6 +11,8 @@ import {
     Title
 } from "./styled";
 import { Arrow } from "../Arrow";
+import { useSelector } from "react-redux";
+import { selectPopularPeopleData } from "../../PersonList/popularPeopleSlice";
 
 const PeopleTiles = ({ title, creditsData }) => {
     const [showMore, setShowMore] = useState(false);
