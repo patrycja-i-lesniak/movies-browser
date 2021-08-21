@@ -1,4 +1,5 @@
 import { takeEvery, call, put, all } from "@redux-saga/core/effects";
+
 import { getMovieCredits } from "./getMovieCredits";
 import { getMovieData } from "./getMovieData";
 import { fetchMovieDetails, fetchMovieDetailsError, fetchMovieDetailsSuccess } from "./movieDetailsSlice";

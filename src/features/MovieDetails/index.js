@@ -1,15 +1,16 @@
+import { useEffect } from "react";
+import { useParams } from "react-router-dom";
+import { useDispatch, useSelector } from "react-redux";
+
 import { Header } from "./Header";
 import { Wrapper } from "./styled";
 import { BigMovieTile } from "../Tiles/BigMovieTile";
 import PeopleTiles from "../Tiles/PeopleTiles";
-// import { useAPIData } from "../../useAPIData";
-import { Loader } from "../../common/Loader";
 import Error from "../../common/Error";
+import { Loader } from "../../common/Loader";
 import { NoResults } from "../../common/NoResults";
-import { useDispatch, useSelector } from "react-redux";
 import { fetchMovieDetails, selectStatus } from "./movieDetailsSlice";
-import { useEffect } from "react";
-import { useParams } from "react-router-dom";
+
 
 export const MovieDetails = () => {
     const status = useSelector(selectStatus);

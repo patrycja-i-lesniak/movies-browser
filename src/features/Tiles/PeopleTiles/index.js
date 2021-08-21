@@ -1,4 +1,6 @@
 import { useState } from "react";
+import { useSelector } from "react-redux";
+
 import { exampleConfiguration } from "../exampleConfiguration";
 import pictureSubstitution from "../pictureSubstitution.svg";
 import {
@@ -11,7 +13,6 @@ import {
     Title
 } from "./styled";
 import { Arrow } from "../Arrow";
-import { useSelector } from "react-redux";
 import { selectPopularPeopleData } from "../../PersonList/popularPeopleSlice";
 import { selectMovieCredits } from "../../MovieDetails/movieDetailsSlice";
 

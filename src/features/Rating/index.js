@@ -1,4 +1,5 @@
 import { useSelector } from "react-redux";
+
 import star from "../Images/star.svg";
 import { selectMovieData } from "../MovieDetails/movieDetailsSlice";
 import {
