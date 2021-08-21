@@ -1,7 +1,12 @@
+import { useSelector } from "react-redux";
+
 import { PaginationArrow } from "./PaginationArrow";
 import { Caption, CaptionsWrapper, LinkText, PaginationLinks, StyledLink, Wrapper } from "./styled";
+import { selectPopularMoviesData } from "../popularMoviesSlice";
 
-export const Pagination = ({ popularMoviesData }) => {
+export const Pagination = () => {
+    const popularMoviesData = useSelector(selectPopularMoviesData);
+
     const currentPage = popularMoviesData.page;
     const totalPages = popularMoviesData.total_pages;
 

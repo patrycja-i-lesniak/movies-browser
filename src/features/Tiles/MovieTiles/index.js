@@ -1,3 +1,6 @@
+import { useSelector } from "react-redux";
+import { selectGenres, selectPopularMoviesData } from "../../MovieList/popularMoviesSlice";
+
 import pictureSubstitution from "../pictureSubstitution.svg";
 import {
     SiteTitle,
@@ -12,13 +15,11 @@ import {
 } from "./styled";
 import { Rate } from "../../Rate";
 
-
-
-const MovieTiles = ({ title, popularMoviesData, movieData }) => {
+const MovieTiles = ({ title }) => {
+    const popularMoviesData = useSelector(selectPopularMoviesData);
     const moviesList = popularMoviesData.results;
-    const genres = movieData.genres;
-    // const year = movieData.release_date.slice(0, 4);
-
+    const moviesGenresData = useSelector(selectGenres);
+    const moviesGenres = moviesGenresData.genres;
 
     return (
         <>
@@ -44,7 +45,11 @@ const MovieTiles = ({ title, popularMoviesData, movieData }) => {
                                 )}
 
                                 <Tags>
-                                    {genres.map(tag => <Tag key={`genres-${tag.name}`}>{tag.name}</Tag>)}
+                                    {movie.genre_ids.map(genreID =>
+                                        <Tag key={`genres-${genreID}`}>
+                                            {moviesGenres.find(({ id }) => id === genreID).name}
+                                        </Tag>
+                                    )}
                                 </Tags>
                                 <Rate
                                     small={true}
