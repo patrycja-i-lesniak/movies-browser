@@ -16,6 +16,8 @@ export const useAPIData = () => {
                 const movieId = "21";
                 const personId = "1039305";
 
+                const moviesGenresData = await axios.get(`${pathAPI}genre/movie/list?${APIKey}&language=en-US`);
+                // console.log(moviesGenresData);
 
                 const movieDetailsAPI = `${pathAPI}movie/${movieId}?${APIKey}`;
                 const movieData = await axios.get(movieDetailsAPI);
@@ -36,7 +38,8 @@ export const useAPIData = () => {
                     creditsData,
                     // popularPeopleData,
                     personData,
-                    personCreditsData
+                    personCreditsData,
+                    moviesGenresData,
                 });
             } catch (error) {
                 setMoviesAndPeopleData({
