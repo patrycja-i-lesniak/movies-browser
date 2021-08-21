@@ -34,7 +34,7 @@ export const PersonList = () => {
                         <Wrapper>
                             <PeopleTiles title="Popular People" />
                         </Wrapper>
-                        <Pagination />
+                        <Pagination pathName="/people" />
                     </>);
             case "error":
                 return <Error />;

@@ -6,10 +6,11 @@ import { Loader } from "../../common/Loader";
 import Error from "../../common/Error";
 import { NoResults } from "../../common/NoResults";
 import { Wrapper } from "../MovieDetails/styled";
-import { Pagination } from "../MovieList/Pagination";
+
 import { useQueryParameter } from "../../useQueryParameter";
 import { paginationQueryParamName } from "../../queryParamNames";
 import { selectPopularMoviesStatus, fetchPopularMoviesLoading } from "./popularMoviesSlice";
+import { Pagination } from "../../common/Pagination";
 
 
 const MovieList = () => {
@@ -31,8 +32,9 @@ const MovieList = () => {
                         <Wrapper>
                             <MovieTiles title="Popular movies" />
                         </Wrapper>
-                        <Pagination />
-                    </>);
+                        <Pagination pathName="/movies" />
+                    </>
+                );
             case "error":
                 return <Error />;
             default:

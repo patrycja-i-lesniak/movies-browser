@@ -1,14 +1,14 @@
 import { useSelector } from "react-redux";
-
+import { selectPopularMoviesData } from "../../features/MovieList/popularMoviesSlice";
 import { selectPopularPeopleData } from "../../features/PersonList/popularPeopleSlice";
 import { PaginationArrow } from "./PaginationArrow";
 import { Caption, CaptionsWrapper, LinkText, PaginationLinks, StyledLink, Wrapper } from "./styled";
 
-export const Pagination = () => {
-    const popularPeopleData = useSelector(selectPopularPeopleData);
+export const Pagination = ({ pathName }) => {
+    const APIData = useSelector(pathName === "/people" ? selectPopularPeopleData : selectPopularMoviesData);
 
-    const currentPage = popularPeopleData.page;
-    const totalPages = popularPeopleData.total_pages;
+    const currentPage = APIData.page;
+    const totalPages = APIData.total_pages;
 
     return (
         <Wrapper>
@@ -16,7 +16,7 @@ export const Pagination = () => {
                 <li>
                     <StyledLink
                         disabled={currentPage === 1}
-                        to="/people?page=1"
+                        to={`${pathName}?page=1`}
                     >
                         <PaginationArrow disabled={currentPage === 1} />
                         <PaginationArrow
@@ -30,7 +30,7 @@ export const Pagination = () => {
                     <StyledLink
                         smallStep
                         disabled={currentPage === 1}
-                        to={`/people?page=${currentPage - 1}`}
+                        to={`${pathName}?page=${currentPage - 1}`}
                     >
                         <PaginationArrow disabled={currentPage === 1} />
                         <LinkText>Previous</LinkText>
@@ -56,7 +56,7 @@ export const Pagination = () => {
                     <StyledLink
                         smallStep
                         disabled={currentPage === totalPages}
-                        to={`/people?page=${currentPage + 1}`}
+                        to={`${pathName}?page=${currentPage + 1}`}
                     >
                         <LinkText>Next</LinkText>
                         <PaginationArrow
@@ -68,7 +68,7 @@ export const Pagination = () => {
                 <li>
                     <StyledLink
                         disabled={currentPage === totalPages}
-                        to={`/people?page=${totalPages}`}
+                        to={`${pathName}?page=${totalPages}`}
                     >
                         <LinkText>Last</LinkText>
                         <PaginationArrow
