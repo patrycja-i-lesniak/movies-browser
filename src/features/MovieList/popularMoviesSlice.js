@@ -5,6 +5,7 @@ const popularMoviesSlice = createSlice({
     initialState: {
         status: "initial",
         popularMoviesData: null,
+        popularMoviesGenres: null,
     },
     reducers: {
         fetchPopularMoviesLoading: () => ({
@@ -14,9 +15,15 @@ const popularMoviesSlice = createSlice({
             status: "success",
             popularMoviesData,
         }),
+        // fetchPopularMoviesSuccess: (_, { payload: movieDetails }) => ({
+        //     status: "success",
+        //     popularMoviesData: movieDetails.popularMoviesData,
+        //     popularMoviesGenres: movieDetails.popularMoviesGenres,
+        // }),
         fetchPopularMoviesError: () => ({
             status: "error",
             popularMoviesData: null,
+            popularMoviesGenres: null,
         }),
     }
 });
