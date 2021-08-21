@@ -1,5 +1,5 @@
 import styled, { css } from "styled-components";
-import { Link } from "react-router-dom";
+// import { Link } from "react-router-dom";
 
 export const Wrapper = styled.nav`
     color: ${({ theme }) => theme.colors.pagination.primaryText};
@@ -38,8 +38,41 @@ export const PaginationLinks = styled.ul`
     }
 `;
 
-export const StyledLink = styled(({ smallStep, ...otherProps }) => <Link {...otherProps} />)`
-display: grid;
+// export const StyledLink = styled(({ smallStep, ...otherProps }) => <Link {...otherProps} />)`
+// display: grid;
+//     grid-template-columns: auto auto;
+//     grid-gap: 8px;
+//     align-items: center;
+//     text-decoration: none;
+//     font-size: 14px;
+//     line-height: 1.4;
+//     color: ${({ theme }) => theme.colors.pagination.primaryText};
+//     background: ${({ theme }) => theme.colors.pagination.background};
+//     border-radius: 5px;
+//     padding: 8px 16px;
+
+//     ${({ disabled }) => disabled && css`
+//         pointer-events: none;
+//         cursor: default;
+//         background-color: ${({ theme }) => theme.colors.pagination.backgroundDisabled};
+//     `}
+
+//     @media(max-width: ${({ theme }) => theme.breakpoints.small}px) {
+//         grid-gap: 6px;
+//     }
+
+//     @media(max-width: ${({ theme }) => theme.breakpoints.xsmall}px) {
+//         grid-gap: 4px;
+//         padding: 8px 12px;
+
+//         ${({ smallStep }) => smallStep && css`
+//             grid-template-columns: auto;
+//         `}
+//     }
+// `;
+
+export const PaginationButton = styled.button`
+    display: grid;
     grid-template-columns: auto auto;
     grid-gap: 8px;
     align-items: center;
