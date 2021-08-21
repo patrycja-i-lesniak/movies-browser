@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
 import { useQueryParameter } from "./useQueryParameter";
-import searchQueryParamName from "./searchQueryParamName";
+import { paginationQueryParamName } from "./queryParamNames";
 
 export const useAPIData = () => {
     const [moviesAndPeopleData, setMoviesAndPeopleData] = useState({
@@ -9,7 +9,7 @@ export const useAPIData = () => {
         movieData: null
     });
 
-    const page = useQueryParameter(searchQueryParamName) || "1";
+    const page = useQueryParameter(paginationQueryParamName) || "1";
 
     useEffect(() => {
         const getAPIData = async () => {
