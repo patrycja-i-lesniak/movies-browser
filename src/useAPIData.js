@@ -1,7 +1,5 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
-import { useQueryParameter } from "./useQueryParameter";
-import { paginationQueryParamName } from "./queryParamNames";
 
 import { pathAPI } from "./pathAPI";
 import { APIKey } from "./APIKey";
@@ -11,8 +9,6 @@ export const useAPIData = () => {
         status: "loading",
         movieData: null
     });
-
-    const page = useQueryParameter(paginationQueryParamName) || "1";
 
     useEffect(() => {
         const getAPIData = async () => {
