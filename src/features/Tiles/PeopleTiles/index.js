@@ -44,7 +44,7 @@ const PeopleTiles = ({ title }) => {
             <section>
                 <Title>{title}</Title>
                 <PeopleList>
-                    {peopleList.map((person, index) =>
+                    {peopleList.map(({ id, profile_path, name, character, job }, index) =>
                         <li
                             key={index}
                             hidden={
@@ -53,18 +53,18 @@ const PeopleTiles = ({ title }) => {
                                 index > 5
                             }>
                             <PersonTile
-                                to={`/profile/${person.id}`}
+                                to={`/profile/${id}`}
                             >
                                 <ProfilePicture
-                                    src={person.profile_path ?
-                                        `${pictureLinkBase}${person.profile_path}` :
+                                    src={profile_path ?
+                                        `${pictureLinkBase}${profile_path}` :
                                         pictureSubstitution}
                                 />
-                                <TileTitle>{person.name}</TileTitle>
+                                <TileTitle>{name}</TileTitle>
                                 {
                                     !sectionName.includes("popular") &&
                                     <Role>
-                                        {person.character || person.job}
+                                        {character || job}
                                     </Role>
                                 }
                             </PersonTile>
