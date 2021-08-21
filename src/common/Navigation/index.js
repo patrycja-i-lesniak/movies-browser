@@ -1,4 +1,6 @@
+import { searchQueryParamName } from "../../queryParamNames";
 import { useQueryParameter } from "../../useQueryParameter";
+import { useReplaceQueryParameter } from "./useReplaceQueryParameter";
 import {
     NavigationWrapper,
     NavigationContainer,
@@ -15,11 +17,10 @@ import {
     SearchIcon,
     SearchInput,
 } from "./styled";
-import { useReplaceQueryParameter } from "./useReplaceQueryParameter";
 import videoIcon from "./videoIcon.svg";
 
 export const Navigation = () => {
-    const query = useQueryParameter("search");
+    const query = useQueryParameter(searchQueryParamName);
     const replaceQueryParameter = useReplaceQueryParameter();
 
     const onSearchChange = ({ target }) => {
