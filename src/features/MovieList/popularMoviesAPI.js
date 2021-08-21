@@ -8,5 +8,5 @@ export const getPopularMoviesData = page =>
         .then(response => response.data);
 
 export const getGenres = () =>
-    axios.get(`${pathAPI}genre / movie / list?${APIKey}&language=en-US`)
+    axios.get(`${pathAPI}genre/movie/list?${APIKey}&language=en-US`)
         .then(response => response.data);
