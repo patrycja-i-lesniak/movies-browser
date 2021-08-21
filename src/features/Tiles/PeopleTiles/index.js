@@ -1,4 +1,6 @@
 import { useState } from "react";
+import { useSelector } from "react-redux";
+
 import { exampleConfiguration } from "../exampleConfiguration";
 import pictureSubstitution from "../pictureSubstitution.svg";
 import {
@@ -11,17 +13,18 @@ import {
     Title
 } from "./styled";
 import { Arrow } from "../Arrow";
-import { useSelector } from "react-redux";
 import { selectPopularPeopleData } from "../../PersonList/popularPeopleSlice";
+import { selectMovieCredits } from "../../MovieDetails/movieDetailsSlice";
 
-const PeopleTiles = ({ title, creditsData }) => {
+const PeopleTiles = ({ title }) => {
+    const popularPeopleData = useSelector(selectPopularPeopleData);
+    const creditsData = useSelector(selectMovieCredits);
+
     const [showMore, setShowMore] = useState(false);
 
     let peopleList;
     const sectionName = title.toLowerCase();
     const pictureLinkBase = `${exampleConfiguration.images.base_url}w185`;
-
-    const popularPeopleData = useSelector(selectPopularPeopleData);
 
     switch (sectionName) {
         case "cast":
@@ -42,14 +45,15 @@ const PeopleTiles = ({ title, creditsData }) => {
                 <Title>{title}</Title>
                 <PeopleList>
                     {peopleList.map((person, index) =>
-                        <li key={index}>
+                        <li
+                            key={index}
+                            hidden={
+                                !sectionName.includes("popular") &&
+                                !showMore &&
+                                index > 5
+                            }>
                             <PersonTile
                                 to={`/profile/${person.id}`}
-                                hidden={
-                                    !sectionName.includes("popular") &&
-                                    !showMore &&
-                                    index > 5
-                                }
                             >
                                 <ProfilePicture
                                     src={person.profile_path ?

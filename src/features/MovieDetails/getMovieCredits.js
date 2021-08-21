@@ -1,6 +1,6 @@
 import axios from "axios";
 import { APIKey, APIPath } from "../../common/movieAPI";
 
-export const getPopularPeopleData = page =>
-    axios.get(`${APIPath}person/popular?${APIKey}&language=en-US&page=${page}`)
+export const getMovieCredits = movieID =>
+    axios.get(`${APIPath}movie/${movieID}/credits?${APIKey}&language=en-US`)
         .then(response => response.data);

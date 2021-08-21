@@ -1,9 +1,21 @@
-import star from "../../../Images/star.svg";
-import { HeaderDiv, HeaderNote, HeaderScale, HeaderStarImage, HeaderVotes, Wrapper } from "./styled";
+import { useSelector } from "react-redux";
 
-const HeaderRating = ({movieData}) => {
+import star from "../../../Images/star.svg";
+import { selectMovieData } from "../../movieDetailsSlice";
+import {
+    HeaderDiv,
+    HeaderNote,
+    HeaderScale,
+    HeaderStarImage,
+    HeaderVotes,
+    Wrapper
+} from "./styled";
+
+const HeaderRating = () => {
+    const movieData = useSelector(selectMovieData);
+
     const rating = movieData.vote_average;
-    const votesNumber= movieData.vote_count;
+    const votesNumber = movieData.vote_count;
 
     return (
         <HeaderDiv>
