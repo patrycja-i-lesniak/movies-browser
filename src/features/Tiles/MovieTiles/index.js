@@ -15,12 +15,14 @@ import {
 } from "./styled";
 import { Rate } from "../../Rate";
 
-const MovieTiles = ({ title, movieData }) => {
+const MovieTiles = ({ title, movieData, moviesGenresData }) => {
     const popularMoviesData = useSelector(selectPopularMoviesData);
+    const moviesGenres = moviesGenresData.genres;
+    console.log(moviesGenres);
 
     const moviesList = popularMoviesData.results;
-    const genres = movieData.genres;
-    // console.log(popularMoviesData);
+    console.log(popularMoviesData);
+
     return (
         <>
             <SiteTitle>{title}</SiteTitle>
@@ -45,7 +47,7 @@ const MovieTiles = ({ title, movieData }) => {
                                 )}
 
                                 <Tags>
-                                    {genres.map(tag => <Tag key={`genres-${tag.name}`}>{tag.name}</Tag>)}
+                                    {moviesList[index].genre_ids.map(movie => <Tag key={`genres-${movie}`}>{movie === moviesGenres[0].id ? moviesGenres[0].name : ""}</Tag>)}
                                 </Tags>
                                 <Rate
                                     small={true}
