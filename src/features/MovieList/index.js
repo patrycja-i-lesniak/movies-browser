@@ -34,6 +34,7 @@ const MovieList = () => {
                         <Wrapper>
                             <MovieTiles title="Popular movies"
                                 movieData={APIData.movieData.data}
+                                moviesGenresData={APIData.moviesGenresData.data}
                             />
                         </Wrapper>
                         <Pagination />
