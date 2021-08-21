@@ -8,13 +8,14 @@ import { NoResults } from "../../common/NoResults";
 import { Wrapper } from "../MovieDetails/styled";
 import { Pagination } from "../MovieList/Pagination";
 import { useQueryParameter } from "../../useQueryParameter";
-import searchQueryParamName from "../../searchQueryParamName";
+import { paginationQueryParamName } from "../../queryParamNames";
 import { selectPopularMoviesStatus, fetchPopularMoviesLoading } from "./popularMoviesSlice";
+
 
 const MovieList = () => {
     const dispatch = useDispatch();
     const status = useSelector(selectPopularMoviesStatus);
-    const page = useQueryParameter(searchQueryParamName) || "1";
+    const page = useQueryParameter(paginationQueryParamName) || "1";
 
     useEffect(() => {
         dispatch(fetchPopularMoviesLoading(page));

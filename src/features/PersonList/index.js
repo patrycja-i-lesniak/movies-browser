@@ -8,7 +8,7 @@ import { NoResults } from "../../common/NoResults";
 import { Wrapper } from "../MovieDetails/styled";
 import { Pagination } from "../../common/Pagination";
 import { useQueryParameter } from "../../useQueryParameter";
-import searchQueryParamName from "../../searchQueryParamName";
+import { paginationQueryParamName } from "../../queryParamNames";
 import {
     fetchPopularPeopleLoading,
     selectStatus,
@@ -18,7 +18,7 @@ export const PersonList = () => {
     const dispatch = useDispatch();
     const status = useSelector(selectStatus);
 
-    const page = useQueryParameter(searchQueryParamName) || "1";
+    const page = useQueryParameter(paginationQueryParamName) || "1";
 
     useEffect(() => {
         dispatch(fetchPopularPeopleLoading(page));
