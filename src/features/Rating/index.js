@@ -1,4 +1,7 @@
+import { useSelector } from "react-redux";
+
 import star from "../Images/star.svg";
+import { selectMovieData } from "../MovieDetails/movieDetailsSlice";
 import {
     RatingField,
     StarIcon,
@@ -7,10 +10,12 @@ import {
     Votes,
 } from "./styled";
 
-export const Rating = ({movieData}) => {
+export const Rating = () => {
+    const movieData = useSelector(selectMovieData);
+
     const vote_average = movieData.vote_average;
     const vote_count = movieData.vote_count;
-   
+
     return (
         <RatingField>
             <StarIcon src={star} alt="" />
@@ -21,10 +26,12 @@ export const Rating = ({movieData}) => {
     );
 };
 
-export const MobileRating = ({movieData}) => {
+export const MobileRating = () => {
+    const movieData = useSelector(selectMovieData);
+    
     const vote_average = movieData.vote_average;
     const vote_count = movieData.vote_count;
-    
+
     return (
         <RatingField>
             <StarIcon src={star} alt="" />
