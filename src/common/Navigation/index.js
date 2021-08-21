@@ -1,5 +1,7 @@
+import { useLocation } from "react-router-dom";
+
 import { searchQueryParamName } from "../../queryParamNames";
-import { useQueryParameter } from "../../useQueryParameter";
+import { useQueryParameter } from "../useQueryParameter";
 import { useReplaceQueryParameter } from "./useReplaceQueryParameter";
 import {
     NavigationWrapper,
@@ -20,14 +22,18 @@ import {
 import videoIcon from "./videoIcon.svg";
 
 export const Navigation = () => {
+    const location = useLocation();
+
     const query = useQueryParameter(searchQueryParamName);
     const replaceQueryParameter = useReplaceQueryParameter();
 
     const onSearchChange = ({ target }) => {
         replaceQueryParameter({
-            key: "search",
+            key: searchQueryParamName,
             value: target.value.trim() !== "" ? target.value : undefined
         });
+
+        // fetchSearchData();
     };
 
     return (
@@ -51,7 +57,15 @@ export const Navigation = () => {
                     <SearchContainer>
                         <SearchBox>
                             <SearchIcon />
-                            <SearchInput onChange={onSearchChange} value={query || ""} placeholder="Search for movies" />
+                            <SearchInput
+                                onChange={onSearchChange}
+                                value={query || ""}
+                                placeholder={
+                                    `Search for ${location.pathname.includes("/movie")
+                                        ? "movies"
+                                        : "people"}`
+                                }
+                            />
                         </SearchBox>
                     </SearchContainer>
                 </DoubleContainer>
