@@ -8,24 +8,28 @@ import {
 } from "./styled";
 
 export const Rating = ({movieData}) => {
-    const note = movieData.vote_average;
-    const votes = movieData.vote_count;
+    const vote_average = movieData.vote_average;
+    const vote_count = movieData.vote_count;
+   
     return (
         <RatingField>
             <StarIcon src={star} alt="" />
-            <Note>{note}</Note>
+            <Note>{vote_average}</Note>
             <RatingScale>/10</RatingScale>
-            <Votes>{votes} votes</Votes>
+            <Votes>{vote_count} votes</Votes>
         </RatingField>
     );
 };
 
-export const MobileRating = () => {
+export const MobileRating = ({movieData}) => {
+    const vote_average = movieData.vote_average;
+    const vote_count = movieData.vote_count;
+    
     return (
         <RatingField>
             <StarIcon src={star} alt="" />
-            <Note>7,8</Note>
-            <Votes>35 votes</Votes>
+            <Note>{vote_average}</Note>
+            <Votes>{vote_count}</Votes>
         </RatingField>
     );
 };

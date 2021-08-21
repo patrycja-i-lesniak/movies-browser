@@ -1,7 +1,6 @@
 import styled from "styled-components";
 
 export const RatingField = styled.div`
-    grid-area: rating;
     display: grid;
     grid-template-columns: repeat(4, auto);
     justify-content: start;
@@ -18,7 +17,6 @@ export const StarIcon = styled.img`
         height: 15.25px;
     }
 `;
-
 
 export const Note = styled.p`
     font-size: 22px;
@@ -38,7 +36,6 @@ export const RatingScale = styled.p`
         display: none;
     }
 `;
-
 
 export const Votes = styled.p`
     padding-left: 4px;
