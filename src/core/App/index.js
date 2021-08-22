@@ -9,13 +9,13 @@ import { Navigation } from "../../common/Navigation";
 // import MovieList from "../../features/PopularMovies";
 // import Error from "../../common/Error";
 // import {MovieDetails} from "../../features/PopularMovies/MovieDetails";
-import PersonTile from "../../features/Tiles/PersonTile";
+import PersonDetails from "../../features/PopularPeople/PersonDetails";
 
 export const App = () => {
   return (
     <HashRouter>
       <Navigation />
-      <PersonTile/>
+      <PersonDetails/>
       {/* <Switch>
         <Route path="/profile/:id">
           <p>5. Profile</p>
