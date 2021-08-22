@@ -1,6 +1,5 @@
 import { useHistory, useLocation } from "react-router-dom";
-
-// import { paginationQueryParamName } from "../../queryParamNames";
+import { paginationQueryParamName, searchQueryParamName } from "../../queryParamNames";
 
 export const useReplaceQueryParameter = () => {
     const location = useLocation();
@@ -14,7 +13,10 @@ export const useReplaceQueryParameter = () => {
         } else {
             searchParams.set(key, value);
         }
-        // searchParams.delete(paginationQueryParamName);
+        if (key === searchQueryParamName) {
+            searchParams.delete(paginationQueryParamName);
+        }
+        
 
         history.push(`${location.pathname.includes("/movie") ? "/movies" : "/people"}?${searchParams.toString()}`);
     };
