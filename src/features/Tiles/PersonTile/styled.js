@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 export const Wrapper = styled.section`
-    padding: 56px 16px;
+    padding: 56px 16px 0;
 `;
 
 export const PersonDetailsTile = styled.article`
