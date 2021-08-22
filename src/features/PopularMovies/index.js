@@ -11,7 +11,7 @@ import { useQueryParameter } from "../../useQueryParameter";
 import searchQueryParamName from "../../searchQueryParamName";
 import { selectPopularMoviesStatus, fetchPopularMoviesLoading } from "./popularMoviesSlice";
 
-const MovieList = () => {
+const PopularMovieList = () => {
     const dispatch = useDispatch();
     const status = useSelector(selectPopularMoviesStatus);
     const page = useQueryParameter(searchQueryParamName) || "1";
@@ -44,4 +44,4 @@ const MovieList = () => {
     );
 };
 
-export default MovieList;
+export default PopularMovieList;

@@ -14,7 +14,7 @@ import {
     selectStatus,
 } from "./popularPeopleSlice";
 
-export const PersonList = () => {
+export const PopularPeopleList = () => {
     const dispatch = useDispatch();
     const status = useSelector(selectStatus);
 
@@ -24,7 +24,7 @@ export const PersonList = () => {
         dispatch(fetchPopularPeopleLoading(page));
     }, [dispatch, page]);
 
-    const PersonListContent = () => {
+    const PeopleListContent = () => {
         switch (status) {
             case "loading":
                 return < Loader />;
@@ -44,6 +44,6 @@ export const PersonList = () => {
     };
 
     return (
-        <PersonListContent />
+        <PeopleListContent />
     );
 };

@@ -5,8 +5,8 @@ import {
   Redirect,
 } from "react-router-dom";
 import { Navigation } from "../../common/Navigation";
-import { PersonList } from "../../features/PopularPeople";
-import MovieList from "../../features/PopularMovies";
+import { PopularPeopleList } from "../../features/PopularPeople";
+import PopularMovieList from "../../features/PopularMovies";
 import Error from "../../common/Error";
 import {MovieDetails} from "../../features/PopularMovies/MovieDetails";
 import PersonDetails from "../../features/PopularPeople/PersonDetails";
@@ -23,10 +23,10 @@ export const App = () => {
           <MovieDetails />
         </Route>
         <Route path="/movies">
-          <MovieList />
+          <PopularMovieList />
         </Route>
         <Route path="/people">
-          <PersonList />
+          <PopularPeopleList />
         </Route>
         <Route path="/error">
           <Error />
