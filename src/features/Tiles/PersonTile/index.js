@@ -15,7 +15,9 @@ import noPhoto from "./noPhoto.svg";
 const PersonTile = () => {
     return (
         <Wrapper>
-        <PersonDetailsTile>
+        <PersonDetailsTile
+        to={`/profile/:id`}
+        >
             <PersonPhoto src={noPhoto}/>
             <Content>
                 <PersonName>Name and surname</PersonName>
