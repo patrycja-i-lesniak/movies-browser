@@ -1,3 +1,5 @@
+import { useSelector } from "react-redux";
+import {selectPersonData} from "../../PopularPeople/PersonDetails/personDetailsSlice";
 import {
     Wrapper,
     PersonDetailsTile,
@@ -13,12 +15,18 @@ import {
 import noPhoto from "./noPhoto.svg";
 
 const PersonTile = () => {
+    const personData = useSelector(selectPersonData);
+
     return (
         <Wrapper>
             <PersonDetailsTile
                 to={`/profile/:id`}
             >
-                <PersonPhoto src={noPhoto} />
+                {personData.profile_path
+                ?
+                <PersonPhoto src={`https://image.tmdb.org/t/p/w300${personData.profile_path}`} alt=""/>
+                : {noPhoto}
+                }
                 <Content>
                     <PersonName>Name and surname</PersonName>
                     <Details>
