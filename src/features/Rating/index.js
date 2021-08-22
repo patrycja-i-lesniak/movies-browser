@@ -1,7 +1,7 @@
 import { useSelector } from "react-redux";
 
 import star from "../Images/star.svg";
-import { selectMovieData } from "../MovieDetails/movieDetailsSlice";
+import { selectMovieData } from "../PopularMovies/MovieDetails/movieDetailsSlice";
 import {
     RatingField,
     StarIcon,

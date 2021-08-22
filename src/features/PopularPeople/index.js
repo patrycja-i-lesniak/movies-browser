@@ -5,7 +5,7 @@ import PeopleTiles from "../Tiles/PeopleTiles";
 import { Loader } from "../../common/Loader";
 import Error from "../../common/Error";
 import { NoResults } from "../../common/NoResults";
-import { Wrapper } from "../MovieDetails/styled";
+import { Wrapper } from "../PopularMovies/MovieDetails/styled";
 import { Pagination } from "../../common/Pagination";
 import { useQueryParameter } from "../../useQueryParameter";
 import searchQueryParamName from "../../searchQueryParamName";

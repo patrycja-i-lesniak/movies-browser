@@ -6,9 +6,9 @@ import {
 } from "react-router-dom";
 import { Navigation } from "../../common/Navigation";
 import { PersonList } from "../../features/PopularPeople";
-import MovieList from "../../features/MovieList";
+import MovieList from "../../features/PopularMovies";
 import Error from "../../common/Error";
-import {MovieDetails} from "../../features/MovieDetails";
+import {MovieDetails} from "../../features/PopularMovies/MovieDetails";
 
 export const App = () => {
   return (
