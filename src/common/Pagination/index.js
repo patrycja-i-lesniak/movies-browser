@@ -1,6 +1,6 @@
 import { useSelector } from "react-redux";
 
-import { selectPopularPeopleData } from "../../features/PersonList/popularPeopleSlice";
+import { selectPopularPeopleData } from "../../features/PopularPeople/popularPeopleSlice";
 import { PaginationArrow } from "./PaginationArrow";
 import { Caption, CaptionsWrapper, LinkText, PaginationLinks, StyledLink, Wrapper } from "./styled";
 

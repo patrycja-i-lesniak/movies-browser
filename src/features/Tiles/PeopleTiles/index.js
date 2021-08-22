@@ -13,7 +13,7 @@ import {
     Title
 } from "./styled";
 import { Arrow } from "../Arrow";
-import { selectPopularPeopleData } from "../../PersonList/popularPeopleSlice";
+import { selectPopularPeopleData } from "../../PopularPeople/popularPeopleSlice";
 import { selectMovieCredits } from "../../MovieDetails/movieDetailsSlice";
 
 const PeopleTiles = ({ title }) => {
