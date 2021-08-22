@@ -1,18 +1,25 @@
+import { useEffect } from "react";
+import { useParams } from "react-router-dom";
+import {useSelector, useDispatch} from "react-redux";
 import PersonTile from "../../Tiles/PersonTile";
 import MovieTiles from "../../Tiles/MovieTiles";
-import { useAPIData } from "../../../useAPIData";
-// import {useSelector} from "react-redux";
 import { Loader } from "../../../common/Loader";
 import Error from "../../../common/Error";
 import { NoResults } from "../../../common/NoResults";
 import { Wrapper } from "./styled";
+import { fetchPersonDetails, selectStatus } from "./personDetailsSlice";
 
 const PersonDetails = () => {
-    const APIData = useAPIData();
-    // const status = useSelector(selectStatus);
+    const status = useSelector(selectStatus);
+    const dispatch = useDispatch();
+    const { id } = useParams();
+
+    useEffect(() => {
+        dispatch(fetchPersonDetails(id));
+    }, [dispatch, id]);
     
     const PersonDetailsContent = () => {
-        switch (APIData.status) {
+        switch (status) {
             case "loading":
                 return < Loader />;
             case "success":
