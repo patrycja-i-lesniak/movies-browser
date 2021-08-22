@@ -1,20 +1,22 @@
 import {
   HashRouter,
-  Switch,
-  Route,
-  Redirect,
+  // Switch,
+  // Route,
+  // Redirect,
 } from "react-router-dom";
 import { Navigation } from "../../common/Navigation";
-import { PersonList } from "../../features/PopularPeople";
-import MovieList from "../../features/PopularMovies";
-import Error from "../../common/Error";
-import {MovieDetails} from "../../features/PopularMovies/MovieDetails";
+// import { PersonList } from "../../features/PopularPeople";
+// import MovieList from "../../features/PopularMovies";
+// import Error from "../../common/Error";
+// import {MovieDetails} from "../../features/PopularMovies/MovieDetails";
+import PersonTile from "../../features/Tiles/PersonTile";
 
 export const App = () => {
   return (
     <HashRouter>
       <Navigation />
-      <Switch>
+      <PersonTile/>
+      {/* <Switch>
         <Route path="/profile/:id">
           <p>5. Profile</p>
         </Route>
@@ -33,7 +35,7 @@ export const App = () => {
         <Route path="/">
           <Redirect to="/movies" />
         </Route>
-      </Switch>
+      </Switch> */}
     </HashRouter>
   );
 };
