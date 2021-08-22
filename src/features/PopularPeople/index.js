@@ -17,7 +17,6 @@ import {
 export const PopularPeopleList = () => {
     const dispatch = useDispatch();
     const status = useSelector(selectStatus);
-
     const page = useQueryParameter(searchQueryParamName) || "1";
 
     useEffect(() => {
