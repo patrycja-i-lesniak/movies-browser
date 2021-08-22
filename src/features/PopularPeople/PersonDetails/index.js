@@ -1,17 +1,16 @@
 import PersonTile from "../../Tiles/PersonTile";
-// import MovieTiles from "../../Tiles/MovieTiles";
+import MovieTiles from "../../Tiles/MovieTiles";
 import { useAPIData } from "../../../useAPIData";
 // import {useSelector} from "react-redux";
-import {Loader} from "../../../common/Loader";
+import { Loader } from "../../../common/Loader";
 import Error from "../../../common/Error";
 import { NoResults } from "../../../common/NoResults";
 import { Wrapper } from "./styled";
 
-
-
 const PersonDetails = () => {
     const APIData = useAPIData();
     // const status = useSelector(selectStatus);
+    
     const PersonDetailsContent = () => {
         switch (APIData.status) {
             case "loading":
@@ -21,8 +20,8 @@ const PersonDetails = () => {
                     <>
                         <Wrapper>
                             <PersonTile />
-                            {/* <MovieTiles title="Cast" />
-                            <MovieTiles title="Crew" /> */}
+                            <MovieTiles person="true" title="Movie - cast" />
+                            <MovieTiles person="true" title="Movie - crew" />
                         </Wrapper>
                     </>
                 );
