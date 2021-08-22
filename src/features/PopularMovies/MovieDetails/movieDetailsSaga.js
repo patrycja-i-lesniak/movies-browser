@@ -1,7 +1,6 @@
 import { takeEvery, call, put, all } from "@redux-saga/core/effects";
 
-import { getMovieCredits } from "./getMovieCredits";
-import { getMovieData } from "./getMovieData";
+import { getMovieCredits, getMovieData } from "./getMovieAPI";
 import { fetchMovieDetails, fetchMovieDetailsError, fetchMovieDetailsSuccess } from "./movieDetailsSlice";
 
 function* fetchMovieDetailsHandler({ payload: movieID }) {
