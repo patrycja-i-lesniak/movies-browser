@@ -10,13 +10,13 @@ import {
     PersonData,
     Biography,
 } from "./styled";
-import noPoster from "./noPoster.svg";
+import noPhoto from "./noPhoto.svg";
 
 const PersonTile = () => {
     return (
         <Wrapper>
         <PersonDetailsTile>
-            <PersonPhoto src={noPoster}/>
+            <PersonPhoto src={noPhoto}/>
             <Content>
                 <PersonName>Name and surname</PersonName>
                 <Details>
