@@ -1,7 +1,7 @@
 import { useSelector } from "react-redux";
 
 import { selectMoviesData } from "../../features/PopularMovies/moviesSlice";
-import { selectPopularPeopleData } from "../../features/PersonList/popularPeopleSlice";
+import { selectPopularPeopleData } from "../../features/PopularPeople/popularPeopleSlice";
 import { paginationQueryParamName } from "../queryParamNames";
 
 import { useReplaceQueryParameter } from "../useReplaceQueryParameter";
