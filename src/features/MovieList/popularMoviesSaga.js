@@ -1,25 +1,29 @@
-import { takeEvery, debounce, call, put } from "@redux-saga/core/effects";
+import { takeEvery, debounce, call, put, all } from "@redux-saga/core/effects";
 
 import { getGenres, getPopularMoviesData, getSearchMoviesData } from "./popularMoviesAPI";
-import { fetchPopularMoviesError, fetchPopularMoviesLoading, fetchPopularMoviesSuccess, fetchSearchMoviesLoading } from "./popularMoviesSlice";
+import {  fetchMoviesError, fetchMoviesSuccess, fetchPopularMoviesLoading, fetchSearchMoviesLoading } from "./popularMoviesSlice";
 
 function* fetchPopularMoviesDataHandler({ payload: page }) {
     try {
-        const popularMoviesGenres = yield call(getGenres);
-            const moviesData = yield call(getPopularMoviesData, page);
-        yield put(fetchPopularMoviesSuccess({ moviesData, popularMoviesGenres }));
+        const [moviesData, popularMoviesGenres] = yield all([
+            call(getPopularMoviesData, page),
+            call(getGenres),
+        ]);
+        yield put(fetchMoviesSuccess({ moviesData, popularMoviesGenres }));
     } catch (error) {
-        yield put(fetchPopularMoviesError());
+        yield put(fetchMoviesError());
     }
 };
 
 function* fetchSearchMoviesDataHandler({ payload: location }) {
     try {
-        const popularMoviesGenres = yield call(getGenres);
-        const moviesData = yield call(getSearchMoviesData, location);
-        yield put(fetchPopularMoviesSuccess({ moviesData, popularMoviesGenres }));
+        const [moviesData, popularMoviesGenres] = yield all([
+            call(getSearchMoviesData, location),
+            call(getGenres),
+        ]);
+        yield put(fetchMoviesSuccess({ moviesData, popularMoviesGenres }));
     } catch (error) {
-        yield put(fetchPopularMoviesError());
+        yield put(fetchMoviesError());
     }
 };
 

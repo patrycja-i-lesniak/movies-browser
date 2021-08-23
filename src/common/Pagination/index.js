@@ -1,6 +1,6 @@
 import { useSelector } from "react-redux";
 
-import { selectPopularMoviesData } from "../../features/MovieList/popularMoviesSlice";
+import { selectMoviesData } from "../../features/MovieList/popularMoviesSlice";
 import { selectPopularPeopleData } from "../../features/PersonList/popularPeopleSlice";
 import { paginationQueryParamName } from "../queryParamNames";
 
@@ -20,7 +20,7 @@ export const Pagination = ({ pathName }) => {
     const APIData = useSelector(
         pathName === "/people"
             ? selectPopularPeopleData
-            : selectPopularMoviesData
+            : selectMoviesData
     );
     const replaceQueryParameter = useReplaceQueryParameter();
 
