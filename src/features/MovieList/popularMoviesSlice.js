@@ -13,7 +13,7 @@ const popularMoviesSlice = createSlice({
         }),
         fetchPopularMoviesSuccess: (_, { payload: movieDetails }) => ({
             status: "success",
-            popularMoviesData: movieDetails.popularMoviesData,
+            popularMoviesData: movieDetails.moviesData,
             popularMoviesGenres: movieDetails.popularMoviesGenres,
         }),
         fetchPopularMoviesError: () => ({
