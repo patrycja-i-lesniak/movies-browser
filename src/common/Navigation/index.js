@@ -32,8 +32,6 @@ export const Navigation = () => {
             key: searchQueryParamName,
             value: target.value.trim() !== "" ? target.value : undefined
         });
-
-        // fetchSearchData();
     };
 
     return (
