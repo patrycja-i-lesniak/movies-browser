@@ -28,7 +28,7 @@ const MovieTiles = ({ title }) => {
     const moviesGenresData = useSelector(selectGenres);
     const moviesGenres = moviesGenresData.genres;
     const sectionName = title.toLowerCase();
-    const creditsData  = useSelector(selectPersonCredits);
+    const creditsData = useSelector(selectPersonCredits);
 
     switch (sectionName) {
         case "cast":
@@ -46,49 +46,59 @@ const MovieTiles = ({ title }) => {
 
     return (
         <>
-        <section> 
-            <SiteTitle>{title}</SiteTitle>
-            <List>
-                {moviesList.map((movie, index) =>
-                    <li key={index}
-                    hidden={
-                        !sectionName.includes("{cast, crew}") &&
-                        !showMore &&
-                        index > 5
-                    }>
-                        <Tile
-                            to={`/movie/${movie.id}`}
-                        >
-                            <Picture
-                                src={movie.poster_path ? `https://image.tmdb.org/t/p/w300${movie.poster_path}`
-                                    : pictureSubstitution
-                                }
-                                alt={`${title} poster`}
-                            />
-                            <ContentContainer>
-                                <TileTitle>{movie.title}</TileTitle>
-                                {movie.release_date && (
-                                    <Year>
-                                        {movie.release_date.slice(0, 4)}
-                                    </Year>
-                                )}
+            <section>
+                {
+                    sectionName.includes("popular")
+                        ?
+                        <SiteTitle>
+                            {sectionName.charAt(0).toUpperCase() + sectionName.slice(1)}
+                        </SiteTitle>
+                        :
+                        <SiteTitle>
+                            {`Movie - ${sectionName}`}
+                        </SiteTitle>
+                }
+                <List>
+                    {moviesList.map((movie, index) =>
+                        <li key={index}
+                            hidden={
+                                !sectionName.includes("{cast, crew}") &&
+                                !showMore &&
+                                index > 5
+                            }>
+                            <Tile
+                                to={`/movie/${movie.id}`}
+                            >
+                                <Picture
+                                    src={movie.poster_path ? `https://image.tmdb.org/t/p/w300${movie.poster_path}`
+                                        : pictureSubstitution
+                                    }
+                                    alt={`${title} poster`}
+                                />
+                                <ContentContainer>
+                                    <TileTitle>{movie.title}</TileTitle>
 
-                                <Tags>
-                                    {movie.genre_ids.map(genreID =>
-                                        <Tag key={`genres-${genreID}`}>
-                                            {moviesGenres.find(({ id }) => id === genreID).name}
-                                        </Tag>
+                                    {movie.release_date && (
+                                        <Year>
+                                            {movie.release_date.slice(0, 4)}
+                                        </Year>
                                     )}
-                                </Tags>
-                                <Rate
-                                    small={true}
-                                    vote_average={movie.vote_average}
-                                    vote_count={movie.vote_count} />
-                            </ContentContainer>
-                        </Tile>
-                    </li>
-                )}
-            </List>
+                                    <Tags>
+                                        {movie.genre_ids.map(genreID =>
+                                            <Tag key={`genres-${genreID}`}>
+                                                {moviesGenres.find(({ id }) => id === genreID).name}
+                                            </Tag>
+                                        )}
+                                    </Tags>
+                                    <Rate
+                                        small={true}
+                                        vote_average={movie.vote_average}
+                                        vote_count={movie.vote_count} />
+                                </ContentContainer>
+                            </Tile>
+                        </li>
+                    )}
+                </List>
             </section>
             {
                 !sectionName.includes("{cast, crew}") &&
