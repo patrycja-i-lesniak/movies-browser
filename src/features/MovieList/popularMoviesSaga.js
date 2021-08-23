@@ -3,13 +3,16 @@ import { takeEvery, call, put, all } from "@redux-saga/core/effects";
 import { getGenres, getPopularMoviesData } from "./popularMoviesAPI";
 import { fetchPopularMoviesError, fetchPopularMoviesLoading, fetchPopularMoviesSuccess } from "./popularMoviesSlice";
 
-function* fetchPopularMoviesDataHandler({ payload: page }) {
+function* fetchPopularMoviesDataHandler({ payload: location }) {
     try {
-        const [popularMoviesData, popularMoviesGenres] = yield all([
-            call(getPopularMoviesData, page),
-            call(getGenres)
-        ]);
-        yield put(fetchPopularMoviesSuccess({ popularMoviesData, popularMoviesGenres }));
+        let moviesData;
+        const popularMoviesGenres = yield call(getGenres);
+        if (location.searchQuery) {
+            moviesData = yield call(getSearchMoviesData, location);
+        } else {
+            moviesData = yield call(getPopularMoviesData, location.page);
+        }
+        yield put(fetchPopularMoviesSuccess({ moviesData, popularMoviesGenres }));
     } catch (error) {
         yield put(fetchPopularMoviesError());
     }

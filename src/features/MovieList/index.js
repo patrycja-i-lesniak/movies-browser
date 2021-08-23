@@ -19,7 +19,7 @@ const MovieList = () => {
     const searchQuery = useQueryParameter(searchQueryParamName);
 
     useEffect(() => {
-        dispatch(fetchPopularMoviesLoading(page));
+        dispatch(fetchPopularMoviesLoading({page, searchQuery}));
     }, [dispatch, page, searchQuery]);
 
     const MovieListContent = () => {
