@@ -1,5 +1,6 @@
 import { useSelector } from "react-redux";
 import { selectGenres, selectPopularMoviesData } from "../../PopularMovies/popularMoviesSlice";
+import { selectPersonCredits } from "../../PopularPeople/PersonDetails/personDetailsSlice";
 
 import pictureSubstitution from "../pictureSubstitution.svg";
 import {
@@ -17,9 +18,27 @@ import { Rate } from "../../Rate";
 
 const MovieTiles = ({ title }) => {
     const popularMoviesData = useSelector(selectPopularMoviesData);
-    const moviesList = popularMoviesData.results;
+    let moviesList;
     const moviesGenresData = useSelector(selectGenres);
     const moviesGenres = moviesGenresData.genres;
+    const sectionName = title.toLowerCase();
+    const creditsData  = useSelector(selectPersonCredits);
+
+
+    switch (sectionName) {
+        case "cast":
+            moviesList = creditsData.cast;
+            break;
+
+        case "crew":
+            moviesList = creditsData.crew;
+            break;
+
+        default:
+            moviesList = popularMoviesData.results;
+    }
+
+    
 
     return (
         <>

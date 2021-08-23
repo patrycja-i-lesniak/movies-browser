@@ -28,8 +28,8 @@ const PersonDetails = () => {
                     <>
                         <Wrapper>
                             <PersonTile />
-                            <MovieTiles title="Movie - cast" />
-                            <MovieTiles title="Movie - crew" />
+                            <MovieTiles title="cast"/>
+                            <MovieTiles title="crew" />
                         </Wrapper>
                     </>
                 );
