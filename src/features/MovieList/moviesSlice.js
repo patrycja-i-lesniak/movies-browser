@@ -17,7 +17,7 @@ const popularMoviesSlice = createSlice({
         fetchMoviesSuccess: (_, { payload: movieDetails }) => ({
             status: "success",
             moviesData: movieDetails.moviesData,
-            moviesGenres: movieDetails.popularMoviesGenres,
+            moviesGenres: movieDetails.moviesGenres,
         }),
         fetchMoviesError: () => ({
             status: "error",
@@ -38,6 +38,6 @@ export const selectMoviesDataState = state => state.popularMovies;
 
 export const selectMoviesData = state => selectMoviesDataState(state).moviesData;
 export const selectGenres = state => selectMoviesDataState(state).moviesGenres;
-export const selectPopularMoviesStatus = state => selectMoviesDataState(state).status;
+export const selectMoviesStatus = state => selectMoviesDataState(state).status;
 
 export default popularMoviesSlice.reducer;

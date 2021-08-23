@@ -1,5 +1,5 @@
 import { useSelector } from "react-redux";
-import { selectGenres, selectMoviesData } from "../../MovieList/popularMoviesSlice";
+import { selectGenres, selectMoviesData } from "../../MovieList/moviesSlice";
 
 import pictureSubstitution from "../pictureSubstitution.svg";
 import {
