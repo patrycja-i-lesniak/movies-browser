@@ -9,7 +9,7 @@ function* fetchPopularMoviesDataHandler({ payload: location }) {
         let moviesData;
 
         if (location.searchQuery) {
-            yield delay(2000);
+            yield delay(1_000);
             moviesData = yield call(getSearchMoviesData, location);
         } else {
             moviesData = yield call(getPopularMoviesData, location.page);
