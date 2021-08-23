@@ -1,11 +1,12 @@
 import { createSlice } from "@reduxjs/toolkit";
+import { genres } from "../../genres";
 
 const popularMoviesSlice = createSlice({
     name: "popularMovies",
     initialState: {
         status: "initial",
         popularMoviesData: null,
-        popularMoviesGenres: null,
+        popularMoviesGenres: genres,
     },
     reducers: {
         fetchPopularMoviesLoading: () => ({
