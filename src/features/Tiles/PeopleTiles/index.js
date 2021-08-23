@@ -13,9 +13,11 @@ import {
     Title
 } from "./styled";
 import { Arrow } from "../Arrow";
-import { selectPopularPeopleData } from "../../PersonList/popularPeopleSlice";
-import { selectMovieCredits } from "../../MovieDetails/movieDetailsSlice";
+
+
 import { toProfile } from "../../../core/App/routes";
+import { selectMovieCredits } from "../../PopularMovies/MovieDetails/movieDetailsSlice";
+import { selectPopularPeopleData } from "../../PopularPeople/popularPeopleSlice";
 
 const PeopleTiles = ({ title }) => {
     const popularPeopleData = useSelector(selectPopularPeopleData);

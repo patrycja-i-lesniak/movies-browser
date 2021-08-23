@@ -4,12 +4,12 @@ import { useDispatch, useSelector } from "react-redux";
 
 import { Header } from "./Header";
 import { Wrapper } from "./styled";
-import { BigMovieTile } from "../Tiles/BigMovieTile";
-import PeopleTiles from "../Tiles/PeopleTiles";
-import Error from "../../common/Error";
-import { Loader } from "../../common/Loader";
-import { NoResults } from "../../common/NoResults";
 import { fetchMovieDetails, selectStatus } from "./movieDetailsSlice";
+import Error from "../../../common/Error";
+import { Loader } from "../../../common/Loader";
+import { NoResults } from "../../../common/NoResults";
+import { BigMovieTile } from "../../Tiles/BigMovieTile";
+import PeopleTiles from "../../Tiles/PeopleTiles";
 
 
 export const MovieDetails = () => {
@@ -24,7 +24,7 @@ export const MovieDetails = () => {
     const MovieDetailsContent = () => {
         switch (status) {
             case "loading":
-                return < Loader />;
+                return <Loader />;
             case "success":
                 return (
                     <>

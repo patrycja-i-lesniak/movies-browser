@@ -5,7 +5,6 @@ import PeopleTiles from "../Tiles/PeopleTiles";
 import { Loader } from "../../common/Loader";
 import Error from "../../common/Error";
 import { NoResults } from "../../common/NoResults";
-import { Wrapper } from "../MovieDetails/styled";
 import { Pagination } from "../../common/Pagination";
 import { useQueryParameter } from "../../common/useQueryParameter";
 import { paginationQueryParamName } from "../../common/queryParamNames";
@@ -13,6 +12,7 @@ import {
     fetchPopularPeopleLoading,
     selectStatus,
 } from "./popularPeopleSlice";
+import { Wrapper } from "../PopularMovies/MovieDetails/styled";
 
 export const PersonList = () => {
     const dispatch = useDispatch();

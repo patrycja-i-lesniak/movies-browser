@@ -1,6 +1,6 @@
 import { useSelector } from "react-redux";
 
-import star from "../../../Images/star.svg";
+import star from "../../../../Images/star.svg";
 import { selectMovieData } from "../../movieDetailsSlice";
 import {
     HeaderDiv,

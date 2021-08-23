@@ -1,8 +1,8 @@
 import { configureStore } from "@reduxjs/toolkit";
 import createSagaMiddleware from "@redux-saga/core";
-import moviesReducer from "../features/MovieList/moviesSlice";
-import popularPeopleReducer from "../features/PersonList/popularPeopleSlice";
-import movieDetailsReducer from "../features/MovieDetails/movieDetailsSlice";
+import moviesReducer from "../features/PopularMovies/moviesSlice";
+import popularPeopleReducer from "../features/PopularPeople/popularPeopleSlice";
+import movieDetailsReducer from "../features/PopularMovies/MovieDetails/movieDetailsSlice";
 import saga from "./saga";
 
 const sagaMiddleware = createSagaMiddleware();

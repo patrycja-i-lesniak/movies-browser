@@ -5,12 +5,11 @@ import MovieTiles from "../Tiles/MovieTiles";
 import { Loader } from "../../common/Loader";
 import Error from "../../common/Error";
 import { NoResults } from "../../common/NoResults";
-import { Wrapper } from "../MovieDetails/styled";
 import { useQueryParameter } from "../../common/useQueryParameter";
 import { paginationQueryParamName, searchQueryParamName } from "../../common/queryParamNames";
-
 import { Pagination } from "../../common/Pagination";
 import { fetchMoviesLoading, selectMoviesStatus } from "./moviesSlice";
+import { Wrapper } from "./MovieDetails/styled";
 
 
 

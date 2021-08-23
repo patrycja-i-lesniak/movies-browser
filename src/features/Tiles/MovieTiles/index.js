@@ -1,5 +1,5 @@
 import { useSelector } from "react-redux";
-import { selectGenres, selectMoviesData } from "../../MovieList/moviesSlice";
+
 
 import pictureSubstitution from "../pictureSubstitution.svg";
 import {
@@ -15,6 +15,7 @@ import {
 } from "./styled";
 import { Rate } from "../../Rate";
 import { toMovie } from "../../../core/App/routes";
+import { selectGenres, selectMoviesData } from "../../PopularMovies/moviesSlice";
 
 const MovieTiles = ({ title }) => {
     const popularMoviesData = useSelector(selectMoviesData);

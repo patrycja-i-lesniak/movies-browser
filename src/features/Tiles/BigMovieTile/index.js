@@ -1,6 +1,7 @@
 import { useSelector } from "react-redux";
+import { selectMovieData } from "../../PopularMovies/MovieDetails/movieDetailsSlice";
 
-import { selectMovieData } from "../../MovieDetails/movieDetailsSlice";
+
 import { Rating } from "../../Rating";
 import {
     MovieDetailsTile,
