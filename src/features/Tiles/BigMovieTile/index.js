@@ -34,11 +34,7 @@ export const BigMovieTile = () => {
 
     return (
         <MovieDetailsTile>
-            {movieData.poster_path
-                ?
-                <Image src={poster} alt="" />
-                : { noPhoto }
-            }
+                <Image src={movieData.poster_path ? poster : noPhoto} alt="" />
             <Content>
                 <Title>{title}</Title>
                 <Year>{year}</Year>
