@@ -1,4 +1,4 @@
-import styled, {css} from "styled-components";
+import styled from "styled-components";
 import { Link } from "react-router-dom";
 
 export const Wrapper = styled.section`
@@ -35,25 +35,6 @@ export const List = styled.ul`
         grid-template-columns: 1fr;
         grid-gap: 20px;
     }
-
-    ${({ person }) => person && css`
-    grid-template-columns: repeat(6, 1fr);
-
-        @media(max-width: ${({ theme }) => theme.breakpoints.large}px) {
-            grid-template-columns: repeat(5, 1fr);
-        }
-
-        @media(max-width: ${({ theme }) => theme.breakpoints.medium}px) {
-            grid-template-columns: repeat(4, 1fr);
-        }
-
-        @media(max-width: ${({ theme }) => theme.breakpoints.small}px) {
-            grid-template-columns: repeat(3, 1fr);
-        }
-
-        @media(max-width: ${({ theme }) => theme.breakpoints.xsmall}px) {
-            grid-template-columns: repeat(2, 1fr);
-    `};
 `;
 
 export const Tile = styled(Link)`

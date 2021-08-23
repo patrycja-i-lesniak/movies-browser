@@ -15,7 +15,7 @@ import {
 } from "./styled";
 import { Rate } from "../../Rate";
 
-const MovieTiles = ({ title, person = false }) => {
+const MovieTiles = ({ title }) => {
     const popularMoviesData = useSelector(selectPopularMoviesData);
     const moviesList = popularMoviesData.results;
     const moviesGenresData = useSelector(selectGenres);
@@ -24,7 +24,7 @@ const MovieTiles = ({ title, person = false }) => {
     return (
         <>
             <SiteTitle>{title}</SiteTitle>
-            <List person={person}>
+            <List>
                 {moviesList.map((movie, index) =>
                     <li key={index}>
                         <Tile
