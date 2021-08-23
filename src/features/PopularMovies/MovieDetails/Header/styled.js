@@ -12,7 +12,7 @@ export const WrapperPoster = styled.div`
     background-repeat: no-repeat;
     background-position: center;
     background-image: url(${props => props.url});
-    background-size: cover;
+    background-size: contain;
 `;
 
 export const Wrapper = styled.div`
