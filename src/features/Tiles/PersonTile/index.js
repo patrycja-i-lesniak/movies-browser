@@ -13,7 +13,7 @@ import {
     Biography,
 } from "./styled";
 import noPhoto from "./noPhoto.svg";
-import ShowMoreButton from "../ShowMoreButton";
+import { ShowMoreBiography } from "../ShowMoreButton";
 
 
 const PersonTile = () => {
@@ -47,8 +47,8 @@ const PersonTile = () => {
                     </Details>
                 </Content>
                 <Biography>
-                    <ShowMoreButton biography={personData.biography}/>
-                    </Biography>
+                    <ShowMoreBiography biography={personData.biography} />
+                </Biography>
             </PersonDetailsTile>
         </Wrapper>
     );

@@ -1,5 +1,5 @@
-import { useState } from "react";
 import { useSelector } from "react-redux";
+import { useState } from "react";
 import { selectGenres, selectPopularMoviesData } from "../../PopularMovies/popularMoviesSlice";
 import { selectPersonCredits } from "../../PopularPeople/PersonDetails/personDetailsSlice";
 
@@ -14,17 +14,16 @@ import {
     Tags,
     Tag,
     ContentContainer,
-    ShowMoreButton,
+    ShowMoreButton
 } from "./styled";
 import { Rate } from "../../Rate";
-import { Arrow } from "../Arrow";
+import {Arrow} from "../Arrow";
 
 const MovieTiles = ({ title }) => {
     const popularMoviesData = useSelector(selectPopularMoviesData);
 
-    const [showMore, setShowMore] = useState(false);
-
     let moviesList;
+    const [showMore, setShowMore] = useState(false);
     const moviesGenresData = useSelector(selectGenres);
     const moviesGenres = moviesGenresData.genres;
     const sectionName = title.toLowerCase();
@@ -87,8 +86,8 @@ const MovieTiles = ({ title }) => {
                                                 : movie.job
                                                     ? `${movie.job}
                                             (${movie.release_date ? movie.release_date.slice(0, 4) : ""
-                                                })`
-                                                : movie.release_date ? movie.release_date.slice(0, 4) : ""
+                                                    })`
+                                                    : movie.release_date ? movie.release_date.slice(0, 4) : ""
                                             }
                                         </Year>
                                     )}

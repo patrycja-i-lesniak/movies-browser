@@ -7,7 +7,7 @@ export const ShowMore = styled.button`
     text-transform: uppercase;
     font-size: 12px;
     font-weight: 500;
-    margin: 0 auto 20px;
+    margin: 0 auto 0px;
     display: grid;
     grid-template-columns: auto auto;
     grid-gap: 6px;
