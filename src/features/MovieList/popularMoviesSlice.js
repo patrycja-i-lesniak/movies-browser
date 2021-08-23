@@ -8,6 +8,9 @@ const popularMoviesSlice = createSlice({
         popularMoviesGenres: null,
     },
     reducers: {
+        fetchSearchMoviesLoading: () => ({
+            status: "loading",
+        }),
         fetchPopularMoviesLoading: () => ({
             status: "loading",
         }),
@@ -25,6 +28,7 @@ const popularMoviesSlice = createSlice({
 });
 
 export const {
+    fetchSearchMoviesLoading,
     fetchPopularMoviesLoading,
     fetchPopularMoviesSuccess,
     fetchPopularMoviesError,

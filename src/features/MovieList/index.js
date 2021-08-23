@@ -8,7 +8,7 @@ import { NoResults } from "../../common/NoResults";
 import { Wrapper } from "../MovieDetails/styled";
 import { useQueryParameter } from "../../common/useQueryParameter";
 import { paginationQueryParamName, searchQueryParamName } from "../../common/queryParamNames";
-import { selectPopularMoviesStatus, fetchPopularMoviesLoading } from "./popularMoviesSlice";
+import { selectPopularMoviesStatus, fetchPopularMoviesLoading, fetchSearchMoviesLoading } from "./popularMoviesSlice";
 import { Pagination } from "../../common/Pagination";
 
 
@@ -19,7 +19,7 @@ const MovieList = () => {
     const searchQuery = useQueryParameter(searchQueryParamName);
 
     useEffect(() => {
-        dispatch(fetchPopularMoviesLoading({page, searchQuery}));
+        dispatch(searchQuery ? fetchSearchMoviesLoading({page, searchQuery}) : fetchPopularMoviesLoading(page));
     }, [dispatch, page, searchQuery]);
 
     const MovieListContent = () => {
