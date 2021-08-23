@@ -1,8 +1,10 @@
 import { Header, LoadingIcon } from "./styled";
 import { Wrapper } from "../LoaderNoResultsWrapper";
+import { useQueryParameter } from "../useQueryParameter";
+import { searchQueryParamName } from "../queryParamNames";
 
 export const Loader = () => {
-    const search = "Mulan"; //template, waiting for search code and logic
+    const search = useQueryParameter(searchQueryParamName);
 
     return (
         <Wrapper>
