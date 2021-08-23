@@ -1,7 +1,7 @@
 import { all } from "@redux-saga/core/effects";
 
 import { movieDetailsSaga } from "../features/MovieDetails/movieDetailsSaga";
-import { moviesSaga } from "../features/MovieList/moviesSaga";
+import { moviesSaga } from "../features/PopularMovies/moviesSaga";
 import { popularPeopleSaga } from "../features/PersonList/popularPeopleSaga";
 
 export default function* saga() {
