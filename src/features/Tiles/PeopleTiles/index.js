@@ -55,7 +55,7 @@ const PeopleTiles = ({ title }) => {
                                 index > 5
                             }>
                             <PersonTile
-                                to={toProfile({ id: id })}
+                                to={toProfile({ id })}
                             >
                                 <ProfilePicture
                                     src={profile_path ?
