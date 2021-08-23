@@ -16,10 +16,11 @@ import {
     Tag,
     Description,
 } from "./styled";
+import noPhoto from "./noPhoto.svg";
 
 export const BigMovieTile = () => {
     const movieData = useSelector(selectMovieData);
-    
+
     const image = movieData.poster_path;
     const imageURL = "http://image.tmdb.org/t/p/";
     const size = "original";
@@ -33,7 +34,11 @@ export const BigMovieTile = () => {
 
     return (
         <MovieDetailsTile>
-            <Image src={poster} alt="" />
+            {movieData.poster_path
+                ?
+                <Image src={poster} alt="" />
+                : { noPhoto }
+            }
             <Content>
                 <Title>{title}</Title>
                 <Year>{year}</Year>
