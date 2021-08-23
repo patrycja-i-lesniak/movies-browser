@@ -1,13 +1,13 @@
 import { all } from "@redux-saga/core/effects";
 
 import { movieDetailsSaga } from "../features/MovieDetails/movieDetailsSaga";
-import { popularMoviesSaga } from "../features/MovieList/popularMoviesSaga";
+import { moviesSaga } from "../features/MovieList/moviesSaga";
 import { popularPeopleSaga } from "../features/PersonList/popularPeopleSaga";
 
 export default function* saga() {
         yield all([
                 popularPeopleSaga(),
-                popularMoviesSaga(),
+                moviesSaga(),
                 movieDetailsSaga(),
         ]);
 };
