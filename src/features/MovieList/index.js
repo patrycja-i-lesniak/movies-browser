@@ -7,7 +7,7 @@ import Error from "../../common/Error";
 import { NoResults } from "../../common/NoResults";
 import { Wrapper } from "../MovieDetails/styled";
 import { useQueryParameter } from "../../common/useQueryParameter";
-import { paginationQueryParamName, searchQueryParamName } from "../../queryParamNames";
+import { paginationQueryParamName, searchQueryParamName } from "../../common/queryParamNames";
 import { selectPopularMoviesStatus, fetchPopularMoviesLoading } from "./popularMoviesSlice";
 import { Pagination } from "../../common/Pagination";
 

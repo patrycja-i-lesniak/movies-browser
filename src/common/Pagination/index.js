@@ -2,9 +2,9 @@ import { useSelector } from "react-redux";
 
 import { selectPopularMoviesData } from "../../features/MovieList/popularMoviesSlice";
 import { selectPopularPeopleData } from "../../features/PersonList/popularPeopleSlice";
-import {
-    paginationQueryParamName,
-} from "../../queryParamNames";
+import { paginationQueryParamName } from "../queryParamNames";
+
+import { useReplaceQueryParameter } from "../useReplaceQueryParameter";
 import { PaginationArrow } from "./PaginationArrow";
 import {
     Caption,
@@ -14,7 +14,7 @@ import {
     PaginationButton,
     Wrapper
 } from "./styled";
-import { useReplaceQueryParameter } from "../Navigation/useReplaceQueryParameter";
+
 
 export const Pagination = ({ pathName }) => {
     const APIData = useSelector(

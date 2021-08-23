@@ -1,8 +1,8 @@
 import { useLocation } from "react-router-dom";
+import { searchQueryParamName } from "../queryParamNames";
 
-import { searchQueryParamName } from "../../queryParamNames";
 import { useQueryParameter } from "../useQueryParameter";
-import { useReplaceQueryParameter } from "./useReplaceQueryParameter";
+import { useReplaceQueryParameter } from "../useReplaceQueryParameter";
 import {
     NavigationWrapper,
     NavigationContainer,
