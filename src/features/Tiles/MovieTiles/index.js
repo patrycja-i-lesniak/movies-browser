@@ -63,7 +63,7 @@ const MovieTiles = ({ title }) => {
                         <li key={index}
                             hidden={
                                 !sectionName.includes("popular") &&
-                                !showMore && 
+                                !showMore &&
                                 index > 3
                             }>
                             <Tile
@@ -80,7 +80,16 @@ const MovieTiles = ({ title }) => {
 
                                     {movie.release_date && (
                                         <Year>
-                                            {movie.release_date.slice(0, 4)}
+                                            {movie.character
+                                                ? `${movie.character}
+                                            (${movie.release_date ? movie.release_date.slice(0, 4) : ""
+                                                })`
+                                                : movie.job
+                                                    ? `${movie.job}
+                                            (${movie.release_date ? movie.release_date.slice(0, 4) : ""
+                                                })`
+                                                : movie.release_date ? movie.release_date.slice(0, 4) : ""
+                                            }
                                         </Year>
                                     )}
                                     <Tags>
