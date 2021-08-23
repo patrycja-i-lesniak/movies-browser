@@ -1,6 +1,6 @@
-import { takeEvery, call, put, all } from "@redux-saga/core/effects";
+import { throttle, call, put } from "@redux-saga/core/effects";
 
-import { getGenres, getPopularMoviesData } from "./popularMoviesAPI";
+import { getGenres, getPopularMoviesData, getSearchMoviesData } from "./popularMoviesAPI";
 import { fetchPopularMoviesError, fetchPopularMoviesLoading, fetchPopularMoviesSuccess } from "./popularMoviesSlice";
 
 function* fetchPopularMoviesDataHandler({ payload: location }) {
@@ -19,5 +19,5 @@ function* fetchPopularMoviesDataHandler({ payload: location }) {
 }
 
 export function* popularMoviesSaga() {
-    yield takeEvery(fetchPopularMoviesLoading.type, fetchPopularMoviesDataHandler);
+    yield throttle(2000, fetchPopularMoviesLoading.type, fetchPopularMoviesDataHandler);
 }
