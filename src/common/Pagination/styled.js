@@ -71,7 +71,7 @@ export const PaginationLinks = styled.ul`
 //     }
 // `;
 
-export const PaginationButton = styled.button`
+export const PaginationButton = styled.span`
     display: grid;
     grid-template-columns: auto auto;
     grid-gap: 8px;
@@ -83,6 +83,7 @@ export const PaginationButton = styled.button`
     background: ${({ theme }) => theme.colors.pagination.background};
     border-radius: 5px;
     padding: 8px 16px;
+    cursor: pointer;
 
     ${({ disabled }) => disabled && css`
         pointer-events: none;
