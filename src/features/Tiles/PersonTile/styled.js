@@ -115,3 +115,4 @@ export const Biography = styled.div`
 `;
 
 
+

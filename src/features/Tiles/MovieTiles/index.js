@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { useSelector } from "react-redux";
 import { selectGenres, selectPopularMoviesData } from "../../PopularMovies/popularMoviesSlice";
 import { selectPersonCredits } from "../../PopularPeople/PersonDetails/personDetailsSlice";
@@ -13,17 +14,21 @@ import {
     Tags,
     Tag,
     ContentContainer,
+    ShowMoreButton,
 } from "./styled";
 import { Rate } from "../../Rate";
+import { Arrow } from "../Arrow";
 
 const MovieTiles = ({ title }) => {
     const popularMoviesData = useSelector(selectPopularMoviesData);
+
+    const [showMore, setShowMore] = useState(false);
+
     let moviesList;
     const moviesGenresData = useSelector(selectGenres);
     const moviesGenres = moviesGenresData.genres;
     const sectionName = title.toLowerCase();
     const creditsData  = useSelector(selectPersonCredits);
-
 
     switch (sectionName) {
         case "cast":
@@ -38,14 +43,19 @@ const MovieTiles = ({ title }) => {
             moviesList = popularMoviesData.results;
     }
 
-    
 
     return (
         <>
+        <section> 
             <SiteTitle>{title}</SiteTitle>
             <List>
                 {moviesList.map((movie, index) =>
-                    <li key={index}>
+                    <li key={index}
+                    hidden={
+                        !sectionName.includes("{cast, crew}") &&
+                        !showMore &&
+                        index > 5
+                    }>
                         <Tile
                             to={`/movie/${movie.id}`}
                         >
@@ -79,6 +89,16 @@ const MovieTiles = ({ title }) => {
                     </li>
                 )}
             </List>
+            </section>
+            {
+                !sectionName.includes("{cast, crew}") &&
+                <ShowMoreButton onClick={() => setShowMore(!showMore)}>
+                    <span>
+                        {showMore ? "Show less" : "Show more"}
+                    </span>
+                    <Arrow showMore={showMore} />
+                </ShowMoreButton>
+            }
         </>
     );
 };
