@@ -10,7 +10,8 @@ import { useQueryParameter } from "../../common/useQueryParameter";
 import { paginationQueryParamName, searchQueryParamName } from "../../common/queryParamNames";
 
 import { Pagination } from "../../common/Pagination";
-import { fetchPopularMoviesLoading, fetchSearchMoviesLoading, selectMoviesStatus } from "./moviesSlice";
+import { fetchMoviesLoading, selectMoviesStatus } from "./moviesSlice";
+
 
 
 const MovieList = () => {
@@ -20,7 +21,7 @@ const MovieList = () => {
     const searchQuery = useQueryParameter(searchQueryParamName);
 
     useEffect(() => {
-        dispatch(searchQuery ? fetchSearchMoviesLoading({page, searchQuery}) : fetchPopularMoviesLoading(page));
+        dispatch(fetchMoviesLoading({page, searchQuery}));
     }, [dispatch, page, searchQuery]);
 
     const MovieListContent = () => {
