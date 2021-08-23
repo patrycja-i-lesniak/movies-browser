@@ -14,6 +14,7 @@ import {
     ContentContainer,
 } from "./styled";
 import { Rate } from "../../Rate";
+import { toMovie } from "../../../core/App/routes";
 
 const MovieTiles = ({ title }) => {
     const popularMoviesData = useSelector(selectMoviesData);
@@ -28,7 +29,7 @@ const MovieTiles = ({ title }) => {
                 {moviesList.map((movie, index) =>
                     <li key={index}>
                         <Tile
-                            to={`/movie/${movie.id}`}
+                            to={toMovie({id: movie.id})}
                         >
                             <Picture
                                 src={movie.poster_path ? `https://image.tmdb.org/t/p/w300${movie.poster_path}`

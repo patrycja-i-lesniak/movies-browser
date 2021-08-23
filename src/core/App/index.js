@@ -7,31 +7,28 @@ import {
 import { Navigation } from "../../common/Navigation";
 import { PersonList } from "../../features/PersonList";
 import MovieList from "../../features/MovieList";
-import Error from "../../common/Error";
 import {MovieDetails} from "../../features/MovieDetails";
+import { toMovie, toMovies, toPeople, toProfile } from "./routes";
 
 export const App = () => {
   return (
     <HashRouter>
       <Navigation />
       <Switch>
-        <Route path="/profile/:id">
+        <Route path={toProfile()}>
           <p>5. Profile</p>
         </Route>
-        <Route path="/movie/:id">
+        <Route path={toMovie()}>
           <MovieDetails />
         </Route>
-        <Route path="/movies">
+        <Route path={toMovies()}>
           <MovieList />
         </Route>
-        <Route path="/people">
+        <Route path={toPeople()}>
           <PersonList />
         </Route>
-        <Route path="/error">
-          <Error />
-        </Route>
         <Route path="/">
-          <Redirect to="/movies" />
+          <Redirect to={toMovies()} />
         </Route>
       </Switch>
     </HashRouter>

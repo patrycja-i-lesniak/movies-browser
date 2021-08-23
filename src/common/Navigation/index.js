@@ -1,4 +1,5 @@
 import { useLocation } from "react-router-dom";
+import { toMovies, toPeople } from "../../core/App/routes";
 import { searchQueryParamName } from "../queryParamNames";
 
 import { useQueryParameter } from "../useQueryParameter";
@@ -39,16 +40,16 @@ export const Navigation = () => {
             <NavigationContainer>
                 <DoubleContainer>
                     <HeaderContainer>
-                        <Logo to="/movies">
+                        <Logo to={toMovies()}>
                             <VideoIcon src={videoIcon} />
                             <Title>Movie Browser</Title>
                         </Logo>
                         <NavigationLinks>
                             <NavigationItems>
-                                <StyledNavLink to="/movies">Movie</StyledNavLink>
+                                <StyledNavLink to={toMovies()}>Movie</StyledNavLink>
                             </NavigationItems>
                             <NavigationItems>
-                                <StyledNavLink to="/people">People</StyledNavLink>
+                                <StyledNavLink to={toPeople()}>People</StyledNavLink>
                             </NavigationItems>
                         </NavigationLinks>
                     </HeaderContainer>

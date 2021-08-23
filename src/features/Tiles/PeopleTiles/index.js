@@ -15,6 +15,7 @@ import {
 import { Arrow } from "../Arrow";
 import { selectPopularPeopleData } from "../../PersonList/popularPeopleSlice";
 import { selectMovieCredits } from "../../MovieDetails/movieDetailsSlice";
+import { toProfile } from "../../../core/App/routes";
 
 const PeopleTiles = ({ title }) => {
     const popularPeopleData = useSelector(selectPopularPeopleData);
@@ -53,7 +54,7 @@ const PeopleTiles = ({ title }) => {
                                 index > 5
                             }>
                             <PersonTile
-                                to={`/profile/${person.id}`}
+                                to={toProfile({ id: person.id })}
                             >
                                 <ProfilePicture
                                     src={person.profile_path ?
