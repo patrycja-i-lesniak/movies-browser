@@ -18,6 +18,10 @@ import { ShowMoreBiography } from "../ShowMoreButton";
 
 const PersonTile = () => {
     const personData = useSelector(selectPersonData);
+    const image = personData.profile_path;
+    const imageURL = "http://image.tmdb.org/t/p/";
+    const size = "w300";
+    const poster = `${imageURL}${size}${image}`;
 
     return (
         <Wrapper>
@@ -26,7 +30,7 @@ const PersonTile = () => {
             >
                 {personData.profile_path
                     ?
-                    <PersonPhoto src={`https://image.tmdb.org/t/p/w300${personData.profile_path}`} alt="" />
+                    <PersonPhoto src={poster} alt="" />
                     : { noPhoto }
                 }
                 <Content>
