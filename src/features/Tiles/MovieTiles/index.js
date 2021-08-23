@@ -62,9 +62,9 @@ const MovieTiles = ({ title }) => {
                     {moviesList.map((movie, index) =>
                         <li key={index}
                             hidden={
-                                !sectionName.includes("{cast, crew}") &&
-                                !showMore &&
-                                index > 5
+                                !sectionName.includes("popular") &&
+                                !showMore && 
+                                index > 3
                             }>
                             <Tile
                                 to={`/movie/${movie.id}`}
@@ -101,7 +101,7 @@ const MovieTiles = ({ title }) => {
                 </List>
             </section>
             {
-                !sectionName.includes("{cast, crew}") &&
+                !sectionName.includes("popular") &&
                 <ShowMoreButton onClick={() => setShowMore(!showMore)}>
                     <span>
                         {showMore ? "Show less" : "Show more"}
