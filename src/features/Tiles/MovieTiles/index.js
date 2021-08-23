@@ -55,7 +55,7 @@ const MovieTiles = ({ title }) => {
                         </SiteTitle>
                         :
                         <SiteTitle>
-                            {`Movie - ${sectionName}`}
+                            {`Movie - ${sectionName}`} ({moviesList.length})
                         </SiteTitle>
                 }
                 <List>
