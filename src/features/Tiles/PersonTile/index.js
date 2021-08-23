@@ -28,7 +28,7 @@ const PersonTile = () => {
             <PersonDetailsTile
                 to={`/profile/:id`}
             >
-                <PersonPhoto src={personData.profile_path ? poster : noPersonPhoto } alt="" />
+                <PersonPhoto src={personData.profile_path ? poster : noPersonPhoto } alt={`${personData.name} poster`} />
                 <Content>
                     <PersonName>{personData.name}</PersonName>
                     <Details>

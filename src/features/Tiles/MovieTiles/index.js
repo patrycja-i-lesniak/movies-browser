@@ -74,7 +74,7 @@ const MovieTiles = ({ title }) => {
                                 to={`/movie/${movie.id}`}
                             >
                                 <Picture
-                                    src={movie.poster_path ? `${poster}${movie.poster_path}` : noMoviePhoto} alt={`${title} poster`} />
+                                    src={movie.poster_path ? `${poster}${movie.poster_path}` : noMoviePhoto} alt={`${sectionName} poster`} />
                                 <ContentContainer>
                                     <TileTitle>{movie.title}</TileTitle>
 
