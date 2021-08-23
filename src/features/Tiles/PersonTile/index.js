@@ -13,6 +13,8 @@ import {
     Biography,
 } from "./styled";
 import noPhoto from "./noPhoto.svg";
+import ShowMoreButton from "../ShowMoreButton";
+
 
 const PersonTile = () => {
     const personData = useSelector(selectPersonData);
@@ -30,7 +32,7 @@ const PersonTile = () => {
                 <Content>
                     <PersonName>{personData.name}</PersonName>
                     <Details>
-                        {personData.birthhday &&
+                        {personData.birthday &&
                             <PersonDetails>
                                 <Label>Date of birth:</Label>
                                 <PersonData>{personData.birthday}</PersonData>
@@ -44,7 +46,9 @@ const PersonTile = () => {
                         }
                     </Details>
                 </Content>
-                <Biography>{personData.biography}</Biography>
+                <Biography>
+                    <ShowMoreButton biography={personData.biography}/>
+                    </Biography>
             </PersonDetailsTile>
         </Wrapper>
     );
