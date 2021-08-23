@@ -7,7 +7,7 @@ import Error from "../../common/Error";
 import { NoResults } from "../../common/NoResults";
 import { Wrapper } from "../MovieDetails/styled";
 import { useQueryParameter } from "../../common/useQueryParameter";
-import { paginationQueryParamName } from "../../queryParamNames";
+import { paginationQueryParamName, searchQueryParamName } from "../../queryParamNames";
 import { selectPopularMoviesStatus, fetchPopularMoviesLoading } from "./popularMoviesSlice";
 import { Pagination } from "../../common/Pagination";
 
@@ -16,10 +16,11 @@ const MovieList = () => {
     const dispatch = useDispatch();
     const status = useSelector(selectPopularMoviesStatus);
     const page = useQueryParameter(paginationQueryParamName) || "1";
+    const searchQuery = useQueryParameter(searchQueryParamName);
 
     useEffect(() => {
         dispatch(fetchPopularMoviesLoading(page));
-    }, [dispatch, page]);
+    }, [dispatch, page, searchQuery]);
 
     const MovieListContent = () => {
         switch (status) {
