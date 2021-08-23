@@ -4,11 +4,14 @@ import { useQueryParameter } from "../useQueryParameter";
 import { searchQueryParamName } from "../queryParamNames";
 
 export const Loader = () => {
-    const search = useQueryParameter(searchQueryParamName);
+    const searchQuery = useQueryParameter(searchQueryParamName);
+    const headerText = searchQuery
+        ? `Search results for "${searchQuery}"`
+        : "";
 
     return (
         <Wrapper>
-            <Header>Search results for "{search}"</Header>
+            <Header>{headerText}</Header>
             <LoadingIcon />
         </Wrapper>
     );
