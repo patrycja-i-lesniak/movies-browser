@@ -16,7 +16,7 @@ import {
     Tag,
     Description,
 } from "./styled";
-import noPhoto from "./noPhoto.svg";
+import noMoviePhoto from "../Images/noMoviePhoto.svg";
 
 export const BigMovieTile = () => {
     const movieData = useSelector(selectMovieData);
@@ -34,7 +34,7 @@ export const BigMovieTile = () => {
 
     return (
         <MovieDetailsTile>
-                <Image src={movieData.poster_path ? poster : noPhoto} alt="" />
+                <Image src={movieData.poster_path ? poster : noMoviePhoto} alt="" />
             <Content>
                 <Title>{title}</Title>
                 <Year>{year}</Year>

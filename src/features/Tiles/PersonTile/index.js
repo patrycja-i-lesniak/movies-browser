@@ -12,7 +12,7 @@ import {
     PersonData,
     Biography,
 } from "./styled";
-import noPhoto from "./noPhoto.svg";
+import noPersonPhoto from "../Images/noPersonPhoto.svg";
 import { ShowMoreBiography } from "../ShowMoreButton";
 
 
@@ -28,7 +28,7 @@ const PersonTile = () => {
             <PersonDetailsTile
                 to={`/profile/:id`}
             >
-                <PersonPhoto src={personData.profile_path ? poster : noPhoto } alt="" />
+                <PersonPhoto src={personData.profile_path ? poster : noPersonPhoto } alt="" />
                 <Content>
                     <PersonName>{personData.name}</PersonName>
                     <Details>

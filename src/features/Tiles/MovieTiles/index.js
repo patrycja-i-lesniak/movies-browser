@@ -3,7 +3,7 @@ import { useState } from "react";
 import { selectGenres, selectPopularMoviesData } from "../../PopularMovies/popularMoviesSlice";
 import { selectPersonCredits } from "../../PopularPeople/PersonDetails/personDetailsSlice";
 
-import pictureSubstitution from "../pictureSubstitution.svg";
+import noMoviePhoto from "../Images/noMoviePhoto.svg";
 import {
     SiteTitle,
     List,
@@ -17,17 +17,23 @@ import {
     ShowMoreButton
 } from "./styled";
 import { Rate } from "../../Rate";
-import {Arrow} from "../Arrow";
+import { Arrow } from "../Arrow";
 
 const MovieTiles = ({ title }) => {
     const popularMoviesData = useSelector(selectPopularMoviesData);
 
+    const imageURL = "http://image.tmdb.org/t/p/";
+    const size = "w300";
+    const poster = `${imageURL}${size}`;
+
     let moviesList;
+
     const [showMore, setShowMore] = useState(false);
     const moviesGenresData = useSelector(selectGenres);
     const moviesGenres = moviesGenresData.genres;
     const sectionName = title.toLowerCase();
     const creditsData = useSelector(selectPersonCredits);
+
 
     switch (sectionName) {
         case "cast":
@@ -41,7 +47,6 @@ const MovieTiles = ({ title }) => {
         default:
             moviesList = popularMoviesData.results;
     }
-
 
     return (
         <>
@@ -69,11 +74,7 @@ const MovieTiles = ({ title }) => {
                                 to={`/movie/${movie.id}`}
                             >
                                 <Picture
-                                    src={movie.poster_path ? `https://image.tmdb.org/t/p/w300${movie.poster_path}`
-                                        : pictureSubstitution
-                                    }
-                                    alt={`${title} poster`}
-                                />
+                                    src={movie.poster_path ? `${poster}${movie.poster_path}` : noMoviePhoto} alt={`${title} poster`} />
                                 <ContentContainer>
                                     <TileTitle>{movie.title}</TileTitle>
 

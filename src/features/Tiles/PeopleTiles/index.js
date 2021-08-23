@@ -2,7 +2,7 @@ import { useState } from "react";
 import { useSelector } from "react-redux";
 
 import { exampleConfiguration } from "../exampleConfiguration";
-import pictureSubstitution from "../pictureSubstitution.svg";
+import noPersonPhoto from "../Images/noPersonPhoto.svg";
 import {
     PeopleList,
     PersonTile,
@@ -58,7 +58,7 @@ const PeopleTiles = ({ title }) => {
                                 <ProfilePicture
                                     src={profile_path ?
                                         `${pictureLinkBase}${profile_path}` :
-                                        pictureSubstitution}
+                                        noPersonPhoto}
                                 />
                                 <TileTitle>{name}</TileTitle>
                                 {
