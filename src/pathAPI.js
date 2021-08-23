@@ -1,1 +1,0 @@
-export const pathAPI = "https://api.themoviedb.org/3/";

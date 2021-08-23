@@ -4,13 +4,13 @@ import {
   Route,
   Redirect,
 } from "react-router-dom";
+
 import { Navigation } from "../../common/Navigation";
 import { PersonList } from "../../features/PopularPeople";
-
-
-import { toMovie, toMovies, toPeople, toProfile } from "./routes";
-import { MovieDetails } from "../../features/PopularMovies/MovieDetails";
 import MovieList from "../../features/PopularMovies";
+import { MovieDetails } from "../../features/PopularMovies/MovieDetails";
+import { toMovie, toMovies, toPeople, toProfile } from "./routes";
+
 export const App = () => {
   return (
     <HashRouter>

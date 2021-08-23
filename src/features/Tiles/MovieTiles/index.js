@@ -1,6 +1,5 @@
 import { useSelector } from "react-redux";
 
-
 import pictureSubstitution from "../pictureSubstitution.svg";
 import {
     SiteTitle,
@@ -47,7 +46,11 @@ const MovieTiles = ({ title }) => {
                                 )}
 
                                 <Tags>
-                                    {moviesList[index].genre_ids.map(movie => <Tag key={`genres-${movie}`}>{moviesGenres.find(({ id }) => id === movie).name}</Tag>)}
+                                    {movie.genre_ids.map(genreID =>
+                                        <Tag key={`genres-${genreID}`}>
+                                            {moviesGenres.find(({ id }) => id === genreID).name}
+                                        </Tag>
+                                    )}
                                 </Tags>
                                 <Rate
                                     small={true}

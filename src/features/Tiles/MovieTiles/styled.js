@@ -128,7 +128,7 @@ export const Tag = styled.li`
     background: ${({ theme }) => theme.colors.tile.tagBackground};
     padding: 8px 16px;
     font-size: 14px;
-    margin-right: 8px;
+    margin: 0 8px 8px 0;
     border-radius: 5px;
     text-decoration: none;
 

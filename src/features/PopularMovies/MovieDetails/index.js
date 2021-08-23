@@ -4,13 +4,12 @@ import { useDispatch, useSelector } from "react-redux";
 
 import { Header } from "./Header";
 import { Wrapper } from "./styled";
-import { fetchMovieDetails, selectStatus } from "./movieDetailsSlice";
+import { BigMovieTile } from "../../Tiles/BigMovieTile";
+import PeopleTiles from "../../Tiles/PeopleTiles";
 import Error from "../../../common/Error";
 import { Loader } from "../../../common/Loader";
 import { NoResults } from "../../../common/NoResults";
-import { BigMovieTile } from "../../Tiles/BigMovieTile";
-import PeopleTiles from "../../Tiles/PeopleTiles";
-
+import { fetchMovieDetails, selectStatus } from "./movieDetailsSlice";
 
 export const MovieDetails = () => {
     const status = useSelector(selectStatus);

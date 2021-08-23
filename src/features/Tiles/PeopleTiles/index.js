@@ -14,7 +14,6 @@ import {
 } from "./styled";
 import { Arrow } from "../Arrow";
 
-
 import { toProfile } from "../../../core/App/routes";
 import { selectMovieCredits } from "../../PopularMovies/MovieDetails/movieDetailsSlice";
 import { selectPopularPeopleData } from "../../PopularPeople/popularPeopleSlice";
@@ -47,7 +46,7 @@ const PeopleTiles = ({ title }) => {
             <section>
                 <Title>{title}</Title>
                 <PeopleList>
-                    {peopleList.map((person, index) =>
+                    {peopleList.map(({ id, profile_path, name, character, job }, index) =>
                         <li
                             key={index}
                             hidden={
@@ -56,18 +55,18 @@ const PeopleTiles = ({ title }) => {
                                 index > 5
                             }>
                             <PersonTile
-                                to={toProfile({ id: person.id })}
+                                to={toProfile({ id: id })}
                             >
                                 <ProfilePicture
-                                    src={person.profile_path ?
-                                        `${pictureLinkBase}${person.profile_path}` :
+                                    src={profile_path ?
+                                        `${pictureLinkBase}${profile_path}` :
                                         pictureSubstitution}
                                 />
-                                <TileTitle>{person.name}</TileTitle>
+                                <TileTitle>{name}</TileTitle>
                                 {
                                     !sectionName.includes("popular") &&
                                     <Role>
-                                        {person.character || person.job}
+                                        {character || job}
                                     </Role>
                                 }
                             </PersonTile>

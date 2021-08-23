@@ -1,8 +1,7 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
 
-import { pathAPI } from "./pathAPI";
-import { APIKey } from "./APIKey";
+import { APIKey, APIPath } from "../src/API";
 
 export const useAPIData = () => {
     const [moviesAndPeopleData, setMoviesAndPeopleData] = useState({
@@ -16,16 +15,16 @@ export const useAPIData = () => {
                 const movieId = "21";
                 const personId = "1039305";
 
-                const movieDetailsAPI = `${pathAPI}movie/${movieId}?${APIKey}`;
+                const movieDetailsAPI = `${APIPath}movie/${movieId}?${APIKey}`;
                 const movieData = await axios.get(movieDetailsAPI);
 
-                const creditsAPI = `${pathAPI}movie/${movieId}/credits?${APIKey}`;
+                const creditsAPI = `${APIPath}movie/${movieId}/credits?${APIKey}`;
                 const creditsData = await axios.get(creditsAPI);
 
-                const personAPI = `${pathAPI}person/${personId}/movie_credits?${APIKey}`;
+                const personAPI = `${APIPath}person/${personId}/movie_credits?${APIKey}`;
                 const personData = await axios.get(personAPI);
 
-                const personCreditsAPI = `${pathAPI}movie/${movieId}/credits?${APIKey}`;
+                const personCreditsAPI = `${APIPath}movie/${movieId}/credits?${APIKey}`;
                 const personCreditsData = await axios.get(personCreditsAPI);
 
                 setMoviesAndPeopleData({
