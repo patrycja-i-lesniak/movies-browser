@@ -16,11 +16,18 @@ import { Wrapper } from "./MovieDetails/styled";
 const MovieList = () => {
     const dispatch = useDispatch();
     const status = useSelector(selectMoviesStatus);
-    const page = useQueryParameter(paginationQueryParamName) || "1";
+    const page = useQueryParameter(paginationQueryParamName);
     const searchQuery = useQueryParameter(searchQueryParamName);
-
     useEffect(() => {
-        dispatch(fetchMoviesLoading({page, searchQuery}));
+        if (searchQuery && !page) {
+            const timeoutID = setTimeout(() => {
+                dispatch(fetchMoviesLoading({page, searchQuery}));
+            }, 1_000);
+
+            return () => clearTimeout(timeoutID);
+        } else {
+            dispatch(fetchMoviesLoading({page, searchQuery}));
+        } 
     }, [dispatch, page, searchQuery]);
 
     const MovieListContent = () => {
