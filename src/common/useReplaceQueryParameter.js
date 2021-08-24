@@ -13,6 +13,7 @@ export const useReplaceQueryParameter = () => {
         } else {
             searchParams.set(key, value);
         }
+        
         if (key === searchQueryParamName) {
             searchParams.delete(paginationQueryParamName);
         }
