@@ -5,7 +5,6 @@ export const RateWrapper = styled.div`
     grid-template-columns: repeat(4, auto);
     justify-content: start;
     align-items: end;
-    grid-column-gap: 8px;
     margin: 0;
     grid-template-areas:
         "star average scale vote";
@@ -36,6 +35,7 @@ export const RateWrapper = styled.div`
 export const StarIcon = styled.img`
     width: 24px;
     grid-area: star;
+    margin-right: 8px;
 
     @media(max-width: ${({ theme }) => theme.breakpoints.small}px) {
         width: 16px;
