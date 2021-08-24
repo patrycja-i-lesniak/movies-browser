@@ -48,8 +48,9 @@ const MovieTiles = ({ title }) => {
             moviesList = popularMoviesData.results;
     }
 
-    return (
+    return ( moviesList.length ?
         <>
+        
             <section>
                 {
                     sectionName.includes("popular")
@@ -59,7 +60,7 @@ const MovieTiles = ({ title }) => {
                         </SiteTitle>
                         :
                         <SiteTitle>
-                            {`Movie - ${sectionName}`} ({moviesList.length})
+                            {`Movie - ${sectionName} (${moviesList.length})`}
                         </SiteTitle>
                 }
                 <List>
@@ -110,7 +111,7 @@ const MovieTiles = ({ title }) => {
                 </List>
             </section>
             {
-                !sectionName.includes("popular") &&
+                !sectionName.includes("popular") && 
                 <ShowMoreButton onClick={() => setShowMore(!showMore)}>
                     <span>
                         {showMore ? "Show less" : "Show more"}
@@ -119,6 +120,7 @@ const MovieTiles = ({ title }) => {
                 </ShowMoreButton>
             }
         </>
+        : ""
     );
 };
 
