@@ -1,9 +1,5 @@
 import styled from "styled-components";
 
-export const Wrapper = styled.section`
-    padding: 56px 0 0;
-`;
-
 export const PersonDetailsTile = styled.article`
     background: ${({ theme }) => theme.colors.tile.background};
     box-shadow: 0px 4px 12px rgba(186, 199, 213, 0.5);

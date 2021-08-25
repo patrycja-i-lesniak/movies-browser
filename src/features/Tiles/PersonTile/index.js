@@ -1,7 +1,6 @@
 import { useSelector } from "react-redux";
 import { selectPersonData } from "../../PopularPeople/PersonDetails/personDetailsSlice";
 import {
-    Wrapper,
     PersonDetailsTile,
     PersonPhoto,
     Content,
@@ -24,7 +23,6 @@ const PersonTile = () => {
     const poster = `${imageURL}${size}${image}`;
 
     return (
-        <Wrapper>
             <PersonDetailsTile
                 to={`/profile/:id`}
             >
@@ -50,7 +48,6 @@ const PersonTile = () => {
                     <ShowMoreBiography biography={personData.biography} />
                 </Biography>
             </PersonDetailsTile>
-        </Wrapper>
     );
 };
 
