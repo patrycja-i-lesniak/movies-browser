@@ -2,9 +2,9 @@ import styled, { css } from "styled-components";
 
 export const RateWrapper = styled.div`
     display: grid;
-    grid-template-columns: repeat(4, auto);
+    grid-template-columns: auto auto auto 1fr;
     justify-content: start;
-    align-items: end;
+    align-items: baseline;
     margin: 0;
     grid-template-areas:
         "star average scale vote";
@@ -86,7 +86,7 @@ export const RatingScale = styled.p`
     color: ${({ theme }) => theme.colors.textPrimary};
 
     @media(max-width: ${({ theme }) => theme.breakpoints.small}px) {
-        display:  none;
+        /* display:  none; */
         font-size: 12px;
         color: ${({ theme }) => theme.colors.textPrimary};
     };
@@ -98,7 +98,7 @@ export const RatingScale = styled.p`
 
     ${({ small }) => small && css`
         color: ${({ theme }) => theme.colors.textSecondary};
-        display:  none;
+        /* display:  none; */
         padding: 0;
     `};
 `;
