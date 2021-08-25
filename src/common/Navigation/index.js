@@ -16,7 +16,17 @@ import {
 } from "./styled";
 import videoIcon from "./videoIcon.svg";
 
+import { useDispatch } from "react-redux";
+import { useEffect } from "react";
+import { fetchMoviesBrowserLoading } from "../../core/App/moviesBrowserSlice";
+
 export const Navigation = () => {
+    const dispatch = useDispatch();
+
+    useEffect(() => {
+        dispatch(fetchMoviesBrowserLoading());
+    }, [dispatch]);
+
     return (
         <NavigationWrapper>
             <NavigationContainer>
