@@ -1,7 +1,6 @@
 import { useSelector } from "react-redux";
 
 import { selectMovieData } from "../../PopularMovies/MovieDetails/movieDetailsSlice";
-import { Rating } from "../../Rating";
 import {
     MovieDetailsTile,
     Image,
@@ -17,6 +16,7 @@ import {
     Description,
 } from "./styled";
 import noMoviePhoto from "../Images/noMoviePhoto.svg";
+import {Rate} from "../../Rate";
 
 export const BigMovieTile = () => {
     const movieData = useSelector(selectMovieData);
@@ -51,7 +51,7 @@ export const BigMovieTile = () => {
                 <Tags>
                     {genres.map(tag => <Tag key={`genres-${tag.name}`}>{tag.name}</Tag>)}
                 </Tags>
-                <Rating />
+                <Rate />
             </Content>
             <Description>
                 {overview}
