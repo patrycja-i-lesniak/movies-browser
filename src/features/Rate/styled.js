@@ -4,7 +4,7 @@ export const RateWrapper = styled.div`
     display: grid;
     grid-template-columns: auto auto auto 1fr;
     justify-content: start;
-    align-items: baseline;
+    align-items: end;
     margin: 0;
     grid-template-areas:
         "star average scale vote";
@@ -26,9 +26,15 @@ export const RateWrapper = styled.div`
             "vote vote vote";
 
             @media(max-width: ${({ theme }) => theme.breakpoints.small}px) {
-                grid-template-columns: repeat(4,auto);
+                grid-template-columns: repeat(4, auto);
                 grid-template-areas:  "star average scale vote";
             };
+    `};
+
+    ${({ small }) => small && css`
+        grid-template-areas:
+            "star average vote";
+        grid-template-columns: auto auto  auto 1fr;
     `};
 `;
 
@@ -39,6 +45,7 @@ export const StarIcon = styled.img`
 
     @media(max-width: ${({ theme }) => theme.breakpoints.small}px) {
         width: 16px;
+        margin-right: 4px;
     };
 
     ${({ big }) => big && css`
@@ -62,6 +69,7 @@ export const VoteAverage = styled.p`
         font-size: 13px;
         font-weight: 600;
         color: ${({ theme }) => theme.colors.textPrimary};
+        margin-right: 4px;
     };
 
     ${({ big }) => big && css`
@@ -86,7 +94,7 @@ export const RatingScale = styled.p`
     color: ${({ theme }) => theme.colors.textPrimary};
 
     @media(max-width: ${({ theme }) => theme.breakpoints.small}px) {
-        /* display:  none; */
+        display:  none;
         font-size: 12px;
         color: ${({ theme }) => theme.colors.textPrimary};
     };
