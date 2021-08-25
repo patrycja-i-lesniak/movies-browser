@@ -18,8 +18,8 @@ const MoviesBrowserSlice = createSlice({
         }),
         fetchMoviesBrowserError: () => ({
             status: "error",
-            movieData: null,
-            movieCredits: null,
+            genres: null,
+            configuration: null,
         }),
     }
 });
