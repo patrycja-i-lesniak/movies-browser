@@ -20,6 +20,8 @@ import {Rate} from "../../Rate";
 
 export const BigMovieTile = () => {
     const movieData = useSelector(selectMovieData);
+    const vote_average = movieData.vote_average;
+    const vote_count = movieData.vote_count;
 
     const image = movieData.poster_path;
     const imageURL = "http://image.tmdb.org/t/p/";
@@ -51,7 +53,9 @@ export const BigMovieTile = () => {
                 <Tags>
                     {genres.map(tag => <Tag key={`genres-${tag.name}`}>{tag.name}</Tag>)}
                 </Tags>
-                <Rate />
+                <Rate 
+                vote_average={vote_average}
+                vote_count={vote_count}/>
             </Content>
             <Description>
                 {overview}
