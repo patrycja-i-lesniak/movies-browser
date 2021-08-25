@@ -25,9 +25,7 @@ const PersonTile = () => {
 
     return (
         <Wrapper>
-            <PersonDetailsTile
-                to={`/profile/:id`}
-            >
+            <PersonDetailsTile>
                 <PersonPhoto
                     src={
                         personData.profile_path

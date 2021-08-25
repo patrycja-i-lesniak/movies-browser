@@ -7,7 +7,6 @@ import {
     PersonTile,
     ProfilePicture,
     Role,
-    ShowMoreButton,
     TileTitle,
     Title
 } from "./styled";
@@ -16,6 +15,7 @@ import { Arrow } from "../Arrow";
 import { toProfile } from "../../../core/App/routes";
 import { selectMovieCredits } from "../../PopularMovies/MovieDetails/movieDetailsSlice";
 import { selectPopularPeopleData } from "../../PopularPeople/popularPeopleSlice";
+import { ShowMoreButton } from "../ShowMoreButton";
 
 const PeopleTiles = ({ title }) => {
     const popularPeopleData = useSelector(selectPopularPeopleData);
