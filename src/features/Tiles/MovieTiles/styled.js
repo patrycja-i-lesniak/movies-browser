@@ -20,7 +20,7 @@ export const List = styled.ul`
     list-style-type: none;
     padding: 0;
 
-   @media(max-width: ${({ theme }) => theme.breakpoints.large}px) {
+    @media(max-width: ${({ theme }) => theme.breakpoints.large}px) {
         grid-template-columns: repeat(3, 1fr);
     }
 
