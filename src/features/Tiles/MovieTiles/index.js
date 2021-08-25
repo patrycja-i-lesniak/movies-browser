@@ -64,7 +64,17 @@ const MovieTiles = ({ title }) => {
                         </SiteTitle>
                 }
                 <List>
-                    {moviesList.map((movie, index) =>
+                    {moviesList.map(({
+                        id,
+                        poster_path,
+                        title,
+                        release_date,
+                        character,
+                        job,
+                        genre_ids,
+                        vote_average,
+                        vote_count},
+                        index) =>
                         <li key={index}
                             hidden={
                                 !sectionName.includes("popular") &&
@@ -72,30 +82,30 @@ const MovieTiles = ({ title }) => {
                                 index > 3
                             }>
                             <Tile
-                                to={`/movie/${movie.id}`}
+                                to={`/movie/${id}`}
                             >
                                 <ContentContainer>
                                     <Picture
-                                        src={movie.poster_path ? `${poster}${movie.poster_path}` : noMoviePhoto} alt={`${sectionName} poster`} />
+                                        src={poster_path ? `${poster}${poster_path}` : noMoviePhoto} alt={`${sectionName} poster`} />
                                     <div>
-                                        <TileTitle>{movie.title}</TileTitle>
+                                        <TileTitle>{title}</TileTitle>
 
-                                        {movie.release_date && (
+                                        {release_date && (
                                             <Year>
-                                                {movie.character
-                                                    ? `${movie.character}
-                                            (${movie.release_date ? movie.release_date.slice(0, 4) : ""
+                                                {character
+                                                    ? `${character}
+                                            (${release_date ? release_date.slice(0, 4) : ""
                                                     })`
-                                                    : movie.job
-                                                        ? `${movie.job}
-                                            (${movie.release_date ? movie.release_date.slice(0, 4) : ""
+                                                    : job
+                                                        ? `${job}
+                                            (${release_date ? release_date.slice(0, 4) : ""
                                                         })`
-                                                        : movie.release_date ? movie.release_date.slice(0, 4) : ""
+                                                        : release_date ? release_date.slice(0, 4) : ""
                                                 }
                                             </Year>
                                         )}
                                         <Tags>
-                                            {movie.genre_ids.map(genreID =>
+                                            {genre_ids.map(genreID =>
                                                 <Tag key={`genres-${genreID}`}>
                                                     {moviesGenres.find(({ id }) => id === genreID).name}
                                                 </Tag>
@@ -103,8 +113,8 @@ const MovieTiles = ({ title }) => {
                                         </Tags>
                                         <Rate
                                             small={true}
-                                            vote_average={movie.vote_average}
-                                            vote_count={movie.vote_count} />
+                                            vote_average={vote_average}
+                                            vote_count={vote_count} />
                                     </div>
                                 </ContentContainer>
                             </Tile>
