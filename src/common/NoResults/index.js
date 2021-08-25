@@ -1,5 +1,5 @@
 import { NoResultsHeader, NoResultsImage, } from "./styled";
-import { Wrapper } from "../LoaderNoResultsWrapper";
+import { Wrapper } from "../Wrappers/LoaderNoResultsWrapper";
 
 export const NoResults = () => {
     const search = "Muan"; //template, waitng for search code and logic

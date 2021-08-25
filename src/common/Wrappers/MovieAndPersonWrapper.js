@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-export const Wrapper = styled.div`
+export const MovieAndPersonWrapper = styled.div`
     margin: 0 auto;
     background: ${({ theme }) => theme.colors.site.backgroundWrapper};
     padding: 64px 0;

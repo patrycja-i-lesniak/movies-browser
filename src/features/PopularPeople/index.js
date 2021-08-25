@@ -5,7 +5,7 @@ import PeopleTiles from "../Tiles/PeopleTiles";
 import { Loader } from "../../common/Loader";
 import Error from "../../common/Error";
 import { NoResults } from "../../common/NoResults";
-import { Wrapper } from "../PopularMovies/MovieDetails/styled";
+import { MovieAndPersonWrapper } from "../../common/Wrappers/MovieAndPersonWrapper";
 import { Pagination } from "../../common/Pagination";
 import { useQueryParameter } from "../../useQueryParameter";
 import searchQueryParamName from "../../searchQueryParamName";
@@ -30,9 +30,9 @@ export const PopularPeopleList = () => {
             case "success":
                 return (
                     <>
-                        <Wrapper>
+                        <MovieAndPersonWrapper>
                             <PeopleTiles title="Popular People" />
-                        </Wrapper>
+                        </MovieAndPersonWrapper>
                         <Pagination />
                     </>);
             case "error":

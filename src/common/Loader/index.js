@@ -1,5 +1,5 @@
 import { Header, LoadingIcon } from "./styled";
-import { Wrapper } from "../LoaderNoResultsWrapper";
+import { Wrapper } from "../Wrappers/LoaderNoResultsWrapper";
 
 export const Loader = () => {
     const search = "Mulan"; //template, waiting for search code and logic
