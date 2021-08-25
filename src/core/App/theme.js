@@ -29,6 +29,7 @@ const common = {
 export const theme = {
     colors: {
         textPrimary: colorNames.black,
+        textSecondary: colorNames.darkGrey,
         textHeader: colorNames.white,
         navigation: {
             background: colorNames.black,
