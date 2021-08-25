@@ -86,7 +86,7 @@ export const TileTitle = styled.h2`
     font-size: 22px;
     line-height: 1.3;
     color: ${({ theme }) => theme.colors.textPrimary};
-    margin: 16px 0 0;
+    margin: 0;
     font-weight: 500;
 
     @media(max-width: ${({ theme }) => theme.breakpoints.medium}px) {
