@@ -55,7 +55,7 @@ export const VoteAverage = styled.p`
     font-size: 22px;
     color: ${({ theme }) => theme.colors.textPrimary};
     font-weight: 500;
-    margin: 0;
+    margin: 0 8px 0 0;
     grid-area: average;
 
     @media(max-width: ${({ theme }) => theme.breakpoints.small}px) {
