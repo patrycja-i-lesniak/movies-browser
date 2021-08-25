@@ -50,7 +50,6 @@ const MovieTiles = ({ title }) => {
 
     return (moviesList.length ?
         <>
-
             <section>
                 {
                     sectionName.includes("popular")
@@ -72,6 +71,8 @@ const MovieTiles = ({ title }) => {
                         character,
                         job,
                         genre_ids,
+                        vote_average,
+                        vote_count,
                     }, index) =>
                         <li key={index}
                             hidden={
@@ -82,9 +83,9 @@ const MovieTiles = ({ title }) => {
                             <Tile
                                 to={`/movie/${id}`}
                             >
+                                <Picture
+                                    src={poster_path ? `${poster}${poster_path}` : noMoviePhoto} alt={`${sectionName} poster`} />
                                 <ContentContainer>
-                                    <Picture
-                                        src={poster_path ? `${poster}${poster_path}` : noMoviePhoto} alt={`${sectionName} poster`} />
                                     <div>
                                         <TileTitle>{title}</TileTitle>
 
@@ -109,8 +110,10 @@ const MovieTiles = ({ title }) => {
                                                 </Tag>
                                             )}
                                         </Tags>
-                                        <Rate small={true} />
                                     </div>
+                                    <Rate small={true}
+                                        vote_average={vote_average}
+                                        vote_count={vote_count} />
                                 </ContentContainer>
                             </Tile>
                         </li>

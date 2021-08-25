@@ -15,7 +15,7 @@ export const SiteTitle = styled.h1`
 
 export const List = styled.ul`
     display: grid;
-    grid-gap: 40px;
+    grid-gap: 16px;
     grid-template-columns: repeat(4, 1fr);
     list-style-type: none;
     padding: 0;
@@ -37,23 +37,35 @@ export const List = styled.ul`
 export const Tile = styled(Link)`
     text-decoration: none;
     display: grid;
-    align-content: space-between;
+    grid-template-rows: auto 1fr;
+    grid-row-gap: 16px;
+    align-content: start;
     padding: 16px;
     height: 100%;
     background-color: ${({ theme }) => theme.colors.tile.background};
     box-shadow: 0px 4px 12px rgba(186, 199, 213, 0.5);
     border-radius: 5px;
     color: inherit;
+
+    @media(max-width: ${({ theme }) => theme.breakpoints.xsmall}px) {
+        grid-template-rows: auto;
+        padding: 16px;
+        grid-template-columns: min-content 1fr;
+        grid-gap: 16px;
+        grid-template-areas:
+            "image content"
+    }
 `;
 
 export const ContentContainer = styled.div`
-    display: grid;
-    grid-template-rows: auto 1fr;
-    bottom: 5px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
 
     @media(max-width: ${({ theme }) => theme.breakpoints.xsmall}px) {
-        display: grid;
-        grid-template-columns: auto 1fr;
+        grid-area: content;
+        justify-content: flex-start;
     }
 `;
 
@@ -65,7 +77,6 @@ export const Picture = styled.img`
     @media(max-width: ${({ theme }) => theme.breakpoints.xsmall}px) {
         width: 114px;
         height: 169px;
-        margin-right: 16px;
     }
 `;
 
