@@ -62,7 +62,6 @@ export const ContentContainer = styled.div`
     flex-direction: column;
     justify-content: space-between;
 
-
     @media(max-width: ${({ theme }) => theme.breakpoints.xsmall}px) {
         grid-area: content;
         justify-content: flex-start;
@@ -75,7 +74,6 @@ export const Picture = styled.img`
     width: 100%;
     aspect-ratio: 2 / 3;
     
-
     @media(max-width: ${({ theme }) => theme.breakpoints.xsmall}px) {
         width: 114px;
         height: 169px;
