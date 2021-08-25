@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { useSelector } from "react-redux";
 
-import noPersonPhoto from "../Images/noPersonPhoto.svg";
+import noPersonPhoto from "../../../features/Images/noPersonPhoto.svg";
 import {
     PeopleList,
     PersonTile,

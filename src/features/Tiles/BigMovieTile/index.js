@@ -15,7 +15,7 @@ import {
     Tag,
     Description,
 } from "./styled";
-import noMoviePhoto from "../Images/noMoviePhoto.svg";
+import noMoviePhoto from "../../../features/Images/noMoviePhoto.svg";
 import { Rate } from "../../Rate";
 
 export const BigMovieTile = () => {

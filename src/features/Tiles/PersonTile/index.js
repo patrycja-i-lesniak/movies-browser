@@ -11,7 +11,7 @@ import {
     PersonData,
     Biography,
 } from "./styled";
-import noPersonPhoto from "../Images/noPersonPhoto.svg";
+import noPersonPhoto from "../../../features/Images/noPersonPhoto.svg";
 import { ShowMoreBiography } from "../ShowMoreButton";
 
 

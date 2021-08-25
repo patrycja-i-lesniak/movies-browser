@@ -7,7 +7,7 @@ import {
 } from "../../PopularPeople/PersonDetails/personDetailsSlice";
 
 import { selectGenres } from "../../../core/App/moviesBrowserSlice";
-import noMoviePhoto from "../Images/noMoviePhoto.svg";
+import noMoviePhoto from "../../../features/Images/noMoviePhoto.svg";
 import {
     SiteTitle,
     List,
