@@ -1,16 +1,15 @@
-import { takeLatest, call, put, all } from "@redux-saga/core/effects";
+import { takeLatest, call, put } from "@redux-saga/core/effects";
 
-import { getGenres, getPopularMoviesData, getSearchMoviesData } from "./moviesAPI";
+import {  getPopularMoviesData, getSearchMoviesData } from "./moviesAPI";
 import { fetchMoviesError, fetchMoviesSuccess, fetchMoviesLoading } from "./moviesSlice";
 
 function* fetchMoviesDataHandler({ payload: location }) {
     try {
-        const [moviesData, moviesGenres] = yield all([
-            location.searchQuery ? call(getSearchMoviesData, location) : call(getPopularMoviesData, location.page),
-            call(getGenres),
-        ]);
+        const moviesData = yield location.searchQuery
+            ? call(getSearchMoviesData, location)
+            : call(getPopularMoviesData, location.page);
 
-        yield put(fetchMoviesSuccess({ moviesData, moviesGenres }));
+            yield put(fetchMoviesSuccess(moviesData));
     } catch (error) {
         yield put(fetchMoviesError());
     }
