@@ -8,7 +8,7 @@ import { Navigation } from "../../common/Navigation";
 import { PopularPeopleList } from "../../features/PopularPeople";
 import PopularMovieList from "../../features/PopularMovies";
 import Error from "../../common/Error";
-import {MovieDetails} from "../../features/PopularMovies/MovieDetails";
+import { MovieDetails } from "../../features/PopularMovies/MovieDetails";
 import PersonDetails from "../../features/PopularPeople/PersonDetails";
 
 export const App = () => {
@@ -17,7 +17,7 @@ export const App = () => {
       <Navigation />
       <Switch>
         <Route path="/profile/:id">
-          <PersonDetails/>
+          <PersonDetails />
         </Route>
         <Route path="/movie/:id">
           <MovieDetails />
