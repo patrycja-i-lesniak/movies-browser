@@ -72,9 +72,7 @@ const MovieTiles = ({ title }) => {
                         character,
                         job,
                         genre_ids,
-                        vote_average,
-                        vote_count},
-                        index) =>
+                    }, index) =>
                         <li key={index}
                             hidden={
                                 !sectionName.includes("popular") &&
@@ -111,10 +109,7 @@ const MovieTiles = ({ title }) => {
                                                 </Tag>
                                             )}
                                         </Tags>
-                                        <Rate
-                                            small={true}
-                                            vote_average={vote_average}
-                                            vote_count={vote_count} />
+                                        <Rate small={true} />
                                     </div>
                                 </ContentContainer>
                             </Tile>
