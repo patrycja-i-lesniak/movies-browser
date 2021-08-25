@@ -18,10 +18,9 @@ export const ShowMoreBiography = ({ biography }) => {
         ) : (
             <>
                 {biography}
-            </> 
+            </>
         );
 };
-
 
 export const ShowMoreButton = () => {
     const [showMore, setShowMore] = useState(false);
