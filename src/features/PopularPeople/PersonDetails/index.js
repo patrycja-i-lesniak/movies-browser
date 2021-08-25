@@ -1,6 +1,6 @@
 import { useEffect } from "react";
 import { useParams } from "react-router-dom";
-import {useSelector, useDispatch} from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
 
 import PersonTile from "../../Tiles/PersonTile";
 import MovieTiles from "../../Tiles/MovieTiles";
@@ -18,7 +18,7 @@ const PersonDetails = () => {
     useEffect(() => {
         dispatch(fetchPersonDetails(id));
     }, [dispatch, id]);
-    
+
     const PersonDetailsContent = () => {
         switch (status) {
             case "loading":
@@ -28,7 +28,7 @@ const PersonDetails = () => {
                     <>
                         <Wrapper>
                             <PersonTile />
-                            <MovieTiles title="cast"/>
+                            <MovieTiles title="cast" />
                             <MovieTiles title="crew" />
                         </Wrapper>
                     </>
