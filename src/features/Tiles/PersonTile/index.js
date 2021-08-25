@@ -28,7 +28,14 @@ const PersonTile = () => {
             <PersonDetailsTile
                 to={`/profile/:id`}
             >
-                <PersonPhoto src={personData.profile_path ? poster : noPersonPhoto } alt={`${personData.name} poster`} />
+                <PersonPhoto
+                    src={
+                        personData.profile_path
+                            ? poster
+                            : noPersonPhoto
+                    }
+                    alt={`${personData.name} poster`}
+                />
                 <Content>
                     <PersonName>{personData.name}</PersonName>
                     <Details>
@@ -41,7 +48,9 @@ const PersonTile = () => {
                         {personData.place_of_birth &&
                             <PersonDetails>
                                 <Label>Place of birth:</Label>
-                                <PersonData>{personData.place_of_birth}</PersonData>
+                                <PersonData>
+                                    {personData.place_of_birth}
+                                </PersonData>
                             </PersonDetails>
                         }
                     </Details>

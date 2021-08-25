@@ -11,7 +11,7 @@ import { Pagination } from "../../common/Pagination";
 import { fetchMoviesLoading, selectMoviesStatus } from "./moviesSlice";
 import { MovieAndPersonWrapper } from "../../common/Wrappers/MovieAndPersonWrapper";
 
-const PopularMoviesList = () => {
+const MoviesList = () => {
     const dispatch = useDispatch();
     const status = useSelector(selectMoviesStatus);
     const page = useQueryParameter(paginationQueryParamName);
@@ -54,4 +54,4 @@ const PopularMoviesList = () => {
     );
 };
 
-export default PopularMoviesList;
+export default MoviesList;

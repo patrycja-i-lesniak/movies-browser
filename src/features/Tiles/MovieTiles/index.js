@@ -1,8 +1,9 @@
 import { useSelector } from "react-redux";
 import { useState } from "react";
-import { selectPersonCredits } from "../../PopularPeople/PersonDetails/personDetailsSlice";
-import { selectGenres, selectMoviesData } from "../../PopularMovies/moviesSlice";
 
+import { selectPersonCredits } from "../../PopularPeople/PersonDetails/personDetailsSlice";
+import { selectMoviesData } from "../../PopularMovies/moviesSlice";
+import { selectGenres } from "../../../core/App/moviesBrowserSlice";
 import noMoviePhoto from "../Images/noMoviePhoto.svg";
 import {
     SiteTitle,
@@ -14,10 +15,12 @@ import {
     Tags,
     Tag,
     ContentContainer,
+    ShowMoreButton
 } from "./styled";
 import { Rate } from "../../Rate";
 import { Arrow } from "../Arrow";
-import { ShowMoreButton } from "../ShowMoreButton";
+import { nanoid } from "@reduxjs/toolkit";
+import { toMovie } from "../../../core/App/routes";
 
 const MovieTiles = ({ title }) => {
     const popularMoviesData = useSelector(selectMoviesData);
@@ -80,10 +83,16 @@ const MovieTiles = ({ title }) => {
                                 index > 3
                             }>
                             <Tile
-                                to={`/movie/${id}`}
+                                to={toMovie(id)}
                             >
                                 <Picture
-                                    src={poster_path ? `${poster}${poster_path}` : noMoviePhoto} alt={`${sectionName} poster`} />
+                                    src={
+                                        poster_path
+                                            ? `${poster}${poster_path}`
+                                            : noMoviePhoto
+                                    }
+                                    alt={`${sectionName} poster`}
+                                />
                                 <ContentContainer>
                                     <div>
                                         <TileTitle>{title}</TileTitle>
@@ -92,20 +101,30 @@ const MovieTiles = ({ title }) => {
                                             <Year>
                                                 {character
                                                     ? `${character}
-                                            (${release_date ? release_date.slice(0, 4) : ""
-                                                    })`
+                                            (
+                                                ${release_date
+                                                        ? release_date.slice(0, 4)
+                                                        : ""}
+                                            )`
                                                     : job
-                                                        ? `${job}
-                                            (${release_date ? release_date.slice(0, 4) : ""
-                                                        })`
-                                                        : release_date ? release_date.slice(0, 4) : ""
+                                                        ? `${job}(
+                                                            ${release_date
+                                                            ? release_date.slice(0, 4)
+                                                            : ""}
+                                                            )`
+                                                        : release_date
+                                                            ? release_date.slice(0, 4)
+                                                            : ""
                                                 }
                                             </Year>
                                         )}
                                         <Tags>
                                             {genre_ids.map(genreID =>
-                                                <Tag key={`genres-${genreID}`}>
-                                                    {moviesGenres.find(({ id }) => id === genreID).name}
+                                                <Tag key={nanoid()}>
+                                                    {
+                                                        moviesGenres.find(({ id }) =>
+                                                            id === genreID).name
+                                                    }
                                                 </Tag>
                                             )}
                                         </Tags>
