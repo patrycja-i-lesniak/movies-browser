@@ -25,7 +25,6 @@ export const Rate = ({ vote_average, vote_count, mobile = false, small = false, 
                     <RateWrapper>
                         <StarIcon mobile={mobile} src={star} alt="star" />
                         <VoteAverage mobile={mobile}>{vote_average}</VoteAverage>
-                        <RatingScale mobile={mobile}>/10</RatingScale>
                         <VoteCount mobile={mobile}>{vote_count} votes</VoteCount>
                     </RateWrapper>
                 )
