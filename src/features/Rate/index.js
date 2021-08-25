@@ -1,5 +1,5 @@
-import { useSelector } from "react-redux";
-import { selectMovieData } from "../PopularMovies/MovieDetails/movieDetailsSlice";
+// import { useSelector } from "react-redux";
+// import { selectMovieData } from "../PopularMovies/MovieDetails/movieDetailsSlice";
 import star from "./star.svg";
 import {
     RateWrapper,
@@ -12,11 +12,11 @@ import {
 } from "./styled";
 
 
-export const Rate = ({ mobile = false, small = false, big = false }) => {        // big, small, mobile
-    const movieData = useSelector(selectMovieData);
+export const Rate = ({ vote_average, vote_count, mobile = false, small = false, big = false }) => {        // big, small, mobile
+    // const movieData = useSelector(selectMovieData);
 
-    const vote_average = movieData.vote_average;
-    const vote_count = movieData.vote_count;
+    // const vote_average = movieData.vote_average;
+    // const vote_count = movieData.vote_count;
 
     return (
         <>
