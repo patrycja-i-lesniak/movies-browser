@@ -12,7 +12,7 @@ const sagaMiddleware = createSagaMiddleware();
 
 const store = configureStore({
     reducer: {
-        popularMovies: moviesReducer,
+        movies: moviesReducer,
         moviesBrowser: moviesBrowserReducer,
         popularPeople: popularPeopleReducer,
         movieDetails: movieDetailsReducer,
