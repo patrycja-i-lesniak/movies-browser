@@ -31,7 +31,7 @@ export const PopularPeopleList = () => {
                 return (
                     <>
                         <MovieAndPersonWrapper>
-                            <PeopleTiles title="Popular People" />
+                            <PeopleTiles title="Popular people" />
                         </MovieAndPersonWrapper>
                         <Pagination />
                     </>);
