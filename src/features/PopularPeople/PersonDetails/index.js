@@ -18,7 +18,6 @@ const PersonDetails = () => {
     useEffect(() => {
         dispatch(fetchPersonDetails(id));
     }, [dispatch, id]);
-    
     const PersonDetailsContent = () => {
         switch (status) {
             case "loading":

@@ -1,8 +1,12 @@
 import { useSelector } from "react-redux";
 import { useState } from "react";
-import { selectGenres, selectPopularMoviesData } from "../../PopularMovies/popularMoviesSlice";
-import { selectPersonCredits } from "../../PopularPeople/PersonDetails/personDetailsSlice";
+import { nanoid } from "@reduxjs/toolkit";
 
+import {
+    selectPersonCredits
+} from "../../PopularPeople/PersonDetails/personDetailsSlice";
+
+import { selectGenres } from "../../../core/App/moviesBrowserSlice";
 import noMoviePhoto from "../Images/noMoviePhoto.svg";
 import {
     SiteTitle,
@@ -16,10 +20,12 @@ import {
     ContentContainer,
 } from "./styled";
 import { Rate } from "../../Rate";
+import { toMovie } from "../../../core/App/routes";
+import { selectMoviesData } from "../../PopularMovies/moviesSlice";
 import { ShowMoreButton } from "../ShowMoreButton";
 
 const MovieTiles = ({ title }) => {
-    const popularMoviesData = useSelector(selectPopularMoviesData);
+    const popularMoviesData = useSelector(selectMoviesData);
 
     const imageURL = "http://image.tmdb.org/t/p/";
     const size = "w342";
@@ -31,7 +37,6 @@ const MovieTiles = ({ title }) => {
     const moviesGenres = moviesGenresData.genres;
     const sectionName = title.toLowerCase();
     const creditsData = useSelector(selectPersonCredits);
-
 
     switch (sectionName) {
         case "cast":
@@ -79,10 +84,16 @@ const MovieTiles = ({ title }) => {
                                 index > 3
                             }>
                             <Tile
-                                to={`/movie/${id}`}
+                                to={toMovie({ id })}
                             >
                                 <Picture
-                                    src={poster_path ? `${poster}${poster_path}` : noMoviePhoto} alt={`${sectionName} poster`} />
+                                    src={
+                                        poster_path
+                                            ? `${poster}${poster_path}`
+                                            : noMoviePhoto
+                                    }
+                                    alt={`${sectionName} poster`}
+                                />
                                 <ContentContainer>
                                     <div>
                                         <TileTitle>{title}</TileTitle>
@@ -91,20 +102,30 @@ const MovieTiles = ({ title }) => {
                                             <Year>
                                                 {character
                                                     ? `${character}
-                                            (${release_date ? release_date.slice(0, 4) : ""
-                                                    })`
+                                            (
+                                                ${release_date
+                                                        ? release_date.slice(0, 4)
+                                                        : ""}
+                                            )`
                                                     : job
-                                                        ? `${job}
-                                            (${release_date ? release_date.slice(0, 4) : ""
-                                                        })`
-                                                        : release_date ? release_date.slice(0, 4) : ""
+                                                        ? `${job}(
+                                                            ${release_date
+                                                            ? release_date.slice(0, 4)
+                                                            : ""}
+                                                            )`
+                                                        : release_date
+                                                            ? release_date.slice(0, 4)
+                                                            : ""
                                                 }
                                             </Year>
                                         )}
                                         <Tags>
                                             {genre_ids.map(genreID =>
-                                                <Tag key={`genres-${genreID}`}>
-                                                    {moviesGenres.find(({ id }) => id === genreID).name}
+                                                <Tag key={nanoid()}>
+                                                    {
+                                                        moviesGenres.find(({ id }) =>
+                                                            id === genreID).name
+                                                    }
                                                 </Tag>
                                             )}
                                         </Tags>

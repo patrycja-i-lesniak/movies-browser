@@ -1,4 +1,5 @@
 import { useSelector } from "react-redux";
+import { selectMovieData } from "../movieDetailsSlice";
 
 import HeaderRating from "./HeaderRating";
 import {
@@ -8,7 +9,7 @@ import {
     TitleHeader,
     MovieDetailsHeader
 } from "./styled";
-import { selectMovieData } from "../movieDetailsSlice";
+
 
 export const Header = () => {
     const movieData = useSelector(selectMovieData);
