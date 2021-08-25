@@ -1,9 +1,6 @@
 import styled from "styled-components";
 import { Link } from "react-router-dom";
 
-export const Wrapper = styled.section`
-    padding: 0 16px;
-`;
 
 export const SiteTitle = styled.h1`
     font-size: 36px;
@@ -18,16 +15,16 @@ export const SiteTitle = styled.h1`
 
 export const List = styled.ul`
     display: grid;
-    grid-gap: 40px;
+    grid-gap: 16px;
     grid-template-columns: repeat(4, 1fr);
     list-style-type: none;
     padding: 0;
 
-    @media(max-width: ${({ theme }) => theme.breakpoints.large}px) {
+   @media(max-width: ${({ theme }) => theme.breakpoints.large}px) {
         grid-template-columns: repeat(3, 1fr);
     }
 
-    @media(max-width: ${({ theme }) => theme.breakpoints.medium}px) {
+    @media(max-width: ${({ theme }) => theme.breakpoints.small}px) {
         grid-template-columns: repeat(2, 1fr);
     }
 
@@ -40,6 +37,7 @@ export const List = styled.ul`
 export const Tile = styled(Link)`
     text-decoration: none;
     display: grid;
+    grid-template-rows: auto 1fr;
     grid-row-gap: 16px;
     align-content: start;
     padding: 16px;
@@ -50,12 +48,23 @@ export const Tile = styled(Link)`
     color: inherit;
 
     @media(max-width: ${({ theme }) => theme.breakpoints.xsmall}px) {
-        display: grid;
+        grid-template-rows: auto;
         padding: 16px;
-        grid-template-columns:  min-content 1fr;
+        grid-template-columns: min-content 1fr;
         grid-gap: 16px;
         grid-template-areas:
             "image content"
+    }
+`;
+
+export const ContentContainer = styled.div`
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    @media(max-width: ${({ theme }) => theme.breakpoints.xsmall}px) {
+        grid-area: content;
+        justify-content: flex-start;
     }
 `;
 
@@ -63,18 +72,11 @@ export const Picture = styled.img`
     background: ${({ theme }) => theme.colors.tile.substitutionPicture};
     border-radius: 5px;
     width: 100%;
-
+    aspect-ratio: 2 / 3;
+    
     @media(max-width: ${({ theme }) => theme.breakpoints.xsmall}px) {
-        float: none;
         width: 114px;
         height: 169px;
-        grid-area: image;
-        }
-`;
-
-export const ContentContainer = styled.div`
-    @media(max-width: ${({ theme }) => theme.breakpoints.xsmall}px) {
-    grid-area: content;
     }
 `;
 
@@ -91,6 +93,7 @@ export const TileTitle = styled.h2`
 
     @media(max-width: ${({ theme }) => theme.breakpoints.xsmall}px) {
         font-size: 14px;
+        margin: 0;
     }
 `;
 
@@ -120,7 +123,7 @@ export const Tags = styled.ul`
     margin: 10px 0;
 
     @media(max-width: ${({ theme }) => theme.breakpoints.small}px) {
-        margin: 8px -4px;
+        margin: 8px 0px;
     }
 `;
 
@@ -136,5 +139,25 @@ export const Tag = styled.li`
         padding: 4px 8px;
         font-size: 10px;
         margin-bottom: 8px;
+    }
+`;
+
+export const ShowMoreButton = styled.button`
+    border: none;
+    background: none;
+    padding: 2px;
+    text-transform: uppercase;
+    font-size: 12px;
+    font-weight: 500;
+    margin: 0 auto 20px;
+    display: grid;
+    grid-template-columns: auto auto;
+    grid-gap: 6px;
+    align-items: center;
+    color: ${({ theme }) => theme.colors.tile.role};
+
+    :hover {
+        cursor: pointer;
+        transform: scale(1.1);
     }
 `;

@@ -2,10 +2,9 @@ import styled, { css } from "styled-components";
 
 export const RateWrapper = styled.div`
     display: grid;
-    grid-template-columns: repeat(4, auto);
+    grid-template-columns: auto auto auto 1fr;
     justify-content: start;
-    align-items: end;
-    grid-column-gap: 8px;
+    align-items: baseline;
     margin: 0;
     grid-template-areas:
         "star average scale vote";
@@ -36,6 +35,7 @@ export const RateWrapper = styled.div`
 export const StarIcon = styled.img`
     width: 24px;
     grid-area: star;
+    margin-right: 8px;
 
     @media(max-width: ${({ theme }) => theme.breakpoints.small}px) {
         width: 16px;
@@ -52,10 +52,10 @@ export const StarIcon = styled.img`
 `;
 
 export const VoteAverage = styled.p`
-    font-size: 16px;
+    font-size: 22px;
     color: ${({ theme }) => theme.colors.textPrimary};
     font-weight: 500;
-    margin: 0;
+    margin: 0 8px 0 0;
     grid-area: average;
 
     @media(max-width: ${({ theme }) => theme.breakpoints.small}px) {
@@ -75,7 +75,7 @@ export const VoteAverage = styled.p`
     `};
 
     ${({ mobile }) => mobile && css`
-        font-size: 22px; 
+        font-size: 16px; 
     `};
 `;
 
@@ -86,7 +86,7 @@ export const RatingScale = styled.p`
     color: ${({ theme }) => theme.colors.textPrimary};
 
     @media(max-width: ${({ theme }) => theme.breakpoints.small}px) {
-        display:  none;
+        /* display:  none; */
         font-size: 12px;
         color: ${({ theme }) => theme.colors.textPrimary};
     };
@@ -98,7 +98,7 @@ export const RatingScale = styled.p`
 
     ${({ small }) => small && css`
         color: ${({ theme }) => theme.colors.textSecondary};
-        display:  none;
+        /* display:  none; */
         padding: 0;
     `};
 `;

@@ -5,6 +5,7 @@ import PeopleTiles from "../Tiles/PeopleTiles";
 import { Loader } from "../../common/Loader";
 import Error from "../../common/Error";
 import { NoResults } from "../../common/NoResults";
+import { MovieAndPersonWrapper } from "../../common/Wrappers/MovieAndPersonWrapper";
 import { Pagination } from "../../common/Pagination";
 import { useQueryParameter } from "../../common/useQueryParameter";
 import { paginationQueryParamName } from "../../common/queryParamNames";
@@ -12,9 +13,8 @@ import {
     fetchPopularPeopleLoading,
     selectStatus,
 } from "./popularPeopleSlice";
-import { Wrapper } from "../PopularMovies/MovieDetails/styled";
 
-export const PersonList = () => {
+export const PopularPeopleList = () => {
     const dispatch = useDispatch();
     const status = useSelector(selectStatus);
 
@@ -24,18 +24,19 @@ export const PersonList = () => {
         dispatch(fetchPopularPeopleLoading(page));
     }, [dispatch, page]);
 
-    const PersonListContent = () => {
+    const PeopleListContent = () => {
         switch (status) {
             case "loading":
                 return < Loader />;
             case "success":
                 return (
                     <>
-                        <Wrapper>
-                            <PeopleTiles title="Popular People" />
-                        </Wrapper>
+                        <MovieAndPersonWrapper>
+                            <PeopleTiles title="Popular people" />
+                        </MovieAndPersonWrapper>
                         <Pagination pathName="/people" />
-                    </>);
+                    </>
+                );
             case "error":
                 return <Error />;
             default:
@@ -44,6 +45,6 @@ export const PersonList = () => {
     };
 
     return (
-        <PersonListContent />
+        <PeopleListContent />
     );
 };

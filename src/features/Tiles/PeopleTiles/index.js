@@ -1,8 +1,7 @@
 import { useState } from "react";
 import { useSelector } from "react-redux";
 
-import { exampleConfiguration } from "../exampleConfiguration";
-import pictureSubstitution from "../pictureSubstitution.svg";
+import noPersonPhoto from "../Images/noPersonPhoto.svg";
 import {
     PeopleList,
     PersonTile,
@@ -26,7 +25,9 @@ const PeopleTiles = ({ title }) => {
 
     let peopleList;
     const sectionName = title.toLowerCase();
-    const pictureLinkBase = `${exampleConfiguration.images.base_url}w185`;
+    const imageURL = "http://image.tmdb.org/t/p/";
+    const size = "w185";
+    const poster = `${imageURL}${size}`;
 
     switch (sectionName) {
         case "cast":
@@ -58,10 +59,7 @@ const PeopleTiles = ({ title }) => {
                                 to={toProfile({ id })}
                             >
                                 <ProfilePicture
-                                    src={profile_path ?
-                                        `${pictureLinkBase}${profile_path}` :
-                                        pictureSubstitution}
-                                />
+                                    src={profile_path ? `${poster}${profile_path}` : noPersonPhoto} alt={`${title} poster`}/>
                                 <TileTitle>{name}</TileTitle>
                                 {
                                     !sectionName.includes("popular") &&

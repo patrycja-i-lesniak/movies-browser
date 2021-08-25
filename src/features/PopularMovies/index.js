@@ -9,24 +9,24 @@ import { useQueryParameter } from "../../common/useQueryParameter";
 import { paginationQueryParamName, searchQueryParamName } from "../../common/queryParamNames";
 import { Pagination } from "../../common/Pagination";
 import { fetchMoviesLoading, selectMoviesStatus } from "./moviesSlice";
-import { Wrapper } from "./MovieDetails/styled";
+import { MovieAndPersonWrapper } from "../../common/Wrappers/MovieAndPersonWrapper";
 
-const MovieList = () => {
+const PopularMoviesList = () => {
     const dispatch = useDispatch();
     const status = useSelector(selectMoviesStatus);
     const page = useQueryParameter(paginationQueryParamName);
     const searchQuery = useQueryParameter(searchQueryParamName);
-    
+
     useEffect(() => {
         if (searchQuery && !page) {
             const timeoutID = setTimeout(() => {
-                dispatch(fetchMoviesLoading({page, searchQuery}));
+                dispatch(fetchMoviesLoading({ page, searchQuery }));
             }, 1_000);
 
             return () => clearTimeout(timeoutID);
         } else {
-            dispatch(fetchMoviesLoading({page, searchQuery}));
-        } 
+            dispatch(fetchMoviesLoading({ page, searchQuery }));
+        }
     }, [dispatch, page, searchQuery]);
 
     const MovieListContent = () => {
@@ -36,9 +36,9 @@ const MovieList = () => {
             case "success":
                 return (
                     <>
-                        <Wrapper>
+                        <MovieAndPersonWrapper>
                             <MovieTiles title="Popular movies" />
-                        </Wrapper>
+                        </MovieAndPersonWrapper>
                         <Pagination pathName="/movies" />
                     </>
                 );
@@ -54,4 +54,4 @@ const MovieList = () => {
     );
 };
 
-export default MovieList;
+export default PopularMoviesList;
