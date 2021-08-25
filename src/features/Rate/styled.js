@@ -12,30 +12,7 @@ export const RateWrapper = styled.div`
         @media(max-width: ${({ theme }) => theme.breakpoints.small}px) {
             grid-template-columns: repeat(3, auto);
             grid-template-areas: "star average vote";
-            grid-column-gap: 4px;
-            margin: 16px 0 0 0;
         };
-
-    ${({ big }) => big && css`
-        grid-template-columns: repeat(3, auto);
-        grid-template-rows: auto auto;
-        justify-items: start;
-        grid-row-gap: 16px;
-        grid-template-areas:
-            "star average scale"
-            "vote vote vote";
-
-            @media(max-width: ${({ theme }) => theme.breakpoints.small}px) {
-                grid-template-columns: repeat(4, auto);
-                grid-template-areas:  "star average scale vote";
-            };
-    `};
-
-    ${({ small }) => small && css`
-        grid-template-areas:
-            "star average vote";
-        grid-template-columns: auto auto  auto 1fr;
-    `};
 `;
 
 export const StarIcon = styled.img`
@@ -47,15 +24,6 @@ export const StarIcon = styled.img`
         width: 16px;
         margin-right: 4px;
     };
-
-    ${({ big }) => big && css`
-        width: 40px;
-    `};
-
-    ${({ mobile }) => mobile && css`
-        margin-right: 4px;
-    `};
-
 `;
 
 export const VoteAverage = styled.p`
@@ -67,23 +35,13 @@ export const VoteAverage = styled.p`
 
     @media(max-width: ${({ theme }) => theme.breakpoints.small}px) {
         font-size: 13px;
-        font-weight: 600;
-        color: ${({ theme }) => theme.colors.textPrimary};
+        font-weight: 600;;
         margin-right: 4px;
     };
 
-    ${({ big }) => big && css`
-        font-size: 30px;
-        color: ${({ theme }) => theme.colors.textSecondary};
-    `};
-
-    ${({ small }) => small && css`
-        font-size: 14px;
-        color: ${({ theme }) => theme.colors.textSecondary};
-    `};
-
-    ${({ mobile }) => mobile && css`
-        font-size: 16px; 
+    ${({ tile }) => tile && css`
+        font-size: 16px;
+        margin-right: 12px;
     `};
 `;
 
@@ -98,17 +56,6 @@ export const RatingScale = styled.p`
         font-size: 12px;
         color: ${({ theme }) => theme.colors.textPrimary};
     };
-
-    ${({ big }) => big && css`
-        font-size: 16px;
-        color: ${({ header }) => header ? "white" : "black"};
-    `};
-
-    ${({ small }) => small && css`
-        color: ${({ theme }) => theme.colors.textSecondary};
-        /* display:  none; */
-        padding: 0;
-    `};
 `;
 
 export const VoteCount = styled.p`
@@ -124,17 +71,8 @@ export const VoteCount = styled.p`
         padding-left: 0;
     };
 
-    ${({ big }) => big && css`
+    ${({ tile }) => tile && css`
         font-size: 16px;
         color: ${({ theme }) => theme.colors.textSecondary};
-    `};
-
-    ${({ small }) => small && css`
-        color: ${({ theme }) => theme.colors.textSecondary};
-        font-size: 12px;
-    `};
-
-    ${({ movieMobile }) => movieMobile && css`
-        margin: 0;
     `};
 `;
