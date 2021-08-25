@@ -14,7 +14,7 @@ import {
     Tags,
     Tag,
     ContentContainer,
-    ShowMoreButton
+    ShowMoreButton,
 } from "./styled";
 import { Rate } from "../../Rate";
 import { Arrow } from "../Arrow";
@@ -48,9 +48,9 @@ const MovieTiles = ({ title }) => {
             moviesList = popularMoviesData.results;
     }
 
-    return ( moviesList.length ?
+    return (moviesList.length ?
         <>
-        
+
             <section>
                 {
                     sectionName.includes("popular")
@@ -74,36 +74,38 @@ const MovieTiles = ({ title }) => {
                             <Tile
                                 to={`/movie/${movie.id}`}
                             >
-                                <Picture
-                                    src={movie.poster_path ? `${poster}${movie.poster_path}` : noMoviePhoto} alt={`${sectionName} poster`} />
                                 <ContentContainer>
-                                    <TileTitle>{movie.title}</TileTitle>
+                                    <Picture
+                                        src={movie.poster_path ? `${poster}${movie.poster_path}` : noMoviePhoto} alt={`${sectionName} poster`} />
+                                    <div>
+                                        <TileTitle>{movie.title}</TileTitle>
 
-                                    {movie.release_date && (
-                                        <Year>
-                                            {movie.character
-                                                ? `${movie.character}
-                                            (${movie.release_date ? movie.release_date.slice(0, 4) : ""
-                                                })`
-                                                : movie.job
-                                                    ? `${movie.job}
+                                        {movie.release_date && (
+                                            <Year>
+                                                {movie.character
+                                                    ? `${movie.character}
                                             (${movie.release_date ? movie.release_date.slice(0, 4) : ""
                                                     })`
-                                                    : movie.release_date ? movie.release_date.slice(0, 4) : ""
-                                            }
-                                        </Year>
-                                    )}
-                                    <Tags>
-                                        {movie.genre_ids.map(genreID =>
-                                            <Tag key={`genres-${genreID}`}>
-                                                {moviesGenres.find(({ id }) => id === genreID).name}
-                                            </Tag>
+                                                    : movie.job
+                                                        ? `${movie.job}
+                                            (${movie.release_date ? movie.release_date.slice(0, 4) : ""
+                                                        })`
+                                                        : movie.release_date ? movie.release_date.slice(0, 4) : ""
+                                                }
+                                            </Year>
                                         )}
-                                    </Tags>
-                                    <Rate
-                                        small={true}
-                                        vote_average={movie.vote_average}
-                                        vote_count={movie.vote_count} />
+                                        <Tags>
+                                            {movie.genre_ids.map(genreID =>
+                                                <Tag key={`genres-${genreID}`}>
+                                                    {moviesGenres.find(({ id }) => id === genreID).name}
+                                                </Tag>
+                                            )}
+                                        </Tags>
+                                        <Rate
+                                            small={true}
+                                            vote_average={movie.vote_average}
+                                            vote_count={movie.vote_count} />
+                                    </div>
                                 </ContentContainer>
                             </Tile>
                         </li>
@@ -111,7 +113,7 @@ const MovieTiles = ({ title }) => {
                 </List>
             </section>
             {
-                !sectionName.includes("popular") && 
+                !sectionName.includes("popular") &&
                 <ShowMoreButton onClick={() => setShowMore(!showMore)}>
                     <span>
                         {showMore ? "Show less" : "Show more"}

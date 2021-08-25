@@ -1,9 +1,6 @@
 import styled from "styled-components";
 import { Link } from "react-router-dom";
 
-export const Wrapper = styled.section`
-    padding: 0 16px;
-`;
 
 export const SiteTitle = styled.h1`
     font-size: 36px;
@@ -23,11 +20,11 @@ export const List = styled.ul`
     list-style-type: none;
     padding: 0;
 
-    @media(max-width: ${({ theme }) => theme.breakpoints.large}px) {
+   @media(max-width: ${({ theme }) => theme.breakpoints.large}px) {
         grid-template-columns: repeat(3, 1fr);
     }
 
-    @media(max-width: ${({ theme }) => theme.breakpoints.medium}px) {
+    @media(max-width: ${({ theme }) => theme.breakpoints.small}px) {
         grid-template-columns: repeat(2, 1fr);
     }
 
@@ -40,22 +37,23 @@ export const List = styled.ul`
 export const Tile = styled(Link)`
     text-decoration: none;
     display: grid;
-    grid-row-gap: 16px;
-    align-content: start;
+    align-content: space-between;
     padding: 16px;
     height: 100%;
     background-color: ${({ theme }) => theme.colors.tile.background};
     box-shadow: 0px 4px 12px rgba(186, 199, 213, 0.5);
     border-radius: 5px;
     color: inherit;
+`;
+
+export const ContentContainer = styled.div`
+    display: grid;
+    grid-template-rows: auto 1fr;
+    bottom: 5px;
 
     @media(max-width: ${({ theme }) => theme.breakpoints.xsmall}px) {
         display: grid;
-        padding: 16px;
-        grid-template-columns:  min-content 1fr;
-        grid-gap: 16px;
-        grid-template-areas:
-            "image content"
+        grid-template-columns: auto 1fr;
     }
 `;
 
@@ -65,16 +63,9 @@ export const Picture = styled.img`
     width: 100%;
 
     @media(max-width: ${({ theme }) => theme.breakpoints.xsmall}px) {
-        float: none;
         width: 114px;
         height: 169px;
-        grid-area: image;
-        }
-`;
-
-export const ContentContainer = styled.div`
-    @media(max-width: ${({ theme }) => theme.breakpoints.xsmall}px) {
-    grid-area: content;
+        margin-right: 16px;
     }
 `;
 
@@ -82,7 +73,7 @@ export const TileTitle = styled.h2`
     font-size: 22px;
     line-height: 1.3;
     color: ${({ theme }) => theme.colors.textPrimary};
-    margin: 0;
+    margin: 16px 0 0;
     font-weight: 500;
 
     @media(max-width: ${({ theme }) => theme.breakpoints.medium}px) {
@@ -91,6 +82,7 @@ export const TileTitle = styled.h2`
 
     @media(max-width: ${({ theme }) => theme.breakpoints.xsmall}px) {
         font-size: 14px;
+        margin: 0;
     }
 `;
 
@@ -120,7 +112,7 @@ export const Tags = styled.ul`
     margin: 10px 0;
 
     @media(max-width: ${({ theme }) => theme.breakpoints.small}px) {
-        margin: 8px -4px;
+        margin: 8px 0px;
     }
 `;
 
@@ -156,22 +148,5 @@ export const ShowMoreButton = styled.button`
     :hover {
         cursor: pointer;
         transform: scale(1.1);
-    }
-`;
-
-export const Role = styled.p`
-    margin: 0;
-    font-size: 18px;
-    line-height: 1.5;
-    color: ${({ theme }) => theme.colors.tile.role};
-
-    @media(max-width: ${({ theme }) => theme.breakpoints.medium}px) {
-        font-size: 16px;
-        line-height: 1.4;
-    }
-
-    @media(max-width: ${({ theme }) => theme.breakpoints.xsmall}px) {
-        font-size: 13px;
-        line-height: 1.3;
     }
 `;
