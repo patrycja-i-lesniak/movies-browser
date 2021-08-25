@@ -140,11 +140,11 @@ export const Tag = styled.li`
     font-size: 14px;
     margin-right: 8px;
     border-radius: 5px;
+    margin-bottom: 8px;
 
     @media(max-width: ${({ theme }) => theme.breakpoints.small}px) {
         padding: 4px 8px;
         font-size: 10px;
-        margin-bottom: 8px;
     }
 `;
 
