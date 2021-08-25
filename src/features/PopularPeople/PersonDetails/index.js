@@ -25,7 +25,7 @@ const PersonDetails = () => {
             case "success":
                 return (
                     <>
-                        <MovieAndPersonWrapper>
+                        <MovieAndPersonWrapper person>
                             <PersonTile />
                             <MovieTiles title="cast"/>
                             <MovieTiles title="crew" />

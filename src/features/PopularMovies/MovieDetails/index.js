@@ -28,7 +28,7 @@ export const MovieDetails = () => {
                 return (
                     <>
                         <Header />
-                        <MovieAndPersonWrapper>
+                        <MovieAndPersonWrapper movie>
                             <BigMovieTile />
                             <PeopleTiles title="Cast" />
                             <PeopleTiles title="Crew" />

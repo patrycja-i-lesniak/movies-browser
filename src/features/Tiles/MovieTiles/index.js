@@ -1,5 +1,6 @@
 import { useSelector } from "react-redux";
 import { useState } from "react";
+import { nanoid } from "@reduxjs/toolkit";
 
 import {
     selectPersonCredits
@@ -17,13 +18,11 @@ import {
     Tags,
     Tag,
     ContentContainer,
-    ShowMoreButton
 } from "./styled";
 import { Rate } from "../../Rate";
-import { Arrow } from "../Arrow";
-import { nanoid } from "@reduxjs/toolkit";
 import { toMovie } from "../../../core/App/routes";
 import { selectMoviesData } from "../../PopularMovies/moviesSlice";
+import { ShowMoreButton } from "../ShowMoreButton";
 
 const MovieTiles = ({ title }) => {
     const popularMoviesData = useSelector(selectMoviesData);
@@ -31,10 +30,9 @@ const MovieTiles = ({ title }) => {
     const imageURL = "http://image.tmdb.org/t/p/";
     const size = "w342";
     const poster = `${imageURL}${size}`;
-
-    let moviesList;
-
     const [showMore, setShowMore] = useState(false);
+    
+    let moviesList;
     const moviesGenresData = useSelector(selectGenres);
     const moviesGenres = moviesGenresData.genres;
     const sectionName = title.toLowerCase();
@@ -143,12 +141,10 @@ const MovieTiles = ({ title }) => {
             </section>
             {
                 !sectionName.includes("popular") &&
-                <ShowMoreButton onClick={() => setShowMore(!showMore)}>
-                    <span>
-                        {showMore ? "Show less" : "Show more"}
-                    </span>
-                    <Arrow showMore={showMore} />
-                </ShowMoreButton>
+                <ShowMoreButton 
+                showMore={showMore}
+                setShowMore={setShowMore}
+                />
             }
         </>
         : ""

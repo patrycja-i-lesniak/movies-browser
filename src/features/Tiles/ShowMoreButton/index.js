@@ -22,8 +22,7 @@ export const ShowMoreBiography = ({ biography }) => {
         );
 };
 
-export const ShowMoreButton = () => {
-    const [showMore, setShowMore] = useState(false);
+export const ShowMoreButton = ({showMore, setShowMore}) => {
     return (
         <ShowMore onClick={() => setShowMore(!showMore)}>
             <span>

@@ -10,8 +10,6 @@ import {
     TileTitle,
     Title
 } from "./styled";
-import { Arrow } from "../Arrow";
-
 import { toProfile } from "../../../core/App/routes";
 import { selectMovieCredits } from "../../PopularMovies/MovieDetails/movieDetailsSlice";
 import { selectPopularPeopleData } from "../../PopularPeople/popularPeopleSlice";
@@ -20,7 +18,6 @@ import { ShowMoreButton } from "../ShowMoreButton";
 const PeopleTiles = ({ title }) => {
     const popularPeopleData = useSelector(selectPopularPeopleData);
     const creditsData = useSelector(selectMovieCredits);
-
     const [showMore, setShowMore] = useState(false);
 
     let peopleList;
@@ -59,7 +56,7 @@ const PeopleTiles = ({ title }) => {
                                 to={toProfile({ id })}
                             >
                                 <ProfilePicture
-                                    src={profile_path ? `${poster}${profile_path}` : noPersonPhoto} alt={`${title} poster`}/>
+                                    src={profile_path ? `${poster}${profile_path}` : noPersonPhoto} alt={`${title} poster`} />
                                 <TileTitle>{name}</TileTitle>
                                 {
                                     !sectionName.includes("popular") &&
@@ -74,12 +71,10 @@ const PeopleTiles = ({ title }) => {
             </section>
             {
                 !sectionName.includes("popular") &&
-                <ShowMoreButton onClick={() => setShowMore(!showMore)}>
-                    <span>
-                        {showMore ? "Show less" : "Show more"}
-                    </span>
-                    <Arrow showMore={showMore} />
-                </ShowMoreButton>
+                <ShowMoreButton
+                    showMore={showMore}
+                    setShowMore={setShowMore}
+                />
             }
         </>
     );
