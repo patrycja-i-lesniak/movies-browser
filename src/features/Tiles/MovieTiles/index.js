@@ -131,7 +131,7 @@ const MovieTiles = ({ title }) => {
                                         </Tags>
                                     </div>
                                     <Rate
-                                        mobile={true}
+                                        tile={true}
                                         vote_average={vote_average}
                                         vote_count={vote_count} />
                                 </ContentContainer>
