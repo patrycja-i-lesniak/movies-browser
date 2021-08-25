@@ -19,6 +19,7 @@ import {
 } from "./styled";
 import { Rate } from "../../Rate";
 import {Arrow} from "../Arrow";
+import { nanoid } from "@reduxjs/toolkit";
 
 const MovieTiles = ({ title }) => {
     const popularMoviesData = useSelector(selectPopularMoviesData);
@@ -93,7 +94,7 @@ const MovieTiles = ({ title }) => {
                                     )}
                                     <Tags>
                                         {movie.genre_ids.map(genreID =>
-                                            <Tag key={`genres-${genreID}`}>
+                                            <Tag key={nanoid()}>
                                                 {moviesGenres.find(({ id }) => id === genreID).name}
                                             </Tag>
                                         )}
