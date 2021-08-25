@@ -52,7 +52,7 @@ export const StarIcon = styled.img`
 `;
 
 export const VoteAverage = styled.p`
-    font-size: 16px;
+    font-size: 22px;
     color: ${({ theme }) => theme.colors.textPrimary};
     font-weight: 500;
     margin: 0;
@@ -75,7 +75,7 @@ export const VoteAverage = styled.p`
     `};
 
     ${({ mobile }) => mobile && css`
-        font-size: 22px; 
+        font-size: 16px; 
     `};
 `;
 
