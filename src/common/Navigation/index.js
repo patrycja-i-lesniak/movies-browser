@@ -1,7 +1,7 @@
 import { useLocation } from "react-router-dom";
+
 import { toMovies, toPeople } from "../../core/App/routes";
 import { searchQueryParamName } from "../queryParamNames";
-
 import { useQueryParameter } from "../useQueryParameter";
 import { useReplaceQueryParameter } from "../useReplaceQueryParameter";
 import {

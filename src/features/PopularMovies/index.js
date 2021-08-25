@@ -11,13 +11,12 @@ import { Pagination } from "../../common/Pagination";
 import { fetchMoviesLoading, selectMoviesStatus } from "./moviesSlice";
 import { Wrapper } from "./MovieDetails/styled";
 
-
-
 const MovieList = () => {
     const dispatch = useDispatch();
     const status = useSelector(selectMoviesStatus);
     const page = useQueryParameter(paginationQueryParamName);
     const searchQuery = useQueryParameter(searchQueryParamName);
+    
     useEffect(() => {
         if (searchQuery && !page) {
             const timeoutID = setTimeout(() => {
