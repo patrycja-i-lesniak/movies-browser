@@ -20,7 +20,7 @@ export const List = styled.ul`
     list-style-type: none;
     padding: 0;
 
-   @media(max-width: ${({ theme }) => theme.breakpoints.large}px) {
+    @media(max-width: ${({ theme }) => theme.breakpoints.large}px) {
         grid-template-columns: repeat(3, 1fr);
     }
 
@@ -159,5 +159,22 @@ export const ShowMoreButton = styled.button`
     :hover {
         cursor: pointer;
         transform: scale(1.1);
+    }
+`;
+
+export const Role = styled.p`
+    margin: 0;
+    font-size: 18px;
+    line-height: 1.5;
+    color: ${({ theme }) => theme.colors.tile.role};
+
+    @media(max-width: ${({ theme }) => theme.breakpoints.medium}px) {
+        font-size: 16px;
+        line-height: 1.4;
+    }
+
+    @media(max-width: ${({ theme }) => theme.breakpoints.xsmall}px) {
+        font-size: 13px;
+        line-height: 1.3;
     }
 `;

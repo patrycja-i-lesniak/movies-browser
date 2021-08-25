@@ -11,7 +11,6 @@ import { Loader } from "../../../common/Loader";
 import { NoResults } from "../../../common/NoResults";
 import { fetchMovieDetails, selectStatus } from "./movieDetailsSlice";
 
-
 export const MovieDetails = () => {
     const status = useSelector(selectStatus);
     const dispatch = useDispatch();
@@ -24,7 +23,7 @@ export const MovieDetails = () => {
     const MovieDetailsContent = () => {
         switch (status) {
             case "loading":
-                return < Loader />;
+                return <Loader />;
             case "success":
                 return (
                     <>

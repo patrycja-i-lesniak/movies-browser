@@ -16,7 +16,7 @@ import {
     Description,
 } from "./styled";
 import noMoviePhoto from "../Images/noMoviePhoto.svg";
-import {Rate} from "../../Rate";
+import { Rate } from "../../Rate";
 
 export const BigMovieTile = () => {
     const movieData = useSelector(selectMovieData);
@@ -36,14 +36,27 @@ export const BigMovieTile = () => {
 
     return (
         <MovieDetailsTile>
-                <Image src={movieData.poster_path ? poster : noMoviePhoto} alt={`${title} poster`} />
+            <Image src={
+                movieData.poster_path
+                    ? poster
+                    : noMoviePhoto
+            } alt={`${title} poster`}
+            />
             <Content>
                 <Title>{title}</Title>
                 <Year>{year}</Year>
                 <Details>
                     <MovieDetails>
                         <Label>Production:</Label>
-                        <MovieData>{production.map(country => <span key={`production-${country.name}`}>{country.name}{", "}</span>)}</MovieData>
+                        <MovieData>
+                            {
+                                production.map(country =>
+                                    <span key={`production-${country.name}`}>
+                                        {country.name}{", "}
+                                    </span>
+                                )
+                            }
+                        </MovieData>
                     </MovieDetails>
                     <MovieDetails>
                         <Label>Release date:</Label>
@@ -51,7 +64,13 @@ export const BigMovieTile = () => {
                     </MovieDetails>
                 </Details>
                 <Tags>
-                    {genres.map(tag => <Tag key={`genres-${tag.name}`}>{tag.name}</Tag>)}
+                    {
+                        genres.map(tag =>
+                            <Tag key={`genres-${tag.name}`}>
+                                {tag.name}
+                            </Tag>
+                        )
+                    }
                 </Tags>
                 <Rate 
                 vote_average={vote_average}

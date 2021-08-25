@@ -1,22 +1,41 @@
 import { useSelector } from "react-redux";
 
+import { selectMoviesData } from "../../features/PopularMovies/moviesSlice";
 import { selectPopularPeopleData } from "../../features/PopularPeople/popularPeopleSlice";
+import { paginationQueryParamName } from "../queryParamNames";
+import { useReplaceQueryParameter } from "../useReplaceQueryParameter";
 import { PaginationArrow } from "./PaginationArrow";
-import { Caption, CaptionsWrapper, LinkText, PaginationLinks, StyledLink, Wrapper } from "./styled";
+import {
+    Caption,
+    CaptionsWrapper,
+    LinkText,
+    PaginationLinks,
+    PaginationButton,
+    Wrapper
+} from "./styled";
 
-export const Pagination = () => {
-    const popularPeopleData = useSelector(selectPopularPeopleData);
 
-    const currentPage = popularPeopleData.page;
-    const totalPages = popularPeopleData.total_pages;
+export const Pagination = ({ pathName }) => {
+    const APIData = useSelector(
+        pathName === "/people"
+            ? selectPopularPeopleData
+            : selectMoviesData
+    );
+    const replaceQueryParameter = useReplaceQueryParameter();
+
+    const currentPage = APIData.page;
+    const totalPages = APIData.total_pages;
 
     return (
         <Wrapper>
             <PaginationLinks>
                 <li>
-                    <StyledLink
+                    <PaginationButton
                         disabled={currentPage === 1}
-                        to="/people?page=1"
+                        onClick={() => replaceQueryParameter({
+                            key: paginationQueryParamName,
+                            value: 1,
+                        })}
                     >
                         <PaginationArrow disabled={currentPage === 1} />
                         <PaginationArrow
@@ -24,17 +43,20 @@ export const Pagination = () => {
                             disabled={currentPage === 1}
                         />
                         <LinkText>First</LinkText>
-                    </StyledLink>
+                    </PaginationButton>
                 </li>
                 <li>
-                    <StyledLink
+                    <PaginationButton
                         smallStep
                         disabled={currentPage === 1}
-                        to={`/people?page=${currentPage - 1}`}
+                        onClick={() => replaceQueryParameter({
+                            key: paginationQueryParamName,
+                            value: currentPage - 1,
+                        })}
                     >
                         <PaginationArrow disabled={currentPage === 1} />
                         <LinkText>Previous</LinkText>
-                    </StyledLink>
+                    </PaginationButton>
                 </li>
             </PaginationLinks>
             <CaptionsWrapper>
@@ -53,22 +75,28 @@ export const Pagination = () => {
             </CaptionsWrapper>
             <PaginationLinks>
                 <li>
-                    <StyledLink
+                    <PaginationButton
                         smallStep
                         disabled={currentPage === totalPages}
-                        to={`/people?page=${currentPage + 1}`}
+                        onClick={() => replaceQueryParameter({
+                            key: paginationQueryParamName,
+                            value: currentPage + 1,
+                        })}
                     >
                         <LinkText>Next</LinkText>
                         <PaginationArrow
                             forward
                             disabled={currentPage === totalPages}
                         />
-                    </StyledLink>
+                    </PaginationButton>
                 </li>
                 <li>
-                    <StyledLink
+                    <PaginationButton
                         disabled={currentPage === totalPages}
-                        to={`/people?page=${totalPages}`}
+                        onClick={() => replaceQueryParameter({
+                            key: paginationQueryParamName,
+                            value: totalPages,
+                        })}
                     >
                         <LinkText>Last</LinkText>
                         <PaginationArrow
@@ -80,7 +108,7 @@ export const Pagination = () => {
                             forward
                             disabled={currentPage === totalPages}
                         />
-                    </StyledLink>
+                    </PaginationButton>
                 </li>
             </PaginationLinks>
         </Wrapper>

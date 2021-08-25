@@ -7,8 +7,8 @@ import Error from "../../common/Error";
 import { NoResults } from "../../common/NoResults";
 import { MovieAndPersonWrapper } from "../../common/Wrappers/MovieAndPersonWrapper";
 import { Pagination } from "../../common/Pagination";
-import { useQueryParameter } from "../../useQueryParameter";
-import searchQueryParamName from "../../searchQueryParamName";
+import { useQueryParameter } from "../../common/useQueryParameter";
+import { paginationQueryParamName } from "../../common/queryParamNames";
 import {
     fetchPopularPeopleLoading,
     selectStatus,
@@ -17,7 +17,8 @@ import {
 export const PopularPeopleList = () => {
     const dispatch = useDispatch();
     const status = useSelector(selectStatus);
-    const page = useQueryParameter(searchQueryParamName) || "1";
+
+    const page = useQueryParameter(paginationQueryParamName) || "1";
 
     useEffect(() => {
         dispatch(fetchPopularPeopleLoading(page));
@@ -33,8 +34,9 @@ export const PopularPeopleList = () => {
                         <MovieAndPersonWrapper>
                             <PeopleTiles title="Popular people" />
                         </MovieAndPersonWrapper>
-                        <Pagination />
-                    </>);
+                        <Pagination pathName="/people" />
+                    </>
+                );
             case "error":
                 return <Error />;
             default:

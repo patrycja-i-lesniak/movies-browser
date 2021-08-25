@@ -1,5 +1,4 @@
 import styled, { css } from "styled-components";
-import { Link } from "react-router-dom";
 
 export const Wrapper = styled.nav`
     color: ${({ theme }) => theme.colors.pagination.primaryText};
@@ -38,8 +37,8 @@ export const PaginationLinks = styled.ul`
     }
 `;
 
-export const StyledLink = styled(({ smallStep, ...otherProps }) => <Link {...otherProps} />)`
-display: grid;
+export const PaginationButton = styled.span`
+    display: grid;
     grid-template-columns: auto auto;
     grid-gap: 8px;
     align-items: center;
@@ -50,6 +49,7 @@ display: grid;
     background: ${({ theme }) => theme.colors.pagination.background};
     border-radius: 5px;
     padding: 8px 16px;
+    cursor: pointer;
 
     ${({ disabled }) => disabled && css`
         pointer-events: none;

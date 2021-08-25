@@ -1,3 +1,9 @@
+import { useLocation } from "react-router-dom";
+
+import { toMovies, toPeople } from "../../core/App/routes";
+import { searchQueryParamName } from "../queryParamNames";
+import { useQueryParameter } from "../useQueryParameter";
+import { useReplaceQueryParameter } from "../useReplaceQueryParameter";
 import {
     NavigationWrapper,
     NavigationContainer,
@@ -17,28 +23,48 @@ import {
 import videoIcon from "./videoIcon.svg";
 
 export const Navigation = () => {
+    const location = useLocation();
+
+    const query = useQueryParameter(searchQueryParamName);
+    const replaceQueryParameter = useReplaceQueryParameter();
+
+    const onSearchChange = ({ target }) => {
+        replaceQueryParameter({
+            key: searchQueryParamName,
+            value: target.value.trim() !== "" ? target.value : undefined
+        });
+    };
+
     return (
         <NavigationWrapper>
             <NavigationContainer>
                 <DoubleContainer>
                     <HeaderContainer>
-                        <Logo to="/movies">
+                        <Logo to={toMovies()}>
                             <VideoIcon src={videoIcon} />
                             <Title>Movie Browser</Title>
                         </Logo>
                         <NavigationLinks>
                             <NavigationItems>
-                                <StyledNavLink to="/movies">Movie</StyledNavLink>
+                                <StyledNavLink to={toMovies()}>Movie</StyledNavLink>
                             </NavigationItems>
                             <NavigationItems>
-                                <StyledNavLink to="/people">People</StyledNavLink>
+                                <StyledNavLink to={toPeople()}>People</StyledNavLink>
                             </NavigationItems>
                         </NavigationLinks>
                     </HeaderContainer>
                     <SearchContainer>
                         <SearchBox>
                             <SearchIcon />
-                            <SearchInput placeholder="Search for movies" />
+                            <SearchInput
+                                onChange={onSearchChange}
+                                value={query || ""}
+                                placeholder={
+                                    `Search for ${location.pathname.includes("/movie")
+                                        ? "movies"
+                                        : "people"}`
+                                }
+                            />
                         </SearchBox>
                     </SearchContainer>
                 </DoubleContainer>

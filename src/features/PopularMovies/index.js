@@ -5,20 +5,29 @@ import MovieTiles from "../Tiles/MovieTiles";
 import { Loader } from "../../common/Loader";
 import Error from "../../common/Error";
 import { NoResults } from "../../common/NoResults";
+import { useQueryParameter } from "../../common/useQueryParameter";
+import { paginationQueryParamName, searchQueryParamName } from "../../common/queryParamNames";
+import { Pagination } from "../../common/Pagination";
+import { fetchMoviesLoading, selectMoviesStatus } from "./moviesSlice";
 import { MovieAndPersonWrapper } from "../../common/Wrappers/MovieAndPersonWrapper";
-import { Pagination } from "./Pagination";
-import { useQueryParameter } from "../../useQueryParameter";
-import searchQueryParamName from "../../searchQueryParamName";
-import { selectPopularMoviesStatus, fetchPopularMoviesLoading } from "./popularMoviesSlice";
 
-const PopularMoviesList = () => {
+const MoviesList = () => {
     const dispatch = useDispatch();
-    const status = useSelector(selectPopularMoviesStatus);
-    const page = useQueryParameter(searchQueryParamName) || "1";
+    const status = useSelector(selectMoviesStatus);
+    const page = useQueryParameter(paginationQueryParamName);
+    const searchQuery = useQueryParameter(searchQueryParamName);
 
     useEffect(() => {
-        dispatch(fetchPopularMoviesLoading(page));
-    }, [dispatch, page]);
+        if (searchQuery && !page) {
+            const timeoutID = setTimeout(() => {
+                dispatch(fetchMoviesLoading({ page, searchQuery }));
+            }, 1_000);
+
+            return () => clearTimeout(timeoutID);
+        } else {
+            dispatch(fetchMoviesLoading({ page, searchQuery }));
+        }
+    }, [dispatch, page, searchQuery]);
 
     const MovieListContent = () => {
         switch (status) {
@@ -30,8 +39,9 @@ const PopularMoviesList = () => {
                         <MovieAndPersonWrapper>
                             <MovieTiles title="Popular movies" />
                         </MovieAndPersonWrapper>
-                        <Pagination />
-                    </>);
+                        <Pagination pathName="/movies" />
+                    </>
+                );
             case "error":
                 return <Error />;
             default:
@@ -44,4 +54,4 @@ const PopularMoviesList = () => {
     );
 };
 
-export default PopularMoviesList;
+export default MoviesList;
