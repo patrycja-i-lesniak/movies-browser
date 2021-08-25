@@ -4,7 +4,7 @@ export const MovieAndPersonWrapper = styled.div`
     margin: 0 auto;
     background: ${({ theme }) => theme.colors.site.backgroundWrapper};
     max-width: 1368px;
-    padding: 32px 16px;
+    padding: 0 16px;
 
     ${({ movie }) => movie && css`
         margin: 64px 0;
