@@ -73,6 +73,8 @@ export const Picture = styled.img`
     background: ${({ theme }) => theme.colors.tile.substitutionPicture};
     border-radius: 5px;
     width: 100%;
+    aspect-ratio: 2 / 3;
+    
 
     @media(max-width: ${({ theme }) => theme.breakpoints.xsmall}px) {
         width: 114px;

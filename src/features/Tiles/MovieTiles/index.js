@@ -23,7 +23,7 @@ const MovieTiles = ({ title }) => {
     const popularMoviesData = useSelector(selectPopularMoviesData);
 
     const imageURL = "http://image.tmdb.org/t/p/";
-    const size = "w300";
+    const size = "w342";
     const poster = `${imageURL}${size}`;
 
     let moviesList;
