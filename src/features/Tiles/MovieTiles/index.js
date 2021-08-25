@@ -1,8 +1,10 @@
 import { useSelector } from "react-redux";
 import { useState } from "react";
 
-import { selectPersonCredits } from "../../PopularPeople/PersonDetails/personDetailsSlice";
-import { selectMoviesData } from "../../PopularMovies/moviesSlice";
+import {
+    selectPersonCredits
+} from "../../PopularPeople/PersonDetails/personDetailsSlice";
+
 import { selectGenres } from "../../../core/App/moviesBrowserSlice";
 import noMoviePhoto from "../Images/noMoviePhoto.svg";
 import {
@@ -21,6 +23,7 @@ import { Rate } from "../../Rate";
 import { Arrow } from "../Arrow";
 import { nanoid } from "@reduxjs/toolkit";
 import { toMovie } from "../../../core/App/routes";
+import { selectMoviesData } from "../../PopularMovies/moviesSlice";
 
 const MovieTiles = ({ title }) => {
     const popularMoviesData = useSelector(selectMoviesData);
@@ -83,7 +86,7 @@ const MovieTiles = ({ title }) => {
                                 index > 3
                             }>
                             <Tile
-                                to={toMovie(id)}
+                                to={toMovie({ id })}
                             >
                                 <Picture
                                     src={
