@@ -1,6 +1,6 @@
 import { takeLatest, call, put, all } from "@redux-saga/core/effects";
 
-import { getGenres, getPopularMoviesData, getSearchMoviesData } from "./popularMoviesAPI";
+import { getGenres, getPopularMoviesData, getSearchMoviesData } from "./moviesAPI";
 import { fetchMoviesError, fetchMoviesSuccess, fetchMoviesLoading } from "./moviesSlice";
 
 function* fetchMoviesDataHandler({ payload: location }) {
