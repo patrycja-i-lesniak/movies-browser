@@ -14,10 +14,10 @@ import {
     Tags,
     Tag,
     ContentContainer,
-    ShowMoreButton,
 } from "./styled";
 import { Rate } from "../../Rate";
 import { Arrow } from "../Arrow";
+import { ShowMoreButton } from "../ShowMoreButton";
 
 const MovieTiles = ({ title }) => {
     const popularMoviesData = useSelector(selectPopularMoviesData);
