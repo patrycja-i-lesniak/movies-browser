@@ -1,6 +1,7 @@
 import { useSelector } from "react-redux";
 import { useState } from "react";
-import { selectGenres, selectPopularMoviesData } from "../../PopularMovies/popularMoviesSlice";
+import { selectPopularMoviesData } from "../../PopularMovies/popularMoviesSlice";
+import { selectGenres } from "../../../core/App/moviesBrowserSlice";
 import { selectPersonCredits } from "../../PopularPeople/PersonDetails/personDetailsSlice";
 
 import pictureSubstitution from "../pictureSubstitution.svg";
@@ -41,7 +42,6 @@ const MovieTiles = ({ title }) => {
         default:
             moviesList = popularMoviesData.results;
     }
-
 
     return (
         <>
