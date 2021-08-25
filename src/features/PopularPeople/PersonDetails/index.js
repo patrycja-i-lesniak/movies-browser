@@ -1,38 +1,35 @@
 import { useEffect } from "react";
 import { useParams } from "react-router-dom";
-import { useDispatch, useSelector } from "react-redux";
+import {useSelector, useDispatch} from "react-redux";
 
-import { Header } from "./Header";
-import { MovieAndPersonWrapper } from "../../../common/Wrappers/MovieAndPersonWrapper";
-import { BigMovieTile } from "../../Tiles/BigMovieTile";
-import PeopleTiles from "../../Tiles/PeopleTiles";
-import Error from "../../../common/Error";
+import PersonTile from "../../Tiles/PersonTile";
+import MovieTiles from "../../Tiles/MovieTiles";
 import { Loader } from "../../../common/Loader";
+import Error from "../../../common/Error";
 import { NoResults } from "../../../common/NoResults";
-import { fetchMovieDetails, selectStatus } from "./movieDetailsSlice";
+import { MovieAndPersonWrapper } from "../../../common/Wrappers/MovieAndPersonWrapper";
+import { fetchPersonDetails, selectStatus } from "./personDetailsSlice";
 
-
-export const MovieDetails = () => {
+const PersonDetails = () => {
     const status = useSelector(selectStatus);
     const dispatch = useDispatch();
     const { id } = useParams();
 
     useEffect(() => {
-        dispatch(fetchMovieDetails(id));
+        dispatch(fetchPersonDetails(id));
     }, [dispatch, id]);
-
-    const MovieDetailsContent = () => {
+    
+    const PersonDetailsContent = () => {
         switch (status) {
             case "loading":
                 return < Loader />;
             case "success":
                 return (
                     <>
-                        <Header />
                         <MovieAndPersonWrapper>
-                            <BigMovieTile />
-                            <PeopleTiles title="Cast" />
-                            <PeopleTiles title="Crew" />
+                            <PersonTile />
+                            <MovieTiles title="cast"/>
+                            <MovieTiles title="crew" />
                         </MovieAndPersonWrapper>
                     </>
                 );
@@ -44,6 +41,8 @@ export const MovieDetails = () => {
     };
 
     return (
-        <MovieDetailsContent />
+        <PersonDetailsContent />
     );
 };
+
+export default PersonDetails;

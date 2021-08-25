@@ -5,10 +5,11 @@ import {
   Redirect,
 } from "react-router-dom";
 import { Navigation } from "../../common/Navigation";
-import { PersonList } from "../../features/PopularPeople";
-import MovieList from "../../features/PopularMovies";
+import { PopularPeopleList } from "../../features/PopularPeople";
+import PopularMoviesList from "../../features/PopularMovies";
 import Error from "../../common/Error";
 import {MovieDetails} from "../../features/PopularMovies/MovieDetails";
+import PersonDetails from "../../features/PopularPeople/PersonDetails";
 
 export const App = () => {
   return (
@@ -16,16 +17,16 @@ export const App = () => {
       <Navigation />
       <Switch>
         <Route path="/profile/:id">
-          <p>5. Profile</p>
+          <PersonDetails/>
         </Route>
         <Route path="/movie/:id">
           <MovieDetails />
         </Route>
         <Route path="/movies">
-          <MovieList />
+          <PopularMoviesList />
         </Route>
         <Route path="/people">
-          <PersonList />
+          <PopularPeopleList />
         </Route>
         <Route path="/error">
           <Error />

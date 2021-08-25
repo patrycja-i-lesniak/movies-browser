@@ -5,7 +5,7 @@ import PeopleTiles from "../Tiles/PeopleTiles";
 import { Loader } from "../../common/Loader";
 import Error from "../../common/Error";
 import { NoResults } from "../../common/NoResults";
-import { Wrapper } from "../PopularMovies/MovieDetails/styled";
+import { MovieAndPersonWrapper } from "../../common/Wrappers/MovieAndPersonWrapper";
 import { Pagination } from "../../common/Pagination";
 import { useQueryParameter } from "../../useQueryParameter";
 import searchQueryParamName from "../../searchQueryParamName";
@@ -14,26 +14,25 @@ import {
     selectStatus,
 } from "./popularPeopleSlice";
 
-export const PersonList = () => {
+export const PopularPeopleList = () => {
     const dispatch = useDispatch();
     const status = useSelector(selectStatus);
-
     const page = useQueryParameter(searchQueryParamName) || "1";
 
     useEffect(() => {
         dispatch(fetchPopularPeopleLoading(page));
     }, [dispatch, page]);
 
-    const PersonListContent = () => {
+    const PeopleListContent = () => {
         switch (status) {
             case "loading":
                 return < Loader />;
             case "success":
                 return (
                     <>
-                        <Wrapper>
-                            <PeopleTiles title="Popular People" />
-                        </Wrapper>
+                        <MovieAndPersonWrapper>
+                            <PeopleTiles title="Popular people" />
+                        </MovieAndPersonWrapper>
                         <Pagination />
                     </>);
             case "error":
@@ -44,6 +43,6 @@ export const PersonList = () => {
     };
 
     return (
-        <PersonListContent />
+        <PeopleListContent />
     );
 };

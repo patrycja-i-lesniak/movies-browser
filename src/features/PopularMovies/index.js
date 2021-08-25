@@ -5,13 +5,13 @@ import MovieTiles from "../Tiles/MovieTiles";
 import { Loader } from "../../common/Loader";
 import Error from "../../common/Error";
 import { NoResults } from "../../common/NoResults";
-import { Wrapper } from "./MovieDetails/styled";
+import { MovieAndPersonWrapper } from "../../common/Wrappers/MovieAndPersonWrapper";
 import { Pagination } from "./Pagination";
 import { useQueryParameter } from "../../useQueryParameter";
 import searchQueryParamName from "../../searchQueryParamName";
 import { selectPopularMoviesStatus, fetchPopularMoviesLoading } from "./popularMoviesSlice";
 
-const MovieList = () => {
+const PopularMoviesList = () => {
     const dispatch = useDispatch();
     const status = useSelector(selectPopularMoviesStatus);
     const page = useQueryParameter(searchQueryParamName) || "1";
@@ -27,9 +27,9 @@ const MovieList = () => {
             case "success":
                 return (
                     <>
-                        <Wrapper>
+                        <MovieAndPersonWrapper>
                             <MovieTiles title="Popular movies" />
-                        </Wrapper>
+                        </MovieAndPersonWrapper>
                         <Pagination />
                     </>);
             case "error":
@@ -44,4 +44,4 @@ const MovieList = () => {
     );
 };
 
-export default MovieList;
+export default PopularMoviesList;
