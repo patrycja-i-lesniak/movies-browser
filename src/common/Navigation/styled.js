@@ -18,7 +18,7 @@ export const DoubleContainer = styled.div`
     display: flex;
     flex-wrap: wrap;
     min-height: inherit;
-    padding: 0 10px;
+    /* padding: 0 10px; */
     justify-content: space-between;
 
     @media(max-width: ${({ theme }) => theme.breakpoints.medium}px) {
@@ -49,7 +49,7 @@ export const Logo = styled(NavLink).attrs(() => ({ activeClassName }))`
 
 export const VideoIcon = styled.img`
     color: ${({ theme }) => theme.colors.navigation.elems};
-    margin-right: 12px;
+    margin: 0 12px;
 
     @media(max-width: ${({ theme }) => theme.breakpoints.xsmall}px) {
         width: 26px;
