@@ -4,7 +4,7 @@ import { movieDetailsSaga } from "../features/PopularMovies/MovieDetails/movieDe
 import { moviesSaga } from "../features/PopularMovies/moviesSaga";
 import { popularPeopleSaga } from "../features/PopularPeople/popularPeopleSaga";
 import { personDetailsSaga } from "../features/PopularPeople/PersonDetails/personDetailsSaga";
-import { moviesBrowserSaga } from "./App/moviesBrowserSaga";
+import { moviesBrowserSaga } from "./App/movieBrowserSaga";
 
 export default function* saga() {
     yield all([
