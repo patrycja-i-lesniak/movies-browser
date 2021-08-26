@@ -10,9 +10,9 @@ const peopleSlice = createSlice({
         fetchPeopleLoading: () => ({
             status: "loading",
         }),
-        fetchPeopleSuccess: (_, { payload: popularPeopleData }) => ({
+        fetchPeopleSuccess: (_, { payload: peopleData }) => ({
             status: "success",
-            peopleData: popularPeopleData,
+            peopleData: peopleData,
         }),
         fetchPeopleError: () => ({
             status: "error",
@@ -30,6 +30,6 @@ export const {
 export const selectPeopleDataState = state => state.people;
 
 export const selectPeopleData = state => selectPeopleDataState(state).peopleData;
-export const selectStatus = state => selectPeopleDataState(state).status;
+export const selectPeopleStatus = state => selectPeopleDataState(state).status;
 
 export default peopleSlice.reducer;
