@@ -48,7 +48,7 @@ export const Logo = styled(NavLink).attrs(() => ({ activeClassName }))`
 
 export const VideoIcon = styled.img`
     color: ${({ theme }) => theme.colors.navigation.elems};
-    margin: 0 24px;
+    margin: 0 12px;
 
     @media(max-width: ${({ theme }) => theme.breakpoints.xsmall}px) {
         width: 26px;
@@ -112,7 +112,7 @@ export const StyledNavLink = styled(NavLink).attrs(() => ({ activeClassName }))`
     @media(max-width: ${({ theme }) => theme.breakpoints.medium}px) {
         margin-right: 0px;
     }
-    
+
     @media(max-width: ${({ theme }) => theme.breakpoints.xxsmall}px) {
         font-size: 12px;
         padding: 4px 12px;
@@ -128,7 +128,7 @@ export const SearchContainer = styled.div`
     flex-wrap: wrap;
     min-height: 74px;
     margin-right: 12px;
-    
+
     @media(max-width: ${({ theme }) => theme.breakpoints.medium}px) {
         margin-right: 0px;
     }
