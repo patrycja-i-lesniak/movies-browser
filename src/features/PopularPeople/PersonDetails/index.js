@@ -21,7 +21,7 @@ const PersonDetails = () => {
     const PersonDetailsContent = () => {
         switch (status) {
             case "loading":
-                return < Loader />;
+                return <Loader />;
             case "success":
                 return (
                     <>
