@@ -16,7 +16,6 @@ import {
     Wrapper
 } from "./styled";
 
-
 export const Pagination = () => {
     const { pathname } = useLocation();
     const replaceQueryParameter = useReplaceQueryParameter();
