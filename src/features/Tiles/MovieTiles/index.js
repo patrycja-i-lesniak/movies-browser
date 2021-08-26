@@ -20,12 +20,13 @@ import {
 } from "./styled";
 import { Rate } from "../../Rate";
 import { toMovie } from "../../../core/App/routes";
-import { selectMoviesData } from "../../PopularMovies/moviesSlice";
+import {  selectMoviesData, selectMoviesSearchQuery } from "../../PopularMovies/moviesSlice";
 import { ShowMoreButton } from "../ShowMoreButton";
 import { StyledSection } from "../../../common/MovieAndPersonSection";
 
 const MovieTiles = ({ title }) => {
-    const popularMoviesData = useSelector(selectMoviesData);
+    const moviesData = useSelector(selectMoviesData);
+    const searchQuery = useSelector(selectMoviesSearchQuery);
 
     const imageURL = "http://image.tmdb.org/t/p/";
     const size = "w342";
@@ -35,7 +36,7 @@ const MovieTiles = ({ title }) => {
     let moviesList;
     const moviesGenresData = useSelector(selectGenres);
     const moviesGenres = moviesGenresData.genres;
-    const sectionName = title.toLowerCase();
+    const sectionName = title?.toLowerCase() || "Popular movies";
     const creditsData = useSelector(selectPersonCredits);
 
     switch (sectionName) {
@@ -48,17 +49,21 @@ const MovieTiles = ({ title }) => {
             break;
 
         default:
-            moviesList = popularMoviesData.results;
+            moviesList = moviesData.results;
     }
 
     return (moviesList.length ?
         <>
             <StyledSection>
                 {
-                    sectionName.includes("popular")
+                    sectionName.includes("Popular")
                         ?
                         <SiteTitle>
-                            {title}
+                            {
+                                searchQuery
+                                    ? `Search results for "${searchQuery}" (${moviesData.total_results})`
+                                    : sectionName
+                            }
                         </SiteTitle>
                         :
                         <SiteTitle>
@@ -79,7 +84,7 @@ const MovieTiles = ({ title }) => {
                     }, index) =>
                         <li key={index}
                             hidden={
-                                !sectionName.includes("popular") &&
+                                !sectionName.includes("Popular") &&
                                 !showMore &&
                                 index > 3
                             }>
@@ -141,7 +146,7 @@ const MovieTiles = ({ title }) => {
                 </List>
             </StyledSection>
             {
-                !sectionName.includes("popular") && moviesList.length > 3 &&
+                !sectionName.includes("Popular") && moviesList.length > 3 &&
                 <ShowMoreButton
                     showMore={showMore}
                     setShowMore={setShowMore}

@@ -12,17 +12,18 @@ import {
 } from "./styled";
 import { toProfile } from "../../../core/App/routes";
 import { selectMovieCredits } from "../../PopularMovies/MovieDetails/movieDetailsSlice";
-import { selectPeopleData } from "../../PopularPeople/peopleSlice";
+import { selectPeopleData, selectPeopleSearchQuery } from "../../PopularPeople/peopleSlice";
 import { ShowMoreButton } from "../ShowMoreButton";
 import { StyledSection } from "../../../common/MovieAndPersonSection";
 
 const PeopleTiles = ({ title }) => {
-    const popularPeopleData = useSelector(selectPeopleData);
+    const peopleData = useSelector(selectPeopleData);
     const creditsData = useSelector(selectMovieCredits);
+    const searchQuery = useSelector(selectPeopleSearchQuery);
     const [showMore, setShowMore] = useState(false);
 
     let peopleList;
-    const sectionName = title.toLowerCase();
+    const sectionName = title?.toLowerCase() || "Popular people";
     const imageURL = "http://image.tmdb.org/t/p/";
     const size = "w185";
     const poster = `${imageURL}${size}`;
@@ -37,19 +38,30 @@ const PeopleTiles = ({ title }) => {
             break;
 
         default:
-            peopleList = popularPeopleData.results;
+            peopleList = peopleData.results;
     }
 
     return (
         <>
             <StyledSection>
-                <Title>{title}</Title>
+                <Title>
+                    {
+                        searchQuery
+                            ? `Search results for "${searchQuery}" (${peopleData.total_results})`
+                            : title || sectionName
+                    }
+                </Title>
                 <PeopleList>
-                    {peopleList.map(({ id, profile_path, name, character, job }, index) =>
+                    {peopleList.map(({
+                        id,
+                        profile_path,
+                        name,
+                        character,
+                        job }, index) =>
                         <li
                             key={index}
                             hidden={
-                                !sectionName.includes("popular") &&
+                                !sectionName.includes("Popular") &&
                                 !showMore &&
                                 index > 5
                             }>
@@ -57,10 +69,15 @@ const PeopleTiles = ({ title }) => {
                                 to={toProfile({ id })}
                             >
                                 <ProfilePicture
-                                    src={profile_path ? `${poster}${profile_path}` : noPersonPhoto} alt={`${title} poster`} />
+                                    src={
+                                        profile_path
+                                            ? `${poster}${profile_path}`
+                                            : noPersonPhoto}
+                                    alt={`${name} poster`}
+                                />
                                 <TileTitle>{name}</TileTitle>
                                 {
-                                    !sectionName.includes("popular") &&
+                                    !sectionName.includes("Popular") &&
                                     <Role>
                                         {character || job}
                                     </Role>
@@ -71,7 +88,7 @@ const PeopleTiles = ({ title }) => {
                 </PeopleList>
             </StyledSection>
             {
-                !sectionName.includes("popular") && peopleList.length > 5 &&
+                !sectionName.includes("Popular") && peopleList.length > 5 &&
                 <ShowMoreButton
                     showMore={showMore}
                     setShowMore={setShowMore}
