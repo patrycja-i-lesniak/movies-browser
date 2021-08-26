@@ -32,7 +32,7 @@ const MovieTiles = ({ title }) => {
     const size = "w342";
     const poster = `${imageURL}${size}`;
     const [showMore, setShowMore] = useState(false);
-    
+
     let moviesList;
     const moviesGenresData = useSelector(selectGenres);
     const moviesGenres = moviesGenresData.genres;
@@ -142,7 +142,7 @@ const MovieTiles = ({ title }) => {
                 </List>
             </StyledSection>
             {
-                !sectionName.includes("popular") && moviesList.length > 3 &&
+                !sectionName.includes("popular") && moviesList.length > 4 &&
                 <ShowMoreButton
                 showMore={showMore}
                 setShowMore={setShowMore}
