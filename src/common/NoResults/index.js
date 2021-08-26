@@ -1,8 +1,10 @@
 import { NoResultsHeader, NoResultsImage, } from "./styled";
 import { Wrapper } from "../Wrappers/LoaderNoResultsWrapper";
+import { useQueryParameter } from "../useQueryParameter";
+import { searchQueryParamName } from "../queryParamNames";
 
 export const NoResults = () => {
-    const search = "Muan"; //template, waitng for search code and logic
+    const search = useQueryParameter(searchQueryParamName);
 
     return (
         <Wrapper>
