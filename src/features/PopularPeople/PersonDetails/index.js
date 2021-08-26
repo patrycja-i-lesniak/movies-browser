@@ -6,7 +6,6 @@ import PersonTile from "../../Tiles/PersonTile";
 import MovieTiles from "../../Tiles/MovieTiles";
 import { Loader } from "../../../common/Loader";
 import Error from "../../../common/Error";
-import { NoResults } from "../../../common/NoResults";
 import { MovieAndPersonWrapper } from "../../../common/Wrappers/MovieAndPersonWrapper";
 import { fetchPersonDetails, selectStatus } from "./personDetailsSlice";
 
@@ -35,7 +34,7 @@ const PersonDetails = () => {
             case "error":
                 return <Error />;
             default:
-                return <NoResults />;
+                return <></>;
         };
     };
 
