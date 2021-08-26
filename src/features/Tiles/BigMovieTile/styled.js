@@ -6,7 +6,7 @@ export const MovieDetailsTile = styled.article`
     border-radius: 5px;
     min-height: 544px;
     padding: 40px;
-    margin-bottom: 64px;
+    margin: 64px 16px;
 
     @media(max-width: ${({ theme }) => theme.breakpoints.medium}px) {
         padding: 32px;
