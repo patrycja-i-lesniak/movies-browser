@@ -5,7 +5,6 @@ import { nanoid } from "@reduxjs/toolkit";
 import {
     selectPersonCredits
 } from "../../PopularPeople/PersonDetails/personDetailsSlice";
-
 import { selectGenres } from "../../../core/App/moviesBrowserSlice";
 import noMoviePhoto from "../../../features/Images/noMoviePhoto.svg";
 import {
@@ -32,7 +31,7 @@ const MovieTiles = ({ title }) => {
     const size = "w342";
     const poster = `${imageURL}${size}`;
     const [showMore, setShowMore] = useState(false);
-    
+
     let moviesList;
     const moviesGenresData = useSelector(selectGenres);
     const moviesGenres = moviesGenresData.genres;
@@ -59,7 +58,7 @@ const MovieTiles = ({ title }) => {
                     sectionName.includes("popular")
                         ?
                         <SiteTitle>
-                            {sectionName.charAt(0).toUpperCase() + sectionName.slice(1)}
+                            {title}
                         </SiteTitle>
                         :
                         <SiteTitle>
@@ -144,8 +143,8 @@ const MovieTiles = ({ title }) => {
             {
                 !sectionName.includes("popular") && moviesList.length > 3 &&
                 <ShowMoreButton
-                showMore={showMore}
-                setShowMore={setShowMore}
+                    showMore={showMore}
+                    setShowMore={setShowMore}
                 />
             }
         </>
