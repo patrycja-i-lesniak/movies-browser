@@ -79,7 +79,7 @@ export const Label = styled.p`
     align-items: center;
 
     @media(max-width: ${({ theme }) => theme.breakpoints.medium}px) {
-        font-size: 14px;
+        font-size: 16px;
     }
 
     @media(max-width: ${({ theme }) => theme.breakpoints.small}px) {
@@ -94,7 +94,7 @@ export const PersonData = styled.p`
     margin: 0;
 
     @media(max-width: ${({ theme }) => theme.breakpoints.medium}px) {
-        font-size: 14px;
+        font-size: 16px;
     }
 
     @media(max-width: ${({ theme }) => theme.breakpoints.small}px) {
