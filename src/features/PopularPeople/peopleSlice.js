@@ -5,6 +5,7 @@ const peopleSlice = createSlice({
     initialState: {
         status: "initial",
         peopleData: null,
+        searchQuery: null,
     },
     reducers: {
         fetchPeopleLoading: () => ({
@@ -12,11 +13,13 @@ const peopleSlice = createSlice({
         }),
         fetchPeopleSuccess: (_, { payload: peopleData }) => ({
             status: "success",
-            peopleData,
+            peopleData: peopleData.peopleList,
+            searchQuery: peopleData.searchQuery,
         }),
         fetchPeopleError: () => ({
             status: "error",
             peopleData: null,
+            searchQuery: null,
         }),
     }
 });
@@ -31,5 +34,6 @@ export const selectPeopleDataState = state => state.people;
 
 export const selectPeopleData = state => selectPeopleDataState(state).peopleData;
 export const selectPeopleStatus = state => selectPeopleDataState(state).status;
+export const selectPeopleSearchQuery  = state => selectPeopleDataState(state).searchQuery;
 
 export default peopleSlice.reducer;

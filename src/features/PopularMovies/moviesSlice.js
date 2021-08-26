@@ -5,6 +5,7 @@ const moviesSlice = createSlice({
     initialState: {
         status: "initial",
         moviesData: null,
+        searchQuery: null,
     },
     reducers: {
         fetchMoviesLoading: () => ({
@@ -12,11 +13,13 @@ const moviesSlice = createSlice({
         }),
         fetchMoviesSuccess: (_, { payload: moviesData }) => ({
             status: "success",
-            moviesData,
+            moviesData: moviesData.moviesList,
+            searchQuery: moviesData.searchQuery,
         }),
         fetchMoviesError: () => ({
             status: "error",
             moviesData: null,
+            isSearching: null,
         }),
     }
 });
@@ -31,5 +34,6 @@ export const selectMoviesDataState = state => state.movies;
 
 export const selectMoviesData = state => selectMoviesDataState(state).moviesData;
 export const selectMoviesStatus = state => selectMoviesDataState(state).status;
+export const selectMoviesSearchQuery = state => selectMoviesDataState(state).searchQuery;
 
 export default moviesSlice.reducer;
