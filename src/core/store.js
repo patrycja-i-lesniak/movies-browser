@@ -3,7 +3,7 @@ import createSagaMiddleware from "@redux-saga/core";
 
 import moviesReducer from "../features/PopularMovies/moviesSlice";
 import moviesBrowserReducer from "./App/moviesBrowserSlice";
-import popularPeopleReducer from "../features/PopularPeople/popularPeopleSlice";
+import peopleReducer from "../features/PopularPeople/peopleSlice";
 import movieDetailsReducer from "../features/PopularMovies/MovieDetails/movieDetailsSlice";
 import personDetailsReducer from "../features/PopularPeople/PersonDetails/personDetailsSlice";
 import saga from "./saga";
@@ -14,7 +14,7 @@ const store = configureStore({
     reducer: {
         movies: moviesReducer,
         moviesBrowser: moviesBrowserReducer,
-        popularPeople: popularPeopleReducer,
+        people: peopleReducer,
         movieDetails: movieDetailsReducer,
         personDetails: personDetailsReducer,
     },

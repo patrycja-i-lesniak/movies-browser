@@ -12,12 +12,12 @@ import {
 } from "./styled";
 import { toProfile } from "../../../core/App/routes";
 import { selectMovieCredits } from "../../PopularMovies/MovieDetails/movieDetailsSlice";
-import { selectPopularPeopleData } from "../../PopularPeople/popularPeopleSlice";
+import { selectPeopleData } from "../../PopularPeople/peopleSlice";
 import { ShowMoreButton } from "../ShowMoreButton";
 import { StyledSection } from "../../../common/MovieAndPersonSection";
 
 const PeopleTiles = ({ title }) => {
-    const popularPeopleData = useSelector(selectPopularPeopleData);
+    const popularPeopleData = useSelector(selectPeopleData);
     const creditsData = useSelector(selectMovieCredits);
     const [showMore, setShowMore] = useState(false);
 

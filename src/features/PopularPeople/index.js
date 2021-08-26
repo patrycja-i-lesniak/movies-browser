@@ -10,18 +10,18 @@ import { Pagination } from "../../common/Pagination";
 import { useQueryParameter } from "../../common/useQueryParameter";
 import { paginationQueryParamName } from "../../common/queryParamNames";
 import {
-    fetchPopularPeopleLoading,
+    fetchPeopleLoading,
     selectStatus,
-} from "./popularPeopleSlice";
+} from "./peopleSlice";
 
-export const PopularPeopleList = () => {
+export const PeopleList = () => {
     const dispatch = useDispatch();
     const status = useSelector(selectStatus);
 
     const page = useQueryParameter(paginationQueryParamName) || "1";
 
     useEffect(() => {
-        dispatch(fetchPopularPeopleLoading(page));
+        dispatch(fetchPeopleLoading(page));
     }, [dispatch, page]);
 
     const PeopleListContent = () => {
