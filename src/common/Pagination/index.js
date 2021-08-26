@@ -19,14 +19,14 @@ import {
 
 export const Pagination = () => {
     const { pathname } = useLocation();
+    const replaceQueryParameter = useReplaceQueryParameter();
 
     const APIData = useSelector(
         pathname === toPeople()
             ? selectPeopleData
             : selectMoviesData
     );
-    const replaceQueryParameter = useReplaceQueryParameter();
-
+    
     const currentPage = APIData.page;
     const totalPages = APIData.total_pages;
 
