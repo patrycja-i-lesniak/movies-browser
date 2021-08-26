@@ -23,6 +23,7 @@ import { Rate } from "../../Rate";
 import { toMovie } from "../../../core/App/routes";
 import { selectMoviesData } from "../../PopularMovies/moviesSlice";
 import { ShowMoreButton } from "../ShowMoreButton";
+import { StyledSection } from "../../../common/MovieAndPersonSection";
 
 const MovieTiles = ({ title }) => {
     const popularMoviesData = useSelector(selectMoviesData);
@@ -53,7 +54,7 @@ const MovieTiles = ({ title }) => {
 
     return (moviesList.length ?
         <>
-            <section>
+            <StyledSection>
                 {
                     sectionName.includes("popular")
                         ?
@@ -138,10 +139,10 @@ const MovieTiles = ({ title }) => {
                         </li>
                     )}
                 </List>
-            </section>
+            </StyledSection>
             {
                 !sectionName.includes("popular") &&
-                <ShowMoreButton 
+                <ShowMoreButton
                 showMore={showMore}
                 setShowMore={setShowMore}
                 />
