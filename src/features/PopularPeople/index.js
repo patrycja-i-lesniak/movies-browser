@@ -1,5 +1,4 @@
-import { useEffect } from "react";
-import { useDispatch, useSelector } from "react-redux";
+import { useSelector } from "react-redux";
 
 import PeopleTiles from "../Tiles/PeopleTiles";
 import { Loader } from "../../common/Loader";
@@ -7,22 +6,15 @@ import Error from "../../common/Error";
 import { NoResults } from "../../common/NoResults";
 import { MovieAndPersonWrapper } from "../../common/Wrappers/MovieAndPersonWrapper";
 import { Pagination } from "../../common/Pagination";
-import { useQueryParameter } from "../../common/useQueryParameter";
-import { paginationQueryParamName } from "../../common/queryParamNames";
 import {
     fetchPeopleLoading,
-    selectStatus,
+    selectPeopleStatus,
 } from "./peopleSlice";
+import { useFetchList } from "../useFetchList";
 
 export const PeopleList = () => {
-    const dispatch = useDispatch();
-    const status = useSelector(selectStatus);
-
-    const page = useQueryParameter(paginationQueryParamName) || "1";
-
-    useEffect(() => {
-        dispatch(fetchPeopleLoading(page));
-    }, [dispatch, page]);
+    useFetchList(fetchPeopleLoading);
+    const status = useSelector(selectPeopleStatus);
 
     const PeopleListContent = () => {
         switch (status) {
@@ -34,7 +26,7 @@ export const PeopleList = () => {
                         <MovieAndPersonWrapper>
                             <PeopleTiles title="Popular people" />
                         </MovieAndPersonWrapper>
-                        <Pagination pathName="/people" />
+                        <Pagination />
                     </>
                 );
             case "error":

@@ -1,33 +1,17 @@
-import { useDispatch, useSelector } from "react-redux";
-import { useEffect } from "react";
+import {  useSelector } from "react-redux";
 
+import {useFetchList} from "../useFetchList.js";
 import MovieTiles from "../Tiles/MovieTiles";
 import { Loader } from "../../common/Loader";
 import Error from "../../common/Error";
 import { NoResults } from "../../common/NoResults";
-import { useQueryParameter } from "../../common/useQueryParameter";
-import { paginationQueryParamName, searchQueryParamName } from "../../common/queryParamNames";
 import { Pagination } from "../../common/Pagination";
 import { fetchMoviesLoading, selectMoviesStatus } from "./moviesSlice";
 import { MovieAndPersonWrapper } from "../../common/Wrappers/MovieAndPersonWrapper";
 
 const MoviesList = () => {
-    const dispatch = useDispatch();
+    useFetchList(fetchMoviesLoading);
     const status = useSelector(selectMoviesStatus);
-    const page = useQueryParameter(paginationQueryParamName);
-    const searchQuery = useQueryParameter(searchQueryParamName);
-
-    useEffect(() => {
-        if (searchQuery && !page) {
-            const timeoutID = setTimeout(() => {
-                dispatch(fetchMoviesLoading({ page, searchQuery }));
-            }, 1_000);
-
-            return () => clearTimeout(timeoutID);
-        } else {
-            dispatch(fetchMoviesLoading({ page, searchQuery }));
-        }
-    }, [dispatch, page, searchQuery]);
 
     const MovieListContent = () => {
         switch (status) {
@@ -39,7 +23,7 @@ const MoviesList = () => {
                         <MovieAndPersonWrapper>
                             <MovieTiles title="Popular movies" />
                         </MovieAndPersonWrapper>
-                        <Pagination pathName="/movies" />
+                        <Pagination />
                     </>
                 );
             case "error":
