@@ -14,6 +14,7 @@ import { toProfile } from "../../../core/App/routes";
 import { selectMovieCredits } from "../../PopularMovies/MovieDetails/movieDetailsSlice";
 import { selectPopularPeopleData } from "../../PopularPeople/popularPeopleSlice";
 import { ShowMoreButton } from "../ShowMoreButton";
+import { StyledSection } from "../../../common/MovieAndPersonSection";
 
 const PeopleTiles = ({ title }) => {
     const popularPeopleData = useSelector(selectPopularPeopleData);
@@ -41,7 +42,7 @@ const PeopleTiles = ({ title }) => {
 
     return (
         <>
-            <section>
+            <StyledSection>
                 <Title>{title}</Title>
                 <PeopleList>
                     {peopleList.map(({ id, profile_path, name, character, job }, index) =>
@@ -68,7 +69,7 @@ const PeopleTiles = ({ title }) => {
                         </li>
                     )}
                 </PeopleList>
-            </section>
+            </StyledSection>
             {
                 !sectionName.includes("popular") && peopleList.length > 5 &&
                 <ShowMoreButton
