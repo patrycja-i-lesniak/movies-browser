@@ -1,5 +1,6 @@
 import { takeLatest, call, put } from "@redux-saga/core/effects";
-import {getSearchPeopleData, getPopularPeopleData} from "./peopleAPI";
+import { getPopularPeopleData, getSearchPeopleData } from "./peopleAPI";
+
 import { fetchPeopleError, fetchPeopleLoading, fetchPeopleSuccess } from "./peopleSlice";
 
 function* fetchPeopleDataHandler({ payload: location }) {
