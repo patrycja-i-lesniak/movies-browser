@@ -8,6 +8,7 @@ import { MovieAndPersonWrapper } from "../../common/Wrappers/MovieAndPersonWrapp
 import { Pagination } from "../../common/Pagination";
 import {
     fetchPeopleLoading,
+    selectPeopleData,
     selectPeopleStatus,
 } from "./peopleSlice";
 import { useFetchList } from "../useFetchList";
@@ -15,6 +16,7 @@ import { useFetchList } from "../useFetchList";
 export const PeopleList = () => {
     useFetchList(fetchPeopleLoading);
     const status = useSelector(selectPeopleStatus);
+    const peopleData = useSelector(selectPeopleData);
 
     const PeopleListContent = () => {
         switch (status) {
@@ -22,12 +24,14 @@ export const PeopleList = () => {
                 return < Loader />;
             case "success":
                 return (
-                    <>
-                        <MovieAndPersonWrapper>
-                            <PeopleTiles title="Popular people" />
-                        </MovieAndPersonWrapper>
-                        <Pagination />
-                    </>
+                    peopleData.results.length
+                        ? <>
+                            <MovieAndPersonWrapper>
+                                <PeopleTiles title="Popular people" />
+                            </MovieAndPersonWrapper>
+                            <Pagination />
+                        </>
+                        : <NoResults />
                 );
             case "error":
                 return <Error />;

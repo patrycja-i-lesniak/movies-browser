@@ -1,17 +1,18 @@
-import {  useSelector } from "react-redux";
+import { useSelector } from "react-redux";
 
-import {useFetchList} from "../useFetchList.js";
+import { useFetchList } from "../useFetchList.js";
 import MovieTiles from "../Tiles/MovieTiles";
 import { Loader } from "../../common/Loader";
 import Error from "../../common/Error";
 import { NoResults } from "../../common/NoResults";
 import { Pagination } from "../../common/Pagination";
-import { fetchMoviesLoading, selectMoviesStatus } from "./moviesSlice";
+import { fetchMoviesLoading, selectMoviesData, selectMoviesStatus } from "./moviesSlice";
 import { MovieAndPersonWrapper } from "../../common/Wrappers/MovieAndPersonWrapper";
 
 const MoviesList = () => {
     useFetchList(fetchMoviesLoading);
     const status = useSelector(selectMoviesStatus);
+    const moviesData = useSelector(selectMoviesData);
 
     const MovieListContent = () => {
         switch (status) {
@@ -19,17 +20,19 @@ const MoviesList = () => {
                 return <Loader />;
             case "success":
                 return (
-                    <>
-                        <MovieAndPersonWrapper>
-                            <MovieTiles title="Popular movies" />
-                        </MovieAndPersonWrapper>
-                        <Pagination />
-                    </>
+                    moviesData.results.length
+                        ? <>
+                            <MovieAndPersonWrapper>
+                                <MovieTiles title="Popular movies" />
+                            </MovieAndPersonWrapper>
+                            <Pagination />
+                        </>
+                        : <NoResults />
                 );
             case "error":
                 return <Error />;
             default:
-                return <NoResults />;
+                return <></>;
         };
     };
 
