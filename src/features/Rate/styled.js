@@ -4,15 +4,15 @@ export const RateWrapper = styled.div`
     display: grid;
     grid-template-columns: auto auto auto 1fr;
     justify-content: start;
-    align-items: end;
+    align-items: baseline;
     margin: 0;
     grid-template-areas:
         "star average scale vote";
 
-        @media(max-width: ${({ theme }) => theme.breakpoints.small}px) {
-            grid-template-columns: repeat(3, auto);
-            grid-template-areas: "star average vote";
-        };
+    @media(max-width: ${({ theme }) => theme.breakpoints.small}px) {
+        grid-template-columns: auto auto 1fr;
+        grid-template-areas: "star average vote";
+    };
 `;
 
 export const StarIcon = styled.img`
@@ -41,7 +41,7 @@ export const VoteAverage = styled.p`
 
     ${({ tile }) => tile && css`
         font-size: 16px;
-        margin-right: 12px;
+        margin-right: 8px;
     `};
 `;
 
@@ -74,5 +74,6 @@ export const VoteCount = styled.p`
     ${({ tile }) => tile && css`
         font-size: 16px;
         color: ${({ theme }) => theme.colors.textSecondary};
+        margin: 0;
     `};
 `;

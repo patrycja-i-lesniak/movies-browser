@@ -21,16 +21,16 @@ export const Rate = ({ vote_average, vote_count, tile = false, small = false}) =
                         <VoteAverage tile >{vote_average}</VoteAverage>
                         <VoteCount tile >{vote_count} votes</VoteCount>
                     </RateWrapper>
-                            )
-                            :
-                            (
-                                <RateWrapper>
-                                    <StarIcon src={star} alt="star" />
-                                    <VoteAverage>{vote_average}</VoteAverage>
-                                    <RatingScale>/10</RatingScale>
-                                    <VoteCount>{vote_count} votes</VoteCount>
-                                </RateWrapper>
-                            )
+                    )
+                     :
+                    (
+                        <RateWrapper>
+                            <StarIcon src={star} alt="star" />
+                            <VoteAverage>{vote_average}</VoteAverage>
+                            <RatingScale>/10</RatingScale>
+                            <VoteCount>{vote_count} votes</VoteCount>
+                        </RateWrapper>
+                    )
             }
         </>
     );
