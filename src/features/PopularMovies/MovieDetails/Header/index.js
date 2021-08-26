@@ -16,19 +16,22 @@ export const Header = () => {
 
     const imageURL = "http://image.tmdb.org/t/p/";
     const size = "original";
-    const poster = `${imageURL}${size}${movieData.backdrop_path}`;
+    const poster = movieData.backdrop_path;
+    const posterAdress = `${imageURL}${size}${poster}`;
     const title = movieData.title;
 
     return (
-        <MovieDetailsHeader>
-            <WrapperPoster url={poster}>
-                <Wrapper>
-                    <TextWrapper>
-                        <TitleHeader>{title}</TitleHeader>
-                        <HeaderRating />
-                    </TextWrapper>
-                </Wrapper>
-            </WrapperPoster>
-        </MovieDetailsHeader>
+        poster && (
+            <MovieDetailsHeader>
+                <WrapperPoster url={posterAdress}>
+                    <Wrapper>
+                        <TextWrapper>
+                            <TitleHeader>{title}</TitleHeader>
+                            <HeaderRating />
+                        </TextWrapper>
+                    </Wrapper>
+                </WrapperPoster>
+            </MovieDetailsHeader>
+        )
     );
 };
