@@ -5,13 +5,13 @@ import { fetchMoviesError, fetchMoviesSuccess, fetchMoviesLoading } from "./movi
 
 function* fetchMoviesDataHandler({ payload: location }) {
     try {
-        const moviesList = yield location.searchQuery
+        const moviesData = yield location.searchQuery
             ? call(getSearchMoviesData, location)
             : call(getPopularMoviesData, location.page);
 
         const searchQuery = location.searchQuery;
 
-        yield put(fetchMoviesSuccess({ moviesList, searchQuery }));
+        yield put(fetchMoviesSuccess({ moviesData, searchQuery }));
     } catch (error) {
         yield put(fetchMoviesError());
     }

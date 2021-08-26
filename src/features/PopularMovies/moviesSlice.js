@@ -11,10 +11,10 @@ const moviesSlice = createSlice({
         fetchMoviesLoading: () => ({
             status: "loading",
         }),
-        fetchMoviesSuccess: (_, { payload: moviesData }) => ({
+        fetchMoviesSuccess: (_, { payload: movies }) => ({
             status: "success",
-            moviesData: moviesData.moviesList,
-            searchQuery: moviesData.searchQuery,
+            moviesData: movies.moviesData,
+            searchQuery: movies.searchQuery,
         }),
         fetchMoviesError: () => ({
             status: "error",

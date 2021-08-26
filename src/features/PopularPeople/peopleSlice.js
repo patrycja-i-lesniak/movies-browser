@@ -11,10 +11,10 @@ const peopleSlice = createSlice({
         fetchPeopleLoading: () => ({
             status: "loading",
         }),
-        fetchPeopleSuccess: (_, { payload: peopleData }) => ({
+        fetchPeopleSuccess: (_, { payload: people }) => ({
             status: "success",
-            peopleData: peopleData.peopleList,
-            searchQuery: peopleData.searchQuery,
+            peopleData: people.peopleData,
+            searchQuery: people.searchQuery,
         }),
         fetchPeopleError: () => ({
             status: "error",

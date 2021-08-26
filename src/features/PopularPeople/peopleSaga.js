@@ -4,13 +4,13 @@ import { fetchPeopleError, fetchPeopleLoading, fetchPeopleSuccess } from "./peop
 
 function* fetchPeopleDataHandler({ payload: location }) {
     try {
-        const peopleList = yield location.searchQuery
+        const peopleData = yield location.searchQuery
             ? call(getSearchPeopleData, location)
             : call(getPopularPeopleData, location.page);
 
         const searchQuery = location.searchQuery;
 
-        yield put(fetchPeopleSuccess({ peopleList, searchQuery }));
+        yield put(fetchPeopleSuccess({ peopleData, searchQuery }));
     } catch (error) {
         yield put(fetchPeopleError());
     }
