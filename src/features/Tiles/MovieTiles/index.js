@@ -36,7 +36,7 @@ const MovieTiles = ({ title }) => {
     let moviesList;
     const moviesGenresData = useSelector(selectGenres);
     const moviesGenres = moviesGenresData.genres;
-    const sectionName = title?.toLowerCase() || "Popular movies";
+    const sectionName = title.toLowerCase();
     const creditsData = useSelector(selectPersonCredits);
 
     switch (sectionName) {
@@ -56,13 +56,13 @@ const MovieTiles = ({ title }) => {
         <>
             <StyledSection>
                 {
-                    sectionName.includes("Popular")
+                    sectionName.includes("popular")
                         ?
                         <SiteTitle>
                             {
                                 searchQuery
                                     ? `Search results for "${searchQuery}" (${moviesData.total_results})`
-                                    : sectionName
+                                    : title
                             }
                         </SiteTitle>
                         :
@@ -84,7 +84,7 @@ const MovieTiles = ({ title }) => {
                     }, index) =>
                         <li key={index}
                             hidden={
-                                !sectionName.includes("Popular") &&
+                                !sectionName.includes("popular") &&
                                 !showMore &&
                                 index > 3
                             }>
@@ -146,7 +146,7 @@ const MovieTiles = ({ title }) => {
                 </List>
             </StyledSection>
             {
-                !sectionName.includes("Popular") && moviesList.length > 3 &&
+                !sectionName.includes("popular") && moviesList.length > 3 &&
                 <ShowMoreButton
                     showMore={showMore}
                     setShowMore={setShowMore}

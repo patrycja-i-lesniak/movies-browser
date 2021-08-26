@@ -23,7 +23,7 @@ const PeopleTiles = ({ title }) => {
     const [showMore, setShowMore] = useState(false);
 
     let peopleList;
-    const sectionName = title?.toLowerCase() || "Popular people";
+    const sectionName = title.toLowerCase();
     const imageURL = "http://image.tmdb.org/t/p/";
     const size = "w185";
     const poster = `${imageURL}${size}`;
@@ -48,7 +48,7 @@ const PeopleTiles = ({ title }) => {
                     {
                         searchQuery
                             ? `Search results for "${searchQuery}" (${peopleData.total_results})`
-                            : title || sectionName
+                            : title
                     }
                 </Title>
                 <PeopleList>
@@ -61,7 +61,7 @@ const PeopleTiles = ({ title }) => {
                         <li
                             key={index}
                             hidden={
-                                !sectionName.includes("Popular") &&
+                                !sectionName.includes("popular") &&
                                 !showMore &&
                                 index > 5
                             }>
@@ -77,7 +77,7 @@ const PeopleTiles = ({ title }) => {
                                 />
                                 <TileTitle>{name}</TileTitle>
                                 {
-                                    !sectionName.includes("Popular") &&
+                                    !sectionName.includes("popular") &&
                                     <Role>
                                         {character || job}
                                     </Role>
@@ -88,7 +88,7 @@ const PeopleTiles = ({ title }) => {
                 </PeopleList>
             </StyledSection>
             {
-                !sectionName.includes("Popular") && peopleList.length > 5 &&
+                !sectionName.includes("popular") && peopleList.length > 5 &&
                 <ShowMoreButton
                     showMore={showMore}
                     setShowMore={setShowMore}
