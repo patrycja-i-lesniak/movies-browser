@@ -141,7 +141,7 @@ const MovieTiles = ({ title }) => {
                 </List>
             </section>
             {
-                !sectionName.includes("popular") &&
+                !sectionName.includes("popular") && moviesList.length > 3 &&
                 <ShowMoreButton 
                 showMore={showMore}
                 setShowMore={setShowMore}
