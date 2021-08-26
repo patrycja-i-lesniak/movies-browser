@@ -26,11 +26,10 @@ export const App = () => {
 
   const status = useSelector(selectMoviesBrowserStatus);
 
-  switch (status) {
-    case "success":
-      return (
-        <HashRouter>
-          <Navigation />
+  const AppContent = () => {
+    switch (status) {
+      case "success":
+        return (
           <Switch>
             <Route path={toProfile()}>
               <PersonDetails />
@@ -45,14 +44,20 @@ export const App = () => {
               <PopularPeopleList />
             </Route>
             <Route path="/">
-            <Redirect to={toMovies()} />
+              <Redirect to={toMovies()} />
             </Route>
-          </Switch>
-        </HashRouter>
-      );
-    case "error":
-      return <Error />;
-    default:
-      return <></>;
+          </Switch>);
+      case "error":
+        return <Error status={"noButton"} />;
+      default:
+        return <></>;
+    };
   };
+
+  return (
+    <HashRouter>
+      <Navigation />
+      <AppContent />
+    </HashRouter>
+  );
 };
