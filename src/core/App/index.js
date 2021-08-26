@@ -12,9 +12,9 @@ import Error from "../../common/Error";
 import { MovieDetails } from "../../features/PopularMovies/MovieDetails";
 import PersonDetails from "../../features/PopularPeople/PersonDetails";
 import { useDispatch, useSelector } from "react-redux";
-import { fetchMoviesBrowserLoading } from "./moviesBrowserSlice";
+import { fetchMoviesBrowserLoading } from "./movieBrowserSlice";
 import { useEffect } from "react";
-import { selectMoviesBrowserStatus } from "./moviesBrowserSlice";
+import { selectMoviesBrowserStatus } from "./movieBrowserSlice";
 import { toMovie, toMovies, toPeople, toProfile } from "./routes";
 
 export const App = () => {
@@ -48,7 +48,7 @@ export const App = () => {
             </Route>
           </Switch>);
       case "error":
-        return <Error status={"noButton"} />;
+        return <Error reloadButton />;
       default:
         return <></>;
     };
