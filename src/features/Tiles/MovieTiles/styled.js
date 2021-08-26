@@ -47,6 +47,14 @@ export const Tile = styled(Link)`
     border-radius: 5px;
     color: inherit;
 
+    &:hover {
+        box-shadow: 0px 4px 12px ${({ theme }) => theme.colors.tile.hoverColor};
+}
+    &:active {
+        border: 1px solid ${({ theme }) => theme.colors.tile.activeColor};
+        box-shadow: none;
+}
+
     @media(max-width: ${({ theme }) => theme.breakpoints.xsmall}px) {
         grid-template-rows: auto;
         padding: 16px;
@@ -73,7 +81,7 @@ export const Picture = styled.img`
     border-radius: 5px;
     width: 100%;
     aspect-ratio: 2 / 3;
-    
+
     @media(max-width: ${({ theme }) => theme.breakpoints.xsmall}px) {
         width: 114px;
         height: 169px;
