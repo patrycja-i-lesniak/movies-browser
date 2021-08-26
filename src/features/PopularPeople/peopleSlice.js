@@ -12,7 +12,7 @@ const peopleSlice = createSlice({
         }),
         fetchPeopleSuccess: (_, { payload: peopleData }) => ({
             status: "success",
-            peopleData: peopleData,
+            peopleData,
         }),
         fetchPeopleError: () => ({
             status: "error",

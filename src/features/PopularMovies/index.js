@@ -16,7 +16,7 @@ const MoviesList = () => {
     const MovieListContent = () => {
         switch (status) {
             case "loading":
-                return < Loader />;
+                return <Loader />;
             case "success":
                 return (
                     <>

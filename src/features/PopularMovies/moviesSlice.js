@@ -12,7 +12,7 @@ const moviesSlice = createSlice({
         }),
         fetchMoviesSuccess: (_, { payload: moviesData }) => ({
             status: "success",
-            moviesData: moviesData,
+            moviesData,
         }),
         fetchMoviesError: () => ({
             status: "error",
