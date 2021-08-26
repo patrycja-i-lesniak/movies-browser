@@ -21,7 +21,7 @@ const MoviesList = () => {
                 return (
                     <>
                         <MovieAndPersonWrapper>
-                            <MovieTiles title="Popular movies" />
+                            <MovieTiles />
                         </MovieAndPersonWrapper>
                         <Pagination />
                     </>

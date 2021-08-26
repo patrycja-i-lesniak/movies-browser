@@ -24,7 +24,7 @@ export const PeopleList = () => {
                 return (
                     <>
                         <MovieAndPersonWrapper>
-                            <PeopleTiles title="Popular people" />
+                            <PeopleTiles />
                         </MovieAndPersonWrapper>
                         <Pagination />
                     </>
