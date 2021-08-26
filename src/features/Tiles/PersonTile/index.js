@@ -14,7 +14,6 @@ import {
 import noPersonPhoto from "../../../features/Images/noPersonPhoto.svg";
 import { ShowMoreBiography } from "../ShowMoreButton";
 
-
 const PersonTile = () => {
     const personData = useSelector(selectPersonData);
     const image = personData.profile_path;
