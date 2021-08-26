@@ -79,7 +79,12 @@ export const Label = styled.p`
     align-items: center;
 
     @media(max-width: ${({ theme }) => theme.breakpoints.medium}px) {
-        display: none;
+        font-size: 14px;
+    }
+
+    @media(max-width: ${({ theme }) => theme.breakpoints.small}px) {
+        font-size: 12px;
+        line-height: 1.3;
     }
 `;
 
@@ -87,6 +92,10 @@ export const PersonData = styled.p`
     font-size: 18px;
     color: ${({ theme }) => theme.colors.tile.data};
     margin: 0;
+
+    @media(max-width: ${({ theme }) => theme.breakpoints.medium}px) {
+        font-size: 14px;
+    }
 
     @media(max-width: ${({ theme }) => theme.breakpoints.small}px) {
         font-size: 12px;
