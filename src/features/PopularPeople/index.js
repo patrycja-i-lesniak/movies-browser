@@ -36,7 +36,7 @@ export const PeopleList = () => {
             case "error":
                 return <Error />;
             default:
-                return <NoResults />;
+                return <></>;
         };
     };
 
