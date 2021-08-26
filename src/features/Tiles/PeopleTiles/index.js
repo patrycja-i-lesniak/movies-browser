@@ -44,9 +44,9 @@ const PeopleTiles = ({ title }) => {
     return (
         <>
             <StyledSection>
-                <Title>
-                
-                    {sectionName.includes("popular") && searchQuery  
+                <Title>              
+                    {
+                        sectionName.includes("popular") && searchQuery  
                             ? `Search results for "${searchQuery}" (${peopleData.total_results})`
                             : title
                     }
