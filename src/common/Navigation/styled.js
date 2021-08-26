@@ -48,7 +48,7 @@ export const Logo = styled(NavLink).attrs(() => ({ activeClassName }))`
 
 export const VideoIcon = styled.img`
     color: ${({ theme }) => theme.colors.navigation.elems};
-    margin: 0 12px;
+    margin: 0 24px;
 
     @media(max-width: ${({ theme }) => theme.breakpoints.xsmall}px) {
         width: 26px;
