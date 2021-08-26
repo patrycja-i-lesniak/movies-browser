@@ -1,5 +1,5 @@
 import { takeEvery, call, put } from "@redux-saga/core/effects";
-import { getPopularPeopleData } from "./popularPeopleApi";
+import { getPopularPeopleData } from "./peopleAPI";
 import { fetchPopularPeopleError, fetchPopularPeopleLoading, fetchPopularPeopleSuccess } from "./popularPeopleSlice";
 
 function* fetchPopularPeopleDataHandler({ payload: page }) {
