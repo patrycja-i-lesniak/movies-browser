@@ -1,4 +1,6 @@
 import { useSelector } from "react-redux";
+import { useLocation } from "react-router-dom";
+import { toPeople } from "../../core/App/routes";
 
 import { selectMoviesData } from "../../features/PopularMovies/moviesSlice";
 import { selectPeopleData } from "../../features/PopularPeople/peopleSlice";
@@ -15,9 +17,11 @@ import {
 } from "./styled";
 
 
-export const Pagination = ({ pathName }) => {
+export const Pagination = () => {
+    const { pathname } = useLocation();
+
     const APIData = useSelector(
-        pathName === "/people"
+        pathname === toPeople()
             ? selectPeopleData
             : selectMoviesData
     );
