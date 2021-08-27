@@ -148,14 +148,14 @@ export const SearchIcon = styled.button`
     background-image: url(${searchIcon});
     background-color: transparent;
     border: none;
+    background-repeat: no-repeat;
+    background-position: center;
 
     @media(max-width: ${({ theme }) => theme.breakpoints.xsmall}px) {
         background-size: 16px;
         width: 16px;
         width: 16px;
         left: 16px;
-        background-repeat: no-repeat;
-        background-position: center;
     }
 `;
 
