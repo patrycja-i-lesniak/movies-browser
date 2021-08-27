@@ -15,8 +15,7 @@ export const MovieDetailsTile = styled.article`
 
     @media(max-width: ${({ theme }) => theme.breakpoints.small}px) {
         min-height: 328px;
-        padding: 24px;
-        margin-bottom: 20px;
+        margin: 24px 16px;
     }
 
     @media(max-width: ${({ theme }) => theme.breakpoints.xsmall}px) {
@@ -24,7 +23,7 @@ export const MovieDetailsTile = styled.article`
         display: grid;
         grid-template-columns:  min-content 1fr;
         grid-template-rows: auto;
-        grid-gap: 16px;
+        grid-column-gap: 16px;
         grid-template-areas:
             "image content"
             "description description";
@@ -35,13 +34,13 @@ export const Image = styled.img`
     max-width: 312px;
     max-height: 464px;
     border-radius: 5px;
-    margin-right: 40px;
+    margin: 0 40px 8px 0;
     float: left;
 
     @media(max-width: ${({ theme }) => theme.breakpoints.small}px) {
         width: 188px;
         height: 280px;
-        margin: 0 20px 0 0;
+        margin: 0 20px 16px 0;
     }
 
     @media(max-width: ${({ theme }) => theme.breakpoints.xsmall}px) {
@@ -156,12 +155,12 @@ export const Description = styled.div`
     @media(max-width: ${({ theme }) => theme.breakpoints.small}px) {
         font-size: 16px;
         grid-area: description;
-        margin-top: 12px;
+        margin-top: 8px;
     }
 
     @media(max-width: ${({ theme }) => theme.breakpoints.xsmall}px) {
         font-size: 14px;
-        margin-top: 0;
+        margin-top: 8px;
     }
 `;
 
