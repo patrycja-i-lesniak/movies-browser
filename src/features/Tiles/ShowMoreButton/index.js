@@ -7,7 +7,7 @@ export const ShowMoreBiography = ({ biography }) => {
 
     return biography.length > 500 ?(
             <>
-                {showMore ? biography : `${biography.slice(0, 500)}..`}
+                {showMore ? biography : `${biography.slice(0, 500)}...`}
                 <ShowMore onClick={() => setShowMore(!showMore)}>
                     <span>
                         {showMore ? "Show less" : "Show more"}

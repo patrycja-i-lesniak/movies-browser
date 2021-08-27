@@ -4,12 +4,12 @@ import { useSelector } from "react-redux";
 import noPersonPhoto from "../../../features/Images/noPersonPhoto.svg";
 import {
     PeopleList,
-    PersonTile,
     ProfilePicture,
     Role,
     TileTitle,
     Title
 } from "./styled";
+import { TilesTile } from "../TilesTile";
 import { toProfile } from "../../../core/App/routes";
 import { selectMovieCredits } from "../../PopularMovies/MovieDetails/movieDetailsSlice";
 import { selectPeopleData, selectPeopleSearchQuery } from "../../PopularPeople/peopleSlice";
@@ -65,7 +65,7 @@ const PeopleTiles = ({ title }) => {
                                 !showMore &&
                                 index > 5
                             }>
-                            <PersonTile
+                            <TilesTile
                                 to={toProfile({ id })}
                             >
                                 <ProfilePicture
@@ -82,13 +82,13 @@ const PeopleTiles = ({ title }) => {
                                         {character || job}
                                     </Role>
                                 }
-                            </PersonTile>
+                            </TilesTile>
                         </li>
                     )}
                 </PeopleList>
             </StyledSection>
             {
-                !sectionName.includes("popular") && peopleList.length > 5 &&
+                !sectionName.includes("popular") && peopleList.length > 6 &&
                 <ShowMoreButton
                     showMore={showMore}
                     setShowMore={setShowMore}

@@ -146,7 +146,7 @@ const MovieTiles = ({ title }) => {
                 </List>
             </StyledSection>
             {
-                !sectionName.includes("popular") && moviesList.length > 3 &&
+                !sectionName.includes("popular") && moviesList.length > 4 &&
                 <ShowMoreButton
                     showMore={showMore}
                     setShowMore={setShowMore}
