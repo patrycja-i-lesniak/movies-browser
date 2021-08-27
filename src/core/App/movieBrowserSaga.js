@@ -1,7 +1,7 @@
 import { takeEvery, call, put, all } from "@redux-saga/core/effects";
 
-import { getGenres } from "./moviesBrowserAPI";
-import { fetchMoviesBrowserError, fetchMoviesBrowserLoading, fetchMoviesBrowserSuccess } from "./moviesBrowserSlice";
+import { getGenres } from "./movieBrowserAPI";
+import { fetchMoviesBrowserError, fetchMoviesBrowserLoading, fetchMoviesBrowserSuccess } from "./movieBrowserSlice";
 
 function* fetchMoviesBrowserDataHandler() {
     try {
