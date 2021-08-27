@@ -71,7 +71,7 @@ const PeopleTiles = ({ title }) => {
                 </PeopleList>
             </StyledSection>
             {
-                !sectionName.includes("popular") && peopleList.length > 5 &&
+                !sectionName.includes("popular") && peopleList.length > 6 &&
                 <ShowMoreButton
                     showMore={showMore}
                     setShowMore={setShowMore}

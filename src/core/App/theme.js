@@ -49,6 +49,8 @@ export const theme = {
             substitutionPicture: colorNames.silverSand,
             role: colorNames.darkGrey,
             year: colorNames.darkGrey,
+            hoverColor: colorNames.blue,
+            activeColor: colorNames.lightBlue,
         },
         button: {
             background: colorNames.blue,
