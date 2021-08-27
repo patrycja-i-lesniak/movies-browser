@@ -1,3 +1,12 @@
+# Movie Browser
+coded by:
+- Patrycja Leśniak
+- Karol Cieśluk
+- Wojciech Bylica
+
+## Demo
+"https://patrycja-i-lesniak.github.io/movies-browser/"
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
