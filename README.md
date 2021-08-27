@@ -5,7 +5,7 @@ coded by:
 - Wojciech Bylica
 
 ## Demo
-"https://patrycja-i-lesniak.github.io/movies-browser/"
+https://patrycja-i-lesniak.github.io/movies-browser/
 
 # Getting Started with Create React App
 
