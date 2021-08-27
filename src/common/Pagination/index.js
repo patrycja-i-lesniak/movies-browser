@@ -1,7 +1,9 @@
 import { useSelector } from "react-redux";
+import { useLocation } from "react-router-dom";
+import { toPeople } from "../../core/App/routes";
 
 import { selectMoviesData } from "../../features/PopularMovies/moviesSlice";
-import { selectPopularPeopleData } from "../../features/PopularPeople/popularPeopleSlice";
+import { selectPeopleData } from "../../features/PopularPeople/peopleSlice";
 import { paginationQueryParamName } from "../queryParamNames";
 import { useReplaceQueryParameter } from "../useReplaceQueryParameter";
 import { PaginationArrow } from "./PaginationArrow";
@@ -14,15 +16,16 @@ import {
     Wrapper
 } from "./styled";
 
-
-export const Pagination = ({ pathName }) => {
-    const APIData = useSelector(
-        pathName === "/people"
-            ? selectPopularPeopleData
-            : selectMoviesData
-    );
+export const Pagination = () => {
+    const { pathname } = useLocation();
     const replaceQueryParameter = useReplaceQueryParameter();
 
+    const APIData = useSelector(
+        pathname === toPeople()
+            ? selectPeopleData
+            : selectMoviesData
+    );
+    
     const currentPage = APIData.page;
     const totalPages = APIData.total_pages;
 

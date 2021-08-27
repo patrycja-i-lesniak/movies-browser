@@ -12,13 +12,14 @@ import {
 import { TilesTile } from "../TilesTile";
 import { toProfile } from "../../../core/App/routes";
 import { selectMovieCredits } from "../../PopularMovies/MovieDetails/movieDetailsSlice";
-import { selectPopularPeopleData } from "../../PopularPeople/popularPeopleSlice";
+import { selectPeopleData, selectPeopleSearchQuery } from "../../PopularPeople/peopleSlice";
 import { ShowMoreButton } from "../ShowMoreButton";
 import { StyledSection } from "../../../common/MovieAndPersonSection";
 
 const PeopleTiles = ({ title }) => {
-    const popularPeopleData = useSelector(selectPopularPeopleData);
+    const peopleData = useSelector(selectPeopleData);
     const creditsData = useSelector(selectMovieCredits);
+    const searchQuery = useSelector(selectPeopleSearchQuery);
     const [showMore, setShowMore] = useState(false);
 
     let peopleList;
@@ -37,15 +38,26 @@ const PeopleTiles = ({ title }) => {
             break;
 
         default:
-            peopleList = popularPeopleData.results;
+            peopleList = peopleData.results;
     }
 
     return (
         <>
             <StyledSection>
-                <Title>{title}</Title>
+                <Title>              
+                    {
+                        sectionName.includes("popular") && searchQuery  
+                            ? `Search results for "${searchQuery}" (${peopleData.total_results})`
+                            : title
+                    }
+                </Title>
                 <PeopleList>
-                    {peopleList.map(({ id, profile_path, name, character, job }, index) =>
+                    {peopleList.map(({
+                        id,
+                        profile_path,
+                        name,
+                        character,
+                        job }, index) =>
                         <li
                             key={index}
                             hidden={
@@ -57,7 +69,12 @@ const PeopleTiles = ({ title }) => {
                                 to={toProfile({ id })}
                             >
                                 <ProfilePicture
-                                    src={profile_path ? `${poster}${profile_path}` : noPersonPhoto} alt={`${title} poster`} />
+                                    src={
+                                        profile_path
+                                            ? `${poster}${profile_path}`
+                                            : noPersonPhoto}
+                                    alt={`${name} poster`}
+                                />
                                 <TileTitle>{name}</TileTitle>
                                 {
                                     !sectionName.includes("popular") &&

@@ -5,7 +5,6 @@ import { nanoid } from "@reduxjs/toolkit";
 import {
     selectPersonCredits
 } from "../../PopularPeople/PersonDetails/personDetailsSlice";
-
 import { selectGenres } from "../../../core/App/movieBrowserSlice";
 import noMoviePhoto from "../../../features/Images/noMoviePhoto.svg";
 import {
@@ -21,12 +20,13 @@ import {
 } from "./styled";
 import { Rate } from "../../Rate";
 import { toMovie } from "../../../core/App/routes";
-import { selectMoviesData } from "../../PopularMovies/moviesSlice";
+import {  selectMoviesData, selectMoviesSearchQuery } from "../../PopularMovies/moviesSlice";
 import { ShowMoreButton } from "../ShowMoreButton";
 import { StyledSection } from "../../../common/MovieAndPersonSection";
 
 const MovieTiles = ({ title }) => {
-    const popularMoviesData = useSelector(selectMoviesData);
+    const moviesData = useSelector(selectMoviesData);
+    const searchQuery = useSelector(selectMoviesSearchQuery);
 
     const imageURL = "http://image.tmdb.org/t/p/";
     const size = "w342";
@@ -49,7 +49,7 @@ const MovieTiles = ({ title }) => {
             break;
 
         default:
-            moviesList = popularMoviesData.results;
+            moviesList = moviesData.results;
     }
 
     return (moviesList.length ?
@@ -59,7 +59,11 @@ const MovieTiles = ({ title }) => {
                     sectionName.includes("popular")
                         ?
                         <SiteTitle>
-                            {sectionName.charAt(0).toUpperCase() + sectionName.slice(1)}
+                            {
+                                searchQuery
+                                    ? `Search results for "${searchQuery}" (${moviesData.total_results})`
+                                    : title
+                            }
                         </SiteTitle>
                         :
                         <SiteTitle>
@@ -144,8 +148,8 @@ const MovieTiles = ({ title }) => {
             {
                 !sectionName.includes("popular") && moviesList.length > 4 &&
                 <ShowMoreButton
-                showMore={showMore}
-                setShowMore={setShowMore}
+                    showMore={showMore}
+                    setShowMore={setShowMore}
                 />
             }
         </>

@@ -6,7 +6,7 @@ import {
 } from "react-router-dom";
 
 import { Navigation } from "../../common/Navigation";
-import { PopularPeopleList } from "../../features/PopularPeople";
+
 import MovieList from "../../features/PopularMovies";
 import Error from "../../common/Error";
 import { MovieDetails } from "../../features/PopularMovies/MovieDetails";
@@ -16,6 +16,7 @@ import { fetchMoviesBrowserLoading } from "./movieBrowserSlice";
 import { useEffect } from "react";
 import { selectMoviesBrowserStatus } from "./movieBrowserSlice";
 import { toMovie, toMovies, toPeople, toProfile } from "./routes";
+import { PeopleList } from "../../features/PopularPeople";
 
 export const App = () => {
   const dispatch = useDispatch();
@@ -41,7 +42,7 @@ export const App = () => {
               <MovieList />
             </Route>
             <Route path={toPeople()}>
-              <PopularPeopleList />
+              <PeopleList />
             </Route>
             <Route path="/">
               <Redirect to={toMovies()} />

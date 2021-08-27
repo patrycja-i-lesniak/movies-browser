@@ -1,6 +1,6 @@
 import { takeLatest, call, put } from "@redux-saga/core/effects";
 
-import {  getPopularMoviesData, getSearchMoviesData } from "./moviesAPI";
+import { getPopularMoviesData, getSearchMoviesData } from "./moviesAPI";
 import { fetchMoviesError, fetchMoviesSuccess, fetchMoviesLoading } from "./moviesSlice";
 
 function* fetchMoviesDataHandler({ payload: location }) {
@@ -9,7 +9,9 @@ function* fetchMoviesDataHandler({ payload: location }) {
             ? call(getSearchMoviesData, location)
             : call(getPopularMoviesData, location.page);
 
-            yield put(fetchMoviesSuccess(moviesData));
+        const searchQuery = location.searchQuery;
+
+        yield put(fetchMoviesSuccess({ moviesData, searchQuery }));
     } catch (error) {
         yield put(fetchMoviesError());
     }

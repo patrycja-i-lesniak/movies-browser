@@ -1,5 +1,4 @@
-import { useEffect } from "react";
-import { useDispatch, useSelector } from "react-redux";
+import { useSelector } from "react-redux";
 
 import PeopleTiles from "../Tiles/PeopleTiles";
 import { Loader } from "../../common/Loader";
@@ -7,22 +6,17 @@ import Error from "../../common/Error";
 import { NoResults } from "../../common/NoResults";
 import { MovieAndPersonWrapper } from "../../common/Wrappers/MovieAndPersonWrapper";
 import { Pagination } from "../../common/Pagination";
-import { useQueryParameter } from "../../common/useQueryParameter";
-import { paginationQueryParamName } from "../../common/queryParamNames";
 import {
-    fetchPopularPeopleLoading,
-    selectStatus,
-} from "./popularPeopleSlice";
+    fetchPeopleLoading,
+    selectPeopleData,
+    selectPeopleStatus,
+} from "./peopleSlice";
+import { useFetchList } from "../useFetchList";
 
-export const PopularPeopleList = () => {
-    const dispatch = useDispatch();
-    const status = useSelector(selectStatus);
-
-    const page = useQueryParameter(paginationQueryParamName) || "1";
-
-    useEffect(() => {
-        dispatch(fetchPopularPeopleLoading(page));
-    }, [dispatch, page]);
+export const PeopleList = () => {
+    useFetchList(fetchPeopleLoading);
+    const status = useSelector(selectPeopleStatus);
+    const peopleData = useSelector(selectPeopleData);
 
     const PeopleListContent = () => {
         switch (status) {
@@ -30,17 +24,19 @@ export const PopularPeopleList = () => {
                 return < Loader />;
             case "success":
                 return (
-                    <>
-                        <MovieAndPersonWrapper>
-                            <PeopleTiles title="Popular people" />
-                        </MovieAndPersonWrapper>
-                        <Pagination pathName="/people" />
-                    </>
+                    peopleData.results.length
+                        ? <>
+                            <MovieAndPersonWrapper>
+                                <PeopleTiles title="Popular people" />
+                            </MovieAndPersonWrapper>
+                            <Pagination />
+                        </>
+                        : <NoResults />
                 );
             case "error":
                 return <Error />;
             default:
-                return <NoResults />;
+                return <></>;
         };
     };
 

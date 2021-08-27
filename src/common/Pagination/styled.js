@@ -37,7 +37,7 @@ export const PaginationLinks = styled.ul`
     }
 `;
 
-export const PaginationButton = styled.span`
+export const PaginationButton = styled.button`
     display: grid;
     grid-template-columns: auto auto;
     grid-gap: 8px;
@@ -50,6 +50,7 @@ export const PaginationButton = styled.span`
     border-radius: 5px;
     padding: 8px 16px;
     cursor: pointer;
+    border: none;
 
     ${({ disabled }) => disabled && css`
         pointer-events: none;

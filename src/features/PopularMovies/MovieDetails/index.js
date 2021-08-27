@@ -8,7 +8,6 @@ import { BigMovieTile } from "../../Tiles/BigMovieTile";
 import PeopleTiles from "../../Tiles/PeopleTiles";
 import Error from "../../../common/Error";
 import { Loader } from "../../../common/Loader";
-import { NoResults } from "../../../common/NoResults";
 import { fetchMovieDetails, selectStatus } from "./movieDetailsSlice";
 
 export const MovieDetails = () => {
@@ -38,7 +37,7 @@ export const MovieDetails = () => {
             case "error":
                 return <Error />;
             default:
-                return <NoResults />;
+                return <></>;
         };
     };
 
