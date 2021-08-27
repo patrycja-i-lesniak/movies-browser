@@ -1,4 +1,5 @@
 import { useSelector } from "react-redux";
+import { selectConfiguration } from "../../../../core/App/movieBrowserSlice";
 import { selectMovieData } from "../movieDetailsSlice";
 
 import HeaderRating from "./HeaderRating";
@@ -13,9 +14,10 @@ import {
 
 export const Header = () => {
     const movieData = useSelector(selectMovieData);
+    const configuration = useSelector(selectConfiguration);
 
-    const imageURL = "http://image.tmdb.org/t/p/";
-    const size = "original";
+    const imageURL = configuration.images.base_url;
+    const size = configuration.images.backdrop_sizes[3];
     const poster = movieData.backdrop_path;
     const posterAdress = `${imageURL}${size}${poster}`;
     const title = movieData.title;

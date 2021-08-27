@@ -13,12 +13,14 @@ import {
 } from "./styled";
 import noPersonPhoto from "../../../features/Images/noPersonPhoto.svg";
 import { ShowMoreBiography } from "../ShowMoreButton";
+import { selectConfiguration } from "../../../core/App/movieBrowserSlice";
 
 const PersonTile = () => {
     const personData = useSelector(selectPersonData);
+    const configuration = useSelector(selectConfiguration);
     const image = personData.profile_path;
-    const imageURL = "http://image.tmdb.org/t/p/";
-    const size = "w300";
+    const imageURL = configuration.images.base_url;
+    const size = configuration.images.logo_sizes[4];
     const poster = `${imageURL}${size}${image}`;
 
     return (

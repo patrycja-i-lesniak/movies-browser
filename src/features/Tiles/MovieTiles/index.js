@@ -5,7 +5,7 @@ import { nanoid } from "@reduxjs/toolkit";
 import {
     selectPersonCredits
 } from "../../PopularPeople/PersonDetails/personDetailsSlice";
-import { selectGenres } from "../../../core/App/movieBrowserSlice";
+import { selectConfiguration, selectGenres } from "../../../core/App/movieBrowserSlice";
 import noMoviePhoto from "../../../features/Images/noMoviePhoto.svg";
 import {
     SiteTitle,
@@ -20,16 +20,17 @@ import {
 } from "./styled";
 import { Rate } from "../../Rate";
 import { toMovie } from "../../../core/App/routes";
-import {  selectMoviesData, selectMoviesSearchQuery } from "../../PopularMovies/moviesSlice";
+import { selectMoviesData, selectMoviesSearchQuery } from "../../PopularMovies/moviesSlice";
 import { ShowMoreButton } from "../ShowMoreButton";
 import { StyledSection } from "../../../common/MovieAndPersonSection";
 
 const MovieTiles = ({ title }) => {
     const moviesData = useSelector(selectMoviesData);
     const searchQuery = useSelector(selectMoviesSearchQuery);
+    const configuration = useSelector(selectConfiguration);
 
-    const imageURL = "http://image.tmdb.org/t/p/";
-    const size = "w342";
+    const imageURL = configuration.images.base_url;
+    const size = configuration.images.poster_sizes[3];
     const poster = `${imageURL}${size}`;
     const [showMore, setShowMore] = useState(false);
 
@@ -52,7 +53,7 @@ const MovieTiles = ({ title }) => {
             moviesList = moviesData.results;
     }
 
-    return (moviesList.length ?
+    return (moviesList.length &&
         <>
             <StyledSection>
                 {
@@ -153,7 +154,6 @@ const MovieTiles = ({ title }) => {
                 />
             }
         </>
-        : ""
     );
 };
 

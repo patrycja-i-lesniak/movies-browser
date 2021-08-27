@@ -15,17 +15,20 @@ import { selectMovieCredits } from "../../PopularMovies/MovieDetails/movieDetail
 import { selectPeopleData, selectPeopleSearchQuery } from "../../PopularPeople/peopleSlice";
 import { ShowMoreButton } from "../ShowMoreButton";
 import { StyledSection } from "../../../common/MovieAndPersonSection";
+import { selectConfiguration } from "../../../core/App/movieBrowserSlice";
 
 const PeopleTiles = ({ title }) => {
     const peopleData = useSelector(selectPeopleData);
     const creditsData = useSelector(selectMovieCredits);
     const searchQuery = useSelector(selectPeopleSearchQuery);
+    const configuration = useSelector(selectConfiguration);
+
     const [showMore, setShowMore] = useState(false);
 
     let peopleList;
     const sectionName = title.toLowerCase();
-    const imageURL = "http://image.tmdb.org/t/p/";
-    const size = "w185";
+    const imageURL = configuration.images.base_url;
+    const size = configuration.images.poster_sizes[2];
     const poster = `${imageURL}${size}`;
 
     switch (sectionName) {
@@ -44,9 +47,9 @@ const PeopleTiles = ({ title }) => {
     return (
         <>
             <StyledSection>
-                <Title>              
+                <Title>
                     {
-                        sectionName.includes("popular") && searchQuery  
+                        sectionName.includes("popular") && searchQuery
                             ? `Search results for "${searchQuery}" (${peopleData.total_results})`
                             : title
                     }
