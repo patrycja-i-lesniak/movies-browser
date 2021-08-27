@@ -22,7 +22,7 @@ export const Header = () => {
     });
 
     useEffect(() => {
-        let mediaQuery = window.matchMedia("(min-width: 1280px)");
+        const mediaQuery = window.matchMedia("(min-width: 1280px)");
         mediaQuery.addListener(setMQuery);
         return () => mediaQuery.removeListener(setMQuery);
       }, [mQuery]);
