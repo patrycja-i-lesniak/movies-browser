@@ -7,7 +7,7 @@ import Error from "../../common/Error";
 import { NoResults } from "../../common/NoResults";
 import { Pagination } from "../../common/Pagination";
 import { fetchMoviesLoading, selectMoviesData, selectMoviesStatus } from "./moviesSlice";
-import { MovieAndPersonWrapper } from "../../common/Wrappers/MovieAndPersonWrapper";
+import { MovieAndPersonWrapper } from "../../common/StyledComponents/MovieAndPersonWrapper";
 
 const MoviesList = () => {
     useFetchList(fetchMoviesLoading);
