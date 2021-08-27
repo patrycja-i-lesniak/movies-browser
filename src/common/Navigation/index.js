@@ -62,7 +62,7 @@ export const Navigation = () => {
                                 placeholder={
                                     `Search for ${location.pathname.includes("/movie")
                                         ? "movies"
-                                        : "people"}`
+                                        : "people"}…`
                                 }
                             />
                         </SearchBox>

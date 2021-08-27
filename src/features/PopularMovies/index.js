@@ -30,7 +30,7 @@ const MoviesList = () => {
                         : <NoResults />
                 );
             case "error":
-                return <Error />;
+                return <Error reloadButton/>;
             default:
                 return <></>;
         };

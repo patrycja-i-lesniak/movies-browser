@@ -12,9 +12,9 @@ import Error from "../../common/Error";
 import { MovieDetails } from "../../features/PopularMovies/MovieDetails";
 import PersonDetails from "../../features/PopularPeople/PersonDetails";
 import { useDispatch, useSelector } from "react-redux";
-import { fetchMoviesBrowserLoading } from "./moviesBrowserSlice";
+import { fetchMoviesBrowserLoading } from "./movieBrowserSlice";
 import { useEffect } from "react";
-import { selectMoviesBrowserStatus } from "./moviesBrowserSlice";
+import { selectMoviesBrowserStatus } from "./movieBrowserSlice";
 import { toMovie, toMovies, toPeople, toProfile } from "./routes";
 import { PeopleList } from "../../features/PopularPeople";
 
@@ -27,11 +27,10 @@ export const App = () => {
 
   const status = useSelector(selectMoviesBrowserStatus);
 
-  switch (status) {
-    case "success":
-      return (
-        <HashRouter>
-          <Navigation />
+  const AppContent = () => {
+    switch (status) {
+      case "success":
+        return (
           <Switch>
             <Route path={toProfile()}>
               <PersonDetails />
@@ -46,14 +45,20 @@ export const App = () => {
               <PeopleList />
             </Route>
             <Route path="/">
-            <Redirect to={toMovies()} />
+              <Redirect to={toMovies()} />
             </Route>
-          </Switch>
-        </HashRouter>
-      );
-    case "error":
-      return <Error />;
-    default:
-      return <></>;
+          </Switch>);
+      case "error":
+        return <Error reloadButton />;
+      default:
+        return <></>;
+    };
   };
+
+  return (
+    <HashRouter>
+      <Navigation />
+      <AppContent />
+    </HashRouter>
+  );
 };

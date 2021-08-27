@@ -18,7 +18,6 @@ export const DoubleContainer = styled.div`
     display: flex;
     flex-wrap: wrap;
     min-height: inherit;
-    padding: 0 10px;
     justify-content: space-between;
 
     @media(max-width: ${({ theme }) => theme.breakpoints.medium}px) {
@@ -39,7 +38,7 @@ export const Logo = styled(NavLink).attrs(() => ({ activeClassName }))`
     display: flex;
     align-items: center;
     margin-right: 20px;
-    margin-right: 80px;
+    margin-right: 40px;
     text-decoration: none;
 
     @media(max-width: ${({ theme }) => theme.breakpoints.medium}px) {
@@ -49,7 +48,7 @@ export const Logo = styled(NavLink).attrs(() => ({ activeClassName }))`
 
 export const VideoIcon = styled.img`
     color: ${({ theme }) => theme.colors.navigation.elems};
-    margin-right: 12px;
+    margin: 0 24px;
 
     @media(max-width: ${({ theme }) => theme.breakpoints.xsmall}px) {
         width: 26px;
@@ -84,7 +83,7 @@ export const NavigationLinks = styled.ul`
 `;
 
 export const NavigationItems = styled.li`
-    margin-left: 4px;
+    margin-left: 0px;
 `;
 
 export const StyledNavLink = styled(NavLink).attrs(() => ({ activeClassName }))`
@@ -113,7 +112,7 @@ export const StyledNavLink = styled(NavLink).attrs(() => ({ activeClassName }))`
     @media(max-width: ${({ theme }) => theme.breakpoints.medium}px) {
         margin-right: 0px;
     }
-    
+
     @media(max-width: ${({ theme }) => theme.breakpoints.xxsmall}px) {
         font-size: 12px;
         padding: 4px 12px;
@@ -128,6 +127,11 @@ export const SearchContainer = styled.div`
     padding: 0 10px;
     flex-wrap: wrap;
     min-height: 74px;
+    margin-right: 12px;
+
+    @media(max-width: ${({ theme }) => theme.breakpoints.medium}px) {
+        margin-right: 0px;
+    }
 `;
 
 export const SearchBox = styled.form`
@@ -144,14 +148,14 @@ export const SearchIcon = styled.button`
     background-image: url(${searchIcon});
     background-color: transparent;
     border: none;
+    background-repeat: no-repeat;
+    background-position: center;
 
     @media(max-width: ${({ theme }) => theme.breakpoints.xsmall}px) {
         background-size: 16px;
         width: 16px;
         width: 16px;
         left: 16px;
-        background-repeat: no-repeat;
-        background-position: center;
     }
 `;
 

@@ -77,20 +77,29 @@ export const Label = styled.p`
     margin: 0 10px 0 0;
     display: flex;
     align-items: center;
+    line-height: 1.3;
 
     @media(max-width: ${({ theme }) => theme.breakpoints.medium}px) {
-        display: none;
+        font-size: 16px;
+    }
+
+    @media(max-width: ${({ theme }) => theme.breakpoints.small}px) {
+        font-size: 12px;
     }
 `;
 
 export const PersonData = styled.p`
     font-size: 18px;
     color: ${({ theme }) => theme.colors.tile.data};
-    margin: 0;
+    margin: 0; 
+    line-height: 1.3;
+
+    @media(max-width: ${({ theme }) => theme.breakpoints.medium}px) {
+        font-size: 16px;
+    }
 
     @media(max-width: ${({ theme }) => theme.breakpoints.small}px) {
         font-size: 12px;
-        line-height: 1.3;
     }
 `;
 

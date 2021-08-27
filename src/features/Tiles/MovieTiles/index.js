@@ -5,7 +5,7 @@ import { nanoid } from "@reduxjs/toolkit";
 import {
     selectPersonCredits
 } from "../../PopularPeople/PersonDetails/personDetailsSlice";
-import { selectGenres } from "../../../core/App/moviesBrowserSlice";
+import { selectGenres } from "../../../core/App/movieBrowserSlice";
 import noMoviePhoto from "../../../features/Images/noMoviePhoto.svg";
 import {
     SiteTitle,
