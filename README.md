@@ -1,9 +1,9 @@
 # MOVIE BROWSER
 
 * Authors:
-**Wojciech Bylica**
-**Karol Cieśluk**
-**Patrycja Leśniak**
+* **Wojciech Bylica**,
+* **Karol Cieśluk**,
+* **Patrycja Leśniak**.
 
 ![Screen](public/readmeImage.jpg)
 
