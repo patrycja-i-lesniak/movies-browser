@@ -138,7 +138,7 @@ export const SearchBox = styled.form`
     position: relative;
 `;
 
-export const SearchIcon = styled.button`
+export const SearchIcon = styled.span`
     position: absolute;
     left: 24px;
     top: 25%;
