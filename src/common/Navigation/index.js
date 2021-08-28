@@ -23,7 +23,7 @@ import {
 import videoIcon from "./videoIcon.svg";
 
 export const Navigation = () => {
-    const location = useLocation();
+    const { pathname } = useLocation();
 
     const query = useQueryParameter(searchQueryParamName);
     const replaceQueryParameter = useReplaceQueryParameter();
@@ -46,10 +46,14 @@ export const Navigation = () => {
                         </Logo>
                         <NavigationLinks>
                             <NavigationItems>
-                                <StyledNavLink to={toMovies()}>Movie</StyledNavLink>
+                                <StyledNavLink to={toMovies()}>
+                                    Movie
+                                </StyledNavLink>
                             </NavigationItems>
                             <NavigationItems>
-                                <StyledNavLink to={toPeople()}>People</StyledNavLink>
+                                <StyledNavLink to={toPeople()}>
+                                    People
+                                </StyledNavLink>
                             </NavigationItems>
                         </NavigationLinks>
                     </HeaderContainer>
@@ -60,7 +64,7 @@ export const Navigation = () => {
                                 onChange={onSearchChange}
                                 value={query || ""}
                                 placeholder={
-                                    `Search for ${location.pathname.includes("/movie")
+                                    `Search for ${pathname.includes("/movie")
                                         ? "movies"
                                         : "people"}…`
                                 }
