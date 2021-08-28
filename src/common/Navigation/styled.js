@@ -90,10 +90,6 @@ export const NavigationLinks = styled.ul`
     color: ${({ theme }) => theme.colors.navigation.elems};
 `;
 
-export const NavigationItems = styled.li`
-    margin-left: 0px;
-`;
-
 export const StyledNavLink = styled(NavLink).attrs(() => ({ activeClassName }))`
     text-transform: uppercase;
     font-weight: 600;

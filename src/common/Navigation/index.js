@@ -13,7 +13,6 @@ import {
     VideoIcon,
     Title,
     NavigationLinks,
-    NavigationItems,
     StyledNavLink,
     SearchContainer,
     SearchBox,
@@ -45,16 +44,16 @@ export const Navigation = () => {
                             <Title>Movie Browser</Title>
                         </Logo>
                         <NavigationLinks>
-                            <NavigationItems>
+                            <li>
                                 <StyledNavLink to={toMovies()}>
                                     Movie
                                 </StyledNavLink>
-                            </NavigationItems>
-                            <NavigationItems>
+                            </li>
+                            <li>
                                 <StyledNavLink to={toPeople()}>
                                     People
                                 </StyledNavLink>
-                            </NavigationItems>
+                            </li>
                         </NavigationLinks>
                     </HeaderContainer>
                     <SearchContainer>
