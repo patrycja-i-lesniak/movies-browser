@@ -1,12 +1,14 @@
+import { ThemeProvider } from "styled-components";
+import { Normalize } from "styled-normalize";
 import {
   HashRouter,
   Switch,
   Route,
   Redirect,
 } from "react-router-dom";
-
+import { theme } from "../../core/App/theme.js";
 import { Navigation } from "../../common/Navigation";
-
+import { GlobalStyle } from "../../core/App/GlobalStyle";
 import MovieList from "../../features/PopularMovies";
 import Error from "../../common/Error";
 import { MovieDetails } from "../../features/PopularMovies/MovieDetails";
@@ -57,12 +59,17 @@ export const App = () => {
   };
 
   return (
+
     <HashRouter>
-      <Navigation />
-      <AppContent />
-      <Footer>
-        © 2021 | Coded by Wojciech Bylica, Karol Cieśluk, Patrycja Leśniak
-      </Footer>
+        <ThemeProvider theme={theme}>
+        <Normalize />
+      <GlobalStyle />
+          <Navigation />
+          <AppContent />
+          <Footer>
+            © 2021 | Coded by Wojciech Bylica, Karol Cieśluk, Patrycja Leśniak
+          </Footer>
+        </ThemeProvider>
     </HashRouter>
 
   );
