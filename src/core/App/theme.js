@@ -73,3 +73,51 @@ export const theme = {
     },
     ...common,
 };
+
+export const darkTheme = {
+    colors: {
+        textPrimary: colorNames.black,
+        textSecondary: colorNames.darkGrey,
+        textHeader: colorNames.white,
+        navigation: {
+            background: colorNames.black,
+            border: colorNames.mystic,
+            elems: colorNames.white,
+            searchIcon: colorNames.lynch,
+        },
+        site: {
+            background: colorNames.platinum,
+            text: colorNames.black,
+            backgroundWrapper: colorNames.lightGrey,
+        },
+        tile: {
+            background: colorNames.white,
+            tagBackground: colorNames.mystic,
+            details: colorNames.slateGray,
+            substitutionPicture: colorNames.silverSand,
+            role: colorNames.darkGrey,
+            year: colorNames.darkGrey,
+            hoverColor: colorNames.darkGrey,
+            activeColor: colorNames.lightBlue,
+        },
+        button: {
+            background: colorNames.blue,
+            text: colorNames.white,
+        },
+        loader: {
+            circle: colorNames.snuff,
+            elipse: colorNames.black,
+        },
+        movieDetails: {
+            background: colorNames.black,
+        },
+        pagination: {
+            primaryText: colorNames.eerieBlack,
+            background: colorNames.lightBlue,
+            backgroundDisabled: colorNames.mystic,
+            secondaryText: colorNames.darkGrey,
+            paginationArrow: colorNames.blue,
+        },
+    },
+    ...common,
+};
