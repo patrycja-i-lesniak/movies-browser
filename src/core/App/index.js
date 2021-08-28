@@ -17,6 +17,7 @@ import { useEffect } from "react";
 import { selectMoviesBrowserStatus } from "./movieBrowserSlice";
 import { toMovie, toMovies, toPeople, toProfile } from "./routes";
 import { PeopleList } from "../../features/PopularPeople";
+import { Footer } from "../../../src/common/Footer";
 
 export const App = () => {
   const dispatch = useDispatch();
@@ -59,6 +60,10 @@ export const App = () => {
     <HashRouter>
       <Navigation />
       <AppContent />
+      <Footer>
+        © 2021 | Coded by Wojciech Bylica, Karol Cieśluk, Patrycja Leśniak
+      </Footer>
     </HashRouter>
+
   );
 };
