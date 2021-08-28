@@ -80,6 +80,10 @@ export const NavigationLinks = styled.ul`
     padding-left: 0;
     text-decoration: none;
     color: ${({ theme }) => theme.colors.navigation.elems};
+    
+    :hover {
+        cursor: pointer;
+    }
 `;
 
 export const NavigationItems = styled.li`
