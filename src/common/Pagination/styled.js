@@ -52,6 +52,11 @@ export const PaginationButton = styled.button`
     cursor: pointer;
     border: none;
 
+    :hover {
+        cursor: pointer;
+        opacity: 70%;
+    }
+
     ${({ disabled }) => disabled && css`
         pointer-events: none;
         cursor: default;
