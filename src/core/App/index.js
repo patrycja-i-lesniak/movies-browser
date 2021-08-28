@@ -6,7 +6,7 @@ import {
   Route,
   Redirect,
 } from "react-router-dom";
-import { theme } from "../../core/App/theme.js";
+import { theme, darkTheme } from "../../core/App/theme.js";
 import { Navigation } from "../../common/Navigation";
 import { GlobalStyle } from "../../core/App/GlobalStyle";
 import MovieList from "../../features/PopularMovies";
@@ -20,6 +20,9 @@ import { selectMoviesBrowserStatus } from "./movieBrowserSlice";
 import { toMovie, toMovies, toPeople, toProfile } from "./routes";
 import { PeopleList } from "../../features/PopularPeople";
 import { Footer } from "../../../src/common/Footer";
+import { selectIsDarkTheme } from "../../common/ThemeSwitch/themeSlice";
+import { ThemeSwitch } from "../../common/ThemeSwitch";
+
 
 export const App = () => {
   const dispatch = useDispatch();
@@ -29,6 +32,8 @@ export const App = () => {
   }, [dispatch]);
 
   const status = useSelector(selectMoviesBrowserStatus);
+  const isDarkTheme = useSelector(selectIsDarkTheme);
+
 
   const AppContent = () => {
     switch (status) {
@@ -61,15 +66,17 @@ export const App = () => {
   return (
 
     <HashRouter>
-        <ThemeProvider theme={theme}>
+      <ThemeProvider theme={isDarkTheme ? darkTheme : theme}>
         <Normalize />
-      <GlobalStyle />
-          <Navigation />
-          <AppContent />
-          <Footer>
-            © 2021 | Coded by Wojciech Bylica, Karol Cieśluk, Patrycja Leśniak
-          </Footer>
-        </ThemeProvider>
+        <GlobalStyle />
+        <Navigation />
+       
+        <AppContent />
+        <Footer>
+          <p>© 2021 | Coded by Wojciech Bylica, Karol Cieśluk, Patrycja Leśniak</p>
+          <ThemeSwitch />
+        </Footer>
+      </ThemeProvider>
     </HashRouter>
 
   );
