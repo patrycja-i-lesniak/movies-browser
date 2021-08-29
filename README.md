@@ -9,7 +9,7 @@
 - [switching themes](#switch-themes)
 - [technologies](#technologies-and-concepts)
 - [authors](#authors-names)
-- [react documenttion](#react-documentation)
+- [react documentation](#react-documentation)
 
   <a name="demo-link">
 
