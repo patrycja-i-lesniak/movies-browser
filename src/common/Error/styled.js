@@ -58,8 +58,8 @@ export const StyledNavLink = styled(NavLink)`
     margin-top: 24px;
     padding: 16px 24px;
     border-radius: 5px;
-    background-color: ${({ theme }) => theme.colors.button.background};
-    color: ${({ theme }) => theme.colors.button.text};
+    background-color: ${({ theme }) => theme.colors.backgroundButton};
+    color: ${({ theme }) => theme.colors.textTertiary};
     font-size: 14px;
     font-weight: 700;
     line-height: 19px;

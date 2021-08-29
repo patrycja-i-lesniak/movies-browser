@@ -15,9 +15,9 @@ export const Image = styled.svg`
 `;
 
 export const Path = styled.path`
-    fill: ${({ theme }) => theme.colors.pagination.paginationArrow};
+    fill: ${({ theme }) => theme.colors.paginationArrow};
 
     ${({ disabled }) => disabled && css`
-        fill: ${({ theme }) => theme.colors.pagination.secondaryText};
+        fill: ${({ theme }) => theme.colors.textSecondary};
     `}
 `;

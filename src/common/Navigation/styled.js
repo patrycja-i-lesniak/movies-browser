@@ -3,8 +3,8 @@ import searchIcon from "./searchIcon.svg";
 import { NavLink } from "react-router-dom";
 
 export const NavigationWrapper = styled.div`
-    background: ${({ theme }) => theme.colors.navigation.background};
-    color: ${({ theme }) => theme.colors.navigation.elems};
+    background: ${({ theme }) => theme.colors.navigationBackground};
+    color: ${({ theme }) => theme.colors.itemsColor};
     min-height: 94px;
 `;
 
@@ -37,17 +37,25 @@ const activeClassName = "active";
 export const Logo = styled(NavLink).attrs(() => ({ activeClassName }))`
     display: flex;
     align-items: center;
-    margin-right: 20px;
-    margin-right: 40px;
+    margin: 0 40px;
     text-decoration: none;
 
+    &:focus {
+        outline: 2px solid ${({theme}) => theme.colors.itemsColor};
+        outline-offset: 6px;
+    }
+
     @media(max-width: ${({ theme }) => theme.breakpoints.medium}px) {
-        margin-right: 24px;
+        margin: 0 24px;
+
+        &:focus {
+            outline: 1px solid ${({theme}) => theme.colors.itemsColor};
+        }
     }
 `;
 
 export const VideoIcon = styled.img`
-    color: ${({ theme }) => theme.colors.navigation.elems};
+    color: ${({ theme }) => theme.colors.itemsColor};
     margin: 0 24px;
 
     @media(max-width: ${({ theme }) => theme.breakpoints.xsmall}px) {
@@ -60,7 +68,7 @@ export const VideoIcon = styled.img`
 `;
 
 export const Title = styled.h1`
-    color: ${({ theme }) => theme.colors.navigation.elems};
+    color: ${({ theme }) => theme.colors.itemsColor};
     font-size: 24px;
     font-weight: 500;
     margin: 0;
@@ -79,11 +87,11 @@ export const NavigationLinks = styled.ul`
     list-style: none;
     padding-left: 0;
     text-decoration: none;
-    color: ${({ theme }) => theme.colors.navigation.elems};
-`;
-
-export const NavigationItems = styled.li`
-    margin-left: 0px;
+    color: ${({ theme }) => theme.colors.itemsColor};
+    
+    :hover {
+        cursor: pointer;
+    }
 `;
 
 export const StyledNavLink = styled(NavLink).attrs(() => ({ activeClassName }))`
@@ -93,20 +101,25 @@ export const StyledNavLink = styled(NavLink).attrs(() => ({ activeClassName }))`
     text-decoration: none;
     padding: 8px 24px;
     margin-right: 16px;
-    color: ${({ theme }) => theme.colors.navigation.elems};
-    border: 1px solid ${({ theme }) => theme.colors.navigation.background};
+    color: ${({ theme }) => theme.colors.itemsColor};
+    border: 1px solid ${({ theme }) => theme.colors.navigationBackground};
 
+    &:focus {
+        outline: none;
+        border: 1px solid ${({ theme }) => theme.colors.itemsColor};
+        border-radius: 24px;
+    }
 
     &:hover {
-        border: 1px solid ${({ theme }) => theme.colors.navigation.elems};
+        border: 1px solid ${({ theme }) => theme.colors.itemsColor};
         border-radius: 24px;
     }
 
     &.${activeClassName} {
-        border: 1px solid ${({ theme }) => theme.colors.navigation.elems};
+        border: 1px solid ${({ theme }) => theme.colors.itemsColor};
         border-radius: 24px;
-        background-color: ${({ theme }) => theme.colors.navigation.elems};
-        color: ${({ theme }) => theme.colors.navigation.background};
+        background-color: ${({ theme }) => theme.colors.itemsColor};
+        color: ${({ theme }) => theme.colors.navigationBackground};
     }
 
     @media(max-width: ${({ theme }) => theme.breakpoints.medium}px) {
@@ -138,7 +151,7 @@ export const SearchBox = styled.form`
     position: relative;
 `;
 
-export const SearchIcon = styled.button`
+export const SearchIcon = styled.span`
     position: absolute;
     left: 24px;
     top: 25%;
@@ -167,7 +180,7 @@ export const SearchInput = styled.input`
     border-radius: 33px;
     padding: 0;
     padding-left: 64px;
-    background-color: ${({ theme }) => theme.colors.navigation.elems};
+    background-color: ${({ theme }) => theme.colors.itemsColor};
     outline: none;
 
     @media(max-width: ${({ theme }) => theme.breakpoints.xsmall}px) {
