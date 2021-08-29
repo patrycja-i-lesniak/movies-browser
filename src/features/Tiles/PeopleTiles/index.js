@@ -16,6 +16,8 @@ import { selectPeopleData, selectPeopleSearchQuery } from "../../PopularPeople/p
 import { ShowMoreButton } from "../ShowMoreButton";
 import { StyledSection } from "../../../common/MovieAndPersonSection";
 import { selectConfiguration } from "../../../core/App/movieBrowserSlice";
+import { useGetScreenWidth } from "../../../useGetScreenWidth";
+import { theme } from "../../../core/App/theme";
 
 const PeopleTiles = ({ title }) => {
     const peopleData = useSelector(selectPeopleData);
@@ -28,7 +30,15 @@ const PeopleTiles = ({ title }) => {
     let peopleList;
     const sectionName = title.toLowerCase();
     const imageURL = configuration.images.secure_base_url;
-    const size = configuration.images.poster_sizes[2];
+
+    const screenWidth = useGetScreenWidth();
+
+    let size = configuration.images.poster_sizes[
+        screenWidth > theme.breakpoints.small
+            ? 2
+            : 3
+    ];
+
     const poster = `${imageURL}${size}`;
 
     switch (sectionName) {
