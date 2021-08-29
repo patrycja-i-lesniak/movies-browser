@@ -16,11 +16,6 @@ import {
 export const Header = () => {
     const movieData = useSelector(selectMovieData);
     const configuration = useSelector(selectConfiguration);
-    console.log(configuration);
-    const [mQuery, setMQuery] = useState({
-        matches: window.innerWidth > 1280 ? true : false
-    });
-
     const [screenWidth, setScreenWidth] = useState(window.innerWidth);
 
     useEffect(() => {
