@@ -11,7 +11,7 @@ export const Footer = styled.footer`
     padding: 30px;
     background-color: ${({ theme }) => theme.colors.navigationBackground};
     height: 80px;
-    position: absolute;
+    position: fixed;
     left: 0;
     right: 0;
     bottom: 0;
