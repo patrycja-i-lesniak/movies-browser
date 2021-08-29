@@ -4,7 +4,7 @@ import { getInitialDarkTheme } from "./initialDarkTheme";
 const themeSlice = createSlice({
     name: "theme",
     initialState: {
-        isDarkTheme: !getInitialDarkTheme,
+        isDarkTheme: getInitialDarkTheme(),
     },
     reducers: {
         toggleTheme: state => {
