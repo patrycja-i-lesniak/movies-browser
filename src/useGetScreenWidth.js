@@ -1,7 +1,6 @@
 /* eslint-disable react-hooks/rules-of-hooks */
 import { useEffect, useState } from "react";
 
-
 export const useGetScreenWidth = () => {
     const [screenWidth, setScreenWidth] = useState(window.innerWidth);
 
