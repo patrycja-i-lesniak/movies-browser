@@ -31,35 +31,35 @@ const MovieTiles = ({ title }) => {
     const searchQuery = useSelector(selectMoviesSearchQuery);
     const configuration = useSelector(selectConfiguration);
     const screenWidth = useGetScreenWidth();
-
-    let size = configuration.images.poster_sizes[
-        screenWidth > theme.breakpoints.xsmall
-            ? 4
-            : 2
-    ];
-
-    const imageURL = configuration.images.secure_base_url;
-    const poster = `${imageURL}${size}`;
     const [showMore, setShowMore] = useState(false);
-
-    let moviesList;
     const moviesGenresData = useSelector(selectGenres);
     const moviesGenres = moviesGenresData.genres;
     const sectionName = title.toLowerCase();
     const creditsData = useSelector(selectPersonCredits);
-
+    let moviesList;
+    let size;
     switch (sectionName) {
         case "cast":
             moviesList = creditsData.cast;
+            size = configuration.images.poster_sizes[3];
             break;
 
         case "crew":
             moviesList = creditsData.crew;
+            size = configuration.images.poster_sizes[3];
             break;
 
         default:
             moviesList = moviesData.results;
+            size = configuration.images.poster_sizes[
+                screenWidth > theme.breakpoints.xsmall
+                    ? 4
+                    : 2
+            ];
     }
+
+    const imageURL = configuration.images.secure_base_url;
+    const poster = `${imageURL}${size}`;
 
     return (moviesList.length &&
         <>
