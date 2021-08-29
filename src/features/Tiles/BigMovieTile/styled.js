@@ -33,6 +33,7 @@ export const MovieDetailsTile = styled.article`
 export const Image = styled.img`
     max-width: 312px;
     max-height: 464px;
+    height: 100%;
     border-radius: 5px;
     margin: 0 40px 8px 0;
     float: left;
