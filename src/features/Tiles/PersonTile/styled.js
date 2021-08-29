@@ -10,7 +10,7 @@ export const PersonDetailsTile = styled.article`
 
     @media(max-width: ${({ theme }) => theme.breakpoints.medium}px) {
         padding: 32px;
-        margin-bottom: 32px;
+        margin: 24px 16px 32px;
     }
 
     @media(max-width: ${({ theme }) => theme.breakpoints.small}px) {
