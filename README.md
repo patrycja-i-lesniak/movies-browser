@@ -24,7 +24,7 @@
 
   ## PREVIEW ##
 
-  ![Preview](readmeImages/moviesBrowserPreview.gif)
+  ![Preview](/readmeImages/moviesBrowserPreview.gif)
 
  </a>
 
@@ -45,7 +45,7 @@ export const getInitialDarkTheme = () => {
 };
 ```
 
-  ![Preview](readmeImages/themesPreview.gif)
+  ![Preview](/readmeImages/themesPreview.gif)
 
  </a>
 
