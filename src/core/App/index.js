@@ -23,7 +23,6 @@ import { Footer } from "../../../src/common/Footer";
 import { selectIsDarkTheme } from "../../common/ThemeSwitch/themeSlice";
 import { ThemeSwitch } from "../../common/ThemeSwitch";
 
-
 export const App = () => {
   const dispatch = useDispatch();
 
@@ -64,13 +63,11 @@ export const App = () => {
   };
 
   return (
-
     <HashRouter>
       <ThemeProvider theme={isDarkTheme ? darkTheme : theme}>
         <Normalize />
         <GlobalStyle />
         <Navigation />
-       
         <AppContent />
         <Footer>
           <p>© 2021 | Coded by Wojciech Bylica, Karol Cieśluk, Patrycja Leśniak</p>
