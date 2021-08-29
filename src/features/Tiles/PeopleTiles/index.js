@@ -27,7 +27,7 @@ const PeopleTiles = ({ title }) => {
 
     let peopleList;
     const sectionName = title.toLowerCase();
-    const imageURL = configuration.images.base_url;
+    const imageURL = configuration.images.secure_base_url;
     const size = configuration.images.poster_sizes[2];
     const poster = `${imageURL}${size}`;
 

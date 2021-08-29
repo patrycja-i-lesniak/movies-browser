@@ -19,7 +19,7 @@ const PersonTile = () => {
     const personData = useSelector(selectPersonData);
     const configuration = useSelector(selectConfiguration);
     const image = personData.profile_path;
-    const imageURL = configuration.images.base_url;
+    const imageURL = configuration.images.secure_base_url;
     const size = configuration.images.logo_sizes[4];
     const poster = `${imageURL}${size}${image}`;
 

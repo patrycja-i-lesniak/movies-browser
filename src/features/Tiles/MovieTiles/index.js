@@ -29,7 +29,7 @@ const MovieTiles = ({ title }) => {
     const searchQuery = useSelector(selectMoviesSearchQuery);
     const configuration = useSelector(selectConfiguration);
 
-    const imageURL = configuration.images.base_url;
+    const imageURL = configuration.images.secure_base_url;
     const size = configuration.images.poster_sizes[3];
     const poster = `${imageURL}${size}`;
     const [showMore, setShowMore] = useState(false);

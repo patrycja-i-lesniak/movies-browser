@@ -17,7 +17,7 @@ export const Header = () => {
     const movieData = useSelector(selectMovieData);
     const configuration = useSelector(selectConfiguration);
     const [screenWidth, setScreenWidth] = useState(window.innerWidth);
-
+    console.log(configuration);
     useEffect(() => {
         const getScreenWidth = () => {
             setScreenWidth(window.innerWidth);
@@ -35,7 +35,7 @@ export const Header = () => {
     if (screenWidth > 300 && screenWidth < 781) size = configuration.images.backdrop_sizes[1];
     if (screenWidth < 301) size = configuration.images.backdrop_sizes[0];
 
-    const imageURL = configuration.images.base_url;
+    const imageURL = configuration.images.secure_base_url;
     const poster = movieData.backdrop_path;
     const posterAdress = `${imageURL}${size}${poster}`;
     const title = movieData.title;
