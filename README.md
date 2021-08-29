@@ -1,11 +1,16 @@
-# Movie Browser
-coded by:
-- Patrycja Leśniak
-- Karol Cieśluk
-- Wojciech Bylica
+# MOVIE BROWSER
 
-## Demo
-https://patrycja-i-lesniak.github.io/movies-browser/
+* Authors:
+* **Wojciech Bylica**,
+* **Karol Cieśluk**,
+* **Patrycja Leśniak**.
+
+![Screen](public/readmeImage.jpg)
+
+
+
+
+
 
 # Getting Started with Create React App
 
