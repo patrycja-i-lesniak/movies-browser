@@ -14,6 +14,8 @@ const colorNames = {
     woodsmoke: "#27272B",
     codGray: "#111111",
     desertStorm: "#EEEEEC",
+    wildBlueYonder: "rgba(119, 139, 177, 0.5)",
+
 };
 
 const common = {
@@ -67,7 +69,7 @@ export const darkTheme = {
         tilesBackground: colorNames.codGray,
         tagBackground: colorNames.shark,
         substitutionPicture: colorNames.silverSand,
-        hoverColor: colorNames.darkGrey,
+        hoverColor: colorNames.wildBlueYonder,
         activeColor: colorNames.lightBlue,
         backgroundButton: colorNames.blue,
         loaderElipse: colorNames.black,
