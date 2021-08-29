@@ -41,7 +41,7 @@ export const Logo = styled(NavLink).attrs(() => ({ activeClassName }))`
     text-decoration: none;
 
     &:focus {
-        outline: 2px solid ${({theme}) => theme.colors.navigation.elems};
+        outline: 2px solid ${({theme}) => theme.colors.itemsColor};
         outline-offset: 6px;
     }
 
@@ -49,7 +49,7 @@ export const Logo = styled(NavLink).attrs(() => ({ activeClassName }))`
         margin: 0 24px;
 
         &:focus {
-            outline: 1px solid ${({theme}) => theme.colors.navigation.elems};
+            outline: 1px solid ${({theme}) => theme.colors.itemsColor};
         }
     }
 `;
@@ -106,7 +106,7 @@ export const StyledNavLink = styled(NavLink).attrs(() => ({ activeClassName }))`
 
     &:focus {
         outline: none;
-        border: 1px solid ${({ theme }) => theme.colors.navigation.elems};
+        border: 1px solid ${({ theme }) => theme.colors.itemsColor};
         border-radius: 24px;
     }
 

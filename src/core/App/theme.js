@@ -15,7 +15,6 @@ const colorNames = {
     codGray: "#111111",
     desertStorm: "#EEEEEC",
     wildBlueYonder: "rgba(119, 139, 177, 0.5)",
-
 };
 
 const common = {
@@ -78,7 +77,6 @@ export const darkTheme = {
         paginationBackgroundDisabled: colorNames.mystic,
         paginationArrow: colorNames.blue,
         boxShadow: "0px 4px 12px rgba(0, 0, 0, 0.5)",
-
     },
     ...common,
 };
