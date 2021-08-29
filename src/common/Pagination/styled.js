@@ -20,7 +20,7 @@ export const Wrapper = styled.nav`
     }
 `;
 
-export const PaginationLinks = styled.ul`
+export const PaginationList = styled.ul`
     list-style: none;
     padding: 0;
     margin: 0;
@@ -38,10 +38,6 @@ export const PaginationLinks = styled.ul`
 `;
 
 export const PaginationButton = styled.button`
-    display: grid;
-    grid-template-columns: auto auto;
-    grid-gap: 8px;
-    align-items: center;
     text-decoration: none;
     font-size: 14px;
     line-height: 1.4;
@@ -63,13 +59,23 @@ export const PaginationButton = styled.button`
         background-color: ${({ theme }) => theme.colors.paginationBackgroundDisabled};
     `}
 
+    @media(max-width: ${({ theme }) => theme.breakpoints.xsmall}px) {
+        padding: 8px 12px;
+    }
+`;
+
+export const ButtonContentWrapper = styled.span`
+    display: grid;
+    grid-template-columns: auto auto;
+    grid-gap: 8px;
+    align-items: center;
+
     @media(max-width: ${({ theme }) => theme.breakpoints.small}px) {
         grid-gap: 6px;
     }
 
     @media(max-width: ${({ theme }) => theme.breakpoints.xsmall}px) {
         grid-gap: 4px;
-        padding: 8px 12px;
 
         ${({ smallStep }) => smallStep && css`
             grid-template-columns: auto;
@@ -77,7 +83,7 @@ export const PaginationButton = styled.button`
     }
 `;
 
-export const LinkText = styled.span`
+export const ButtonText = styled.span`
     @media(max-width: ${({ theme }) => theme.breakpoints.xsmall}px) {
         display: none;
     }

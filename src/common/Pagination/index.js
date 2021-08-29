@@ -1,37 +1,24 @@
-import { useSelector } from "react-redux";
-import { useLocation } from "react-router-dom";
-import { toPeople } from "../../core/App/routes";
-
-import { selectMoviesData } from "../../features/PopularMovies/moviesSlice";
-import { selectPeopleData } from "../../features/PopularPeople/peopleSlice";
-import { paginationQueryParamName } from "../queryParamNames";
 import { useReplaceQueryParameter } from "../useReplaceQueryParameter";
+import { useAPIPages } from "./useAPIPages";
+import { paginationQueryParamName } from "../queryParamNames";
 import { PaginationArrow } from "./PaginationArrow";
 import {
     Caption,
     CaptionsWrapper,
-    LinkText,
-    PaginationLinks,
+    ButtonText,
+    PaginationList,
     PaginationButton,
-    Wrapper
+    Wrapper,
+    ButtonContentWrapper
 } from "./styled";
 
 export const Pagination = () => {
-    const { pathname } = useLocation();
     const replaceQueryParameter = useReplaceQueryParameter();
-
-    const APIData = useSelector(
-        pathname === toPeople()
-            ? selectPeopleData
-            : selectMoviesData
-    );
-    
-    const currentPage = APIData.page;
-    const totalPages = APIData.total_pages;
+    const [currentPage, totalPages] = useAPIPages();
 
     return (
         <Wrapper>
-            <PaginationLinks>
+            <PaginationList>
                 <li>
                     <PaginationButton
                         disabled={currentPage === 1}
@@ -40,28 +27,31 @@ export const Pagination = () => {
                             value: 1,
                         })}
                     >
-                        <PaginationArrow disabled={currentPage === 1} />
-                        <PaginationArrow
-                            extra
-                            disabled={currentPage === 1}
-                        />
-                        <LinkText>First</LinkText>
+                        <ButtonContentWrapper>
+                            <PaginationArrow disabled={currentPage === 1} />
+                            <PaginationArrow
+                                extra
+                                disabled={currentPage === 1}
+                            />
+                            <ButtonText>First</ButtonText>
+                        </ButtonContentWrapper>
                     </PaginationButton>
                 </li>
                 <li>
                     <PaginationButton
-                        smallStep
                         disabled={currentPage === 1}
                         onClick={() => replaceQueryParameter({
                             key: paginationQueryParamName,
                             value: currentPage - 1,
                         })}
                     >
-                        <PaginationArrow disabled={currentPage === 1} />
-                        <LinkText>Previous</LinkText>
+                        <ButtonContentWrapper smallStep>
+                            <PaginationArrow disabled={currentPage === 1} />
+                            <ButtonText>Previous</ButtonText>
+                        </ButtonContentWrapper>
                     </PaginationButton>
                 </li>
-            </PaginationLinks>
+            </PaginationList>
             <CaptionsWrapper>
                 <Caption>
                     Page
@@ -76,21 +66,22 @@ export const Pagination = () => {
                     {totalPages}
                 </Caption>
             </CaptionsWrapper>
-            <PaginationLinks>
+            <PaginationList>
                 <li>
                     <PaginationButton
-                        smallStep
                         disabled={currentPage === totalPages}
                         onClick={() => replaceQueryParameter({
                             key: paginationQueryParamName,
                             value: currentPage + 1,
                         })}
                     >
-                        <LinkText>Next</LinkText>
-                        <PaginationArrow
-                            forward
-                            disabled={currentPage === totalPages}
-                        />
+                        <ButtonContentWrapper smallStep>
+                            <ButtonText>Next</ButtonText>
+                            <PaginationArrow
+                                forward
+                                disabled={currentPage === totalPages}
+                            />
+                        </ButtonContentWrapper>
                     </PaginationButton>
                 </li>
                 <li>
@@ -101,19 +92,21 @@ export const Pagination = () => {
                             value: totalPages,
                         })}
                     >
-                        <LinkText>Last</LinkText>
-                        <PaginationArrow
-                            forward
-                            disabled={currentPage === totalPages}
-                        />
-                        <PaginationArrow
-                            extra
-                            forward
-                            disabled={currentPage === totalPages}
-                        />
+                        <ButtonContentWrapper>
+                            <ButtonText>Last</ButtonText>
+                            <PaginationArrow
+                                forward
+                                disabled={currentPage === totalPages}
+                            />
+                            <PaginationArrow
+                                extra
+                                forward
+                                disabled={currentPage === totalPages}
+                            />
+                        </ButtonContentWrapper>
                     </PaginationButton>
                 </li>
-            </PaginationLinks>
+            </PaginationList>
         </Wrapper>
     );
 };
