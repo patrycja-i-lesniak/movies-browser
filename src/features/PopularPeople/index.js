@@ -4,7 +4,7 @@ import PeopleTiles from "../Tiles/PeopleTiles";
 import { Loader } from "../../common/Loader";
 import Error from "../../common/Error";
 import { NoResults } from "../../common/NoResults";
-import { MovieAndPersonWrapper } from "../../common/StyledComponents/MovieAndPersonWrapper";
+import { MovieAndPersonWrapper } from "../../common/components/MovieAndPersonWrapper";
 import { Pagination } from "../../common/Pagination";
 import {
     fetchPeopleLoading,

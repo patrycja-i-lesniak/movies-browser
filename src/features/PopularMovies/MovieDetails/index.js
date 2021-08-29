@@ -3,7 +3,7 @@ import { useParams } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 
 import { Header } from "./Header";
-import { MovieAndPersonWrapper } from "../../../common/StyledComponents/MovieAndPersonWrapper";
+import { MovieAndPersonWrapper } from "../../../common/components/MovieAndPersonWrapper";
 import { BigMovieTile } from "../../Tiles/BigMovieTile";
 import PeopleTiles from "../../Tiles/PeopleTiles";
 import Error from "../../../common/Error";
