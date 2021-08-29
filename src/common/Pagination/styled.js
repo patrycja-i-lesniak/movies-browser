@@ -7,16 +7,16 @@ export const Wrapper = styled.nav`
     grid-gap: 24px;
     align-items: center;
     width: fit-content;
-    margin: 46px auto 48px;
+    margin: 48px auto 28px;
 
     @media(max-width: ${({ theme }) => theme.breakpoints.small}px) {
         grid-gap: 6px;
-        margin: 40px auto 80px;
+        margin: 32px auto 16px;
     }
 
     @media(max-width: ${({ theme }) => theme.breakpoints.xsmall}px) {
         grid-gap: 8px;
-        margin: 32px auto 30px;
+        margin: 24px auto 8px;
     }
 `;
 
