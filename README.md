@@ -1,6 +1,6 @@
 # MOVIE BROWSER
 
-![Screen](readmeImage.jpg)
+![Screen](readmeImages/readmeImage.jpg)
 
 ## NAVIGATION
 - [demo](#demo-link)
