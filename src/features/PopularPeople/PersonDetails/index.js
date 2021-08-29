@@ -6,7 +6,7 @@ import PersonTile from "../../Tiles/PersonTile";
 import MovieTiles from "../../Tiles/MovieTiles";
 import { Loader } from "../../../common/Loader";
 import Error from "../../../common/Error";
-import { MovieAndPersonWrapper } from "../../../common/components/MovieAndPersonWrapper";
+import { MovieAndPersonWrapper } from "../../../common/styledCommonComponents/MovieAndPersonWrapper";
 import { fetchPersonDetails, selectStatus } from "./personDetailsSlice";
 
 const PersonDetails = () => {

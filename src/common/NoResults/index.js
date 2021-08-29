@@ -1,5 +1,5 @@
 import { NoResultsHeader, NoResultsImage, } from "./styled";
-import { Wrapper } from "../components/LoaderNoResultsWrapper";
+import { Wrapper } from "../styledCommonComponents/LoaderNoResultsWrapper";
 import { useQueryParameter } from "../useQueryParameter";
 import { searchQueryParamName } from "../queryParamNames";
 
