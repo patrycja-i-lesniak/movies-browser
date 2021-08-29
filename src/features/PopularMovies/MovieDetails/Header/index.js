@@ -1,4 +1,3 @@
-import { useState, useEffect } from "react";
 import { useSelector } from "react-redux";
 import { selectConfiguration } from "../../../../core/App/movieBrowserSlice";
 import { useGetScreenWidth } from "../../../../useGetScreenWidth";
@@ -12,7 +11,6 @@ import {
     TitleHeader,
     MovieDetailsHeader
 } from "./styled";
-
 
 export const Header = () => {
     const movieData = useSelector(selectMovieData);
