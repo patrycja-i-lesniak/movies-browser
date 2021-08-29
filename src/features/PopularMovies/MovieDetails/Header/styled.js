@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 export const MovieDetailsHeader = styled.header`
-    background-color: ${({ theme }) => theme.colors.header};
+    background-color: ${({ theme }) => theme.colors.headerBackground};
 `;
 
 export const WrapperPoster = styled.div`

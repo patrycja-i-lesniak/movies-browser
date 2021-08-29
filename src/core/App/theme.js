@@ -34,6 +34,7 @@ export const theme = {
         textSecondary: colorNames.darkGrey,
         textTertiary: colorNames.white,
         navigationBackground: colorNames.black,
+        headerBackground: colorNames.black,
         itemsColor: colorNames.white,
         searchIcon: colorNames.lynch,
         siteBackground: colorNames.lightGrey,
