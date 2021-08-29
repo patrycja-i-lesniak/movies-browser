@@ -13,7 +13,8 @@ html  {
 body {
     margin: 0 auto;
     font-family: 'Poppins', sans-serif;
-    background: ${({ theme }) => theme.colors.backgroundWrapper};
+    background: ${({ theme }) => theme.colors.siteBackground};
+    color: ${({ theme }) => theme.colors.textPrimary};
     min-height: 100%;
     position: relative;
     padding-bottom: 80px;

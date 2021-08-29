@@ -5,10 +5,10 @@ export const Footer = styled.footer`
     justify-content: space-between;
     align-items: center;
     font-size: 14px;
-    color: ${({ theme }) => theme.colors.textWhite};
+    color: ${({ theme }) => theme.colors.textTertiary};
     font-weight: 400;
     padding: 30px;
-    background-color: ${({ theme }) => theme.colors.backgroundBlack};
+    background-color: ${({ theme }) => theme.colors.navigationBackground};
     height: 80px;
     position: absolute;
     left: 0;

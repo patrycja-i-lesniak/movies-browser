@@ -30,7 +30,7 @@ export const Text = styled.span`
 export const Box = styled.span`
     display: flex;
     width: 48px;
-    background: red;
+    background: ${({ theme }) => theme.colors.navigation};
     border: 1px solid;
     padding: 2px;
     border-radius: 12px;

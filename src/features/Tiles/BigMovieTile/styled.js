@@ -1,8 +1,8 @@
 import styled from "styled-components";
 
 export const MovieDetailsTile = styled.article`
-    background: ${({ theme }) => theme.colors.tile.background};
-    box-shadow: 0px 4px 12px rgba(186, 199, 213, 0.5);
+    background: ${({ theme }) => theme.colors.tilesBackground};
+    box-shadow: ${({ theme }) => theme.colors.boxShadow};
     border-radius: 5px;
     min-height: 544px;
     padding: 40px;
@@ -79,7 +79,7 @@ export const Year = styled.div`
     margin-bottom: 24px;
 
     @media(max-width: ${({ theme }) => theme.breakpoints.small}px) {
-        color: ${({ theme }) => theme.colors.tile.year};
+        color: ${({ theme }) => theme.colors.textSecondary};
         font-size: 13px;
         line-height: 1.3;
         margin-bottom: 8px;
@@ -100,7 +100,7 @@ export const MovieDetails = styled.div`
 
 export const Label = styled.p`
     font-size: 18px;
-    color: ${({ theme }) => theme.colors.tile.details};
+    color: ${({ theme }) => theme.colors.textSecondary};
     margin: 0 10px 0 0;
     display: flex;
     align-items: center;
@@ -112,7 +112,7 @@ export const Label = styled.p`
 
 export const MovieData = styled.p`
     font-size: 18px;
-    color: ${({ theme }) => theme.colors.tile.data};
+    color: ${({ theme }) => theme.colors.textPrimary};
     margin: 0;
 
     @media(max-width: ${({ theme }) => theme.breakpoints.small}px) {
@@ -134,7 +134,7 @@ export const Tags = styled.ul`
 `;
 
 export const Tag = styled.li`
-    background: ${({ theme }) => theme.colors.tile.tagBackground};
+    background: ${({ theme }) => theme.colors.tagBackground};
     padding: 8px 16px;
     font-size: 14px;
     margin-right: 8px;

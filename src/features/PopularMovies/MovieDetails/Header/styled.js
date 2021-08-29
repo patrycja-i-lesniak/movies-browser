@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 export const MovieDetailsHeader = styled.header`
-    background-color: ${({ theme }) => theme.colors.movieDetails.background};
+    background-color: ${({ theme }) => theme.colors.navigationBackground};
 `;
 
 export const WrapperPoster = styled.div`
@@ -79,7 +79,7 @@ export const TextWrapper = styled.article`
     max-width: 1368px;
     flex-direction: column;
     justify-content: flex-end;
-    color: ${({ theme }) => theme.colors.textHeader};
+    color: ${({ theme }) => theme.colors.textTertiary};
     margin: 0 auto;
     width: 100vw;
     padding-left: 56px;

@@ -36,7 +36,7 @@ export const PeopleList = styled.ul`
 `;
 
 export const ProfilePicture = styled.img`
-    background: ${({ theme }) => theme.colors.tile.substitutionPicture};
+    background: ${({ theme }) => theme.colors.substitutionPicture};
     border-radius: 5px;
     width: 100%;
 `;
@@ -62,7 +62,7 @@ export const Role = styled.p`
     margin: 0;
     font-size: 18px;
     line-height: 1.5;
-    color: ${({ theme }) => theme.colors.tile.role};
+    color: ${({ theme }) => theme.colors.textSecondary};
     text-align: center;
 
     @media(max-width: ${({ theme }) => theme.breakpoints.medium}px) {

@@ -1,7 +1,7 @@
 import styled, { css } from "styled-components";
 
 export const Wrapper = styled.nav`
-    color: ${({ theme }) => theme.colors.pagination.primaryText};
+    color: ${({ theme }) => theme.colors.textPrimary};
     display: grid;
     grid-template-columns: repeat(3, auto);
     grid-gap: 24px;
@@ -45,8 +45,8 @@ export const PaginationButton = styled.button`
     text-decoration: none;
     font-size: 14px;
     line-height: 1.4;
-    color: ${({ theme }) => theme.colors.pagination.primaryText};
-    background: ${({ theme }) => theme.colors.pagination.background};
+    color: ${({ theme }) => theme.colors.paginationPrimaryText};
+    background: ${({ theme }) => theme.colors.paginationBackground};
     border-radius: 5px;
     padding: 8px 16px;
     cursor: pointer;
@@ -60,7 +60,7 @@ export const PaginationButton = styled.button`
     ${({ disabled }) => disabled && css`
         pointer-events: none;
         cursor: default;
-        background-color: ${({ theme }) => theme.colors.pagination.backgroundDisabled};
+        background-color: ${({ theme }) => theme.colors.paginationBackgroundDisabled};
     `}
 
     @media(max-width: ${({ theme }) => theme.breakpoints.small}px) {
@@ -100,7 +100,7 @@ export const CaptionsWrapper = styled.div`
 export const Caption = styled.span`
     font-size: 16px;
     line-height: 1.5;
-    color: ${({ theme }) => theme.colors.pagination.secondaryText};
+    color: ${({ theme }) => theme.colors.textSecondary};
 
     ${({ semibold }) => semibold && css`
         font-weight: 600;

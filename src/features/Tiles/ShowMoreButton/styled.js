@@ -12,7 +12,7 @@ export const ShowMore = styled.button`
     grid-template-columns: auto auto;
     grid-gap: 6px;
     align-items: center;
-    color: ${({ theme }) => theme.colors.tile.role};
+    color: ${({ theme }) => theme.colors.textSecondary};
     padding: 10px;
 
     :hover {
