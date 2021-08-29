@@ -1,14 +1,15 @@
 import { takeEvery, call, put, all } from "@redux-saga/core/effects";
 
-import { getGenres } from "./movieBrowserAPI";
+import { getConfiguration, getGenres } from "./movieBrowserAPI";
 import { fetchMoviesBrowserError, fetchMoviesBrowserLoading, fetchMoviesBrowserSuccess } from "./movieBrowserSlice";
 
 function* fetchMoviesBrowserDataHandler() {
     try {
-        const [moviesBrowserGenres] = yield all([
-            call(getGenres)
+        const [moviesBrowserGenres, configuration] = yield all([
+            call(getGenres),
+            call(getConfiguration)
         ]);
-        yield put(fetchMoviesBrowserSuccess({ moviesBrowserGenres }));
+        yield put(fetchMoviesBrowserSuccess({ moviesBrowserGenres, configuration }));
     } catch (error) {
         yield put(fetchMoviesBrowserError());
     }

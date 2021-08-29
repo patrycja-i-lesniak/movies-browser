@@ -1,7 +1,7 @@
 import { Header, LoadingIcon } from "./styled";
 import { useQueryParameter } from "../useQueryParameter";
 import { searchQueryParamName } from "../queryParamNames";
-import { Wrapper } from "../Wrappers/LoaderNoResultsWrapper";
+import { Wrapper } from "../styledCommonComponents/LoaderNoResultsWrapper";
 
 export const Loader = () => {
     const searchQuery = useQueryParameter(searchQueryParamName);
