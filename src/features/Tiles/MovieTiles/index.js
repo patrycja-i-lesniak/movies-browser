@@ -23,14 +23,22 @@ import { toMovie } from "../../../core/App/routes";
 import { selectMoviesData, selectMoviesSearchQuery } from "../../PopularMovies/moviesSlice";
 import { ShowMoreButton } from "../ShowMoreButton";
 import { StyledSection } from "../../../common/MovieAndPersonSection";
+import { useGetScreenWidth } from "../../../useGetScreenWidth";
+import { theme } from "../../../core/App/theme";
 
 const MovieTiles = ({ title }) => {
     const moviesData = useSelector(selectMoviesData);
     const searchQuery = useSelector(selectMoviesSearchQuery);
     const configuration = useSelector(selectConfiguration);
+    const screenWidth = useGetScreenWidth();
+
+    let size = configuration.images.poster_sizes[
+        screenWidth > theme.breakpoints.xsmall
+            ? 4
+            : 2
+    ];
 
     const imageURL = configuration.images.secure_base_url;
-    const size = configuration.images.poster_sizes[3];
     const poster = `${imageURL}${size}`;
     const [showMore, setShowMore] = useState(false);
 
