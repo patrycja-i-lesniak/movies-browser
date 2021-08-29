@@ -13,7 +13,6 @@ import {
     VideoIcon,
     Title,
     NavigationLinks,
-    NavigationItems,
     StyledNavLink,
     SearchContainer,
     SearchBox,
@@ -23,7 +22,7 @@ import {
 import videoIcon from "./videoIcon.svg";
 
 export const Navigation = () => {
-    const location = useLocation();
+    const { pathname } = useLocation();
 
     const query = useQueryParameter(searchQueryParamName);
     const replaceQueryParameter = useReplaceQueryParameter();
@@ -45,12 +44,16 @@ export const Navigation = () => {
                             <Title>Movie Browser</Title>
                         </Logo>
                         <NavigationLinks>
-                            <NavigationItems>
-                                <StyledNavLink to={toMovies()}>Movie</StyledNavLink>
-                            </NavigationItems>
-                            <NavigationItems>
-                                <StyledNavLink to={toPeople()}>People</StyledNavLink>
-                            </NavigationItems>
+                            <li>
+                                <StyledNavLink to={toMovies()}>
+                                    Movie
+                                </StyledNavLink>
+                            </li>
+                            <li>
+                                <StyledNavLink to={toPeople()}>
+                                    People
+                                </StyledNavLink>
+                            </li>
                         </NavigationLinks>
                     </HeaderContainer>
                     <SearchContainer>
@@ -60,7 +63,7 @@ export const Navigation = () => {
                                 onChange={onSearchChange}
                                 value={query || ""}
                                 placeholder={
-                                    `Search for ${location.pathname.includes("/movie")
+                                    `Search for ${pathname.includes("/movie")
                                         ? "movies"
                                         : "people"}…`
                                 }
