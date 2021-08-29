@@ -32,7 +32,7 @@
 
   ## SWITCHING THEMES ##
 
-  Movies Browser can be displayed in light and dark mode. You can switch modes clicking dedicated button. The App is choosing default mode by checking the time:
+  Movies Browser can be displayed in light and dark mode. You can switch modes by clicking dedicated button. The App is choosing default mode by checking the time:
 
   ```sh
 export const getInitialDarkTheme = () => {
