@@ -22,7 +22,7 @@ export const DoubleContainer = styled.div`
 
     @media(max-width: ${({ theme }) => theme.breakpoints.medium}px) {
         justify-content: center;
-}
+    }
 `;
 
 export const HeaderContainer = styled.div`
@@ -37,18 +37,18 @@ const activeClassName = "active";
 export const Logo = styled(NavLink).attrs(() => ({ activeClassName }))`
     display: flex;
     align-items: center;
-    margin: 0 40px;
+    margin: 0 40px 0 64px;
     text-decoration: none;
 
-    &:focus {
+    &:focus-visible {
         outline: 2px solid ${({theme}) => theme.colors.itemsColor};
         outline-offset: 6px;
     }
 
     @media(max-width: ${({ theme }) => theme.breakpoints.medium}px) {
-        margin: 0 24px;
+        margin: 0 24px 0 48px;
 
-        &:focus {
+        &:focus-visable {
             outline: 1px solid ${({theme}) => theme.colors.itemsColor};
         }
     }
@@ -56,7 +56,7 @@ export const Logo = styled(NavLink).attrs(() => ({ activeClassName }))`
 
 export const VideoIcon = styled.img`
     color: ${({ theme }) => theme.colors.itemsColor};
-    margin: 0 24px;
+    margin: 0 24px 0 0;
 
     @media(max-width: ${({ theme }) => theme.breakpoints.xsmall}px) {
         width: 26px;
