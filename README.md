@@ -1,16 +1,111 @@
 # MOVIE BROWSER
 
-* Authors:
+![Screen](readmeImages/readmeImage.jpg)
+
+## NAVIGATION
+- [demo](#demo-link)
+- [preview](#page-preview)
+- [movies browser](#search-movies-add-people)
+- [switching themes](#switch-themes)
+- [technologies](#technologies-and-concepts)
+- [authors](#authors-names)
+- [react documenttion](#react-documentation)
+
+  <a name="demo-link">
+
+ # DEMO
+
+  </a>
+
+  [demo](https://patrycja-i-lesniak.github.io/movies-browser/ "Movies Browser")
+
+ <a name= "page-preview">
+
+  ## PREVIEW ##
+
+  ![Preview](readmeImages/moviesBrowserPreview.gif)
+
+ </a>
+
+<a name="search-movies-add-people">
+
+## MOVIES BROWSER
+
+In Movies Browser you can search for popular movies and popular people. The app returns interesting informations about films, actors and crew.
+
+Movies:
+- title
+- poster
+- release_date
+- description
+- genres
+- rating
+- number of votes,
+
+People:
+Movies:
+- name
+- foto
+- date of birth
+- place of birth
+- biography
+- movie cast
+- movie crew
+
+</a>
+
+
+ <a name= "switch-themes">
+
+  ## SWITCHING THEMES ##
+
+  Movies Browser can be displayed in light and dark mode. You can switch modes by clicking dedicated button. The App is choosing default mode by checking the time:
+
+  ```sh
+export const getInitialDarkTheme = () => {
+    const date = new Date();
+    const hour = date.getHours();
+
+    return (
+        (hour < 6 || hour > 19) ? true : false
+    );
+};
+```
+
+  ![Preview](readmeImages/themesPreview.gif)
+
+<a name="technologies-and-concepts">
+
+## TECHNOLOGIES AND CONCEPTS USED IN MOVIES BROWSER
+
+- react
+- redux
+- saga
+- styled components
+- axios
+- media queries
+- css
+- html
+- trello
+- figma
+- team work
+
+ </a>
+
+ <a name="authors-names"></a>
+
+  ## AUTHORS ##
+
 * **Wojciech Bylica**,
 * **Karol Cieśluk**,
 * **Patrycja Leśniak**.
 
-![Screen](public/readmeImage.jpg)
 
 
 
+---
 
-
+<a name="react-documentation">
 
 # Getting Started with Create React App
 
@@ -77,3 +172,4 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 ### `npm run build` fails to minify
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+</a>

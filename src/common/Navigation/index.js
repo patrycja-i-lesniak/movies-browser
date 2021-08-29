@@ -41,12 +41,12 @@ export const Navigation = () => {
                     <HeaderContainer>
                         <Logo to={toMovies()}>
                             <VideoIcon src={videoIcon} />
-                            <Title>Movie Browser</Title>
+                            <Title>Movies Browser</Title>
                         </Logo>
                         <NavigationLinks>
                             <li>
                                 <StyledNavLink to={toMovies()}>
-                                    Movie
+                                    Movies
                                 </StyledNavLink>
                             </li>
                             <li>
