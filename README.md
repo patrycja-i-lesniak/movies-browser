@@ -1,12 +1,15 @@
 # MOVIE BROWSER
 
-* Authors:
+Authors:
 * **Wojciech Bylica**,
 * **Karol Cieśluk**,
 * **Patrycja Leśniak**.
+Coded:
+* 2.08.2021 - 20.08.2021
 
 ![Screen](public/readmeImage.jpg)
 
+## Description
 
 
 
