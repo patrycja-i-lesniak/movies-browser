@@ -17,7 +17,7 @@ export const Header = () => {
     const movieData = useSelector(selectMovieData);
     const configuration = useSelector(selectConfiguration);
     const [screenWidth, setScreenWidth] = useState(window.innerWidth);
-    console.log(configuration);
+
     useEffect(() => {
         const getScreenWidth = () => {
             setScreenWidth(window.innerWidth);
