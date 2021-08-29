@@ -36,7 +36,6 @@ export const PeopleList = styled.ul`
 `;
 
 export const ProfilePicture = styled.img`
-    background: ${({ theme }) => theme.colors.substitutionPicture};
     border-radius: 5px;
     width: 100%;
 `;

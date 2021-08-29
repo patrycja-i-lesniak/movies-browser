@@ -60,9 +60,8 @@ export const ContentContainer = styled.div`
 `;
 
 export const Picture = styled.img`
-    /* background: ${({ theme }) => theme.colors.substitutionPicture}; */
-    /* border-radius: 5px; */
     width: 100%;
+    border-radius: 5px;
     aspect-ratio: 2 / 3;
 
     @media(max-width: ${({ theme }) => theme.breakpoints.xsmall}px) {
