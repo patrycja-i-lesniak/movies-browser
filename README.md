@@ -7,13 +7,9 @@
 - [preview](#page-preview)
 - [movies browser](#search-movies-add-people)
 - [switching themes](#switch-themes)
-- [authors](#authors-names)
 - [technologies](#technologies-and-concepts)
+- [authors](#authors-names)
 - [react documenttion](#react-documentation)
-
-
-
-
 
   <a name="demo-link">
 
