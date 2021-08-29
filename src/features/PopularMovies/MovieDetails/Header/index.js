@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { useSelector } from "react-redux";
 import { selectConfiguration } from "../../../../core/App/movieBrowserSlice";
+import { useGetScreenWidth } from "../../../../useGetScreenWidth";
 import { selectMovieData } from "../movieDetailsSlice";
 
 import HeaderRating from "./HeaderRating";
@@ -12,20 +13,11 @@ import {
     MovieDetailsHeader
 } from "./styled";
 
+
 export const Header = () => {
     const movieData = useSelector(selectMovieData);
     const configuration = useSelector(selectConfiguration);
-    const [screenWidth, setScreenWidth] = useState(window.innerWidth);
-
-    useEffect(() => {
-        const getScreenWidth = () => {
-            setScreenWidth(window.innerWidth);
-        };
-
-        window.addEventListener("resize", getScreenWidth);
-
-        return () => window.removeEventListener("resize", getScreenWidth);
-    }, [screenWidth]);
+    const screenWidth = useGetScreenWidth();
 
     let size;
 
