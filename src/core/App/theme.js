@@ -59,6 +59,7 @@ export const darkTheme = {
         textSecondary: colorNames.darkGrey,
         textTertiary: colorNames.white,
         navigationBackground: colorNames.codGray,
+        headerBackground: colorNames.black,
         itemsColor: colorNames.desertStorm,
         searchIcon: colorNames.lynch,
         siteBackground: colorNames.woodsmoke,
