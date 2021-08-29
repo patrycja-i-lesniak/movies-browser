@@ -23,7 +23,7 @@ export const List = styled.ul`
         grid-template-columns: repeat(3, 1fr);
     }
 
-    @media(max-width: ${({ theme }) => theme.breakpoints.small}px) {
+    @media(max-width: ${({ theme }) => theme.breakpoints.medium}px) {
         grid-template-columns: repeat(2, 1fr);
     }
 
@@ -60,9 +60,8 @@ export const ContentContainer = styled.div`
 `;
 
 export const Picture = styled.img`
-    background: ${({ theme }) => theme.colors.tile.substitutionPicture};
-    border-radius: 5px;
     width: 100%;
+    border-radius: 5px;
     aspect-ratio: 2 / 3;
 
     @media(max-width: ${({ theme }) => theme.breakpoints.xsmall}px) {
@@ -92,7 +91,7 @@ export const Year = styled.p`
         margin: 10px 0;
         font-size: 16px;
         line-height: 1.5;
-        color: ${({ theme }) => theme.colors.tile.year};
+        color: ${({ theme }) => theme.colors.textSecondary};
 
     @media(max-width: ${({ theme }) => theme.breakpoints.medium}px) {
         font-size: 16px;
@@ -119,7 +118,7 @@ export const Tags = styled.ul`
 `;
 
 export const Tag = styled.li`
-    background: ${({ theme }) => theme.colors.tile.tagBackground};
+    background: ${({ theme }) => theme.colors.tagBackground};
     padding: 8px 16px;
     font-size: 14px;
     margin: 0 8px 8px 0;
@@ -137,7 +136,7 @@ export const Role = styled.p`
     margin: 0;
     font-size: 18px;
     line-height: 1.5;
-    color: ${({ theme }) => theme.colors.tile.role};
+    color: ${({ theme }) => theme.colors.textSecondary};
 
     @media(max-width: ${({ theme }) => theme.breakpoints.medium}px) {
         font-size: 16px;

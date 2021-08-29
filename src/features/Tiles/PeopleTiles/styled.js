@@ -14,13 +14,9 @@ export const Title = styled.h1`
 export const PeopleList = styled.ul`
     display: grid;
     grid-gap: 24px;
-    grid-template-columns: repeat(6, 1fr);
+    grid-template-columns: repeat(5, 1fr);
     list-style-type: none;
     padding: 0;
-
-    @media(max-width: ${({ theme }) => theme.breakpoints.large}px) {
-        grid-template-columns: repeat(5, 1fr);
-    }
 
     @media(max-width: ${({ theme }) => theme.breakpoints.medium}px) {
     grid-template-columns: repeat(4, 1fr);
@@ -36,7 +32,6 @@ export const PeopleList = styled.ul`
 `;
 
 export const ProfilePicture = styled.img`
-    background: ${({ theme }) => theme.colors.tile.substitutionPicture};
     border-radius: 5px;
     width: 100%;
 `;
@@ -62,7 +57,7 @@ export const Role = styled.p`
     margin: 0;
     font-size: 18px;
     line-height: 1.5;
-    color: ${({ theme }) => theme.colors.tile.role};
+    color: ${({ theme }) => theme.colors.textSecondary};
     text-align: center;
 
     @media(max-width: ${({ theme }) => theme.breakpoints.medium}px) {
