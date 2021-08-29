@@ -14,7 +14,7 @@ const MoviesBrowserSlice = createSlice({
         fetchMoviesBrowserSuccess: (_, { payload: moviesBrowserData}) => ({
             status: "success",
             genres: moviesBrowserData.moviesBrowserGenres,
-            // configuration: MoviesBrowserData.configuration,
+            configuration: moviesBrowserData.configuration,
         }),
         fetchMoviesBrowserError: () => ({
             status: "error",
@@ -35,5 +35,6 @@ export const selectMoviesBrowserState = state => state.moviesBrowser;
 export const selectMoviesBrowserStatus = state => selectMoviesBrowserState(state).status;
 
 export const selectGenres = state => selectMoviesBrowserState(state).genres;
+export const selectConfiguration = state => selectMoviesBrowserState(state).configuration;
 
 export default MoviesBrowserSlice.reducer;

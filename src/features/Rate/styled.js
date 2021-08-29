@@ -54,7 +54,7 @@ export const RatingScale = styled.p`
     @media(max-width: ${({ theme }) => theme.breakpoints.small}px) {
         display:  none;
         font-size: 12px;
-        color: ${({ theme }) => theme.colors.textPrimary};
+        color: ${({ theme }) => theme.colors.textSecondary};
     };
 `;
 
@@ -67,7 +67,7 @@ export const VoteCount = styled.p`
 
     @media(max-width: ${({ theme }) => theme.breakpoints.small}px) {
         font-size: 13px;
-        color: ${({ theme }) => theme.colors.textTertiary};
+        color: ${({ theme }) => theme.colors.textSecondary};
         padding-left: 0;
     };
 

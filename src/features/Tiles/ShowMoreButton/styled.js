@@ -9,7 +9,7 @@ export const ShowMore = styled.button`
     font-size: 12px;
     font-weight: 500;
     margin: 0 auto 0;
-    color: ${({ theme }) => theme.colors.tile.role};
+    color: ${({ theme }) => theme.colors.textSecondary};
     padding: 10px;
 
     :hover {
