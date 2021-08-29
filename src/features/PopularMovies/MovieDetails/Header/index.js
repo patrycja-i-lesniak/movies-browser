@@ -16,24 +16,29 @@ import {
 export const Header = () => {
     const movieData = useSelector(selectMovieData);
     const configuration = useSelector(selectConfiguration);
-
+    console.log(configuration);
     const [mQuery, setMQuery] = useState({
         matches: window.innerWidth > 1280 ? true : false
     });
 
+    const [screenWidth, setScreenWidth] = useState(window.innerWidth);
+
     useEffect(() => {
-        const mediaQuery = window.matchMedia("(min-width: 1280px)");
-        mediaQuery.addListener(setMQuery);
-        return () => mediaQuery.removeListener(setMQuery);
-      }, [mQuery]);
+        const getScreenWidth = () => {
+            setScreenWidth(window.innerWidth);
+        };
 
-      let size;
+        window.addEventListener("resize", getScreenWidth);
 
-      if (mQuery.matches) {
-        size = configuration.images.backdrop_sizes[3];
-      } else {
-        size = configuration.images.backdrop_sizes[2];
-      }
+        return () => window.removeEventListener("resize", getScreenWidth);
+    }, [screenWidth]);
+
+    let size;
+
+    if (screenWidth > 1280) size = configuration.images.backdrop_sizes[3];
+    if (screenWidth > 780 && screenWidth < 1281) size = configuration.images.backdrop_sizes[2];
+    if (screenWidth > 300 && screenWidth < 781) size = configuration.images.backdrop_sizes[1];
+    if (screenWidth < 301) size = configuration.images.backdrop_sizes[0];
 
     const imageURL = configuration.images.base_url;
     const poster = movieData.backdrop_path;
