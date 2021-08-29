@@ -5,6 +5,7 @@
 ## NAVIGATION
 - [demo](#demo-link)
 - [preview](#page-preview)
+-[movies browser](search-movies-add-people)
 - [authors](#authors-names)
 - [react documenttion](#react-documentation)
 
@@ -27,6 +28,34 @@
   ![Preview](moviesBrowserPreview.gif)
 
  </a>
+
+<a name="search-movies-add-people">
+
+## MOVIES BROWSER
+
+In Movies Browser you can search for popular movies and popular people. The app returns interesting informations about films, actors and crew.
+
+Movies:
+- title
+- poster
+- release_date
+- description
+- genres
+- rating
+- number of votes,
+
+People:
+Movies:
+- name
+- foto
+- date of birth
+- place of birth
+- biography
+- movie cast
+- movie crew
+
+</a>
+
 
  <a name= "switch-themes">
 
