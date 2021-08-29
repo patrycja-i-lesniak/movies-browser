@@ -23,7 +23,7 @@
 
   ## PREVIEW ##
 
-  ![Preview](moviesBrowserPreview.gif)
+  ![Preview](readmeImages/moviesBrowserPreview.gif)
 
  </a>
 
@@ -72,7 +72,7 @@ export const getInitialDarkTheme = () => {
 };
 ```
 
-  ![Preview](themesPreview.gif)
+  ![Preview](readmeImages/themesPreview.gif)
 
 <a name="technologies-and-concepts">
 
