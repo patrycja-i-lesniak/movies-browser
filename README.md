@@ -5,8 +5,10 @@
 ## NAVIGATION
 - [demo](#demo-link)
 - [preview](#page-preview)
--[movies browser](search-movies-add-people)
+- [movies browser](#search-movies-add-people)
+- [switching themes](#switch-themes)
 - [authors](#authors-names)
+- [technologies](#technologies-and-concepts)
 - [react documenttion](#react-documentation)
 
 
@@ -75,6 +77,22 @@ export const getInitialDarkTheme = () => {
 ```
 
   ![Preview](themesPreview.gif)
+
+<a name="technologies-and-concepts">
+
+## TECHNOLOGIES AND CONCEPTS USED IN MOVIES BROWSER
+
+- react
+- redux
+- saga
+- styled components
+- axios
+- media queries
+- css
+- html
+- trello
+- figma
+- team work
 
  </a>
 
