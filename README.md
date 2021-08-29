@@ -7,6 +7,7 @@
 - [preview](#page-preview)
 - [movies browser](#search-movies-add-people)
 - [switching themes](#switch-themes)
+- [dynamic changing size of images](#size-of-images)
 - [technologies](#technologies-and-concepts)
 - [authors](#authors-names)
 - [react documentation](#react-documentation)
@@ -58,7 +59,7 @@ Movies:
 
  <a name= "switch-themes">
 
-  ## SWITCHING THEMES ##
+  ## SWITCHING THEMES
 
   Movies Browser can be displayed in light and dark mode. You can switch modes by clicking dedicated button. The App is choosing default mode by checking the time:
 
@@ -74,6 +75,35 @@ export const getInitialDarkTheme = () => {
 ```
 
   ![Preview](readmeImages/themesPreview.gif)
+
+</a>
+
+<a name= "size-of-images">
+
+  ## DYNAMIC CHANGING SIZE OF IMAGES
+
+  Movies Browser checks the size of the screen and renders proper size of posters and photos
+
+  ```sh
+export const useGetScreenWidth = () => {
+    const [screenWidth, setScreenWidth] = useState(window.innerWidth);
+
+    useEffect(() => {
+        const getScreenWidth = () => {
+            setScreenWidth(window.innerWidth);
+        };
+
+        window.addEventListener("resize", getScreenWidth);
+
+        return () => window.removeEventListener("resize", getScreenWidth);
+    }, [screenWidth]);
+
+    return screenWidth;
+};
+```
+```sh
+if (screenWidth > 1280) size = configuration.images.backdrop_sizes[3];
+```
 
 <a name="technologies-and-concepts">
 
