@@ -15,7 +15,7 @@ body {
     font-family: 'Poppins', sans-serif;
     background: ${({ theme }) => theme.colors.siteBackground};
     color: ${({ theme }) => theme.colors.textPrimary};
-    min-height: 100%;
+    min-height: 100vh;
     position: relative;
     padding-bottom: 80px;
 }
