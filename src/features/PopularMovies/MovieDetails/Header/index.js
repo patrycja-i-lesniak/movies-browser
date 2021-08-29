@@ -20,9 +20,9 @@ export const Header = () => {
     let size;
 
     if (screenWidth > 1280) size = configuration.images.backdrop_sizes[3];
-    if (screenWidth > 780 && screenWidth < 1281) size = configuration.images.backdrop_sizes[2];
-    if (screenWidth > 300 && screenWidth < 781) size = configuration.images.backdrop_sizes[1];
-    if (screenWidth < 301) size = configuration.images.backdrop_sizes[0];
+    if (screenWidth > 780 && screenWidth <= 1280) size = configuration.images.backdrop_sizes[2];
+    if (screenWidth > 300 && screenWidth <= 780) size = configuration.images.backdrop_sizes[1];
+    if (screenWidth <= 300) size = configuration.images.backdrop_sizes[0];
 
     const imageURL = configuration.images.secure_base_url;
     const poster = movieData.backdrop_path;
