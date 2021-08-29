@@ -15,9 +15,10 @@
 
  # DEMO
 
+[demo](https://patrycja-i-lesniak.github.io/movies-browser/ "Movies Browser")
+
   </a>
 
-  [demo](https://patrycja-i-lesniak.github.io/movies-browser/ "Movies Browser")
 
  <a name= "page-preview">
 
