@@ -4,26 +4,33 @@
 
 ## NAVIGATION
 - [demo](#demo-link)
+- [preview](#page-preview)
 - [authors](#authors-names)
 - [react documenttion](#react-documentation)
 
 
 
 
-  
+
   <a name="demo-link">
-  
+
  # DEMO
-  
-  </a> 
-  
+
+  </a>
+
   [demo](https://patrycja-i-lesniak.github.io/movies-browser/ "Movies Browser")
 
+ <a name= "page-preview">
 
+  ## PREVIEW ##
+
+  ![Preview](readmeImages/moviesBrowserPreview.gif)
+
+ </a>
 
  <a name="authors-names"></a>
- 
-  ## AUTHORS: ##
+
+  ## AUTHORS ##
 
 * **Wojciech Bylica**,
 * **Karol Cieśluk**,
@@ -35,7 +42,7 @@
 ---
 
 <a name="react-documentation">
-  
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
