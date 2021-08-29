@@ -1,27 +1,28 @@
 {
   "files": {
-    "main.js": "/movies-browser/static/js/main.ada8145f.chunk.js",
-    "main.js.map": "/movies-browser/static/js/main.ada8145f.chunk.js.map",
+    "main.js": "/movies-browser/static/js/main.e29ec95b.chunk.js",
+    "main.js.map": "/movies-browser/static/js/main.e29ec95b.chunk.js.map",
     "runtime-main.js": "/movies-browser/static/js/runtime-main.b1e26a87.js",
     "runtime-main.js.map": "/movies-browser/static/js/runtime-main.b1e26a87.js.map",
-    "static/js/2.4e76557e.chunk.js": "/movies-browser/static/js/2.4e76557e.chunk.js",
-    "static/js/2.4e76557e.chunk.js.map": "/movies-browser/static/js/2.4e76557e.chunk.js.map",
+    "static/js/2.62030829.chunk.js": "/movies-browser/static/js/2.62030829.chunk.js",
+    "static/js/2.62030829.chunk.js.map": "/movies-browser/static/js/2.62030829.chunk.js.map",
     "static/js/3.7365d558.chunk.js": "/movies-browser/static/js/3.7365d558.chunk.js",
     "static/js/3.7365d558.chunk.js.map": "/movies-browser/static/js/3.7365d558.chunk.js.map",
     "index.html": "/movies-browser/index.html",
-    "static/js/2.4e76557e.chunk.js.LICENSE.txt": "/movies-browser/static/js/2.4e76557e.chunk.js.LICENSE.txt",
+    "static/js/2.62030829.chunk.js.LICENSE.txt": "/movies-browser/static/js/2.62030829.chunk.js.LICENSE.txt",
     "static/media/NoResultsPicture.03778e10.svg": "/movies-browser/static/media/NoResultsPicture.03778e10.svg",
     "static/media/dangerIcon.6c350e95.svg": "/movies-browser/static/media/dangerIcon.6c350e95.svg",
     "static/media/icon-spinner.17b2cd24.svg": "/movies-browser/static/media/icon-spinner.17b2cd24.svg",
+    "static/media/icon.a90ffd6e.svg": "/movies-browser/static/media/icon.a90ffd6e.svg",
     "static/media/noMoviePhoto.27224790.svg": "/movies-browser/static/media/noMoviePhoto.27224790.svg",
-    "static/media/noPersonPhoto.910b78e9.svg": "/movies-browser/static/media/noPersonPhoto.910b78e9.svg",
+    "static/media/noPersonPhoto.1fcdc577.svg": "/movies-browser/static/media/noPersonPhoto.1fcdc577.svg",
     "static/media/searchIcon.ff7c2592.svg": "/movies-browser/static/media/searchIcon.ff7c2592.svg",
     "static/media/star.17fc1039.svg": "/movies-browser/static/media/star.17fc1039.svg",
     "static/media/videoIcon.60b1f07f.svg": "/movies-browser/static/media/videoIcon.60b1f07f.svg"
   },
   "entrypoints": [
     "static/js/runtime-main.b1e26a87.js",
-    "static/js/2.4e76557e.chunk.js",
-    "static/js/main.ada8145f.chunk.js"
+    "static/js/2.62030829.chunk.js",
+    "static/js/main.e29ec95b.chunk.js"
   ]
 }
