@@ -33,7 +33,7 @@ export const Header = styled.h1`
 `;
 
 export const LoadingIcon = styled(Loading)`
-color: ${({ theme }) => theme.colors.loader.elipse};
+color: ${({ theme }) => theme.colors.loaderElipse};
 animation-name: rotate;
 animation-duration: 1s;
 animation-iteration-count: infinite;
