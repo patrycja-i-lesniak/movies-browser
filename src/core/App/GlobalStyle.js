@@ -17,6 +17,6 @@ body {
     color: ${({ theme }) => theme.colors.textPrimary};
     min-height: 100vh;
     position: relative;
-    padding-bottom: 80px;
+    padding-bottom: 100px;
 }
 `;

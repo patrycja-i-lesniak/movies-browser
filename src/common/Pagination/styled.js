@@ -7,7 +7,7 @@ export const Wrapper = styled.nav`
     grid-gap: 24px;
     align-items: center;
     width: fit-content;
-    margin: 46px auto 64px;
+    margin: 46px auto 48px;
 
     @media(max-width: ${({ theme }) => theme.breakpoints.small}px) {
         grid-gap: 6px;

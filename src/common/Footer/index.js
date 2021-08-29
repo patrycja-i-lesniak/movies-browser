@@ -5,6 +5,7 @@ export const Footer = styled.footer`
     justify-content: space-between;
     align-items: center;
     font-size: 14px;
+    margin-top: 20px;
     color: ${({ theme }) => theme.colors.textTertiary};
     font-weight: 400;
     padding: 30px;
