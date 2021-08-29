@@ -12,7 +12,6 @@ import {
     MovieDetailsHeader
 } from "./styled";
 
-
 export const Header = () => {
     const movieData = useSelector(selectMovieData);
     const configuration = useSelector(selectConfiguration);
