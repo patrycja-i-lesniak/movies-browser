@@ -1,5 +1,5 @@
 import styled, { css } from "styled-components";
-import { ReactComponent as SunIcon } from "./sun.svg";
+import { ReactComponent as SwitchIcon } from "./icon.svg";
 
 export const Wrapper = styled.div`
     display: flex;
@@ -47,6 +47,6 @@ export const IconWrapper = styled.span`
     `}
 `;
 
-export const Icon = styled(SunIcon)`
-    color: green;
+export const Icon = styled(SwitchIcon)`
+    color: ${({ theme }) => theme.colors.itemColors}
 `;
