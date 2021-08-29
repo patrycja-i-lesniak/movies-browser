@@ -1,20 +1,41 @@
 # MOVIE BROWSER
 
-Authors:
+![Screen](public/readmeImage.jpg)
+
+## NAVIGATION
+- [demo](#demo-link)
+- [authors](#authors-names)
+- [react documenttion](#react-documentation)
+
+
+
+
+  
+  <a name="demo-link">
+  
+ # DEMO
+  
+  </a> 
+  
+  [demo](https://patrycja-i-lesniak.github.io/movies-browser/ "Movies Browser")
+
+
+
+ <a name="authors-names"></a>
+ 
+  ## AUTHORS: ##
+
 * **Wojciech Bylica**,
 * **Karol Cieśluk**,
 * **Patrycja Leśniak**.
-Coded:
-* 2.08.2021 - 20.08.2021
-
-![Screen](public/readmeImage.jpg)
-
-## Description
 
 
 
 
+---
 
+<a name="react-documentation">
+  
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
@@ -80,3 +101,4 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 ### `npm run build` fails to minify
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+</a>
