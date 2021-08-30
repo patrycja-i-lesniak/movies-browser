@@ -37,7 +37,7 @@ const activeClassName = "active";
 export const Logo = styled(NavLink).attrs(() => ({ activeClassName }))`
     display: flex;
     align-items: center;
-    margin: 0 40px 0 64px;
+    margin: 0 40px 0 40px;
     text-decoration: none;
 
     &:focus-visible {
