@@ -1,4 +1,4 @@
-# MOVIE BROWSER
+# MOVIES BROWSER
 
 ![Screen](readmeImages/readmeImage.jpg)
 
@@ -45,7 +45,6 @@ Movies:
 - number of votes,
 
 People:
-Movies:
 - name
 - foto
 - date of birth
