@@ -61,7 +61,7 @@ const MovieTiles = ({ title }) => {
     const imageURL = configuration.images.secure_base_url;
     const poster = `${imageURL}${size}`;
 
-    return (moviesList.length &&
+    return (moviesList.length>0 &&
         <>
             <StyledSection>
                 {
