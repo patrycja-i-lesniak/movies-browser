@@ -37,7 +37,7 @@ const activeClassName = "active";
 export const Logo = styled(NavLink).attrs(() => ({ activeClassName }))`
     display: flex;
     align-items: center;
-    margin: 0 40px 0 40px;
+    margin: 0 12px 0 24px;
     text-decoration: none;
 
     &:focus-visible {
@@ -46,7 +46,7 @@ export const Logo = styled(NavLink).attrs(() => ({ activeClassName }))`
     }
 
     @media(max-width: ${({ theme }) => theme.breakpoints.medium}px) {
-        margin: 0 24px 0 48px;
+        margin: 0 8px 0 0;
 
         &:focus-visable {
             outline: 1px solid ${({theme}) => theme.colors.itemsColor};
@@ -58,8 +58,12 @@ export const VideoIcon = styled.img`
     color: ${({ theme }) => theme.colors.itemsColor};
     margin: 0 24px 0 0;
 
+    @media(max-width: ${({ theme }) => theme.breakpoints.medium}px) {
+        margin: 0 12px 0 0;
+    }
+
     @media(max-width: ${({ theme }) => theme.breakpoints.xsmall}px) {
-        width: 26px;
+        width: 24px;
     }
 
     @media(max-width: ${({ theme }) => theme.breakpoints.xxsmall}px) {
@@ -73,8 +77,8 @@ export const Title = styled.h1`
     font-weight: 500;
     margin: 0;
 
-    @media(max-width: ${({ theme }) => theme.breakpoints.xsmall}px) {
-        font-size: 22px;
+    @media(max-width: ${({ theme }) => theme.breakpoints.medium}px) {
+        font-size: 20px;
     }
 
     @media(max-width: ${({ theme }) => theme.breakpoints.xxsmall}px) {
@@ -137,7 +141,7 @@ export const SearchContainer = styled.div`
     justify-content: flex-end;
     align-items: center;
     min-height: inherit;
-    padding: 0 10px;
+    padding: 0 16px;
     flex-wrap: wrap;
     min-height: 74px;
     margin-right: 12px;
