@@ -1,10 +1,11 @@
-import { takeEvery, call, put, all } from "@redux-saga/core/effects";
+import { takeEvery, call, put, all, delay } from "@redux-saga/core/effects";
 
 import { getConfiguration, getGenres } from "./movieBrowserAPI";
 import { fetchMoviesBrowserError, fetchMoviesBrowserLoading, fetchMoviesBrowserSuccess } from "./movieBrowserSlice";
 
 function* fetchMoviesBrowserDataHandler() {
     try {
+        yield delay(1_500);
         const [moviesBrowserGenres, configuration] = yield all([
             call(getGenres),
             call(getConfiguration)
