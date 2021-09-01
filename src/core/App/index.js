@@ -23,7 +23,8 @@ import { Footer } from "../../../src/common/Footer";
 import { selectIsDarkTheme } from "../../common/ThemeSwitch/themeSlice";
 import { ThemeSwitch } from "../../common/ThemeSwitch";
 import { WelcomeImage, WelcomeLoader } from "./welcomeLoader.js";
-import  favicon  from "../../features/Images/favicon.svg";
+import favicon from "../../features/Images/favicon.svg";
+
 export const App = () => {
   const dispatch = useDispatch();
 
@@ -34,13 +35,12 @@ export const App = () => {
   const status = useSelector(selectMoviesBrowserStatus);
   const isDarkTheme = useSelector(selectIsDarkTheme);
 
-
   const AppContent = () => {
     switch (status) {
       case "loading":
         return (
           <WelcomeLoader>
-            <WelcomeImage src={favicon} alt="welcome loading image" />
+            <WelcomeImage src={favicon} alt="welcome image" />
           </WelcomeLoader>
         );
       case "success":
