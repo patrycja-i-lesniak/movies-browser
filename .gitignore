@@ -27,3 +27,5 @@ yarn-error.log*
 
 .history
 .eslintrc.json
+
+prettier.config.js

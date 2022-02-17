@@ -1,2 +1,2 @@
-export const paginationQueryParamName = "page";
-export const searchQueryParamName = "search";
+export const paginationQueryParamName = 'page';
+export const searchQueryParamName = 'search';
